@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SageBills — Legal</title>
-    <meta name="description" content="Privacy Policy, GDPR Disclosure, and Terms of Service for SageBills — the smart utility bill tracker for Europe.">
+    <title>Sagelight Studio — Legal</title>
+    <meta name="description" content="Privacy Policy, GDPR Disclosure, and Terms of Service for Sagelight Studio apps (SageBills and SageMeet).">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -817,7 +817,7 @@
 
 <!-- Navigation -->
 <nav class="nav">
-    <a href="#" class="nav__logo">Sage<span>Bills</span></a>
+    <a href="#" class="nav__logo">Sagelight <span>Studio</span></a>
     <ul class="nav__tabs" id="navTabs">
         <li class="nav__tab nav__tab--active" data-doc="privacy" onclick="switchDoc('privacy')">Privacy Policy</li>
         <li class="nav__tab" data-doc="gdpr" onclick="switchDoc('gdpr')">GDPR</li>
@@ -841,9 +841,9 @@
         <header class="doc-header animate-in">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">Privacy <em>Policy</em></h1>
-            <p class="doc-header__subtitle">Your financial data belongs to you, stays with you, and is controlled by you. We built SageBills with this as our foundation.</p>
+            <p class="doc-header__subtitle">This policy covers all Sagelight Studio apps, including SageBills and SageMeet. Your data belongs to you.</p>
             <div class="doc-header__meta">
-                <span>Last updated: April 10, 2026</span>
+                <span>Last updated: April 11, 2026</span>
                 <span>Effective: April 1, 2026</span>
             </div>
         </header>
@@ -852,18 +852,18 @@
         <div class="key-points animate-in animate-in--d1">
             <div class="key-point">
                 <span class="key-point__icon">&#128274;</span>
-                <div class="key-point__title">100% Local Data</div>
+                <div class="key-point__title">SageBills: 100% Local</div>
                 <div class="key-point__desc">All your data stays on your device. No servers, no cloud, no exceptions.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#129302;</span>
+                <div class="key-point__title">SageMeet: Local + AI</div>
+                <div class="key-point__desc">Data is local. AI features optionally send data to OpenAI. Private Mode disables all external transmission.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#128683;</span>
                 <div class="key-point__title">Zero Tracking</div>
-                <div class="key-point__desc">No analytics, no advertising IDs, no telemetry. We cannot see what you do.</div>
-            </div>
-            <div class="key-point">
-                <span class="key-point__icon">&#129521;</span>
-                <div class="key-point__title">No Third Parties</div>
-                <div class="key-point__desc">Built entirely with Apple frameworks. Zero external SDKs or dependencies.</div>
+                <div class="key-point__desc">No analytics, no advertising IDs, no telemetry in any of our apps.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#128272;</span>
@@ -898,21 +898,22 @@
         <div class="animate-in animate-in--d3">
             <div class="section" id="p1">
                 <h2 class="section__heading"><span class="section__num">01</span> Introduction</h2>
-                <p>Welcome to SageBills. This Privacy Policy explains how SageBills handles your information when you use our utility bill tracking application on iOS and macOS.</p>
+                <p>Welcome to Sagelight Studio. This Privacy Policy explains how we handle your information when you use our applications &mdash; <strong>SageBills</strong> (utility bill tracking) and <strong>SageMeet</strong> (meeting recording and AI transcription) &mdash; on iOS and macOS.</p>
                 <p>This policy complies with the General Data Protection Regulation (GDPR), the ePrivacy Directive, and Apple App Store Guidelines (sections 5.1.1 and 5.1.2).</p>
             </div>
 
             <div class="section" id="p2">
                 <h2 class="section__heading"><span class="section__num">02</span> Who We Are</h2>
-                <p>SageBills is developed and maintained by a sole proprietor based in Romania, European Union.</p>
+                <p>Sagelight Studio apps are developed and maintained by a sole proprietor based in Romania, European Union.</p>
                 <ul>
                     <li><strong>Contact:</strong> <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></li>
                 </ul>
-                <p>For the purposes of the GDPR, the developer acts as the data controller. However, because all data processing occurs locally on your device, your data never reaches us.</p>
+                <p>For the purposes of the GDPR, the developer acts as the data controller. For SageBills, all data processing occurs locally and your data never reaches us. For SageMeet, data is processed locally except when you use AI features, which transmit data to OpenAI (see Sections 9 and 10).</p>
             </div>
 
             <div class="section" id="p3">
                 <h2 class="section__heading"><span class="section__num">03</span> Privacy-First Architecture</h2>
+                <h3 class="section__subheading">SageBills</h3>
                 <p>SageBills is designed with a <strong>local-only, zero-server architecture</strong>:</p>
                 <ul>
                     <li><strong>No servers.</strong> We do not operate any backend servers that receive, store, or process your data.</li>
@@ -921,14 +922,24 @@
                     <li><strong>No tracking.</strong> We do not track your behavior, location, or activity.</li>
                     <li><strong>No third-party SDKs.</strong> The app is built entirely with Apple frameworks. Zero external dependencies.</li>
                 </ul>
+                <h3 class="section__subheading">SageMeet</h3>
+                <p>SageMeet stores all data locally and optionally syncs via iCloud. When you use AI-powered features:</p>
+                <ul>
+                    <li><strong>Audio and text are sent to OpenAI APIs</strong> (Whisper for transcription, GPT-4o for notes, embedding APIs for search) when you explicitly request AI processing.</li>
+                    <li><strong>Private Mode</strong> disables all external data transmission. No data leaves your device.</li>
+                    <li><strong>No analytics or tracking.</strong> SageMeet does not collect usage analytics, crash reports, or telemetry.</li>
+                    <li><strong>Your OpenAI API key</strong> is stored securely in the device Keychain and only used to authenticate requests you initiate.</li>
+                </ul>
                 <div class="callout">
-                    <strong>In simple terms:</strong> All data you enter into SageBills remains on your device unless you explicitly choose to export it.
+                    <strong>In simple terms:</strong> SageBills data never leaves your device. SageMeet data stays local unless you use AI features &mdash; and Private Mode disables all external transmission.
                 </div>
             </div>
 
             <div class="section" id="p4">
                 <h2 class="section__heading"><span class="section__num">04</span> Data We Process</h2>
-                <p>All of the following data is stored <strong>exclusively on your device</strong>:</p>
+
+                <h3 class="section__subheading">SageBills Data</h3>
+                <p>All of the following data is stored <strong>exclusively on your device and in your private iCloud account</strong>:</p>
 
                 <details class="collapsible" open>
                     <summary>Bill Data (User-Entered)</summary>
@@ -953,40 +964,56 @@
                 </details>
 
                 <details class="collapsible">
-                    <summary>App Preferences and Settings</summary>
+                    <summary>App Preferences &amp; Keychain</summary>
                     <div class="collapsible__body">
                         <ul>
-                            <li>Currency and display preferences</li>
-                            <li>Notification preferences</li>
-                            <li>Savings goals configuration</li>
-                            <li>Onboarding and consent status</li>
+                            <li>Currency and display preferences, notification preferences, savings goals, onboarding and consent status</li>
+                            <li>GDPR consent date (Keychain, non-personal)</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <h3 class="section__subheading">SageMeet Data</h3>
+                <p>The following data is stored <strong>on your device and optionally in your private iCloud account</strong>:</p>
+
+                <details class="collapsible" open>
+                    <summary>Recordings &amp; Transcripts</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li><strong>Audio recordings</strong> &mdash; stored locally and optionally in iCloud Drive</li>
+                            <li><strong>Transcripts</strong> &mdash; text generated from audio via OpenAI Whisper API</li>
+                            <li><strong>AI-generated notes</strong> &mdash; summaries, action items, analytics generated by GPT-4o</li>
                         </ul>
                     </div>
                 </details>
 
                 <details class="collapsible">
-                    <summary>Subscription Status</summary>
+                    <summary>Search, Calendar &amp; Analytics</summary>
                     <div class="collapsible__body">
-                        <p>Managed entirely by Apple through StoreKit. SageBills reads your subscription status to unlock features but does not store payment details.</p>
+                        <ul>
+                            <li><strong>Semantic embeddings</strong> &mdash; vector representations in local SQLite for content search</li>
+                            <li><strong>Calendar data</strong> &mdash; read-only access for meeting context (SageMeet does not modify your calendar)</li>
+                            <li><strong>Speaker analytics</strong> &mdash; participation metrics processed via GPT-4o-mini</li>
+                            <li><strong>Spotlight index</strong> &mdash; meeting records indexed for device search</li>
+                        </ul>
                     </div>
                 </details>
 
                 <details class="collapsible">
-                    <summary>Keychain Data</summary>
+                    <summary>SageMeet Keychain &amp; Preferences</summary>
                     <div class="collapsible__body">
-                        <p>SageBills stores two non-personal items in the device Keychain:</p>
                         <ul>
-                            <li><strong>First-launch date:</strong> Used to calculate the 90-day free grace period.</li>
-                            <li><strong>GDPR consent date:</strong> Stored for tamper detection to ensure consent integrity.</li>
+                            <li><strong>OpenAI API key</strong> &mdash; stored securely in the device Keychain, used only to authenticate your requests</li>
+                            <li>Display settings, recording preferences, AI feature toggles, Private Mode status</li>
                         </ul>
-                        <p>No personal data is stored in the Keychain.</p>
                     </div>
                 </details>
             </div>
 
             <div class="section" id="p5">
                 <h2 class="section__heading"><span class="section__num">05</span> How We Use Your Data</h2>
-                <p>Because all data stays on your device, "use" means local processing within the app:</p>
+                <h3 class="section__subheading">SageBills</h3>
+                <p>Because all SageBills data stays on your device, "use" means local processing within the app:</p>
                 <div class="table-wrap">
                     <table>
                         <thead><tr><th>Purpose</th><th>Description</th></tr></thead>
@@ -1002,12 +1029,33 @@
                         </tbody>
                     </table>
                 </div>
+                <h3 class="section__subheading">SageMeet</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Purpose</th><th>Description</th><th>External Service?</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Meeting recording</strong></td><td>Capturing audio on your device</td><td>No</td></tr>
+                            <tr><td><strong>Transcription</strong></td><td>Converting audio to text via OpenAI Whisper API</td><td>Yes (OpenAI)</td></tr>
+                            <tr><td><strong>AI note generation</strong></td><td>Generating summaries and action items via GPT-4o</td><td>Yes (OpenAI)</td></tr>
+                            <tr><td><strong>Semantic search</strong></td><td>Creating embeddings for content search</td><td>Yes (OpenAI)</td></tr>
+                            <tr><td><strong>Speaker analytics</strong></td><td>Analyzing participation patterns via GPT-4o-mini</td><td>Yes (OpenAI)</td></tr>
+                            <tr><td><strong>Calendar integration</strong></td><td>Reading calendar events for meeting context</td><td>No</td></tr>
+                            <tr><td><strong>Spotlight indexing</strong></td><td>Making meetings findable through device search</td><td>No</td></tr>
+                            <tr><td><strong>iCloud sync</strong></td><td>Syncing meeting data across your devices</td><td>No (Apple)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="section" id="p6">
                 <h2 class="section__heading"><span class="section__num">06</span> Legal Basis for Processing</h2>
-                <p>Under Article 6(1)(a) of the GDPR, our legal basis for processing your data is <strong>your explicit consent</strong>, which you provide during the app's onboarding process.</p>
-                <p>You may withdraw your consent at any time through the app's Settings. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.</p>
+                <p><strong>SageBills:</strong> Under Article 6(1)(a) of the GDPR, our legal basis is <strong>your explicit consent</strong>, which you provide during the app's onboarding process.</p>
+                <p><strong>SageMeet:</strong> Our legal bases are:</p>
+                <ul>
+                    <li><strong>Consent</strong> (Art. 6(1)(a)) &mdash; for optional AI features and data processing during onboarding.</li>
+                    <li><strong>Contractual necessity</strong> (Art. 6(1)(b)) &mdash; for core AI processing features integral to the service (transcription, note generation).</li>
+                </ul>
+                <p>You may withdraw your consent at any time through either app's Settings. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.</p>
             </div>
 
             <div class="section" id="p7">
@@ -1039,21 +1087,30 @@
 
             <div class="section" id="p9">
                 <h2 class="section__heading"><span class="section__num">09</span> Third-Party Services</h2>
-                <h3 class="section__subheading">Apple App Store and StoreKit</h3>
-                <p>SageBills offers optional subscriptions managed through Apple's App Store. Payment processing is handled entirely by Apple. SageBills does not receive or store your payment information.</p>
-                <p>Apple's handling of your payment data is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
-                <h3 class="section__subheading">No Other Third Parties</h3>
-                <p>SageBills contains <strong>no third-party SDKs, frameworks, libraries, or services</strong>. We do not share, sell, or disclose your data to any third party.</p>
+                <h3 class="section__subheading">Apple iCloud (SageMeet)</h3>
+                <p>SageMeet optionally syncs meeting data via Apple's iCloud (CloudKit). Apple acts as a data processor under its own GDPR commitments. iCloud data is encrypted in transit and at rest.</p>
+                <h3 class="section__subheading">OpenAI (SageMeet)</h3>
+                <p>When you use AI features in SageMeet, audio and text data are sent to <strong>OpenAI LLC</strong> for processing. OpenAI acts as a <strong>data processor</strong> under Article 28 GDPR. The following OpenAI services are used:</p>
+                <ul>
+                    <li><strong>Whisper API</strong> &mdash; audio-to-text transcription</li>
+                    <li><strong>GPT-4o</strong> &mdash; meeting note generation and summarization</li>
+                    <li><strong>GPT-4o-mini</strong> &mdash; speaker analytics processing</li>
+                    <li><strong>Embedding API</strong> &mdash; semantic vector generation for search</li>
+                </ul>
+                <p>OpenAI does not use API data to train their models. OpenAI is certified under the <strong>EU-US Data Privacy Framework</strong> (DPF). You authenticate with your own API key; we have no access to your OpenAI account.</p>
+                <h3 class="section__subheading">SageBills: No Other Third Parties</h3>
+                <p>SageBills contains <strong>no third-party SDKs, frameworks, libraries, or services</strong> beyond Apple's own frameworks. We do not share, sell, or disclose your SageBills data to any third party.</p>
             </div>
 
             <div class="section" id="p10">
                 <h2 class="section__heading"><span class="section__num">10</span> International Data Transfers</h2>
-                <p>SageBills does not transfer your data internationally. Your data remains on your device at all times.</p>
+                <p><strong>SageBills</strong> does not transfer your data internationally. Your data remains on your device at all times.</p>
+                <p><strong>SageMeet</strong> transfers data to the United States when you use AI features, as OpenAI's API servers are located in the US. These transfers are lawful under the <strong>EU-US Data Privacy Framework</strong> (DPF), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.</p>
             </div>
 
             <div class="section" id="p11">
                 <h2 class="section__heading"><span class="section__num">11</span> Cookies and Tracking</h2>
-                <p>SageBills does not use cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. The app does not contain any advertising.</p>
+                <p>Neither SageBills nor SageMeet uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. Neither app contains any advertising.</p>
             </div>
 
             <div class="section" id="p12">
@@ -1098,7 +1155,7 @@
 
             <div class="section" id="p13">
                 <h2 class="section__heading"><span class="section__num">13</span> Children's Privacy</h2>
-                <p>SageBills is not directed at children under 16. We do not knowingly process data from children. Since all data is stored locally, we have no means to identify or verify user age.</p>
+                <p>Our apps are not directed at children under 16. We do not knowingly process data from children. Since data is stored locally, we have no means to identify or verify user age.</p>
             </div>
 
             <div class="section" id="p14">
@@ -1123,9 +1180,9 @@
         <header class="doc-header">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">GDPR <em>Disclosure</em></h1>
-            <p class="doc-header__subtitle">Information required under Articles 13 and 14 of the General Data Protection Regulation (EU) 2016/679 regarding data processing through SageBills.</p>
+            <p class="doc-header__subtitle">Information required under Articles 13 and 14 of the General Data Protection Regulation (EU) 2016/679 regarding data processing through Sagelight Studio apps (SageBills and SageMeet).</p>
             <div class="doc-header__meta">
-                <span>Last updated: April 10, 2026</span>
+                <span>Last updated: April 11, 2026</span>
                 <span>GDPR (EU) 2016/679</span>
             </div>
         </header>
@@ -1134,22 +1191,22 @@
             <div class="key-point">
                 <span class="key-point__icon">&#127963;</span>
                 <div class="key-point__title">Controller in EU</div>
-                <div class="key-point__desc">Sole proprietor based in Romania. Your data never reaches us.</div>
+                <div class="key-point__desc">Sole proprietor based in Romania. Your data never reaches our servers.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#9878;</span>
-                <div class="key-point__title">Lawful Basis: Consent</div>
-                <div class="key-point__desc">Processing based on Art. 6(1)(a). Withdraw anytime in Settings.</div>
+                <div class="key-point__title">Lawful Basis</div>
+                <div class="key-point__desc">SageBills: consent (Art. 6(1)(a)). SageMeet: consent + contractual necessity (Art. 6(1)(b)).</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#128101;</span>
-                <div class="key-point__title">Zero Recipients</div>
-                <div class="key-point__desc">No data processors, no third parties, no advertising networks.</div>
+                <div class="key-point__title">SageMeet: OpenAI as Processor</div>
+                <div class="key-point__desc">OpenAI LLC receives audio/text when AI features are used (Art. 28). Private Mode disables all sharing.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127760;</span>
-                <div class="key-point__title">No Transfers</div>
-                <div class="key-point__desc">No international data transfers. All processing is on-device.</div>
+                <div class="key-point__title">iCloud Sync</div>
+                <div class="key-point__desc">Data syncs via Apple CloudKit to your private iCloud account under Apple's GDPR commitments.</div>
             </div>
         </div>
 
@@ -1176,10 +1233,10 @@
 
         <div class="section" id="g1">
             <h2 class="section__heading"><span class="section__num">01</span> Data Controller</h2>
-            <p><strong>Controller:</strong> SageBills (individual developer / sole proprietor)<br>
+            <p><strong>Controller:</strong> Sagelight Studio (individual developer / sole proprietor)<br>
             <strong>Location:</strong> Romania, European Union<br>
             <strong>Email:</strong> <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
-            <p>Per <strong>Article 13(1)(a)</strong> and <strong>Article 14(1)(a)</strong>, the developer is the data controller. Due to the local-only architecture, the controller does not receive, access, or store any personal data. All processing occurs exclusively on the user's device.</p>
+            <p>Per <strong>Article 13(1)(a)</strong> and <strong>Article 14(1)(a)</strong>, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data. For SageMeet, data is processed locally except when the user initiates AI features, which transmit data to OpenAI as a data processor (Art. 28).</p>
         </div>
 
         <div class="section" id="g2">
@@ -1191,6 +1248,7 @@
         <div class="section" id="g3">
             <h2 class="section__heading"><span class="section__num">03</span> Categories of Personal Data</h2>
             <p>Per <strong>Article 13(1)(d)</strong> and <strong>14(1)(d)</strong>:</p>
+            <h3 class="section__subheading">SageBills</h3>
             <div class="table-wrap">
                 <table>
                     <thead><tr><th>Category</th><th>Examples</th><th>Special (Art. 9)?</th></tr></thead>
@@ -1201,16 +1259,33 @@
                         <tr><td><strong>Consumption data</strong></td><td>kWh readings, cubic meters</td><td>No</td></tr>
                         <tr><td><strong>Free-text data</strong></td><td>Notes you add to bill records</td><td>No</td></tr>
                         <tr><td><strong>OCR-extracted data</strong></td><td>Account numbers, addresses from invoices</td><td>No</td></tr>
-                        <tr><td><strong>Technical data</strong></td><td>First-launch date, consent timestamp (Keychain)</td><td>No</td></tr>
+                        <tr><td><strong>Technical data</strong></td><td>Consent timestamp (Keychain)</td><td>No</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p><strong>No special categories of personal data</strong> (Article 9) are processed by SageBills.</p>
+            <h3 class="section__subheading">SageMeet</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Category</th><th>Examples</th><th>Special (Art. 9)?</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Audio data</strong></td><td>Meeting recordings</td><td>No</td></tr>
+                        <tr><td><strong>Transcript data</strong></td><td>Text generated from audio via Whisper API</td><td>No</td></tr>
+                        <tr><td><strong>AI-generated content</strong></td><td>Meeting notes, summaries, action items</td><td>No</td></tr>
+                        <tr><td><strong>Embedding vectors</strong></td><td>Semantic representations for search (local SQLite)</td><td>No</td></tr>
+                        <tr><td><strong>Calendar metadata</strong></td><td>Event titles, times, participants (read-only)</td><td>No</td></tr>
+                        <tr><td><strong>Speaker analytics</strong></td><td>Speaking time, participation metrics</td><td>No</td></tr>
+                        <tr><td><strong>API credentials</strong></td><td>OpenAI API key (Keychain)</td><td>No</td></tr>
+                        <tr><td><strong>Technical data</strong></td><td>Consent timestamp, app preferences</td><td>No</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>No special categories of personal data</strong> (Article 9) are processed by any Sagelight Studio app.</p>
         </div>
 
         <div class="section" id="g4">
             <h2 class="section__heading"><span class="section__num">04</span> Purposes of Processing</h2>
             <p>Per <strong>Article 13(1)(c)</strong> and <strong>14(1)(c)</strong>:</p>
+            <h3 class="section__subheading">SageBills</h3>
             <div class="table-wrap">
                 <table>
                     <thead><tr><th>#</th><th>Purpose</th><th>Description</th></tr></thead>
@@ -1223,8 +1298,22 @@
                         <tr><td>6</td><td><strong>Due date reminders</strong></td><td>Local notifications for upcoming bills</td></tr>
                         <tr><td>7</td><td><strong>Data export</strong></td><td>CSV exports at the user's request</td></tr>
                         <tr><td>8</td><td><strong>Device search</strong></td><td>Indexing in CoreSpotlight</td></tr>
-                        <tr><td>9</td><td><strong>Subscription management</strong></td><td>Reading status from Apple StoreKit</td></tr>
-                        <tr><td>10</td><td><strong>Anti-abuse</strong></td><td>Verifying grace period eligibility</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="section__subheading">SageMeet</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>#</th><th>Purpose</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>11</td><td><strong>Meeting recording</strong></td><td>Capturing and storing audio recordings locally</td></tr>
+                        <tr><td>12</td><td><strong>Transcription</strong></td><td>Converting audio to text via OpenAI Whisper API</td></tr>
+                        <tr><td>13</td><td><strong>AI summarization</strong></td><td>Generating notes and action items via GPT-4o</td></tr>
+                        <tr><td>14</td><td><strong>Semantic search</strong></td><td>Creating embeddings for content search</td></tr>
+                        <tr><td>15</td><td><strong>Speaker analytics</strong></td><td>Analyzing participation patterns via GPT-4o-mini</td></tr>
+                        <tr><td>16</td><td><strong>Calendar integration</strong></td><td>Reading calendar events for meeting context</td></tr>
+                        <tr><td>17</td><td><strong>iCloud sync</strong></td><td>Syncing meeting data across your devices</td></tr>
+                        <tr><td>18</td><td><strong>Device search</strong></td><td>Indexing meetings in CoreSpotlight</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1232,19 +1321,37 @@
 
         <div class="section" id="g5">
             <h2 class="section__heading"><span class="section__num">05</span> Lawful Basis</h2>
-            <p>Per <strong>Article 6(1)(a)</strong>: <strong>Consent.</strong></p>
-            <p>You provide explicit consent during onboarding. Consent is freely given, specific, informed, and unambiguous. You may withdraw consent at any time via Settings, which takes effect immediately.</p>
+            <p><strong>SageBills:</strong> Per <strong>Article 6(1)(a)</strong>: <strong>Consent.</strong> You provide explicit consent during onboarding.</p>
+            <p><strong>SageMeet:</strong> Per <strong>Article 6(1)(a)</strong> and <strong>Article 6(1)(b)</strong>:</p>
+            <ul>
+                <li><strong>Consent</strong> (Art. 6(1)(a)) &mdash; for optional AI features and data processing during onboarding.</li>
+                <li><strong>Contractual necessity</strong> (Art. 6(1)(b)) &mdash; for core AI processing features integral to the service.</li>
+            </ul>
+            <p>Consent is freely given, specific, informed, and unambiguous. You may withdraw consent at any time via Settings, which takes effect immediately.</p>
         </div>
 
         <div class="section" id="g6">
             <h2 class="section__heading"><span class="section__num">06</span> Recipients</h2>
-            <p>Per <strong>Article 13(1)(e)</strong>: <strong>There are no recipients of your personal data.</strong></p>
-            <p>No data processors (Art. 28), no joint controllers (Art. 26), no third-party services, no advertising networks, no analytics providers.</p>
+            <p>Per <strong>Article 13(1)(e)</strong>:</p>
+            <p><strong>SageBills:</strong> There are no recipients of your SageBills personal data. No data processors (Art. 28), no joint controllers (Art. 26), no third-party services.</p>
+            <p><strong>SageMeet:</strong> When AI features are used, the following recipients process your data:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Recipient</th><th>Role</th><th>Data Received</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>OpenAI LLC</strong></td><td>Data processor (Art. 28)</td><td>Audio, text for transcription, meeting content for summarization, text for embeddings</td></tr>
+                        <tr><td><strong>Apple (iCloud)</strong></td><td>Storage provider</td><td>Meeting data when iCloud sync is enabled</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>OpenAI does not use API data to train its models. No advertising networks, analytics providers, or other third parties receive your data. When Private Mode is enabled, no data is shared with OpenAI.</p>
         </div>
 
         <div class="section" id="g7">
             <h2 class="section__heading"><span class="section__num">07</span> International Transfers</h2>
-            <p>Per <strong>Article 13(1)(f)</strong>: <strong>No international transfers occur.</strong> All data is processed on your local device. No transfer mechanisms under Chapter V are applicable.</p>
+            <p>Per <strong>Article 13(1)(f)</strong>:</p>
+            <p><strong>SageBills:</strong> No international transfers occur. All data is processed on your local device.</p>
+            <p><strong>SageMeet:</strong> When AI features are used, data is transferred to the United States (OpenAI's servers). These transfers are lawful under the <strong>EU-US Data Privacy Framework</strong> (DPF, Chapter V), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.</p>
         </div>
 
         <div class="section" id="g8">
@@ -1256,7 +1363,6 @@
                         <tr><td><strong>Bill records</strong></td><td>Until you delete them or uninstall</td><td>User control</td></tr>
                         <tr><td><strong>OCR-extracted text</strong></td><td>Until the associated bill is deleted</td><td>User control</td></tr>
                         <tr><td><strong>App preferences</strong></td><td>Until reset or uninstall</td><td>User control</td></tr>
-                        <tr><td><strong>First-launch date</strong></td><td>Until uninstallation</td><td>Anti-abuse</td></tr>
                         <tr><td><strong>Consent timestamp</strong></td><td>Until uninstallation</td><td>Legal compliance</td></tr>
                     </tbody>
                 </table>
@@ -1314,7 +1420,8 @@
 
         <div class="section" id="g10">
             <h2 class="section__heading"><span class="section__num">10</span> Automated Decision-Making</h2>
-            <p>SageBills uses statistical calculations (averaging, trend analysis) for predictions and anomaly detection. These are <strong>informational only</strong> and do not constitute profiling (Art. 4(4)) or automated decision-making (Art. 22) as they produce no legal or similarly significant effects.</p>
+            <p><strong>SageBills</strong> uses statistical calculations (averaging, trend analysis) for predictions and anomaly detection. These are <strong>informational only</strong> and do not constitute profiling (Art. 4(4)) or automated decision-making (Art. 22) as they produce no legal or similarly significant effects.</p>
+            <p><strong>SageMeet</strong> uses AI models (GPT-4o, GPT-4o-mini) to generate meeting notes, summaries, action items, and speaker analytics. These AI-generated outputs are <strong>informational only</strong> and are not used for decisions producing legal or similarly significant effects. Users should review AI outputs for accuracy and not rely on them for legal, medical, or financial decisions.</p>
         </div>
 
         <div class="section" id="g11">
@@ -1341,7 +1448,7 @@
 
         <div class="section" id="g13">
             <h2 class="section__heading"><span class="section__num">13</span> Children's Data</h2>
-            <p>Per <strong>Article 8</strong>: SageBills is not directed at children under 16 (Romania's national threshold). We cannot verify user age due to the local-only architecture.</p>
+            <p>Per <strong>Article 8</strong>: Our apps are not directed at children under 16 (Romania's national threshold). We cannot verify user age due to the primarily local architecture.</p>
         </div>
 
         <div class="section" id="g14">
@@ -1371,9 +1478,9 @@
         <header class="doc-header">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">Terms of <em>Service</em></h1>
-            <p class="doc-header__subtitle">The agreement between you and SageBills. Clear, fair, and respectful of your rights as a European consumer.</p>
+            <p class="doc-header__subtitle">The agreement between you and Sagelight Studio, covering SageBills and SageMeet. Clear, fair, and respectful of your rights as a European consumer.</p>
             <div class="doc-header__meta">
-                <span>Last updated: April 10, 2026</span>
+                <span>Last updated: April 11, 2026</span>
                 <span>Effective: April 1, 2026</span>
             </div>
         </header>
@@ -1381,18 +1488,13 @@
         <div class="key-points">
             <div class="key-point">
                 <span class="key-point__icon">&#128241;</span>
-                <div class="key-point__title">Your Data, Your Device</div>
-                <div class="key-point__desc">All data stays local. You own it completely. We never see it.</div>
+                <div class="key-point__title">Your Data, Your Control</div>
+                <div class="key-point__desc">SageBills data stays local. SageMeet data is local except when you use AI features.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127873;</span>
-                <div class="key-point__title">90-Day Free Trial</div>
-                <div class="key-point__desc">Full Pro features free for 90 days. No credit card required.</div>
-            </div>
-            <div class="key-point">
-                <span class="key-point__icon">&#128176;</span>
-                <div class="key-point__title">Fair Pricing</div>
-                <div class="key-point__desc">Monthly, yearly, or lifetime. Cancel anytime via Apple.</div>
+                <div class="key-point__title">Free to Use</div>
+                <div class="key-point__desc">Both SageBills and SageMeet are provided free of charge.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127466;&#127482;</span>
@@ -1407,126 +1509,118 @@
                 <li class="toc__item"><a href="#t1" data-num="01">Acceptance of Terms</a></li>
                 <li class="toc__item"><a href="#t2" data-num="02">Description of Service</a></li>
                 <li class="toc__item"><a href="#t3" data-num="03">System Requirements</a></li>
-                <li class="toc__item"><a href="#t4" data-num="04">Subscriptions and Pricing</a></li>
-                <li class="toc__item"><a href="#t5" data-num="05">Free Grace Period</a></li>
-                <li class="toc__item"><a href="#t6" data-num="06">Billing and Cancellation</a></li>
-                <li class="toc__item"><a href="#t7" data-num="07">Local-Only Data Model</a></li>
-                <li class="toc__item"><a href="#t8" data-num="08">Data Ownership</a></li>
-                <li class="toc__item"><a href="#t9" data-num="09">Intellectual Property</a></li>
-                <li class="toc__item"><a href="#t10" data-num="10">Prohibited Uses</a></li>
-                <li class="toc__item"><a href="#t11" data-num="11">Warranties and Liability</a></li>
-                <li class="toc__item"><a href="#t12" data-num="12">Governing Law</a></li>
-                <li class="toc__item"><a href="#t13" data-num="13">Dispute Resolution</a></li>
-                <li class="toc__item"><a href="#t14" data-num="14">Termination</a></li>
-                <li class="toc__item"><a href="#t15" data-num="15">Contact</a></li>
+                <li class="toc__item"><a href="#t4" data-num="04">Pricing</a></li>
+                <li class="toc__item"><a href="#t5" data-num="05">Data Storage Model</a></li>
+                <li class="toc__item"><a href="#t6" data-num="06">Data Ownership</a></li>
+                <li class="toc__item"><a href="#t7" data-num="07">Intellectual Property</a></li>
+                <li class="toc__item"><a href="#t8" data-num="08">Prohibited Uses</a></li>
+                <li class="toc__item"><a href="#t9" data-num="09">Warranties and Liability</a></li>
+                <li class="toc__item"><a href="#t10" data-num="10">Governing Law</a></li>
+                <li class="toc__item"><a href="#t11" data-num="11">Dispute Resolution</a></li>
+                <li class="toc__item"><a href="#t12" data-num="12">Termination</a></li>
+                <li class="toc__item"><a href="#t13" data-num="13">Contact</a></li>
             </ol>
         </nav>
 
         <div class="section" id="t1">
             <h2 class="section__heading"><span class="section__num">01</span> Acceptance of Terms</h2>
-            <p>By downloading, installing, or using SageBills, you agree to these Terms. If you do not agree, do not use the app.</p>
-            <p>These Terms constitute a legal agreement between you and SageBills, a sole proprietor based in Romania, EU. Your use is also governed by our <a href="#" onclick="switchDoc('privacy'); return false;">Privacy Policy</a> and <a href="#" onclick="switchDoc('gdpr'); return false;">GDPR Disclosure</a>.</p>
+            <p>By downloading, installing, or using any Sagelight Studio app, you agree to these Terms. If you do not agree, do not use the app.</p>
+            <p>These Terms constitute a legal agreement between you and Sagelight Studio, a sole proprietor based in Romania, EU. Your use is also governed by our <a href="#" onclick="switchDoc('privacy'); return false;">Privacy Policy</a> and <a href="#" onclick="switchDoc('gdpr'); return false;">GDPR Disclosure</a>.</p>
         </div>
 
         <div class="section" id="t2">
             <h2 class="section__heading"><span class="section__num">02</span> Description of Service</h2>
-            <p>SageBills is a utility bill tracking application for iOS and macOS. Features include bill recording, invoice scanning (OCR), cost predictions, anomaly detection, savings goals, due date reminders, and CSV data export.</p>
+            <p><strong>SageBills</strong> is a utility bill tracking application for iOS and macOS. Features include bill recording, invoice scanning (OCR), cost predictions, anomaly detection, savings goals, due date reminders, and CSV data export.</p>
             <div class="callout">SageBills is a personal finance <strong>tracking</strong> tool. It does not provide financial advice, nor does it process payments to utility providers.</div>
+            <p><strong>SageMeet</strong> is a meeting recording and AI transcription application for iOS and macOS. Features include audio recording, AI-powered transcription (via OpenAI Whisper), meeting note generation (via GPT-4o), semantic search, speaker analytics, calendar integration, and iCloud sync.</p>
+            <div class="callout">SageMeet is a <strong>productivity</strong> tool. AI-generated outputs (transcripts, notes, analytics) may be inaccurate and should not be relied upon for legal, medical, or financial decisions.</div>
         </div>
 
         <div class="section" id="t3">
             <h2 class="section__heading"><span class="section__num">03</span> System Requirements</h2>
+            <h3 class="section__subheading">SageBills</h3>
             <ul>
                 <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later</li>
                 <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later</li>
-                <li>An Apple ID for downloading and subscription management</li>
+                <li>An Apple ID for downloading</li>
             </ul>
-            <p>Internet is only required for downloading the app and managing subscriptions. Core functionality works entirely offline.</p>
+            <p>Internet is only required for downloading the app. Core functionality works entirely offline.</p>
+            <h3 class="section__subheading">SageMeet</h3>
+            <ul>
+                <li><strong>iOS:</strong> iPhone or iPad running iOS 16.0 or later</li>
+                <li><strong>macOS:</strong> Mac running macOS 13.0 (Ventura) or later</li>
+                <li>An Apple ID for downloading</li>
+            </ul>
+            <p>SageMeet requires an internet connection for AI features and a user-provided OpenAI API key. Recording and local playback work offline.</p>
         </div>
 
         <div class="section" id="t4">
-            <h2 class="section__heading"><span class="section__num">04</span> Subscriptions and Pricing</h2>
-            <div class="table-wrap">
-                <table>
-                    <thead><tr><th>Plan</th><th>Price</th><th>Billing</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Monthly</strong></td><td>&euro;2.99/month</td><td>Recurring monthly</td></tr>
-                        <tr><td><strong>Yearly</strong></td><td>&euro;24.99/year</td><td>Recurring yearly</td></tr>
-                        <tr><td><strong>Lifetime</strong></td><td>&euro;49.99</td><td>One-time purchase</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <p>All subscriptions are processed through Apple's App Store. SageBills does not receive your payment information. Prices may change; you will be notified in advance.</p>
+            <h2 class="section__heading"><span class="section__num">04</span> Pricing</h2>
+            <p>Both SageBills and SageMeet are provided <strong>free of charge</strong>. No subscription or payment is required.</p>
+            <p>For SageMeet, you provide your own OpenAI API key to use AI features; usage costs are billed directly by OpenAI under your own account.</p>
         </div>
 
         <div class="section" id="t5">
-            <h2 class="section__heading"><span class="section__num">05</span> Free Grace Period</h2>
-            <p>New users receive a <strong>90-day free grace period</strong> with all premium features. The grace period begins on first app launch, cannot be reset by reinstalling, and is tracked via a secure Keychain timestamp.</p>
-        </div>
-
-        <div class="section" id="t6">
-            <h2 class="section__heading"><span class="section__num">06</span> Billing and Cancellation</h2>
-            <p>Subscriptions auto-renew unless canceled at least <strong>24 hours before</strong> the end of the current period. Manage or cancel via:</p>
-            <ul>
-                <li><strong>iPhone/iPad:</strong> Settings &gt; [Your Name] &gt; Subscriptions</li>
-                <li><strong>Mac:</strong> App Store &gt; Account &gt; Subscriptions</li>
-            </ul>
-            <p>Refund requests must be submitted to Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
-        </div>
-
-        <div class="section" id="t7">
-            <h2 class="section__heading"><span class="section__num">07</span> Local-Only Data Model</h2>
+            <h2 class="section__heading"><span class="section__num">05</span> Data Storage Model</h2>
+            <h3 class="section__subheading">SageBills</h3>
             <div class="callout callout--warning">
                 <strong>Important:</strong> SageBills does not provide cloud backup. You are solely responsible for backing up your data using iCloud device backup, Time Machine, or similar mechanisms.
             </div>
             <p>We are not liable for data loss from device loss, app deletion, OS updates, or any other circumstance, as we have no access to your data.</p>
+            <h3 class="section__subheading">SageMeet</h3>
+            <p>SageMeet stores data locally and optionally syncs via iCloud. Audio recordings and AI-generated content may be stored in iCloud Drive when sync is enabled. When AI features are used, data is transmitted to OpenAI for processing.</p>
+            <div class="callout callout--warning">
+                <strong>Important:</strong> You are responsible for backing up your recordings. We do not have access to your meeting data.
+            </div>
         </div>
 
-        <div class="section" id="t8">
-            <h2 class="section__heading"><span class="section__num">08</span> Data Ownership</h2>
+        <div class="section" id="t6">
+            <h2 class="section__heading"><span class="section__num">06</span> Data Ownership</h2>
             <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data. You are responsible for the accuracy of data you enter, including reviewing OCR-extracted results.</p>
+            <p><strong>SageMeet AI outputs:</strong> AI-generated outputs (transcripts, notes, summaries, analytics) are derived content. You own your recordings and input data. AI-generated outputs are subject to <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">OpenAI's usage policies</a>.</p>
         </div>
 
-        <div class="section" id="t9">
-            <h2 class="section__heading"><span class="section__num">09</span> Intellectual Property</h2>
-            <p>The app's design, code, UI, graphics, and icons are owned by SageBills and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license for personal use.</p>
+        <div class="section" id="t7">
+            <h2 class="section__heading"><span class="section__num">07</span> Intellectual Property</h2>
+            <p>The apps' design, code, UI, graphics, and icons are owned by Sagelight Studio and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license for personal use.</p>
             <p>You may not copy, modify, distribute, reverse-engineer, or use the app to develop a competing product.</p>
         </div>
 
-        <div class="section" id="t10">
-            <h2 class="section__heading"><span class="section__num">10</span> Prohibited Uses</h2>
+        <div class="section" id="t8">
+            <h2 class="section__heading"><span class="section__num">08</span> Prohibited Uses</h2>
             <ul>
                 <li>Violating any applicable law or third-party rights</li>
-                <li>Circumventing the subscription system or grace period</li>
+                <li>Circumventing any access controls or security measures</li>
                 <li>Reverse-engineering or tampering with the app's source code</li>
                 <li>Using the app in ways that could damage or impair its functionality</li>
             </ul>
         </div>
 
-        <div class="section" id="t11">
-            <h2 class="section__heading"><span class="section__num">11</span> Warranties and Liability</h2>
-            <div class="legal-caps">The app is provided "as is" without warranties of any kind, express or implied. We do not warrant that the app will be uninterrupted, error-free, or that predictions will be accurate. Our total liability shall not exceed the amount you paid in the preceding twelve months.</div>
+        <div class="section" id="t9">
+            <h2 class="section__heading"><span class="section__num">09</span> Warranties and Liability</h2>
+            <div class="legal-caps">The apps are provided "as is" without warranties of any kind, express or implied. We do not warrant that the apps will be uninterrupted, error-free, or that predictions will be accurate. To the maximum extent permitted by law, our total liability is limited to the amount, if any, you have paid us in the preceding twelve months.</div>
+            <div class="callout callout--warning"><strong>AI accuracy disclaimer (SageMeet):</strong> AI-generated transcriptions, summaries, and analytics may be inaccurate. SageMeet does not guarantee the accuracy of AI outputs. Do not rely on them for legal, medical, or financial decisions. You are responsible for reviewing all AI-generated content.</div>
             <div class="callout"><strong>EU consumers:</strong> This does not affect your statutory rights under the EU Digital Content Directive (2019/770). Liability cannot be excluded for intentional misconduct or gross negligence.</div>
         </div>
 
-        <div class="section" id="t12">
-            <h2 class="section__heading"><span class="section__num">12</span> Governing Law</h2>
+        <div class="section" id="t10">
+            <h2 class="section__heading"><span class="section__num">10</span> Governing Law</h2>
             <p>These Terms are governed by <strong>Romanian law</strong>. EU consumers also benefit from mandatory consumer protections of their country of residence, including Directives 2011/83/EU, 2019/770/EU, and national consumer laws.</p>
         </div>
 
-        <div class="section" id="t13">
-            <h2 class="section__heading"><span class="section__num">13</span> Dispute Resolution</h2>
+        <div class="section" id="t11">
+            <h2 class="section__heading"><span class="section__num">11</span> Dispute Resolution</h2>
             <p>We encourage informal resolution first via <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>. EU consumers may use the <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">Online Dispute Resolution platform</a>. Otherwise, disputes are resolved by competent Romanian courts (EU consumers may also use courts of their residence).</p>
         </div>
 
-        <div class="section" id="t14">
-            <h2 class="section__heading"><span class="section__num">14</span> Termination</h2>
-            <p>You may stop using SageBills at any time by uninstalling. Remember to cancel any active subscription separately. Upon termination, your data remains on your device. We may discontinue the app, but this would not affect installed copies.</p>
+        <div class="section" id="t12">
+            <h2 class="section__heading"><span class="section__num">12</span> Termination</h2>
+            <p>You may stop using any Sagelight Studio app at any time by uninstalling. Upon termination, your data remains on your device.</p>
             <p>We may update these Terms from time to time. Material changes will have at least <strong>30 days' notice</strong>. These Terms, together with the Privacy Policy and GDPR Disclosure, constitute the entire agreement.</p>
         </div>
 
-        <div class="section" id="t15">
-            <h2 class="section__heading"><span class="section__num">15</span> Contact</h2>
+        <div class="section" id="t13">
+            <h2 class="section__heading"><span class="section__num">13</span> Contact</h2>
             <ul>
                 <li><strong>Contact:</strong> <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></li>
             </ul>
@@ -1536,14 +1630,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__brand">
-            <strong>Sage<span>Bills</span></strong> &mdash; Your bills, your device, your privacy.
+            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet
         </div>
         <div class="footer__links">
             <a href="#" onclick="switchDoc('privacy'); return false;">Privacy</a>
             <a href="#" onclick="switchDoc('gdpr'); return false;">GDPR</a>
             <a href="#" onclick="switchDoc('terms'); return false;">Terms</a>
         </div>
-        <div class="footer__tagline">Built with care in Romania, EU</div>
+        <div class="footer__tagline">Sagelight Studio &mdash; Built with care in Romania, EU</div>
     </footer>
 </main>
 
