@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageBills — Legal</title>
+    <meta name="description" content="Privacy Policy, GDPR Disclosure, and Terms of Service for SageBills — the smart utility bill tracker for Europe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           SAGE DESIGN SYSTEM — CSS Variables
+           ======================================== */
+        :root {
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+            --nav-height: 64px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #050505;
+            --bg-surface: #0a0a0a;
+            --bg-surface-2: #111113;
+            --bg-surface-3: #1a1a1e;
+            --green: #00d672;
+            --green-dim: rgba(0, 214, 114, 0.2);
+            --green-glow: rgba(0, 214, 114, 0.08);
+            --green-muted: #0a8a4a;
+            --text: #e8e8ed;
+            --text-secondary: #a0a0ab;
+            --text-dim: #6e6e78;
+            --text-muted: #3a3a42;
+            --border: #1e1e24;
+            --border-hover: #2e2e36;
+            --card-bg: #0d0d10;
+            --card-border: #1e1e24;
+            --highlight-bg: rgba(0, 214, 114, 0.06);
+            --scrollbar-track: #111113;
+            --scrollbar-thumb: #2a2a32;
+        }
+
+        [data-theme="light"] {
+            --bg: #fafaf9;
+            --bg-surface: #ffffff;
+            --bg-surface-2: #f5f5f3;
+            --bg-surface-3: #eeeee9;
+            --green: #059652;
+            --green-dim: rgba(5, 150, 82, 0.12);
+            --green-glow: rgba(5, 150, 82, 0.06);
+            --green-muted: #078a4c;
+            --text: #1a1a1e;
+            --text-secondary: #52525b;
+            --text-dim: #8a8a96;
+            --text-muted: #c0c0c8;
+            --border: #e4e4e0;
+            --border-hover: #d0d0cc;
+            --card-bg: #ffffff;
+            --card-border: #e4e4e0;
+            --highlight-bg: rgba(5, 150, 82, 0.04);
+            --scrollbar-track: #f0f0ee;
+            --scrollbar-thumb: #ccccc8;
+        }
+
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 24px);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        ::selection {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover { opacity: 0.8; }
+
+        /* ========================================
+           BACKGROUND EFFECTS
+           ======================================== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        .glow-orb--1 {
+            width: 500px;
+            height: 500px;
+            top: -120px;
+            right: -100px;
+            background: radial-gradient(circle, var(--green-dim) 0%, transparent 70%);
+            animation: float-1 10s ease-in-out infinite;
+        }
+        .glow-orb--2 {
+            width: 400px;
+            height: 400px;
+            bottom: -80px;
+            left: -60px;
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+            animation: float-2 8s ease-in-out infinite;
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, 20px); }
+        }
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -15px); }
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .nav {
+            background: rgba(250, 250, 249, 0.85);
+        }
+
+        .nav__logo {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .nav__logo span { color: var(--green); }
+
+        .nav__tabs {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav__tab {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            padding: 8px 20px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            user-select: none;
+            background: none;
+            white-space: nowrap;
+        }
+        .nav__tab:hover {
+            color: var(--text);
+            background: var(--bg-surface-2);
+        }
+        .nav__tab--active {
+            color: var(--green);
+            background: var(--green-glow);
+            border-color: var(--green-dim);
+        }
+
+        .nav__actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        .theme-toggle:hover {
+            color: var(--green);
+            border-color: var(--green-dim);
+            background: var(--green-glow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* ========================================
+           MAIN CONTENT LAYOUT
+           ======================================== */
+        .main {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 48px) 40px 80px;
+            min-height: 100vh;
+        }
+
+        /* ========================================
+           HERO / DOCUMENT HEADER
+           ======================================== */
+        .doc-header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .doc-header__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green);
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px;
+            padding: 6px 16px;
+            margin-bottom: 20px;
+        }
+        .doc-header__badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .doc-header__title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .doc-header__title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .doc-header__subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .doc-header__meta {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+        .doc-header__meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ========================================
+           KEY POINTS CARDS
+           ======================================== */
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        .key-point {
+            background: var(--card-bg);
+            padding: 28px 24px;
+            position: relative;
+            transition: var(--transition);
+        }
+        .key-point:hover {
+            background: var(--bg-surface-2);
+        }
+        .key-point::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--green);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .key-point:hover::before {
+            transform: scaleX(1);
+        }
+
+        .key-point__icon {
+            font-size: 22px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .key-point__title {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .key-point__desc {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           TABLE OF CONTENTS
+           ======================================== */
+        .toc {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc__title {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .toc__list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 4px;
+        }
+
+        .toc__item a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        .toc__item a:hover {
+            background: var(--green-glow);
+            color: var(--green);
+            opacity: 1;
+        }
+        .toc__item a::before {
+            content: attr(data-num);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            min-width: 24px;
+        }
+
+        /* ========================================
+           DOCUMENT SECTIONS
+           ======================================== */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section__heading {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+            padding-top: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        .section__heading .section__num {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--green);
+            letter-spacing: 1px;
+        }
+
+        .section__subheading {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .section strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .section ul, .section ol {
+            margin: 0 0 16px 20px;
+            color: var(--text-secondary);
+        }
+        .section li {
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .section li strong {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        /* ========================================
+           TABLES
+           ======================================== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .table-wrap th {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            background: var(--bg-surface-2);
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .table-wrap td {
+            padding: 12px 16px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            font-weight: 300;
+            vertical-align: top;
+        }
+        .table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+        .table-wrap tr:hover td {
+            background: var(--highlight-bg);
+        }
+        .table-wrap td strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           RIGHTS CARDS (GDPR)
+           ======================================== */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 20px 0 28px;
+        }
+
+        .right-card {
+            background: var(--card-bg);
+            padding: 24px;
+            transition: var(--transition);
+        }
+        .right-card:hover { background: var(--bg-surface-2); }
+
+        .right-card__article {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--green);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .right-card__title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .right-card__desc {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           COLLAPSIBLE SECTIONS
+           ======================================== */
+        details.collapsible {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin: 12px 0;
+            transition: var(--transition);
+        }
+        details.collapsible[open] {
+            border-color: var(--green-dim);
+        }
+
+        details.collapsible summary {
+            padding: 14px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+            border-radius: var(--radius-sm);
+        }
+        details.collapsible summary:hover {
+            background: var(--green-glow);
+        }
+        details.collapsible summary::after {
+            content: '+';
+            font-family: var(--font-mono);
+            font-size: 18px;
+            color: var(--text-dim);
+            transition: transform 0.3s ease;
+        }
+        details.collapsible[open] summary::after {
+            content: '\2212';
+        }
+        details.collapsible summary::-webkit-details-marker { display: none; }
+
+        details.collapsible .collapsible__body {
+            padding: 0 20px 16px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        details.collapsible .collapsible__body p {
+            margin-bottom: 12px;
+        }
+        details.collapsible .collapsible__body ul {
+            margin: 8px 0 12px 16px;
+        }
+
+        /* ========================================
+           CALLOUT / HIGHLIGHT BOX
+           ======================================== */
+        .callout {
+            background: var(--highlight-bg);
+            border-left: 3px solid var(--green);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .callout strong {
+            color: var(--green);
+        }
+
+        .callout--warning {
+            background: rgba(255, 180, 0, 0.06);
+            border-left-color: #ffb400;
+        }
+        .callout--warning strong {
+            color: #ffb400;
+        }
+
+        /* ========================================
+           LEGAL CAPS (Disclaimer sections)
+           ======================================== */
+        .legal-caps {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin: 16px 0;
+            padding: 20px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer__brand {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+        .footer__brand strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .footer__brand strong span { color: var(--green); }
+
+        .footer__links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer__links a {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer__links a:hover { color: var(--green); }
+
+        .footer__tagline {
+            width: 100%;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ========================================
+           DOCUMENT VISIBILITY
+           ======================================== */
+        .doc { display: none; }
+        .doc--active { display: block; }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        .animate-in--d1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-in--d2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-in--d3 { animation-delay: 0.3s; opacity: 0; }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px; }
+            .nav__tabs { display: none; }
+            .nav__tabs--open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: var(--bg-surface);
+                border-bottom: 1px solid var(--border);
+                padding: 12px;
+                gap: 4px;
+            }
+            .mobile-menu-btn { display: flex; }
+            .main { padding: calc(var(--nav-height) + 32px) 20px 60px; }
+            .key-points { grid-template-columns: 1fr; }
+            .toc__list { grid-template-columns: 1fr; }
+            .rights-grid { grid-template-columns: 1fr; }
+            .doc-header__meta { flex-wrap: wrap; gap: 12px; }
+            .footer { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .doc-header__title { font-size: 28px; }
+            .section__heading { font-size: 20px; }
+        }
+
+        /* ========================================
+           PRINT
+           ======================================== */
+        @media print {
+            .bg-grid, .glow-orb, .nav, .theme-toggle, .mobile-menu-btn { display: none !important; }
+            body { background: #fff; color: #111; }
+            .main { padding: 20px; max-width: 100%; }
+            .doc { display: block !important; page-break-before: always; }
+            .doc:first-child { page-break-before: avoid; }
+            .key-point, .right-card { border: 1px solid #ddd; }
+            a { color: #111; text-decoration: underline; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background effects -->
+<div class="bg-grid"></div>
+<div class="glow-orb glow-orb--1"></div>
+<div class="glow-orb glow-orb--2"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <a href="#" class="nav__logo">Sage<span>Bills</span></a>
+    <ul class="nav__tabs" id="navTabs">
+        <li class="nav__tab nav__tab--active" data-doc="privacy" onclick="switchDoc('privacy')">Privacy Policy</li>
+        <li class="nav__tab" data-doc="gdpr" onclick="switchDoc('gdpr')">GDPR</li>
+        <li class="nav__tab" data-doc="terms" onclick="switchDoc('terms')">Terms of Service</li>
+    </ul>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme">
+            <span id="themeIcon">&#9790;</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu">&#9776;</button>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main">
+
+    <!-- ============================================================
+         PRIVACY POLICY
+         ============================================================ -->
+    <article class="doc doc--active" id="doc-privacy">
+        <header class="doc-header animate-in">
+            <div class="doc-header__badge">Active Document</div>
+            <h1 class="doc-header__title">Privacy <em>Policy</em></h1>
+            <p class="doc-header__subtitle">Your financial data belongs to you, stays with you, and is controlled by you. We built SageBills with this as our foundation.</p>
+            <div class="doc-header__meta">
+                <span>Last updated: April 10, 2026</span>
+                <span>Effective: April 1, 2026</span>
+            </div>
+        </header>
+
+        <!-- Key Points -->
+        <div class="key-points animate-in animate-in--d1">
+            <div class="key-point">
+                <span class="key-point__icon">&#128274;</span>
+                <div class="key-point__title">100% Local Data</div>
+                <div class="key-point__desc">All your data stays on your device. No servers, no cloud, no exceptions.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#128683;</span>
+                <div class="key-point__title">Zero Tracking</div>
+                <div class="key-point__desc">No analytics, no advertising IDs, no telemetry. We cannot see what you do.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#129521;</span>
+                <div class="key-point__title">No Third Parties</div>
+                <div class="key-point__desc">Built entirely with Apple frameworks. Zero external SDKs or dependencies.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#128272;</span>
+                <div class="key-point__title">Encrypted at Rest</div>
+                <div class="key-point__desc">Data is protected by Apple's NSFileProtectionComplete when your device is locked.</div>
+            </div>
+        </div>
+
+        <!-- TOC -->
+        <nav class="toc animate-in animate-in--d2">
+            <div class="toc__title">Contents</div>
+            <ol class="toc__list">
+                <li class="toc__item"><a href="#p1" data-num="01">Introduction</a></li>
+                <li class="toc__item"><a href="#p2" data-num="02">Who We Are</a></li>
+                <li class="toc__item"><a href="#p3" data-num="03">Privacy-First Architecture</a></li>
+                <li class="toc__item"><a href="#p4" data-num="04">Data We Process</a></li>
+                <li class="toc__item"><a href="#p5" data-num="05">How We Use Your Data</a></li>
+                <li class="toc__item"><a href="#p6" data-num="06">Legal Basis for Processing</a></li>
+                <li class="toc__item"><a href="#p7" data-num="07">Data Storage and Security</a></li>
+                <li class="toc__item"><a href="#p8" data-num="08">Data Retention</a></li>
+                <li class="toc__item"><a href="#p9" data-num="09">Third-Party Services</a></li>
+                <li class="toc__item"><a href="#p10" data-num="10">International Transfers</a></li>
+                <li class="toc__item"><a href="#p11" data-num="11">Cookies and Tracking</a></li>
+                <li class="toc__item"><a href="#p12" data-num="12">Your Rights Under GDPR</a></li>
+                <li class="toc__item"><a href="#p13" data-num="13">Children's Privacy</a></li>
+                <li class="toc__item"><a href="#p14" data-num="14">Changes to This Policy</a></li>
+                <li class="toc__item"><a href="#p15" data-num="15">Contact Us</a></li>
+            </ol>
+        </nav>
+
+        <!-- Sections -->
+        <div class="animate-in animate-in--d3">
+            <div class="section" id="p1">
+                <h2 class="section__heading"><span class="section__num">01</span> Introduction</h2>
+                <p>Welcome to SageBills. This Privacy Policy explains how SageBills handles your information when you use our utility bill tracking application on iOS and macOS.</p>
+                <p>This policy complies with the General Data Protection Regulation (GDPR), the ePrivacy Directive, and Apple App Store Guidelines (sections 5.1.1 and 5.1.2).</p>
+            </div>
+
+            <div class="section" id="p2">
+                <h2 class="section__heading"><span class="section__num">02</span> Who We Are</h2>
+                <p>SageBills is developed and maintained by a sole proprietor based in Romania, European Union.</p>
+                <ul>
+                    <li><strong>Privacy inquiries:</strong> <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></li>
+                    <li><strong>General support:</strong> <a href="mailto:support@sagebills.app">support@sagebills.app</a></li>
+                </ul>
+                <p>For the purposes of the GDPR, the developer acts as the data controller. However, because all data processing occurs locally on your device, your data never reaches us.</p>
+            </div>
+
+            <div class="section" id="p3">
+                <h2 class="section__heading"><span class="section__num">03</span> Privacy-First Architecture</h2>
+                <p>SageBills is designed with a <strong>local-only, zero-server architecture</strong>:</p>
+                <ul>
+                    <li><strong>No servers.</strong> We do not operate any backend servers that receive, store, or process your data.</li>
+                    <li><strong>No cloud sync.</strong> Your data is not uploaded to any cloud service by SageBills.</li>
+                    <li><strong>No analytics.</strong> We do not collect usage analytics, crash reports, or telemetry of any kind.</li>
+                    <li><strong>No tracking.</strong> We do not track your behavior, location, or activity.</li>
+                    <li><strong>No third-party SDKs.</strong> The app is built entirely with Apple frameworks. Zero external dependencies.</li>
+                </ul>
+                <div class="callout">
+                    <strong>In simple terms:</strong> All data you enter into SageBills remains on your device unless you explicitly choose to export it.
+                </div>
+            </div>
+
+            <div class="section" id="p4">
+                <h2 class="section__heading"><span class="section__num">04</span> Data We Process</h2>
+                <p>All of the following data is stored <strong>exclusively on your device</strong>:</p>
+
+                <details class="collapsible" open>
+                    <summary>Bill Data (User-Entered)</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li>Bill amounts and currency</li>
+                            <li>Provider/utility company names</li>
+                            <li>Bill categories (electricity, gas, water, internet, etc.)</li>
+                            <li>Bill dates (issue date, due date)</li>
+                            <li>Notes you add to bills</li>
+                            <li>Consumption readings (kWh, cubic meters, etc.)</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>OCR-Scanned Data</summary>
+                    <div class="collapsible__body">
+                        <p>When you scan an invoice, Apple's Vision framework extracts text <strong>entirely on your device</strong>. This may include bill amounts, provider names, account numbers, and service addresses.</p>
+                        <p>The original image is not retained after scanning unless you choose otherwise.</p>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>App Preferences and Settings</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li>Currency and display preferences</li>
+                            <li>Notification preferences</li>
+                            <li>Savings goals configuration</li>
+                            <li>Onboarding and consent status</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>Subscription Status</summary>
+                    <div class="collapsible__body">
+                        <p>Managed entirely by Apple through StoreKit. SageBills reads your subscription status to unlock features but does not store payment details.</p>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>Keychain Data</summary>
+                    <div class="collapsible__body">
+                        <p>SageBills stores two non-personal items in the device Keychain:</p>
+                        <ul>
+                            <li><strong>First-launch date:</strong> Used to calculate the 90-day free grace period.</li>
+                            <li><strong>GDPR consent date:</strong> Stored for tamper detection to ensure consent integrity.</li>
+                        </ul>
+                        <p>No personal data is stored in the Keychain.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="section" id="p5">
+                <h2 class="section__heading"><span class="section__num">05</span> How We Use Your Data</h2>
+                <p>Because all data stays on your device, "use" means local processing within the app:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Purpose</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Bill tracking</strong></td><td>Displaying, organizing, and managing your utility bills</td></tr>
+                            <tr><td><strong>Cost prediction</strong></td><td>Generating statistical predictions based on your history</td></tr>
+                            <tr><td><strong>Anomaly detection</strong></td><td>Identifying unusual bills that deviate from patterns</td></tr>
+                            <tr><td><strong>Savings tracking</strong></td><td>Calculating progress toward your savings goals</td></tr>
+                            <tr><td><strong>Invoice scanning</strong></td><td>Extracting bill data from photos via on-device OCR</td></tr>
+                            <tr><td><strong>Reminders</strong></td><td>Sending local notifications for upcoming due dates</td></tr>
+                            <tr><td><strong>Data export</strong></td><td>Generating CSV files when you request it</td></tr>
+                            <tr><td><strong>Device search</strong></td><td>Making bills findable through Spotlight search</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section" id="p6">
+                <h2 class="section__heading"><span class="section__num">06</span> Legal Basis for Processing</h2>
+                <p>Under Article 6(1)(a) of the GDPR, our legal basis for processing your data is <strong>your explicit consent</strong>, which you provide during the app's onboarding process.</p>
+                <p>You may withdraw your consent at any time through the app's Settings. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.</p>
+            </div>
+
+            <div class="section" id="p7">
+                <h2 class="section__heading"><span class="section__num">07</span> Data Storage and Security</h2>
+                <h3 class="section__subheading">Local Storage</h3>
+                <p>All data is stored using Apple's SwiftData framework with <strong>NSFileProtectionComplete</strong> encryption:</p>
+                <ul>
+                    <li>Data is encrypted when your device is locked</li>
+                    <li>Data is only accessible when your device is unlocked and authenticated</li>
+                    <li>Encryption keys are tied to your device passcode/biometrics</li>
+                </ul>
+                <h3 class="section__subheading">No Remote Storage</h3>
+                <p>SageBills does not transmit data to any remote server. We have no ability to access, read, or recover your data.</p>
+                <div class="callout callout--warning">
+                    <strong>Your responsibility:</strong> Because data is stored only on your device, you are responsible for maintaining backups through your device's backup mechanisms.
+                </div>
+            </div>
+
+            <div class="section" id="p8">
+                <h2 class="section__heading"><span class="section__num">08</span> Data Retention</h2>
+                <p>Your data is retained on your device for as long as you keep the app installed and choose to retain it. You have full control:</p>
+                <ul>
+                    <li><strong>Delete individual bills</strong> at any time within the app</li>
+                    <li><strong>Delete all data</strong> using the option in Settings</li>
+                    <li><strong>Uninstall the app</strong> to remove all associated data</li>
+                </ul>
+                <p>We do not retain any copy of your data because we never receive it.</p>
+            </div>
+
+            <div class="section" id="p9">
+                <h2 class="section__heading"><span class="section__num">09</span> Third-Party Services</h2>
+                <h3 class="section__subheading">Apple App Store and StoreKit</h3>
+                <p>SageBills offers optional subscriptions managed through Apple's App Store. Payment processing is handled entirely by Apple. SageBills does not receive or store your payment information.</p>
+                <p>Apple's handling of your payment data is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+                <h3 class="section__subheading">No Other Third Parties</h3>
+                <p>SageBills contains <strong>no third-party SDKs, frameworks, libraries, or services</strong>. We do not share, sell, or disclose your data to any third party.</p>
+            </div>
+
+            <div class="section" id="p10">
+                <h2 class="section__heading"><span class="section__num">10</span> International Data Transfers</h2>
+                <p>SageBills does not transfer your data internationally. Your data remains on your device at all times.</p>
+            </div>
+
+            <div class="section" id="p11">
+                <h2 class="section__heading"><span class="section__num">11</span> Cookies and Tracking</h2>
+                <p>SageBills does not use cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. The app does not contain any advertising.</p>
+            </div>
+
+            <div class="section" id="p12">
+                <h2 class="section__heading"><span class="section__num">12</span> Your Rights Under GDPR</h2>
+                <p>As a resident of the EU or EEA, you have the following rights:</p>
+                <div class="rights-grid">
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 15</div>
+                        <div class="right-card__title">Right of Access</div>
+                        <div class="right-card__desc">View all your data directly in the app at any time.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 16</div>
+                        <div class="right-card__title">Right to Rectification</div>
+                        <div class="right-card__desc">Edit any bill or data entry within the app.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 17</div>
+                        <div class="right-card__title">Right to Erasure</div>
+                        <div class="right-card__desc">Delete individual bills or all data via Settings.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 20</div>
+                        <div class="right-card__title">Right to Portability</div>
+                        <div class="right-card__desc">Export your data as CSV from within the app.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 7(3)</div>
+                        <div class="right-card__title">Withdraw Consent</div>
+                        <div class="right-card__desc">Withdraw consent at any time in Settings.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 77</div>
+                        <div class="right-card__title">Lodge a Complaint</div>
+                        <div class="right-card__desc">Contact your national data protection authority.</div>
+                    </div>
+                </div>
+                <p>For rights you cannot exercise through the app, contact <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a>.</p>
+                <h3 class="section__subheading">Supervisory Authority</h3>
+                <p>If you are in Romania, the competent supervisory authority is <strong>ANSPDCP</strong> (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a>). You may also contact the supervisory authority in your country of residence.</p>
+            </div>
+
+            <div class="section" id="p13">
+                <h2 class="section__heading"><span class="section__num">13</span> Children's Privacy</h2>
+                <p>SageBills is not directed at children under 16. We do not knowingly process data from children. Since all data is stored locally, we have no means to identify or verify user age.</p>
+            </div>
+
+            <div class="section" id="p14">
+                <h2 class="section__heading"><span class="section__num">14</span> Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. The "Last Updated" date will be revised, and material changes will be communicated through an in-app notice.</p>
+            </div>
+
+            <div class="section" id="p15">
+                <h2 class="section__heading"><span class="section__num">15</span> Contact Us</h2>
+                <ul>
+                    <li><strong>Privacy inquiries:</strong> <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></li>
+                    <li><strong>General support:</strong> <a href="mailto:support@sagebills.app">support@sagebills.app</a></li>
+                </ul>
+                <p>We aim to respond to all privacy-related inquiries within 30 days, as required by the GDPR.</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- ============================================================
+         GDPR DISCLOSURE
+         ============================================================ -->
+    <article class="doc" id="doc-gdpr">
+        <header class="doc-header">
+            <div class="doc-header__badge">Active Document</div>
+            <h1 class="doc-header__title">GDPR <em>Disclosure</em></h1>
+            <p class="doc-header__subtitle">Information required under Articles 13 and 14 of the General Data Protection Regulation (EU) 2016/679 regarding data processing through SageBills.</p>
+            <div class="doc-header__meta">
+                <span>Last updated: April 10, 2026</span>
+                <span>GDPR (EU) 2016/679</span>
+            </div>
+        </header>
+
+        <div class="key-points">
+            <div class="key-point">
+                <span class="key-point__icon">&#127963;</span>
+                <div class="key-point__title">Controller in EU</div>
+                <div class="key-point__desc">Sole proprietor based in Romania. Your data never reaches us.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#9878;</span>
+                <div class="key-point__title">Lawful Basis: Consent</div>
+                <div class="key-point__desc">Processing based on Art. 6(1)(a). Withdraw anytime in Settings.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#128101;</span>
+                <div class="key-point__title">Zero Recipients</div>
+                <div class="key-point__desc">No data processors, no third parties, no advertising networks.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#127760;</span>
+                <div class="key-point__title">No Transfers</div>
+                <div class="key-point__desc">No international data transfers. All processing is on-device.</div>
+            </div>
+        </div>
+
+        <nav class="toc">
+            <div class="toc__title">Contents</div>
+            <ol class="toc__list">
+                <li class="toc__item"><a href="#g1" data-num="01">Data Controller</a></li>
+                <li class="toc__item"><a href="#g2" data-num="02">Data Protection Officer</a></li>
+                <li class="toc__item"><a href="#g3" data-num="03">Categories of Personal Data</a></li>
+                <li class="toc__item"><a href="#g4" data-num="04">Purposes of Processing</a></li>
+                <li class="toc__item"><a href="#g5" data-num="05">Lawful Basis</a></li>
+                <li class="toc__item"><a href="#g6" data-num="06">Recipients</a></li>
+                <li class="toc__item"><a href="#g7" data-num="07">International Transfers</a></li>
+                <li class="toc__item"><a href="#g8" data-num="08">Retention Periods</a></li>
+                <li class="toc__item"><a href="#g9" data-num="09">Data Subject Rights</a></li>
+                <li class="toc__item"><a href="#g10" data-num="10">Automated Decision-Making</a></li>
+                <li class="toc__item"><a href="#g11" data-num="11">Data Protection Measures</a></li>
+                <li class="toc__item"><a href="#g12" data-num="12">Breach Notification</a></li>
+                <li class="toc__item"><a href="#g13" data-num="13">Children's Data</a></li>
+                <li class="toc__item"><a href="#g14" data-num="14">Supervisory Authority</a></li>
+                <li class="toc__item"><a href="#g15" data-num="15">Contact</a></li>
+            </ol>
+        </nav>
+
+        <div class="section" id="g1">
+            <h2 class="section__heading"><span class="section__num">01</span> Data Controller</h2>
+            <p><strong>Controller:</strong> SageBills (individual developer / sole proprietor)<br>
+            <strong>Location:</strong> Romania, European Union<br>
+            <strong>Email:</strong> <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></p>
+            <p>Per <strong>Article 13(1)(a)</strong> and <strong>Article 14(1)(a)</strong>, the developer is the data controller. Due to the local-only architecture, the controller does not receive, access, or store any personal data. All processing occurs exclusively on the user's device.</p>
+        </div>
+
+        <div class="section" id="g2">
+            <h2 class="section__heading"><span class="section__num">02</span> Data Protection Officer</h2>
+            <p>Per <strong>Article 37</strong>, a DPO is not required. The controller is a small-scale operator that does not carry out regular and systematic monitoring on a large scale, nor large-scale processing of special categories of data.</p>
+            <p>For privacy inquiries: <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></p>
+        </div>
+
+        <div class="section" id="g3">
+            <h2 class="section__heading"><span class="section__num">03</span> Categories of Personal Data</h2>
+            <p>Per <strong>Article 13(1)(d)</strong> and <strong>14(1)(d)</strong>:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Category</th><th>Examples</th><th>Special (Art. 9)?</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Financial data</strong></td><td>Bill amounts, currency, consumption costs</td><td>No</td></tr>
+                        <tr><td><strong>Utility provider data</strong></td><td>Provider names, service categories</td><td>No</td></tr>
+                        <tr><td><strong>Temporal data</strong></td><td>Bill dates, due dates, billing periods</td><td>No</td></tr>
+                        <tr><td><strong>Consumption data</strong></td><td>kWh readings, cubic meters</td><td>No</td></tr>
+                        <tr><td><strong>Free-text data</strong></td><td>Notes you add to bill records</td><td>No</td></tr>
+                        <tr><td><strong>OCR-extracted data</strong></td><td>Account numbers, addresses from invoices</td><td>No</td></tr>
+                        <tr><td><strong>Technical data</strong></td><td>First-launch date, consent timestamp (Keychain)</td><td>No</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>No special categories of personal data</strong> (Article 9) are processed by SageBills.</p>
+        </div>
+
+        <div class="section" id="g4">
+            <h2 class="section__heading"><span class="section__num">04</span> Purposes of Processing</h2>
+            <p>Per <strong>Article 13(1)(c)</strong> and <strong>14(1)(c)</strong>:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>#</th><th>Purpose</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td><strong>Bill management</strong></td><td>Storing, displaying, organizing, and searching bill records</td></tr>
+                        <tr><td>2</td><td><strong>Cost prediction</strong></td><td>Statistical forecasts based on historical data</td></tr>
+                        <tr><td>3</td><td><strong>Anomaly detection</strong></td><td>Identifying bills that deviate from patterns</td></tr>
+                        <tr><td>4</td><td><strong>Savings tracking</strong></td><td>Tracking progress toward savings goals</td></tr>
+                        <tr><td>5</td><td><strong>Invoice digitization</strong></td><td>OCR extraction from scanned invoices</td></tr>
+                        <tr><td>6</td><td><strong>Due date reminders</strong></td><td>Local notifications for upcoming bills</td></tr>
+                        <tr><td>7</td><td><strong>Data export</strong></td><td>CSV exports at the user's request</td></tr>
+                        <tr><td>8</td><td><strong>Device search</strong></td><td>Indexing in CoreSpotlight</td></tr>
+                        <tr><td>9</td><td><strong>Subscription management</strong></td><td>Reading status from Apple StoreKit</td></tr>
+                        <tr><td>10</td><td><strong>Anti-abuse</strong></td><td>Verifying grace period eligibility</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" id="g5">
+            <h2 class="section__heading"><span class="section__num">05</span> Lawful Basis</h2>
+            <p>Per <strong>Article 6(1)(a)</strong>: <strong>Consent.</strong></p>
+            <p>You provide explicit consent during onboarding. Consent is freely given, specific, informed, and unambiguous. You may withdraw consent at any time via Settings, which takes effect immediately.</p>
+        </div>
+
+        <div class="section" id="g6">
+            <h2 class="section__heading"><span class="section__num">06</span> Recipients</h2>
+            <p>Per <strong>Article 13(1)(e)</strong>: <strong>There are no recipients of your personal data.</strong></p>
+            <p>No data processors (Art. 28), no joint controllers (Art. 26), no third-party services, no advertising networks, no analytics providers.</p>
+        </div>
+
+        <div class="section" id="g7">
+            <h2 class="section__heading"><span class="section__num">07</span> International Transfers</h2>
+            <p>Per <strong>Article 13(1)(f)</strong>: <strong>No international transfers occur.</strong> All data is processed on your local device. No transfer mechanisms under Chapter V are applicable.</p>
+        </div>
+
+        <div class="section" id="g8">
+            <h2 class="section__heading"><span class="section__num">08</span> Retention Periods</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Data</th><th>Retention</th><th>Basis</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Bill records</strong></td><td>Until you delete them or uninstall</td><td>User control</td></tr>
+                        <tr><td><strong>OCR-extracted text</strong></td><td>Until the associated bill is deleted</td><td>User control</td></tr>
+                        <tr><td><strong>App preferences</strong></td><td>Until reset or uninstall</td><td>User control</td></tr>
+                        <tr><td><strong>First-launch date</strong></td><td>Until uninstallation</td><td>Anti-abuse</td></tr>
+                        <tr><td><strong>Consent timestamp</strong></td><td>Until uninstallation</td><td>Legal compliance</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout"><strong>You control retention entirely.</strong> Delete individual records, all data, or uninstall the app at any time.</div>
+        </div>
+
+        <div class="section" id="g9">
+            <h2 class="section__heading"><span class="section__num">09</span> Data Subject Rights</h2>
+            <p>Per <strong>Article 13(2)(b)</strong> and <strong>14(2)(c)</strong>:</p>
+            <div class="rights-grid">
+                <div class="right-card">
+                    <div class="right-card__article">Art. 15</div>
+                    <div class="right-card__title">Access</div>
+                    <div class="right-card__desc">All your data is visible in the app at all times.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 16</div>
+                    <div class="right-card__title">Rectification</div>
+                    <div class="right-card__desc">Edit any record directly within the app.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 17</div>
+                    <div class="right-card__title">Erasure</div>
+                    <div class="right-card__desc">Delete individual or all records. Uninstall removes everything.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 18</div>
+                    <div class="right-card__title">Restriction</div>
+                    <div class="right-card__desc">Contact privacy@sagebills.app or withdraw consent.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 20</div>
+                    <div class="right-card__title">Portability</div>
+                    <div class="right-card__desc">Export all bill data as CSV from within the app.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 21</div>
+                    <div class="right-card__title">Object</div>
+                    <div class="right-card__desc">Withdraw consent in Settings to stop all processing.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 7(3)</div>
+                    <div class="right-card__title">Withdraw Consent</div>
+                    <div class="right-card__desc">Single action in Settings. Takes effect immediately.</div>
+                </div>
+                <div class="right-card">
+                    <div class="right-card__article">Art. 77</div>
+                    <div class="right-card__title">Lodge Complaint</div>
+                    <div class="right-card__desc">Contact your supervisory authority. ANSPDCP for Romania.</div>
+                </div>
+            </div>
+            <p>Most rights can be exercised directly within the app. For other rights, email <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a>. We respond within <strong>30 days</strong> per Article 12(3).</p>
+        </div>
+
+        <div class="section" id="g10">
+            <h2 class="section__heading"><span class="section__num">10</span> Automated Decision-Making</h2>
+            <p>SageBills uses statistical calculations (averaging, trend analysis) for predictions and anomaly detection. These are <strong>informational only</strong> and do not constitute profiling (Art. 4(4)) or automated decision-making (Art. 22) as they produce no legal or similarly significant effects.</p>
+        </div>
+
+        <div class="section" id="g11">
+            <h2 class="section__heading"><span class="section__num">11</span> Data Protection Measures</h2>
+            <p>Per <strong>Article 32</strong>:</p>
+            <ul>
+                <li><strong>Encryption at rest:</strong> NSFileProtectionComplete (data encrypted when device is locked)</li>
+                <li><strong>Keychain security:</strong> Hardware-backed encryption for timestamps</li>
+                <li><strong>On-device processing:</strong> All OCR and predictions run locally</li>
+                <li><strong>No third-party code:</strong> Zero external SDKs eliminates supply-chain risk</li>
+                <li><strong>Privacy by design</strong> (Art. 25(1)) and <strong>privacy by default</strong> (Art. 25(2))</li>
+            </ul>
+        </div>
+
+        <div class="section" id="g12">
+            <h2 class="section__heading"><span class="section__num">12</span> Breach Notification</h2>
+            <p>Per <strong>Articles 33 and 34</strong>: Given the local-only architecture, traditional data breaches are not applicable. Should a vulnerability be identified:</p>
+            <ul>
+                <li>Users will be notified through an app update</li>
+                <li>ANSPDCP will be notified within <strong>72 hours</strong> (Art. 33)</li>
+                <li>Affected data subjects will be notified without undue delay (Art. 34)</li>
+            </ul>
+        </div>
+
+        <div class="section" id="g13">
+            <h2 class="section__heading"><span class="section__num">13</span> Children's Data</h2>
+            <p>Per <strong>Article 8</strong>: SageBills is not directed at children under 16 (Romania's national threshold). We cannot verify user age due to the local-only architecture.</p>
+        </div>
+
+        <div class="section" id="g14">
+            <h2 class="section__heading"><span class="section__num">14</span> Supervisory Authority</h2>
+            <p><strong>ANSPDCP</strong> (Autoritatea Nationala de Supraveghere a Prelucrarii Datelor cu Caracter Personal)</p>
+            <ul>
+                <li><strong>Address:</strong> B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, 010336, Bucuresti</li>
+                <li><strong>Phone:</strong> +40.318.059.211</li>
+                <li><strong>Website:</strong> <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a></li>
+            </ul>
+            <p>You may also lodge a complaint with the authority in your EU/EEA Member State of residence (Art. 77).</p>
+        </div>
+
+        <div class="section" id="g15">
+            <h2 class="section__heading"><span class="section__num">15</span> Contact</h2>
+            <ul>
+                <li><strong>Privacy:</strong> <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></li>
+                <li><strong>Support:</strong> <a href="mailto:support@sagebills.app">support@sagebills.app</a></li>
+            </ul>
+            <p>We respond within <strong>30 days</strong> (Art. 12(3)), with a possible two-month extension for complex requests.</p>
+        </div>
+    </article>
+
+    <!-- ============================================================
+         TERMS OF SERVICE
+         ============================================================ -->
+    <article class="doc" id="doc-terms">
+        <header class="doc-header">
+            <div class="doc-header__badge">Active Document</div>
+            <h1 class="doc-header__title">Terms of <em>Service</em></h1>
+            <p class="doc-header__subtitle">The agreement between you and SageBills. Clear, fair, and respectful of your rights as a European consumer.</p>
+            <div class="doc-header__meta">
+                <span>Last updated: April 10, 2026</span>
+                <span>Effective: April 1, 2026</span>
+            </div>
+        </header>
+
+        <div class="key-points">
+            <div class="key-point">
+                <span class="key-point__icon">&#128241;</span>
+                <div class="key-point__title">Your Data, Your Device</div>
+                <div class="key-point__desc">All data stays local. You own it completely. We never see it.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#127873;</span>
+                <div class="key-point__title">90-Day Free Trial</div>
+                <div class="key-point__desc">Full Pro features free for 90 days. No credit card required.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#128176;</span>
+                <div class="key-point__title">Fair Pricing</div>
+                <div class="key-point__desc">Monthly, yearly, or lifetime. Cancel anytime via Apple.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#127466;&#127482;</span>
+                <div class="key-point__title">EU Consumer Rights</div>
+                <div class="key-point__desc">Romanian law, with full EU consumer protection preserved.</div>
+            </div>
+        </div>
+
+        <nav class="toc">
+            <div class="toc__title">Contents</div>
+            <ol class="toc__list">
+                <li class="toc__item"><a href="#t1" data-num="01">Acceptance of Terms</a></li>
+                <li class="toc__item"><a href="#t2" data-num="02">Description of Service</a></li>
+                <li class="toc__item"><a href="#t3" data-num="03">System Requirements</a></li>
+                <li class="toc__item"><a href="#t4" data-num="04">Subscriptions and Pricing</a></li>
+                <li class="toc__item"><a href="#t5" data-num="05">Free Grace Period</a></li>
+                <li class="toc__item"><a href="#t6" data-num="06">Billing and Cancellation</a></li>
+                <li class="toc__item"><a href="#t7" data-num="07">Local-Only Data Model</a></li>
+                <li class="toc__item"><a href="#t8" data-num="08">Data Ownership</a></li>
+                <li class="toc__item"><a href="#t9" data-num="09">Intellectual Property</a></li>
+                <li class="toc__item"><a href="#t10" data-num="10">Prohibited Uses</a></li>
+                <li class="toc__item"><a href="#t11" data-num="11">Warranties and Liability</a></li>
+                <li class="toc__item"><a href="#t12" data-num="12">Governing Law</a></li>
+                <li class="toc__item"><a href="#t13" data-num="13">Dispute Resolution</a></li>
+                <li class="toc__item"><a href="#t14" data-num="14">Termination</a></li>
+                <li class="toc__item"><a href="#t15" data-num="15">Contact</a></li>
+            </ol>
+        </nav>
+
+        <div class="section" id="t1">
+            <h2 class="section__heading"><span class="section__num">01</span> Acceptance of Terms</h2>
+            <p>By downloading, installing, or using SageBills, you agree to these Terms. If you do not agree, do not use the app.</p>
+            <p>These Terms constitute a legal agreement between you and SageBills, a sole proprietor based in Romania, EU. Your use is also governed by our <a href="#" onclick="switchDoc('privacy'); return false;">Privacy Policy</a> and <a href="#" onclick="switchDoc('gdpr'); return false;">GDPR Disclosure</a>.</p>
+        </div>
+
+        <div class="section" id="t2">
+            <h2 class="section__heading"><span class="section__num">02</span> Description of Service</h2>
+            <p>SageBills is a utility bill tracking application for iOS and macOS. Features include bill recording, invoice scanning (OCR), cost predictions, anomaly detection, savings goals, due date reminders, and CSV data export.</p>
+            <div class="callout">SageBills is a personal finance <strong>tracking</strong> tool. It does not provide financial advice, nor does it process payments to utility providers.</div>
+        </div>
+
+        <div class="section" id="t3">
+            <h2 class="section__heading"><span class="section__num">03</span> System Requirements</h2>
+            <ul>
+                <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later</li>
+                <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later</li>
+                <li>An Apple ID for downloading and subscription management</li>
+            </ul>
+            <p>Internet is only required for downloading the app and managing subscriptions. Core functionality works entirely offline.</p>
+        </div>
+
+        <div class="section" id="t4">
+            <h2 class="section__heading"><span class="section__num">04</span> Subscriptions and Pricing</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Plan</th><th>Price</th><th>Billing</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Monthly</strong></td><td>&euro;2.99/month</td><td>Recurring monthly</td></tr>
+                        <tr><td><strong>Yearly</strong></td><td>&euro;24.99/year</td><td>Recurring yearly</td></tr>
+                        <tr><td><strong>Lifetime</strong></td><td>&euro;49.99</td><td>One-time purchase</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>All subscriptions are processed through Apple's App Store. SageBills does not receive your payment information. Prices may change; you will be notified in advance.</p>
+        </div>
+
+        <div class="section" id="t5">
+            <h2 class="section__heading"><span class="section__num">05</span> Free Grace Period</h2>
+            <p>New users receive a <strong>90-day free grace period</strong> with all premium features. The grace period begins on first app launch, cannot be reset by reinstalling, and is tracked via a secure Keychain timestamp.</p>
+        </div>
+
+        <div class="section" id="t6">
+            <h2 class="section__heading"><span class="section__num">06</span> Billing and Cancellation</h2>
+            <p>Subscriptions auto-renew unless canceled at least <strong>24 hours before</strong> the end of the current period. Manage or cancel via:</p>
+            <ul>
+                <li><strong>iPhone/iPad:</strong> Settings &gt; [Your Name] &gt; Subscriptions</li>
+                <li><strong>Mac:</strong> App Store &gt; Account &gt; Subscriptions</li>
+            </ul>
+            <p>Refund requests must be submitted to Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+        </div>
+
+        <div class="section" id="t7">
+            <h2 class="section__heading"><span class="section__num">07</span> Local-Only Data Model</h2>
+            <div class="callout callout--warning">
+                <strong>Important:</strong> SageBills does not provide cloud backup. You are solely responsible for backing up your data using iCloud device backup, Time Machine, or similar mechanisms.
+            </div>
+            <p>We are not liable for data loss from device loss, app deletion, OS updates, or any other circumstance, as we have no access to your data.</p>
+        </div>
+
+        <div class="section" id="t8">
+            <h2 class="section__heading"><span class="section__num">08</span> Data Ownership</h2>
+            <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data. You are responsible for the accuracy of data you enter, including reviewing OCR-extracted results.</p>
+        </div>
+
+        <div class="section" id="t9">
+            <h2 class="section__heading"><span class="section__num">09</span> Intellectual Property</h2>
+            <p>The app's design, code, UI, graphics, and icons are owned by SageBills and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license for personal use.</p>
+            <p>You may not copy, modify, distribute, reverse-engineer, or use the app to develop a competing product.</p>
+        </div>
+
+        <div class="section" id="t10">
+            <h2 class="section__heading"><span class="section__num">10</span> Prohibited Uses</h2>
+            <ul>
+                <li>Violating any applicable law or third-party rights</li>
+                <li>Circumventing the subscription system or grace period</li>
+                <li>Reverse-engineering or tampering with the app's source code</li>
+                <li>Using the app in ways that could damage or impair its functionality</li>
+            </ul>
+        </div>
+
+        <div class="section" id="t11">
+            <h2 class="section__heading"><span class="section__num">11</span> Warranties and Liability</h2>
+            <div class="legal-caps">The app is provided "as is" without warranties of any kind, express or implied. We do not warrant that the app will be uninterrupted, error-free, or that predictions will be accurate. Our total liability shall not exceed the amount you paid in the preceding twelve months.</div>
+            <div class="callout"><strong>EU consumers:</strong> This does not affect your statutory rights under the EU Digital Content Directive (2019/770). Liability cannot be excluded for intentional misconduct or gross negligence.</div>
+        </div>
+
+        <div class="section" id="t12">
+            <h2 class="section__heading"><span class="section__num">12</span> Governing Law</h2>
+            <p>These Terms are governed by <strong>Romanian law</strong>. EU consumers also benefit from mandatory consumer protections of their country of residence, including Directives 2011/83/EU, 2019/770/EU, and national consumer laws.</p>
+        </div>
+
+        <div class="section" id="t13">
+            <h2 class="section__heading"><span class="section__num">13</span> Dispute Resolution</h2>
+            <p>We encourage informal resolution first via <a href="mailto:support@sagebills.app">support@sagebills.app</a>. EU consumers may use the <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">Online Dispute Resolution platform</a>. Otherwise, disputes are resolved by competent Romanian courts (EU consumers may also use courts of their residence).</p>
+        </div>
+
+        <div class="section" id="t14">
+            <h2 class="section__heading"><span class="section__num">14</span> Termination</h2>
+            <p>You may stop using SageBills at any time by uninstalling. Remember to cancel any active subscription separately. Upon termination, your data remains on your device. We may discontinue the app, but this would not affect installed copies.</p>
+            <p>We may update these Terms from time to time. Material changes will have at least <strong>30 days' notice</strong>. These Terms, together with the Privacy Policy and GDPR Disclosure, constitute the entire agreement.</p>
+        </div>
+
+        <div class="section" id="t15">
+            <h2 class="section__heading"><span class="section__num">15</span> Contact</h2>
+            <ul>
+                <li><strong>Support:</strong> <a href="mailto:support@sagebills.app">support@sagebills.app</a></li>
+                <li><strong>Privacy:</strong> <a href="mailto:privacy@sagebills.app">privacy@sagebills.app</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__brand">
+            <strong>Sage<span>Bills</span></strong> &mdash; Your bills, your device, your privacy.
+        </div>
+        <div class="footer__links">
+            <a href="#" onclick="switchDoc('privacy'); return false;">Privacy</a>
+            <a href="#" onclick="switchDoc('gdpr'); return false;">GDPR</a>
+            <a href="#" onclick="switchDoc('terms'); return false;">Terms</a>
+        </div>
+        <div class="footer__tagline">Built with care in Romania, EU</div>
+    </footer>
+</main>
+
+<script>
+    // ========================================
+    // THEME MANAGEMENT
+    // ========================================
+    const themes = ['dark', 'light', 'system'];
+    const themeIcons = { dark: '\u263E', light: '\u2600', system: '\u25D1' };
+    let currentThemeIndex = 0;
+
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+        const resolved = theme === 'system' ? getSystemTheme() : theme;
+        document.documentElement.setAttribute('data-theme', resolved);
+        document.getElementById('themeIcon').textContent = themeIcons[theme];
+        localStorage.setItem('sage-theme', theme);
+    }
+
+    function cycleTheme() {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        applyTheme(themes[currentThemeIndex]);
+    }
+
+    // Init theme
+    (function() {
+        const saved = localStorage.getItem('sage-theme');
+        if (saved && themes.includes(saved)) {
+            currentThemeIndex = themes.indexOf(saved);
+        }
+        applyTheme(themes[currentThemeIndex]);
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            if (themes[currentThemeIndex] === 'system') applyTheme('system');
+        });
+    })();
+
+    // ========================================
+    // DOCUMENT SWITCHING
+    // ========================================
+    function switchDoc(docId) {
+        // Hide all docs
+        document.querySelectorAll('.doc').forEach(function(d) { d.classList.remove('doc--active'); });
+        // Show target
+        var target = document.getElementById('doc-' + docId);
+        if (target) target.classList.add('doc--active');
+
+        // Update nav tabs
+        document.querySelectorAll('.nav__tab').forEach(function(t) {
+            t.classList.toggle('nav__tab--active', t.getAttribute('data-doc') === docId);
+        });
+
+        // Close mobile menu
+        document.getElementById('navTabs').classList.remove('nav__tabs--open');
+
+        // Update URL hash
+        history.replaceState(null, '', '#' + docId);
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Re-trigger animations
+        target.querySelectorAll('.animate-in').forEach(function(el) {
+            el.style.animation = 'none';
+            el.offsetHeight; // reflow
+            el.style.animation = '';
+        });
+    }
+
+    // Handle hash on load
+    (function() {
+        var hash = window.location.hash.replace('#', '');
+        if (['privacy', 'gdpr', 'terms'].indexOf(hash) !== -1) {
+            switchDoc(hash);
+        }
+    })();
+
+    // ========================================
+    // MOBILE MENU
+    // ========================================
+    function toggleMobileMenu() {
+        document.getElementById('navTabs').classList.toggle('nav__tabs--open');
+    }
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', function(e) {
+        var nav = document.querySelector('.nav');
+        if (!nav.contains(e.target)) {
+            document.getElementById('navTabs').classList.remove('nav__tabs--open');
+        }
+    });
+</script>
+
+</body>
+</html>
