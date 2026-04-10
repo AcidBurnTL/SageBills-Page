@@ -47,8 +47,7 @@ This policy complies with the General Data Protection Regulation (GDPR), the ePr
 
 SageBills is developed and maintained by a sole proprietor based in Romania, European Union.
 
-- **Privacy inquiries:** privacy@sagebills.app
-- **General support:** support@sagebills.app
+- **Contact:** contact@sagelight-studio.com
 
 For the purposes of the GDPR, the developer acts as the data controller. However, because all data processing occurs locally on your device, your data never reaches us.
 
@@ -183,13 +182,13 @@ As a resident of the EU or EEA, you have the following rights:
 | **Right of access** (Art. 15) | View all your data directly in the app |
 | **Right to rectification** (Art. 16) | Edit any bill or data entry within the app |
 | **Right to erasure** (Art. 17) | Delete individual bills or all data via Settings |
-| **Right to restriction** (Art. 18) | Contact privacy@sagebills.app |
+| **Right to restriction** (Art. 18) | Contact contact@sagelight-studio.com |
 | **Right to portability** (Art. 20) | Export your data as CSV from within the app |
 | **Right to object** (Art. 21) | Withdraw consent in Settings |
 | **Withdraw consent** (Art. 7(3)) | Single action in Settings, takes effect immediately |
 | **Lodge a complaint** (Art. 77) | Contact your national data protection authority |
 
-Most rights can be exercised directly within the app. For other rights, email privacy@sagebills.app.
+Most rights can be exercised directly within the app. For other rights, email contact@sagelight-studio.com.
 
 ### Supervisory Authority
 
@@ -205,8 +204,7 @@ We may update this Privacy Policy from time to time. The "Last Updated" date wil
 
 ## 15. Contact Us
 
-- **Privacy inquiries:** privacy@sagebills.app
-- **General support:** support@sagebills.app
+- **Contact:** contact@sagelight-studio.com
 
 We aim to respond to all privacy-related inquiries within 30 days, as required by the GDPR.
 

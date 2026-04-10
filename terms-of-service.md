@@ -131,7 +131,7 @@ These Terms are governed by **Romanian law**. EU consumers also benefit from man
 
 ## 13. Dispute Resolution
 
-We encourage informal resolution first via support@sagebills.app. EU consumers may use the [Online Dispute Resolution platform](https://ec.europa.eu/consumers/odr). Otherwise, disputes are resolved by competent Romanian courts (EU consumers may also use courts of their residence).
+We encourage informal resolution first via contact@sagelight-studio.com. EU consumers may use the [Online Dispute Resolution platform](https://ec.europa.eu/consumers/odr). Otherwise, disputes are resolved by competent Romanian courts (EU consumers may also use courts of their residence).
 
 ## 14. Termination
 
@@ -143,8 +143,7 @@ The app is also subject to Apple's [Licensed Application EULA](https://www.apple
 
 ## 15. Contact
 
-- **Support:** support@sagebills.app
-- **Privacy:** privacy@sagebills.app
+- **Contact:** contact@sagelight-studio.com
 
 ---
 

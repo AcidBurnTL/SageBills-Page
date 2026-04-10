@@ -41,7 +41,7 @@
 
 **Controller:** SageBills (individual developer / sole proprietor)
 **Location:** Romania, European Union
-**Email:** privacy@sagebills.app
+**Email:** contact@sagelight-studio.com
 
 Per **Article 13(1)(a)** and **Article 14(1)(a)**, the developer is the data controller. Due to the local-only architecture, the controller does not receive, access, or store any personal data. All processing occurs exclusively on the user's device.
 
@@ -49,7 +49,7 @@ Per **Article 13(1)(a)** and **Article 14(1)(a)**, the developer is the data con
 
 Per **Article 37**, a DPO is not required. The controller is a small-scale operator that does not carry out regular and systematic monitoring on a large scale, nor large-scale processing of special categories of data.
 
-For privacy inquiries: privacy@sagebills.app
+For privacy inquiries: contact@sagelight-studio.com
 
 ## 3. Categories of Personal Data
 
@@ -131,13 +131,13 @@ Per **Article 13(2)(b)** and **14(2)(c)**:
 | **Access** | Art. 15 | All your data is visible in the app at all times |
 | **Rectification** | Art. 16 | Edit any record directly within the app |
 | **Erasure** | Art. 17 | Delete individual or all records; uninstall removes everything |
-| **Restriction** | Art. 18 | Contact privacy@sagebills.app or withdraw consent |
+| **Restriction** | Art. 18 | Contact contact@sagelight-studio.com or withdraw consent |
 | **Portability** | Art. 20 | Export all bill data as CSV from within the app |
 | **Object** | Art. 21 | Withdraw consent in Settings to stop all processing |
 | **Withdraw Consent** | Art. 7(3) | Single action in Settings; takes effect immediately |
 | **Lodge Complaint** | Art. 77 | Contact your supervisory authority (ANSPDCP for Romania) |
 
-Most rights can be exercised directly within the app. For other rights, email privacy@sagebills.app. We respond within **30 days** per Article 12(3).
+Most rights can be exercised directly within the app. For other rights, email contact@sagelight-studio.com. We respond within **30 days** per Article 12(3).
 
 ## 10. Automated Decision-Making
 
@@ -177,8 +177,7 @@ You may also lodge a complaint with the authority in your EU/EEA Member State of
 
 ## 15. Contact
 
-- **Privacy:** privacy@sagebills.app
-- **Support:** support@sagebills.app
+- **Contact:** contact@sagelight-studio.com
 
 We respond within **30 days** (Art. 12(3)), with a possible two-month extension for complex requests.
 
