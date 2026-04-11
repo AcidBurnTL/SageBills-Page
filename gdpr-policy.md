@@ -4,16 +4,17 @@
 
 ---
 
-> **In brief:** Information required under Articles 13 and 14 of the General Data Protection Regulation regarding data processing through Sagelight Studio apps (SageBills and SageMeet). SageBills processing occurs entirely on your device. SageMeet optionally transmits data to OpenAI when AI features are used.
+> **In brief:** Information required under Articles 13 and 14 of the General Data Protection Regulation regarding data processing through Sagelight Studio apps (SageBills, SageMeet, and SageDocs). SageBills processing occurs entirely on your device. SageMeet optionally transmits data to OpenAI when AI features are used. SageDocs stores encrypted data locally and in your private iCloud account.
 
 ---
 
 ## Key Points
 
 - **Controller in EU** — Sole proprietor based in Romania. Your data is never sent to Sagelight Studio servers.
-- **Lawful Basis: Consent + Contract** — SageBills: Art. 6(1)(a) consent. SageMeet: consent and Art. 6(1)(b) contractual necessity.
-- **iCloud Sync** — Data syncs via Apple CloudKit to your private iCloud account. Apple acts as a data processor under its own GDPR commitments.
+- **Lawful Basis: Consent + Contract** — SageBills and SageDocs: Art. 6(1)(a) consent. SageMeet: consent and Art. 6(1)(b) contractual necessity.
+- **iCloud Sync** — SageMeet and SageDocs sync via Apple CloudKit/iCloud Drive. Apple acts as a data processor under its own GDPR commitments.
 - **SageMeet: OpenAI as Processor** — When AI features are used, OpenAI LLC receives audio/text data as a data processor (Art. 28). No data is shared when Private Mode is enabled.
+- **SageDocs: Enhanced Encryption** — All document attachments are encrypted with AES-256-GCM before storage. Encryption keys are derived from your personal PIN and never leave your device.
 
 ---
 
@@ -43,7 +44,7 @@
 **Location:** Romania, European Union
 **Email:** contact@sagelight-studio.com
 
-Per **Article 13(1)(a)** and **Article 14(1)(a)**, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data — all processing occurs on the user's device. For SageMeet, data is processed locally except when the user initiates AI features, which transmit data to OpenAI as a data processor (Art. 28).
+Per **Article 13(1)(a)** and **Article 14(1)(a)**, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data — all processing occurs on the user's device. For SageMeet, data is processed locally except when the user initiates AI features, which transmit data to OpenAI as a data processor (Art. 28). For SageDocs, all data is processed locally and optionally synced to the user's private iCloud account; all attachments are encrypted before storage.
 
 ## 2. Data Protection Officer
 
@@ -80,7 +81,19 @@ Per **Article 13(1)(d)** and **14(1)(d)**:
 | **API credentials** | OpenAI API key (Keychain) | No |
 | **Technical data** | Consent timestamp, app preferences | No |
 
-**No special categories of personal data** (Article 9) are processed by any Sagelight Studio app.
+### SageDocs
+
+| Category | Examples | Special Category (Art. 9)? |
+|---|---|---|
+| **Document metadata** | Titles, issuers, reference numbers, dates | No |
+| **Document categories** | Identity cards, insurance, loans, contracts, medical | No |
+| **Encrypted attachments** | Document scans, photos, PDFs (AES-256-GCM encrypted) | No |
+| **Expiry data** | Document expiration dates, reminder intervals | No |
+| **Authentication data** | Master PIN hash, biometric enrollment state (Keychain) | No |
+| **Encryption material** | Encryption salt, derived key (Keychain, biometric-protected) | No |
+| **Technical data** | Onboarding status, lockout state, notification preferences | No |
+
+**No special categories of personal data** (Article 9) are processed by any Sagelight Studio app. While SageDocs may store documents relating to health (medical records) or financial status, these are user-provided files stored in encrypted form — the app does not process, analyze, or extract data from document content.
 
 ## 4. Purposes of Processing
 
@@ -112,6 +125,19 @@ Per **Article 13(1)(c)** and **14(1)(c)**:
 | 17 | **iCloud sync** | Syncing meeting data across your devices |
 | 18 | **Device search** | Indexing meetings in CoreSpotlight |
 
+### SageDocs
+
+| # | Purpose | Description |
+|---|---|---|
+| 21 | **Document management** | Storing, organizing, and searching personal documents |
+| 22 | **Document scanning** | Capturing documents via camera (on-device processing) |
+| 23 | **Encryption** | AES-256-GCM encryption of all attachments |
+| 24 | **Authentication** | Biometric (Face ID/Touch ID) and PIN vault protection |
+| 25 | **Expiry tracking** | Monitoring document expiration dates |
+| 26 | **Reminders** | Local notifications for document expirations |
+| 27 | **Secure sharing** | Temporary decryption for user-initiated sharing |
+| 28 | **iCloud sync** | Syncing encrypted documents via CloudKit |
+
 ## 5. Lawful Basis
 
 **SageBills:** Per **Article 6(1)(a)**: **Consent.** You provide explicit consent during onboarding.
@@ -119,6 +145,8 @@ Per **Article 13(1)(c)** and **14(1)(c)**:
 **SageMeet:** Per **Article 6(1)(a)** and **Article 6(1)(b)**:
 - **Consent** (Art. 6(1)(a)) — for optional AI features and data processing during onboarding.
 - **Contractual necessity** (Art. 6(1)(b)) — for core AI processing features (transcription, note generation) that are integral to the service.
+
+**SageDocs:** Per **Article 6(1)(a)**: **Consent.** You provide explicit consent during onboarding. The processing of sensitive personal documents is justified by the enhanced security measures (AES-256-GCM encryption, biometric/PIN authentication) which exceed standard data protection requirements.
 
 Consent is freely given, specific, informed, and unambiguous. You may withdraw consent at any time via Settings, which takes effect immediately.
 
@@ -147,6 +175,14 @@ When AI features are used, the following recipients process your data:
 
 OpenAI does not use API data to train its models. No advertising networks, analytics providers, or other third parties receive your data. When Private Mode is enabled, no data is shared with OpenAI.
 
+### SageDocs
+
+| Recipient | Role | Data Received | Legal Basis |
+|---|---|---|---|
+| **Apple (iCloud/CloudKit)** | Storage provider | Encrypted document data when iCloud sync is enabled | Apple's GDPR commitments |
+
+**No other recipients.** SageDocs does not share data with any third party. All attachments synced to iCloud are encrypted with your personal key before transmission.
+
 ## 7. International Transfers
 
 Per **Article 13(1)(f)**:
@@ -155,16 +191,23 @@ Per **Article 13(1)(f)**:
 
 **SageMeet:** When AI features are used, data is transferred to the United States (OpenAI's servers). These transfers are lawful under the **EU-US Data Privacy Framework** (DPF, Chapter V), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.
 
+**SageDocs:** No international transfers to third parties occur. iCloud sync is managed by Apple under Apple's own international data transfer agreements and GDPR commitments.
+
 ## 8. Retention Periods
 
 Per **Article 13(2)(a)** and **14(2)(a)**:
 
 | Data | Retention | Basis |
 |---|---|---|
-| **Bill records** | Until you delete them or uninstall | User control |
+| **Bill records (SageBills)** | Until you delete them or uninstall | User control |
 | **OCR-extracted text** | Until the associated bill is deleted | User control |
+| **Meeting recordings (SageMeet)** | Until you delete them or uninstall | User control |
+| **Transcripts and AI notes** | Until the associated meeting is deleted | User control |
+| **Documents (SageDocs)** | Until you delete them or reset the vault | User control |
+| **Encrypted attachments** | Until the associated document is deleted | User control |
 | **App preferences** | Until reset or uninstall | User control |
 | **Consent timestamp** | Until uninstallation | Legal compliance |
+| **Encryption keys (SageDocs)** | Until vault reset or uninstallation | Security |
 
 > **You control retention entirely.** Delete individual records, all data, or uninstall the app at any time.
 
@@ -178,7 +221,7 @@ Per **Article 13(2)(b)** and **14(2)(c)**:
 | **Rectification** | Art. 16 | Edit any record directly within the app |
 | **Erasure** | Art. 17 | Delete individual or all records; uninstall removes everything |
 | **Restriction** | Art. 18 | Contact contact@sagelight-studio.com or withdraw consent |
-| **Portability** | Art. 20 | Export all bill data as CSV from within the app |
+| **Portability** | Art. 20 | Export data from within the app |
 | **Object** | Art. 21 | Withdraw consent in Settings to stop all processing |
 | **Withdraw Consent** | Art. 7(3) | Single action in Settings; takes effect immediately |
 | **Lodge Complaint** | Art. 77 | Contact your supervisory authority (ANSPDCP for Romania) |
@@ -191,19 +234,40 @@ Most rights can be exercised directly within the app. For other rights, email co
 
 **SageMeet** uses AI models (GPT-4o, GPT-4o-mini) to generate meeting notes, summaries, action items, and speaker analytics. These AI-generated outputs are **informational only** and are not used for decisions producing legal or similarly significant effects. Users should review AI outputs for accuracy and not rely on them for legal, medical, or financial decisions.
 
+**SageDocs** uses date-based calculations for expiry tracking and reminder scheduling. These are **informational only** and do not constitute profiling or automated decision-making. SageDocs does not use AI or analyze document content.
+
 ## 11. Data Protection Measures
 
 Per **Article 32**:
 
+### All Apps
 - **Encryption at rest:** NSFileProtectionComplete (data encrypted when device is locked)
-- **Keychain security:** Hardware-backed encryption for timestamps
-- **On-device processing:** All OCR and predictions run locally
-- **No third-party code:** Zero external SDKs eliminates supply-chain risk
 - **Privacy by design** (Art. 25(1)) and **privacy by default** (Art. 25(2))
+- **No third-party code** (SageBills, SageDocs): Zero external SDKs eliminates supply-chain risk
+
+### SageBills
+- **Keychain security:** Hardware-backed encryption for consent timestamps
+- **On-device processing:** All OCR and predictions run locally
+
+### SageMeet
+- **Keychain security:** Hardware-backed encryption for API keys and consent data
+- **User-controlled AI:** External data transmission only occurs when user explicitly requests it
+- **Private Mode:** Complete disabling of all external data transmission
+
+### SageDocs (Enhanced Security)
+- **AES-256-GCM encryption:** All attachments encrypted before storage
+- **PBKDF2-SHA256 key derivation:** 600,000 iterations (exceeds OWASP 2023 minimum)
+- **256-bit random salt:** Generated per installation, stored in Keychain
+- **Biometric authentication:** Face ID / Touch ID with enrollment change detection
+- **Biometric-protected key storage:** Encryption key stored with `.biometryCurrentSet` access control
+- **Constant-time PIN comparison:** Prevents timing attacks on authentication
+- **Progressive lockout:** Escalating cooldown after failed authentication attempts
+- **Privacy-respecting logging:** Security events logged via OSLog; never contains PINs, keys, or document content
+- **Secure temporary files:** Decrypted files use `.completeFileProtection` and are immediately cleaned up after sharing
 
 ## 12. Breach Notification
 
-Per **Articles 33 and 34**: Given the local-only architecture, traditional data breaches are not applicable. Should a vulnerability be identified:
+Per **Articles 33 and 34**: Given the local-first architecture, traditional data breaches are not applicable. Should a vulnerability be identified:
 
 - Users will be notified through an app update
 - ANSPDCP will be notified within **72 hours** (Art. 33)

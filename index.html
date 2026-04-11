@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sagelight Studio — Legal</title>
-    <meta name="description" content="Privacy Policy, GDPR Disclosure, and Terms of Service for Sagelight Studio apps (SageBills and SageMeet).">
+    <meta name="description" content="Privacy Policy, GDPR Disclosure, and Terms of Service for Sagelight Studio apps (SageBills, SageMeet, and SageDocs).">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -352,7 +352,7 @@
            ======================================== */
         .key-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1px;
             background: var(--border);
             border-radius: var(--radius);
@@ -841,10 +841,10 @@
         <header class="doc-header animate-in">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">Privacy <em>Policy</em></h1>
-            <p class="doc-header__subtitle">This policy covers all Sagelight Studio apps, including SageBills and SageMeet. Your data belongs to you.</p>
+            <p class="doc-header__subtitle">This policy covers all Sagelight Studio apps, including SageBills, SageMeet, and SageDocs. Your data belongs to you.</p>
             <div class="doc-header__meta">
                 <span>Last updated: April 11, 2026</span>
-                <span>Effective: April 1, 2026</span>
+                <span>Effective: April 11, 2026</span>
             </div>
         </header>
 
@@ -861,6 +861,11 @@
                 <div class="key-point__desc">Data is local. AI features optionally send data to OpenAI. Private Mode disables all external transmission.</div>
             </div>
             <div class="key-point">
+                <span class="key-point__icon">&#128737;</span>
+                <div class="key-point__title">SageDocs: Encrypted Vault</div>
+                <div class="key-point__desc">AES-256-GCM encryption, biometric/PIN protection, iCloud sync of encrypted data. No AI, no third parties.</div>
+            </div>
+            <div class="key-point">
                 <span class="key-point__icon">&#128683;</span>
                 <div class="key-point__title">Zero Tracking</div>
                 <div class="key-point__desc">No analytics, no advertising IDs, no telemetry in any of our apps.</div>
@@ -868,7 +873,7 @@
             <div class="key-point">
                 <span class="key-point__icon">&#128272;</span>
                 <div class="key-point__title">Encrypted at Rest</div>
-                <div class="key-point__desc">Data is protected by Apple's NSFileProtectionComplete when your device is locked.</div>
+                <div class="key-point__desc">NSFileProtectionComplete on all apps. SageDocs adds AES-256-GCM on top.</div>
             </div>
         </div>
 
@@ -898,7 +903,7 @@
         <div class="animate-in animate-in--d3">
             <div class="section" id="p1">
                 <h2 class="section__heading"><span class="section__num">01</span> Introduction</h2>
-                <p>Welcome to Sagelight Studio. This Privacy Policy explains how we handle your information when you use our applications &mdash; <strong>SageBills</strong> (utility bill tracking) and <strong>SageMeet</strong> (meeting recording and AI transcription) &mdash; on iOS and macOS.</p>
+                <p>Welcome to Sagelight Studio. This Privacy Policy explains how we handle your information when you use our applications &mdash; <strong>SageBills</strong> (utility bill tracking), <strong>SageMeet</strong> (meeting recording and AI transcription), and <strong>SageDocs</strong> (personal document vault) &mdash; on iOS and macOS.</p>
                 <p>This policy complies with the General Data Protection Regulation (GDPR), the ePrivacy Directive, and Apple App Store Guidelines (sections 5.1.1 and 5.1.2).</p>
             </div>
 
@@ -908,11 +913,12 @@
                 <ul>
                     <li><strong>Contact:</strong> <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></li>
                 </ul>
-                <p>For the purposes of the GDPR, the developer acts as the data controller. For SageBills, all data processing occurs locally and your data never reaches us. For SageMeet, data is processed locally except when you use AI features, which transmit data to OpenAI (see Sections 9 and 10).</p>
+                <p>For the purposes of the GDPR, the developer acts as the data controller. For SageBills, all data processing occurs locally and your data never reaches us. For SageMeet, data is processed locally except when you use AI features, which transmit data to OpenAI (see Sections 9 and 10). For SageDocs, data is stored locally and synced to your private iCloud account; no data is transmitted to Sagelight Studio or any third party other than Apple.</p>
             </div>
 
             <div class="section" id="p3">
                 <h2 class="section__heading"><span class="section__num">03</span> Privacy-First Architecture</h2>
+
                 <h3 class="section__subheading">SageBills</h3>
                 <p>SageBills is designed with a <strong>local-only, zero-server architecture</strong>:</p>
                 <ul>
@@ -922,6 +928,7 @@
                     <li><strong>No tracking.</strong> We do not track your behavior, location, or activity.</li>
                     <li><strong>No third-party SDKs.</strong> The app is built entirely with Apple frameworks. Zero external dependencies.</li>
                 </ul>
+
                 <h3 class="section__subheading">SageMeet</h3>
                 <p>SageMeet stores all data locally and optionally syncs via iCloud. When you use AI-powered features:</p>
                 <ul>
@@ -930,8 +937,20 @@
                     <li><strong>No analytics or tracking.</strong> SageMeet does not collect usage analytics, crash reports, or telemetry.</li>
                     <li><strong>Your OpenAI API key</strong> is stored securely in the device Keychain and only used to authenticate requests you initiate.</li>
                 </ul>
+
+                <h3 class="section__subheading">SageDocs</h3>
+                <p>SageDocs is a <strong>personal document vault with enhanced security</strong> for sensitive documents such as identity cards, insurance policies, and loan agreements:</p>
+                <ul>
+                    <li><strong>AES-256-GCM encryption.</strong> All document attachments are encrypted before storage using a key derived via PBKDF2-SHA256 (600,000 iterations).</li>
+                    <li><strong>Biometric or PIN authentication.</strong> The vault is locked behind Face ID, Touch ID, or a master PIN.</li>
+                    <li><strong>iCloud sync.</strong> Encrypted documents sync via Apple CloudKit to your private iCloud account. Data is encrypted before it reaches iCloud.</li>
+                    <li><strong>No AI features.</strong> SageDocs does not use artificial intelligence or send data to any external API.</li>
+                    <li><strong>No analytics or tracking.</strong> No telemetry, crash reports, or third-party SDKs.</li>
+                    <li><strong>Privacy-respecting logging.</strong> Security events logged via OSLog never contain PINs, encryption keys, or document content.</li>
+                </ul>
+
                 <div class="callout">
-                    <strong>In simple terms:</strong> SageBills data never leaves your device. SageMeet data stays local unless you use AI features &mdash; and Private Mode disables all external transmission.
+                    <strong>In simple terms:</strong> SageBills data never leaves your device. SageMeet data stays local unless you use AI features. SageDocs encrypts everything and syncs only encrypted data to your private iCloud.
                 </div>
             </div>
 
@@ -1008,10 +1027,53 @@
                         </ul>
                     </div>
                 </details>
+
+                <h3 class="section__subheading">SageDocs Data</h3>
+                <p>The following data is stored <strong>on your device and in your private iCloud account</strong>:</p>
+
+                <details class="collapsible" open>
+                    <summary>Document Metadata</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li><strong>Document titles</strong> &mdash; names you assign to your documents</li>
+                            <li><strong>Issuers</strong> &mdash; organizations that issued the document</li>
+                            <li><strong>Reference numbers</strong> &mdash; document identification numbers</li>
+                            <li><strong>Dates</strong> &mdash; issue dates, expiry dates</li>
+                            <li><strong>Notes</strong> &mdash; free-text notes you add</li>
+                            <li><strong>Categories</strong> &mdash; identity cards, insurance, loans, contracts, medical, etc.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>Encrypted Attachments</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li><strong>Document scans, photos, PDFs</strong> &mdash; encrypted with AES-256-GCM before storage</li>
+                            <li><strong>Thumbnails</strong> &mdash; also encrypted</li>
+                            <li>Stored using SwiftData's external storage mechanism</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="collapsible">
+                    <summary>Security &amp; Keychain Data</summary>
+                    <div class="collapsible__body">
+                        <ul>
+                            <li><strong>Master PIN hash</strong> &mdash; salted PBKDF2-SHA256 hash (no plaintext PIN stored)</li>
+                            <li><strong>Encryption salt</strong> &mdash; 256-bit random value for key derivation</li>
+                            <li><strong>Biometric enrollment state</strong> &mdash; detects changes in Face ID/Touch ID enrollment</li>
+                            <li><strong>Derived encryption key</strong> &mdash; biometric-protected Keychain item</li>
+                            <li><strong>Lockout state</strong> &mdash; progressive lockout after failed authentication</li>
+                            <li>Onboarding status, notification preferences</li>
+                        </ul>
+                    </div>
+                </details>
             </div>
 
             <div class="section" id="p5">
                 <h2 class="section__heading"><span class="section__num">05</span> How We Use Your Data</h2>
+
                 <h3 class="section__subheading">SageBills</h3>
                 <p>Because all SageBills data stays on your device, "use" means local processing within the app:</p>
                 <div class="table-wrap">
@@ -1029,6 +1091,7 @@
                         </tbody>
                     </table>
                 </div>
+
                 <h3 class="section__subheading">SageMeet</h3>
                 <div class="table-wrap">
                     <table>
@@ -1045,32 +1108,60 @@
                         </tbody>
                     </table>
                 </div>
+
+                <h3 class="section__subheading">SageDocs</h3>
+                <p>All SageDocs data stays on your device and in your private iCloud account:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Purpose</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Document storage</strong></td><td>Securely storing and organizing personal documents</td></tr>
+                            <tr><td><strong>Document scanning</strong></td><td>Capturing documents via camera with on-device processing</td></tr>
+                            <tr><td><strong>Encryption</strong></td><td>Encrypting all attachments with AES-256-GCM before storage</td></tr>
+                            <tr><td><strong>Authentication</strong></td><td>Protecting vault with biometrics (Face ID/Touch ID) or master PIN</td></tr>
+                            <tr><td><strong>Expiry tracking</strong></td><td>Monitoring document expiration dates and alerting you</td></tr>
+                            <tr><td><strong>Reminders</strong></td><td>Local notifications for upcoming document expirations</td></tr>
+                            <tr><td><strong>Secure sharing</strong></td><td>Temporary decryption for user-initiated sharing</td></tr>
+                            <tr><td><strong>iCloud sync</strong></td><td>Syncing encrypted documents across your Apple devices</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="section" id="p6">
                 <h2 class="section__heading"><span class="section__num">06</span> Legal Basis for Processing</h2>
-                <p><strong>SageBills:</strong> Under Article 6(1)(a) of the GDPR, our legal basis is <strong>your explicit consent</strong>, which you provide during the app's onboarding process.</p>
+                <p><strong>SageBills &amp; SageDocs:</strong> Under Article 6(1)(a) of the GDPR, our legal basis is <strong>your explicit consent</strong>, which you provide during each app's onboarding process.</p>
                 <p><strong>SageMeet:</strong> Our legal bases are:</p>
                 <ul>
                     <li><strong>Consent</strong> (Art. 6(1)(a)) &mdash; for optional AI features and data processing during onboarding.</li>
                     <li><strong>Contractual necessity</strong> (Art. 6(1)(b)) &mdash; for core AI processing features integral to the service (transcription, note generation).</li>
                 </ul>
-                <p>You may withdraw your consent at any time through either app's Settings. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.</p>
+                <p>You may withdraw your consent at any time through any app's Settings. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.</p>
             </div>
 
             <div class="section" id="p7">
                 <h2 class="section__heading"><span class="section__num">07</span> Data Storage and Security</h2>
-                <h3 class="section__subheading">Local Storage</h3>
+
+                <h3 class="section__subheading">Local Storage (All Apps)</h3>
                 <p>All data is stored using Apple's SwiftData framework with <strong>NSFileProtectionComplete</strong> encryption:</p>
                 <ul>
                     <li>Data is encrypted when your device is locked</li>
                     <li>Data is only accessible when your device is unlocked and authenticated</li>
                     <li>Encryption keys are tied to your device passcode/biometrics</li>
                 </ul>
-                <h3 class="section__subheading">No Remote Storage</h3>
-                <p>SageBills does not transmit data to any remote server. We have no ability to access, read, or recover your data.</p>
+
+                <h3 class="section__subheading">SageDocs Enhanced Security</h3>
+                <p>SageDocs provides additional security beyond standard device encryption:</p>
+                <ul>
+                    <li><strong>AES-256-GCM:</strong> All attachments encrypted with keys derived via PBKDF2-SHA256 (600,000 iterations)</li>
+                    <li><strong>Keychain-stored salt:</strong> 256-bit random salt with <code>kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code></li>
+                    <li><strong>Biometric-protected keys:</strong> Encryption key invalidated if biometric enrollment changes</li>
+                    <li><strong>Constant-time PIN verification:</strong> Prevents timing attacks</li>
+                    <li><strong>Progressive lockout:</strong> Escalating cooldowns after failed authentication</li>
+                </ul>
+
                 <div class="callout callout--warning">
-                    <strong>Your responsibility:</strong> Because data is stored only on your device, you are responsible for maintaining backups through your device's backup mechanisms.
+                    <strong>Your responsibility:</strong> You are responsible for device backups. For SageDocs, remember your master PIN &mdash; we cannot recover it, as we have no access to your encryption keys.
                 </div>
             </div>
 
@@ -1078,18 +1169,21 @@
                 <h2 class="section__heading"><span class="section__num">08</span> Data Retention</h2>
                 <p>Your data is retained on your device for as long as you keep the app installed and choose to retain it. You have full control:</p>
                 <ul>
-                    <li><strong>Delete individual bills</strong> at any time within the app</li>
+                    <li><strong>Delete individual records</strong> at any time within any app</li>
                     <li><strong>Delete all data</strong> using the option in Settings</li>
                     <li><strong>Uninstall the app</strong> to remove all associated data</li>
+                    <li><strong>SageDocs: Reset vault</strong> to delete all documents and encryption keys</li>
                 </ul>
                 <p>We do not retain any copy of your data because we never receive it.</p>
             </div>
 
             <div class="section" id="p9">
                 <h2 class="section__heading"><span class="section__num">09</span> Third-Party Services</h2>
-                <h3 class="section__subheading">Apple iCloud (SageMeet)</h3>
-                <p>SageMeet optionally syncs meeting data via Apple's iCloud (CloudKit). Apple acts as a data processor under its own GDPR commitments. iCloud data is encrypted in transit and at rest.</p>
-                <h3 class="section__subheading">OpenAI (SageMeet)</h3>
+
+                <h3 class="section__subheading">Apple iCloud (SageMeet &amp; SageDocs)</h3>
+                <p>SageMeet and SageDocs optionally sync data via Apple's iCloud (CloudKit / iCloud Drive). Apple acts as a data processor under its own GDPR commitments. iCloud data is encrypted in transit and at rest. For SageDocs, attachments are additionally encrypted with AES-256-GCM before reaching iCloud.</p>
+
+                <h3 class="section__subheading">OpenAI (SageMeet only)</h3>
                 <p>When you use AI features in SageMeet, audio and text data are sent to <strong>OpenAI LLC</strong> for processing. OpenAI acts as a <strong>data processor</strong> under Article 28 GDPR. The following OpenAI services are used:</p>
                 <ul>
                     <li><strong>Whisper API</strong> &mdash; audio-to-text transcription</li>
@@ -1098,19 +1192,21 @@
                     <li><strong>Embedding API</strong> &mdash; semantic vector generation for search</li>
                 </ul>
                 <p>OpenAI does not use API data to train their models. OpenAI is certified under the <strong>EU-US Data Privacy Framework</strong> (DPF). You authenticate with your own API key; we have no access to your OpenAI account.</p>
-                <h3 class="section__subheading">SageBills: No Other Third Parties</h3>
-                <p>SageBills contains <strong>no third-party SDKs, frameworks, libraries, or services</strong> beyond Apple's own frameworks. We do not share, sell, or disclose your SageBills data to any third party.</p>
+
+                <h3 class="section__subheading">SageBills &amp; SageDocs: No Other Third Parties</h3>
+                <p>SageBills and SageDocs contain <strong>no third-party SDKs, frameworks, libraries, or services</strong> beyond Apple's own frameworks. We do not share, sell, or disclose your data to any third party.</p>
             </div>
 
             <div class="section" id="p10">
                 <h2 class="section__heading"><span class="section__num">10</span> International Data Transfers</h2>
                 <p><strong>SageBills</strong> does not transfer your data internationally. Your data remains on your device at all times.</p>
-                <p><strong>SageMeet</strong> transfers data to the United States when you use AI features, as OpenAI's API servers are located in the US. These transfers are lawful under the <strong>EU-US Data Privacy Framework</strong> (DPF), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.</p>
+                <p><strong>SageMeet</strong> transfers data to the United States when you use AI features, as OpenAI's API servers are located in the US. These transfers are lawful under the <strong>EU-US Data Privacy Framework</strong> (DPF). When Private Mode is enabled, no international transfers occur.</p>
+                <p><strong>SageDocs</strong> does not transfer your data to any third party. iCloud sync is managed by Apple under Apple's own GDPR commitments.</p>
             </div>
 
             <div class="section" id="p11">
                 <h2 class="section__heading"><span class="section__num">11</span> Cookies and Tracking</h2>
-                <p>Neither SageBills nor SageMeet uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. Neither app contains any advertising.</p>
+                <p>No Sagelight Studio app uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. No app contains any advertising.</p>
             </div>
 
             <div class="section" id="p12">
@@ -1125,17 +1221,17 @@
                     <div class="right-card">
                         <div class="right-card__article">Art. 16</div>
                         <div class="right-card__title">Right to Rectification</div>
-                        <div class="right-card__desc">Edit any bill or data entry within the app.</div>
+                        <div class="right-card__desc">Edit any data entry within the app.</div>
                     </div>
                     <div class="right-card">
                         <div class="right-card__article">Art. 17</div>
                         <div class="right-card__title">Right to Erasure</div>
-                        <div class="right-card__desc">Delete individual bills or all data via Settings.</div>
+                        <div class="right-card__desc">Delete individual records or all data via Settings.</div>
                     </div>
                     <div class="right-card">
                         <div class="right-card__article">Art. 20</div>
                         <div class="right-card__title">Right to Portability</div>
-                        <div class="right-card__desc">Export your data as CSV from within the app.</div>
+                        <div class="right-card__desc">Export your data from within the app.</div>
                     </div>
                     <div class="right-card">
                         <div class="right-card__article">Art. 7(3)</div>
@@ -1149,6 +1245,7 @@
                     </div>
                 </div>
                 <p>For rights you cannot exercise through the app, contact <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>.</p>
+
                 <h3 class="section__subheading">Supervisory Authority</h3>
                 <p>If you are in Romania, the competent supervisory authority is <strong>ANSPDCP</strong> (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a>). You may also contact the supervisory authority in your country of residence.</p>
             </div>
@@ -1180,7 +1277,7 @@
         <header class="doc-header">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">GDPR <em>Disclosure</em></h1>
-            <p class="doc-header__subtitle">Information required under Articles 13 and 14 of the General Data Protection Regulation (EU) 2016/679 regarding data processing through Sagelight Studio apps (SageBills and SageMeet).</p>
+            <p class="doc-header__subtitle">Information required under Articles 13 and 14 of the General Data Protection Regulation (EU) 2016/679 regarding data processing through Sagelight Studio apps (SageBills, SageMeet, and SageDocs).</p>
             <div class="doc-header__meta">
                 <span>Last updated: April 11, 2026</span>
                 <span>GDPR (EU) 2016/679</span>
@@ -1196,17 +1293,22 @@
             <div class="key-point">
                 <span class="key-point__icon">&#9878;</span>
                 <div class="key-point__title">Lawful Basis</div>
-                <div class="key-point__desc">SageBills: consent (Art. 6(1)(a)). SageMeet: consent + contractual necessity (Art. 6(1)(b)).</div>
+                <div class="key-point__desc">SageBills &amp; SageDocs: consent. SageMeet: consent + contractual necessity.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#128101;</span>
-                <div class="key-point__title">SageMeet: OpenAI as Processor</div>
-                <div class="key-point__desc">OpenAI LLC receives audio/text when AI features are used (Art. 28). Private Mode disables all sharing.</div>
+                <div class="key-point__title">SageMeet: OpenAI</div>
+                <div class="key-point__desc">OpenAI receives audio/text when AI features are used (Art. 28). Private Mode disables all sharing.</div>
+            </div>
+            <div class="key-point">
+                <span class="key-point__icon">&#128737;</span>
+                <div class="key-point__title">SageDocs: AES-256</div>
+                <div class="key-point__desc">All attachments encrypted with AES-256-GCM. Keys derived from your PIN, never leave your device.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127760;</span>
                 <div class="key-point__title">iCloud Sync</div>
-                <div class="key-point__desc">Data syncs via Apple CloudKit to your private iCloud account under Apple's GDPR commitments.</div>
+                <div class="key-point__desc">SageMeet &amp; SageDocs sync via Apple under Apple's own GDPR commitments.</div>
             </div>
         </div>
 
@@ -1236,7 +1338,7 @@
             <p><strong>Controller:</strong> Sagelight Studio (individual developer / sole proprietor)<br>
             <strong>Location:</strong> Romania, European Union<br>
             <strong>Email:</strong> <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
-            <p>Per <strong>Article 13(1)(a)</strong> and <strong>Article 14(1)(a)</strong>, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data. For SageMeet, data is processed locally except when the user initiates AI features, which transmit data to OpenAI as a data processor (Art. 28).</p>
+            <p>Per <strong>Article 13(1)(a)</strong> and <strong>Article 14(1)(a)</strong>, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data. For SageMeet, data is processed locally except when the user initiates AI features (OpenAI as data processor, Art. 28). For SageDocs, all data is processed locally and optionally synced encrypted to the user's private iCloud.</p>
         </div>
 
         <div class="section" id="g2">
@@ -1248,6 +1350,7 @@
         <div class="section" id="g3">
             <h2 class="section__heading"><span class="section__num">03</span> Categories of Personal Data</h2>
             <p>Per <strong>Article 13(1)(d)</strong> and <strong>14(1)(d)</strong>:</p>
+
             <h3 class="section__subheading">SageBills</h3>
             <div class="table-wrap">
                 <table>
@@ -1263,6 +1366,7 @@
                     </tbody>
                 </table>
             </div>
+
             <h3 class="section__subheading">SageMeet</h3>
             <div class="table-wrap">
                 <table>
@@ -1279,12 +1383,29 @@
                     </tbody>
                 </table>
             </div>
+
+            <h3 class="section__subheading">SageDocs</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Category</th><th>Examples</th><th>Special (Art. 9)?</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Document metadata</strong></td><td>Titles, issuers, reference numbers, dates</td><td>No</td></tr>
+                        <tr><td><strong>Document categories</strong></td><td>Identity cards, insurance, loans, contracts, medical</td><td>No</td></tr>
+                        <tr><td><strong>Encrypted attachments</strong></td><td>Document scans, photos, PDFs (AES-256-GCM)</td><td>No</td></tr>
+                        <tr><td><strong>Expiry data</strong></td><td>Expiration dates, reminder intervals</td><td>No</td></tr>
+                        <tr><td><strong>Authentication data</strong></td><td>PIN hash, biometric enrollment state (Keychain)</td><td>No</td></tr>
+                        <tr><td><strong>Encryption material</strong></td><td>Salt, derived key (Keychain, biometric-protected)</td><td>No</td></tr>
+                        <tr><td><strong>Technical data</strong></td><td>Onboarding status, lockout state</td><td>No</td></tr>
+                    </tbody>
+                </table>
+            </div>
             <p><strong>No special categories of personal data</strong> (Article 9) are processed by any Sagelight Studio app.</p>
         </div>
 
         <div class="section" id="g4">
             <h2 class="section__heading"><span class="section__num">04</span> Purposes of Processing</h2>
             <p>Per <strong>Article 13(1)(c)</strong> and <strong>14(1)(c)</strong>:</p>
+
             <h3 class="section__subheading">SageBills</h3>
             <div class="table-wrap">
                 <table>
@@ -1301,6 +1422,7 @@
                     </tbody>
                 </table>
             </div>
+
             <h3 class="section__subheading">SageMeet</h3>
             <div class="table-wrap">
                 <table>
@@ -1317,11 +1439,28 @@
                     </tbody>
                 </table>
             </div>
+
+            <h3 class="section__subheading">SageDocs</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>#</th><th>Purpose</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td>21</td><td><strong>Document management</strong></td><td>Storing, organizing, and searching personal documents</td></tr>
+                        <tr><td>22</td><td><strong>Document scanning</strong></td><td>Capturing documents via camera (on-device processing)</td></tr>
+                        <tr><td>23</td><td><strong>Encryption</strong></td><td>AES-256-GCM encryption of all attachments</td></tr>
+                        <tr><td>24</td><td><strong>Authentication</strong></td><td>Biometric and PIN vault protection</td></tr>
+                        <tr><td>25</td><td><strong>Expiry tracking</strong></td><td>Monitoring document expiration dates</td></tr>
+                        <tr><td>26</td><td><strong>Reminders</strong></td><td>Local notifications for document expirations</td></tr>
+                        <tr><td>27</td><td><strong>Secure sharing</strong></td><td>Temporary decryption for user-initiated sharing</td></tr>
+                        <tr><td>28</td><td><strong>iCloud sync</strong></td><td>Syncing encrypted documents via CloudKit</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="section" id="g5">
             <h2 class="section__heading"><span class="section__num">05</span> Lawful Basis</h2>
-            <p><strong>SageBills:</strong> Per <strong>Article 6(1)(a)</strong>: <strong>Consent.</strong> You provide explicit consent during onboarding.</p>
+            <p><strong>SageBills &amp; SageDocs:</strong> Per <strong>Article 6(1)(a)</strong>: <strong>Consent.</strong> You provide explicit consent during onboarding.</p>
             <p><strong>SageMeet:</strong> Per <strong>Article 6(1)(a)</strong> and <strong>Article 6(1)(b)</strong>:</p>
             <ul>
                 <li><strong>Consent</strong> (Art. 6(1)(a)) &mdash; for optional AI features and data processing during onboarding.</li>
@@ -1333,25 +1472,35 @@
         <div class="section" id="g6">
             <h2 class="section__heading"><span class="section__num">06</span> Recipients</h2>
             <p>Per <strong>Article 13(1)(e)</strong>:</p>
-            <p><strong>SageBills:</strong> There are no recipients of your SageBills personal data. No data processors (Art. 28), no joint controllers (Art. 26), no third-party services.</p>
-            <p><strong>SageMeet:</strong> When AI features are used, the following recipients process your data:</p>
+            <p><strong>SageBills:</strong> There are no recipients of your SageBills personal data.</p>
+            <p><strong>SageMeet:</strong> When AI features are used:</p>
             <div class="table-wrap">
                 <table>
                     <thead><tr><th>Recipient</th><th>Role</th><th>Data Received</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>OpenAI LLC</strong></td><td>Data processor (Art. 28)</td><td>Audio, text for transcription, meeting content for summarization, text for embeddings</td></tr>
+                        <tr><td><strong>OpenAI LLC</strong></td><td>Data processor (Art. 28)</td><td>Audio, text for transcription, content for summarization, text for embeddings</td></tr>
                         <tr><td><strong>Apple (iCloud)</strong></td><td>Storage provider</td><td>Meeting data when iCloud sync is enabled</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p>OpenAI does not use API data to train its models. No advertising networks, analytics providers, or other third parties receive your data. When Private Mode is enabled, no data is shared with OpenAI.</p>
+            <p><strong>SageDocs:</strong></p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Recipient</th><th>Role</th><th>Data Received</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Apple (iCloud/CloudKit)</strong></td><td>Storage provider</td><td>Encrypted document data when iCloud sync is enabled</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>No advertising networks, analytics providers, or other third parties receive data from any app.</p>
         </div>
 
         <div class="section" id="g7">
             <h2 class="section__heading"><span class="section__num">07</span> International Transfers</h2>
             <p>Per <strong>Article 13(1)(f)</strong>:</p>
-            <p><strong>SageBills:</strong> No international transfers occur. All data is processed on your local device.</p>
-            <p><strong>SageMeet:</strong> When AI features are used, data is transferred to the United States (OpenAI's servers). These transfers are lawful under the <strong>EU-US Data Privacy Framework</strong> (DPF, Chapter V), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.</p>
+            <p><strong>SageBills:</strong> No international transfers occur.</p>
+            <p><strong>SageMeet:</strong> Data transferred to the US (OpenAI) under the <strong>EU-US Data Privacy Framework</strong>. No transfers when Private Mode is enabled.</p>
+            <p><strong>SageDocs:</strong> No international transfers to third parties. iCloud sync managed by Apple under Apple's own agreements.</p>
         </div>
 
         <div class="section" id="g8">
@@ -1361,8 +1510,11 @@
                     <thead><tr><th>Data</th><th>Retention</th><th>Basis</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Bill records</strong></td><td>Until you delete them or uninstall</td><td>User control</td></tr>
-                        <tr><td><strong>OCR-extracted text</strong></td><td>Until the associated bill is deleted</td><td>User control</td></tr>
+                        <tr><td><strong>Meeting recordings</strong></td><td>Until you delete them or uninstall</td><td>User control</td></tr>
+                        <tr><td><strong>Documents (SageDocs)</strong></td><td>Until you delete them or reset the vault</td><td>User control</td></tr>
+                        <tr><td><strong>Encrypted attachments</strong></td><td>Until the associated document is deleted</td><td>User control</td></tr>
                         <tr><td><strong>App preferences</strong></td><td>Until reset or uninstall</td><td>User control</td></tr>
+                        <tr><td><strong>Encryption keys</strong></td><td>Until vault reset or uninstallation</td><td>Security</td></tr>
                         <tr><td><strong>Consent timestamp</strong></td><td>Until uninstallation</td><td>Legal compliance</td></tr>
                     </tbody>
                 </table>
@@ -1397,7 +1549,7 @@
                 <div class="right-card">
                     <div class="right-card__article">Art. 20</div>
                     <div class="right-card__title">Portability</div>
-                    <div class="right-card__desc">Export all bill data as CSV from within the app.</div>
+                    <div class="right-card__desc">Export data from within the app.</div>
                 </div>
                 <div class="right-card">
                     <div class="right-card__article">Art. 21</div>
@@ -1420,25 +1572,47 @@
 
         <div class="section" id="g10">
             <h2 class="section__heading"><span class="section__num">10</span> Automated Decision-Making</h2>
-            <p><strong>SageBills</strong> uses statistical calculations (averaging, trend analysis) for predictions and anomaly detection. These are <strong>informational only</strong> and do not constitute profiling (Art. 4(4)) or automated decision-making (Art. 22) as they produce no legal or similarly significant effects.</p>
-            <p><strong>SageMeet</strong> uses AI models (GPT-4o, GPT-4o-mini) to generate meeting notes, summaries, action items, and speaker analytics. These AI-generated outputs are <strong>informational only</strong> and are not used for decisions producing legal or similarly significant effects. Users should review AI outputs for accuracy and not rely on them for legal, medical, or financial decisions.</p>
+            <p><strong>SageBills</strong> uses statistical calculations (averaging, trend analysis) for predictions and anomaly detection. These are <strong>informational only</strong> and do not constitute profiling or automated decision-making.</p>
+            <p><strong>SageMeet</strong> uses AI models (GPT-4o, GPT-4o-mini) to generate meeting notes, summaries, action items, and speaker analytics. These are <strong>informational only</strong>. Users should review AI outputs for accuracy.</p>
+            <p><strong>SageDocs</strong> uses date-based calculations for expiry tracking and reminders. These are <strong>informational only</strong>. SageDocs does not use AI or analyze document content.</p>
         </div>
 
         <div class="section" id="g11">
             <h2 class="section__heading"><span class="section__num">11</span> Data Protection Measures</h2>
             <p>Per <strong>Article 32</strong>:</p>
+            <h3 class="section__subheading">All Apps</h3>
             <ul>
                 <li><strong>Encryption at rest:</strong> NSFileProtectionComplete (data encrypted when device is locked)</li>
-                <li><strong>Keychain security:</strong> Hardware-backed encryption for timestamps</li>
-                <li><strong>On-device processing:</strong> All OCR and predictions run locally</li>
-                <li><strong>No third-party code:</strong> Zero external SDKs eliminates supply-chain risk</li>
                 <li><strong>Privacy by design</strong> (Art. 25(1)) and <strong>privacy by default</strong> (Art. 25(2))</li>
+            </ul>
+            <h3 class="section__subheading">SageBills</h3>
+            <ul>
+                <li><strong>On-device processing:</strong> All OCR and predictions run locally</li>
+                <li><strong>No third-party code:</strong> Zero external SDKs</li>
+            </ul>
+            <h3 class="section__subheading">SageMeet</h3>
+            <ul>
+                <li><strong>User-controlled AI:</strong> External transmission only when explicitly requested</li>
+                <li><strong>Private Mode:</strong> Complete disabling of all external data transmission</li>
+                <li><strong>Keychain security:</strong> Hardware-backed encryption for API keys</li>
+            </ul>
+            <h3 class="section__subheading">SageDocs (Enhanced)</h3>
+            <ul>
+                <li><strong>AES-256-GCM encryption</strong> of all document attachments</li>
+                <li><strong>PBKDF2-SHA256</strong> key derivation (600,000 iterations)</li>
+                <li><strong>256-bit random salt</strong> per installation (Keychain)</li>
+                <li><strong>Biometric-protected key storage</strong> (<code>.biometryCurrentSet</code>)</li>
+                <li><strong>Constant-time PIN comparison</strong></li>
+                <li><strong>Progressive lockout</strong> after failed authentication</li>
+                <li><strong>Privacy-respecting logging</strong> (never contains PINs, keys, or content)</li>
+                <li><strong>Secure temp files</strong> with immediate cleanup after sharing</li>
+                <li><strong>No third-party code:</strong> Zero external SDKs</li>
             </ul>
         </div>
 
         <div class="section" id="g12">
             <h2 class="section__heading"><span class="section__num">12</span> Breach Notification</h2>
-            <p>Per <strong>Articles 33 and 34</strong>: Given the local-only architecture, traditional data breaches are not applicable. Should a vulnerability be identified:</p>
+            <p>Per <strong>Articles 33 and 34</strong>: Given the local-first architecture, traditional data breaches are not applicable. Should a vulnerability be identified:</p>
             <ul>
                 <li>Users will be notified through an app update</li>
                 <li>ANSPDCP will be notified within <strong>72 hours</strong> (Art. 33)</li>
@@ -1478,10 +1652,10 @@
         <header class="doc-header">
             <div class="doc-header__badge">Active Document</div>
             <h1 class="doc-header__title">Terms of <em>Service</em></h1>
-            <p class="doc-header__subtitle">The agreement between you and Sagelight Studio, covering SageBills and SageMeet. Clear, fair, and respectful of your rights as a European consumer.</p>
+            <p class="doc-header__subtitle">The agreement between you and Sagelight Studio, covering SageBills, SageMeet, and SageDocs. Clear, fair, and respectful of your rights as a European consumer.</p>
             <div class="doc-header__meta">
                 <span>Last updated: April 11, 2026</span>
-                <span>Effective: April 1, 2026</span>
+                <span>Effective: April 11, 2026</span>
             </div>
         </header>
 
@@ -1489,12 +1663,12 @@
             <div class="key-point">
                 <span class="key-point__icon">&#128241;</span>
                 <div class="key-point__title">Your Data, Your Control</div>
-                <div class="key-point__desc">SageBills data stays local. SageMeet data is local except when you use AI features.</div>
+                <div class="key-point__desc">SageBills: local. SageMeet: local + optional AI. SageDocs: encrypted + iCloud.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127873;</span>
                 <div class="key-point__title">Free to Use</div>
-                <div class="key-point__desc">Both SageBills and SageMeet are provided free of charge.</div>
+                <div class="key-point__desc">All Sagelight Studio apps are currently provided free of charge.</div>
             </div>
             <div class="key-point">
                 <span class="key-point__icon">&#127466;&#127482;</span>
@@ -1533,31 +1707,42 @@
             <p><strong>SageBills</strong> is a utility bill tracking application for iOS and macOS. Features include bill recording, invoice scanning (OCR), cost predictions, anomaly detection, savings goals, due date reminders, and CSV data export.</p>
             <div class="callout">SageBills is a personal finance <strong>tracking</strong> tool. It does not provide financial advice, nor does it process payments to utility providers.</div>
             <p><strong>SageMeet</strong> is a meeting recording and AI transcription application for iOS and macOS. Features include audio recording, AI-powered transcription (via OpenAI Whisper), meeting note generation (via GPT-4o), semantic search, speaker analytics, calendar integration, and iCloud sync.</p>
-            <div class="callout">SageMeet is a <strong>productivity</strong> tool. AI-generated outputs (transcripts, notes, analytics) may be inaccurate and should not be relied upon for legal, medical, or financial decisions.</div>
+            <div class="callout">SageMeet is a <strong>productivity</strong> tool. AI-generated outputs may be inaccurate and should not be relied upon for legal, medical, or financial decisions.</div>
+            <p><strong>SageDocs</strong> is a personal document vault application for iOS and macOS. Features include secure document storage with AES-256-GCM encryption, document scanning via camera, biometric/PIN protection, document categorization, expiry tracking with reminders, secure sharing, and iCloud sync of encrypted data.</p>
+            <div class="callout">SageDocs is a <strong>personal document management</strong> tool. It is not a certified digital safe, legal archive, or replacement for official document repositories.</div>
         </div>
 
         <div class="section" id="t3">
             <h2 class="section__heading"><span class="section__num">03</span> System Requirements</h2>
             <h3 class="section__subheading">SageBills</h3>
             <ul>
-                <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later</li>
-                <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later</li>
+                <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later (iOS 26+ recommended)</li>
+                <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later (macOS 26+ recommended)</li>
                 <li>An Apple ID for downloading</li>
             </ul>
             <p>Internet is only required for downloading the app. Core functionality works entirely offline.</p>
             <h3 class="section__subheading">SageMeet</h3>
             <ul>
-                <li><strong>iOS:</strong> iPhone or iPad running iOS 16.0 or later</li>
-                <li><strong>macOS:</strong> Mac running macOS 13.0 (Ventura) or later</li>
+                <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later (iOS 26+ recommended)</li>
+                <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later (macOS 26+ recommended)</li>
                 <li>An Apple ID for downloading</li>
             </ul>
             <p>SageMeet requires an internet connection for AI features and a user-provided OpenAI API key. Recording and local playback work offline.</p>
+            <h3 class="section__subheading">SageDocs</h3>
+            <ul>
+                <li><strong>iOS:</strong> iPhone or iPad running iOS 17.0 or later (iOS 26+ recommended)</li>
+                <li><strong>macOS:</strong> Mac running macOS 14.0 (Sonoma) or later (macOS 26+ recommended)</li>
+                <li>An Apple ID for downloading</li>
+                <li>An iCloud account for document sync across devices</li>
+                <li>Face ID, Touch ID, or a device passcode for biometric authentication (master PIN is always required)</li>
+            </ul>
         </div>
 
         <div class="section" id="t4">
             <h2 class="section__heading"><span class="section__num">04</span> Pricing</h2>
-            <p>Both SageBills and SageMeet are provided <strong>free of charge</strong>. No subscription or payment is required.</p>
+            <p>All Sagelight Studio apps are currently provided <strong>free of charge</strong>. No subscription or payment is required.</p>
             <p>For SageMeet, you provide your own OpenAI API key to use AI features; usage costs are billed directly by OpenAI under your own account.</p>
+            <p>We reserve the right to introduce optional subscription tiers in the future. Any paid features will be clearly communicated, and existing free functionality will not be removed.</p>
         </div>
 
         <div class="section" id="t5">
@@ -1572,18 +1757,24 @@
             <div class="callout callout--warning">
                 <strong>Important:</strong> You are responsible for backing up your recordings. We do not have access to your meeting data.
             </div>
+            <h3 class="section__subheading">SageDocs</h3>
+            <p>SageDocs stores all document metadata locally and syncs via CloudKit. All attachments are encrypted with AES-256-GCM before storage.</p>
+            <div class="callout callout--warning">
+                <strong>Critical:</strong> You must remember your master PIN. If you lose your PIN and cannot authenticate via biometrics, your encrypted documents cannot be recovered. We cannot reset your PIN or access your encryption keys.
+            </div>
         </div>
 
         <div class="section" id="t6">
             <h2 class="section__heading"><span class="section__num">06</span> Data Ownership</h2>
-            <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data. You are responsible for the accuracy of data you enter, including reviewing OCR-extracted results.</p>
-            <p><strong>SageMeet AI outputs:</strong> AI-generated outputs (transcripts, notes, summaries, analytics) are derived content. You own your recordings and input data. AI-generated outputs are subject to <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">OpenAI's usage policies</a>.</p>
+            <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data.</p>
+            <p><strong>SageMeet AI outputs:</strong> AI-generated outputs are derived content. You own your recordings and input data. AI outputs are subject to <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">OpenAI's usage policies</a>.</p>
+            <p><strong>SageDocs:</strong> All documents and metadata you store remain entirely your property. Encrypted data synced to iCloud is protected by your personal encryption key.</p>
         </div>
 
         <div class="section" id="t7">
             <h2 class="section__heading"><span class="section__num">07</span> Intellectual Property</h2>
             <p>The apps' design, code, UI, graphics, and icons are owned by Sagelight Studio and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license for personal use.</p>
-            <p>You may not copy, modify, distribute, reverse-engineer, or use the app to develop a competing product.</p>
+            <p>You may not copy, modify, distribute, reverse-engineer, or use any app to develop a competing product.</p>
         </div>
 
         <div class="section" id="t8">
@@ -1593,13 +1784,15 @@
                 <li>Circumventing any access controls or security measures</li>
                 <li>Reverse-engineering or tampering with the app's source code</li>
                 <li>Using the app in ways that could damage or impair its functionality</li>
+                <li>Attempting to extract encryption keys, bypass PIN/biometric protection, or access other users' encrypted data (SageDocs)</li>
             </ul>
         </div>
 
         <div class="section" id="t9">
             <h2 class="section__heading"><span class="section__num">09</span> Warranties and Liability</h2>
             <div class="legal-caps">The apps are provided "as is" without warranties of any kind, express or implied. We do not warrant that the apps will be uninterrupted, error-free, or that predictions will be accurate. To the maximum extent permitted by law, our total liability is limited to the amount, if any, you have paid us in the preceding twelve months.</div>
-            <div class="callout callout--warning"><strong>AI accuracy disclaimer (SageMeet):</strong> AI-generated transcriptions, summaries, and analytics may be inaccurate. SageMeet does not guarantee the accuracy of AI outputs. Do not rely on them for legal, medical, or financial decisions. You are responsible for reviewing all AI-generated content.</div>
+            <div class="callout callout--warning"><strong>AI accuracy disclaimer (SageMeet):</strong> AI-generated transcriptions, summaries, and analytics may be inaccurate. Do not rely on them for legal, medical, or financial decisions.</div>
+            <div class="callout callout--warning"><strong>Encryption disclaimer (SageDocs):</strong> While SageDocs uses industry-standard encryption (AES-256-GCM), no security system is infallible. SageDocs is not a certified digital safe or legally recognized secure archive.</div>
             <div class="callout"><strong>EU consumers:</strong> This does not affect your statutory rights under the EU Digital Content Directive (2019/770). Liability cannot be excluded for intentional misconduct or gross negligence.</div>
         </div>
 
@@ -1630,7 +1823,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__brand">
-            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet
+            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet &middot; SageDocs
         </div>
         <div class="footer__links">
             <a href="#" onclick="switchDoc('privacy'); return false;">Privacy</a>
@@ -1645,16 +1838,16 @@
     // ========================================
     // THEME MANAGEMENT
     // ========================================
-    const themes = ['dark', 'light', 'system'];
-    const themeIcons = { dark: '\u263E', light: '\u2600', system: '\u25D1' };
-    let currentThemeIndex = 0;
+    var themes = ['dark', 'light', 'system'];
+    var themeIcons = { dark: '\u263E', light: '\u2600', system: '\u25D1' };
+    var currentThemeIndex = 0;
 
     function getSystemTheme() {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
     function applyTheme(theme) {
-        const resolved = theme === 'system' ? getSystemTheme() : theme;
+        var resolved = theme === 'system' ? getSystemTheme() : theme;
         document.documentElement.setAttribute('data-theme', resolved);
         document.getElementById('themeIcon').textContent = themeIcons[theme];
         localStorage.setItem('sage-theme', theme);
@@ -1667,8 +1860,8 @@
 
     // Init theme
     (function() {
-        const saved = localStorage.getItem('sage-theme');
-        if (saved && themes.includes(saved)) {
+        var saved = localStorage.getItem('sage-theme');
+        if (saved && themes.indexOf(saved) !== -1) {
             currentThemeIndex = themes.indexOf(saved);
         }
         applyTheme(themes[currentThemeIndex]);
