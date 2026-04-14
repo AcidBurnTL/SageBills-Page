@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sagelight-studio.com/sitemap.xml
+
+# SageBills — sagelight-studio.com
+# Privacy-first utility tracker for European households
