@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageBills — Press Kit | Sagelight Studio</title>
+    <meta name="description" content="Press kit for SageBills — the privacy-first utility bill tracker for European households. Media resources, brand assets, press release, and contact information.">
+    <meta property="og:title" content="SageBills Press Kit — Sagelight Studio">
+    <meta property="og:description" content="Press resources for SageBills. Download brand assets, read the press release, and get in touch.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagelight-studio.com/press-kit.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SageBills Press Kit">
+    <meta name="twitter:description" content="Everything journalists need to cover SageBills.">
+    <meta name="theme-color" content="#00d672">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sagelight-studio.com/press-kit.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           SAGE DESIGN SYSTEM — CSS Variables
+           ======================================== */
+        :root {
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s ease;
+            --nav-height: 64px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #050505;
+            --bg-surface: #0a0a0a;
+            --bg-surface-2: #111113;
+            --bg-surface-3: #1a1a1e;
+            --green: #00d672;
+            --green-dim: rgba(0, 214, 114, 0.2);
+            --green-glow: rgba(0, 214, 114, 0.08);
+            --green-muted: #0a8a4a;
+            --text: #e8e8ed;
+            --text-secondary: #a0a0ab;
+            --text-dim: #6e6e78;
+            --text-muted: #3a3a42;
+            --border: #1e1e24;
+            --border-hover: #2e2e36;
+            --card-bg: #0d0d10;
+            --card-border: #1e1e24;
+            --highlight-bg: rgba(0, 214, 114, 0.06);
+            --scrollbar-track: #111113;
+            --scrollbar-thumb: #2a2a32;
+        }
+
+        [data-theme="light"] {
+            --bg: #fafaf9;
+            --bg-surface: #ffffff;
+            --bg-surface-2: #f5f5f3;
+            --bg-surface-3: #eeeee9;
+            --green: #059652;
+            --green-dim: rgba(5, 150, 82, 0.12);
+            --green-glow: rgba(5, 150, 82, 0.06);
+            --green-muted: #078a4c;
+            --text: #1a1a1e;
+            --text-secondary: #52525b;
+            --text-dim: #8a8a96;
+            --text-muted: #c0c0c8;
+            --border: #e4e4e0;
+            --border-hover: #d0d0cc;
+            --card-bg: #ffffff;
+            --card-border: #e4e4e0;
+            --highlight-bg: rgba(5, 150, 82, 0.04);
+            --scrollbar-track: #f0f0ee;
+            --scrollbar-thumb: #ccccc8;
+        }
+
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 24px);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        ::selection {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover { opacity: 0.8; }
+
+        /* ========================================
+           BACKGROUND EFFECTS
+           ======================================== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        .glow-orb--1 {
+            width: 500px;
+            height: 500px;
+            top: -120px;
+            right: -100px;
+            background: radial-gradient(circle, var(--green-dim) 0%, transparent 70%);
+            animation: float-1 10s ease-in-out infinite;
+        }
+        .glow-orb--2 {
+            width: 400px;
+            height: 400px;
+            bottom: -80px;
+            left: -60px;
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+            animation: float-2 8s ease-in-out infinite;
+        }
+        .glow-orb--3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+            animation: float-1 14s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, 20px); }
+        }
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -15px); }
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .nav {
+            background: rgba(250, 250, 249, 0.85);
+        }
+
+        .nav__logo {
+            font-family: var(--font-body);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .nav__logo span { color: var(--green); }
+
+        .nav__links {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav__link {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .nav__link:hover {
+            color: var(--text);
+            background: var(--bg-surface-2);
+            opacity: 1;
+        }
+        .nav__link--active {
+            color: var(--green);
+            background: var(--green-glow);
+            border-color: var(--green-dim);
+        }
+
+        .nav__actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        .theme-toggle:hover {
+            color: var(--green);
+            border-color: var(--green-dim);
+            background: var(--green-glow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* ========================================
+           MAIN LAYOUT
+           ======================================== */
+        .main {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 64px) 40px 100px;
+            min-height: 100vh;
+        }
+
+        /* ========================================
+           SCROLL ANIMATIONS
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal--d1 { transition-delay: 0.1s; }
+        .reveal--d2 { transition-delay: 0.2s; }
+        .reveal--d3 { transition-delay: 0.3s; }
+        .reveal--d4 { transition-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        .animate-in--d1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-in--d2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-in--d3 { animation-delay: 0.3s; opacity: 0; }
+
+        /* ========================================
+           HERO
+           ======================================== */
+        .hero {
+            margin-bottom: 80px;
+            padding-bottom: 56px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green);
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px;
+            padding: 6px 16px;
+            margin-bottom: 24px;
+        }
+        .badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
+
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.05;
+            color: var(--text);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        .hero__title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .hero__subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 580px;
+            margin-bottom: 32px;
+        }
+
+        .hero__cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+        }
+        .btn--primary {
+            background: var(--green);
+            color: #050505;
+        }
+        .btn--primary:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+        .btn--outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .btn--outline:hover {
+            color: var(--green);
+            border-color: var(--green-dim);
+            background: var(--green-glow);
+            opacity: 1;
+        }
+
+        /* ========================================
+           SECTION HEADINGS
+           ======================================== */
+        .section {
+            margin-bottom: 72px;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 4vw, 38px);
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        /* ========================================
+           QUICK FACTS CARD
+           ======================================== */
+        .facts-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+        }
+        .facts-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green) 0%, transparent 100%);
+        }
+
+        .facts-card__header {
+            padding: 28px 32px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .app-icon-mini {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #00d672 0%, #00a855 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .app-icon-mini svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .facts-card__header-text h3 {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .facts-card__header-text p {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 2px;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+
+        .fact-row {
+            display: contents;
+        }
+
+        .fact-item {
+            padding: 18px 32px;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .fact-item:nth-child(even) {
+            border-right: none;
+        }
+        .fact-item:hover {
+            background: var(--highlight-bg);
+        }
+
+        .fact-item__label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            margin-bottom: 4px;
+        }
+
+        .fact-item__value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.4;
+        }
+        .fact-item__value a {
+            color: var(--green);
+            word-break: break-all;
+        }
+
+        /* ========================================
+           PRESS RELEASE
+           ======================================== */
+        .press-release {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .press-release::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--green) 0%, transparent 100%);
+        }
+
+        .pr-release-line {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pr-release-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .pr-headline {
+            font-family: var(--font-display);
+            font-size: clamp(22px, 3.5vw, 32px);
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .pr-dateline {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pr-body p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .pr-body p strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .pr-subhead {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 32px 0 12px;
+        }
+
+        .pr-body ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .pr-body li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 6px;
+        }
+
+        .pr-boilerplate {
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+        }
+        .pr-boilerplate-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+        }
+        .pr-boilerplate p {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .pr-contact {
+            margin-top: 28px;
+            padding: 20px 24px;
+            background: var(--highlight-bg);
+            border: 1px solid var(--green-dim);
+            border-radius: var(--radius-sm);
+        }
+        .pr-contact-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .pr-contact p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* ========================================
+           TALKING POINTS
+           ======================================== */
+        .talking-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .talking-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .talking-card:hover {
+            border-color: var(--green-dim);
+            background: var(--highlight-bg);
+            transform: translateY(-2px);
+        }
+        .talking-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--green);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+        }
+        .talking-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .talking-card__num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--green);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .talking-card__title {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .talking-card__body {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           FAQ ACCORDION
+           ======================================== */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 22px 28px;
+            background: var(--card-bg);
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .faq-question:hover {
+            background: var(--bg-surface-2);
+        }
+        .faq-item.open .faq-question {
+            color: var(--green);
+            background: var(--highlight-bg);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--text-dim);
+            transition: var(--transition);
+        }
+        .faq-item.open .faq-icon {
+            background: var(--green);
+            border-color: var(--green);
+            color: #050505;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            background: var(--bg-surface);
+        }
+        .faq-item.open .faq-answer {
+            max-height: 600px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 28px 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .faq-answer-inner p + p {
+            margin-top: 12px;
+        }
+        .faq-answer-inner strong {
+            color: var(--text);
+        }
+
+        /* ========================================
+           BRAND ASSETS
+           ======================================== */
+        .brand-section {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .app-icon-large {
+            width: 140px;
+            height: 140px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, #00d672 0%, #00a855 60%, #007d40 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 20px 60px rgba(0, 214, 114, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .app-icon-large::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 70%;
+            height: 60%;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            filter: blur(16px);
+        }
+
+        .app-icon-large svg {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-swatch__chip {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .color-swatch__chip:hover {
+            transform: scale(1.08);
+        }
+
+        .color-swatch__hex {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-align: center;
+        }
+        .color-swatch__name {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .type-samples {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .type-sample {
+            padding: 20px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+        }
+        .type-sample__label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        .type-sample__display {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.1;
+        }
+        .type-sample__body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .download-btn-wrap {
+            margin-top: 24px;
+        }
+
+        /* ========================================
+           SCREENSHOTS
+           ======================================== */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .screenshot-frame {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .screenshot-phone {
+            width: 100%;
+            aspect-ratio: 9/19.5;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 28px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .screenshot-phone:hover {
+            border-color: var(--green-dim);
+            box-shadow: 0 0 30px var(--green-glow);
+        }
+
+        .screenshot-phone::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .screenshot-phone__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 32px 20px 20px;
+            text-align: center;
+        }
+
+        .screenshot-icon {
+            font-size: 28px;
+            opacity: 0.4;
+        }
+
+        .screenshot-placeholder-text {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        /* Simulated screen content */
+        .screen-bars {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 0 16px;
+        }
+        .screen-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: var(--bg-surface-3);
+        }
+        .screen-bar--green {
+            background: var(--green-dim);
+        }
+        .screen-bar--w100 { width: 100%; }
+        .screen-bar--w80 { width: 80%; }
+        .screen-bar--w65 { width: 65%; }
+        .screen-bar--w45 { width: 45%; }
+
+        .screenshot-caption {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        /* ========================================
+           COVERAGE / QUOTES
+           ======================================== */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .quote-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 28px;
+            position: relative;
+        }
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-family: var(--font-display);
+            font-size: 64px;
+            color: var(--green-dim);
+            line-height: 1;
+        }
+
+        .quote-card__text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .quote-card__author {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .quote-card__name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .quote-card__pub {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .coverage-placeholder {
+            padding: 24px;
+            background: var(--card-bg);
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .coverage-placeholder p {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .seen-in-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .publication-badge {
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        .publication-badge:hover {
+            border-color: var(--green-dim);
+            color: var(--text);
+        }
+
+        /* ========================================
+           CONTACT
+           ======================================== */
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+        }
+
+        .contact-card__title {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .contact-card__title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .contact-card__subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 16px;
+            color: var(--green);
+            font-weight: 500;
+            padding: 16px 32px;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+        .contact-email:hover {
+            background: var(--green-dim);
+            opacity: 1;
+        }
+
+        .contact-meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--bg-surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .social-btn:hover {
+            border-color: var(--green-dim);
+            color: var(--green);
+            opacity: 1;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer__brand {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+        .footer__brand strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .footer__brand strong span { color: var(--green); }
+
+        .footer__links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .footer__links a {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer__links a:hover { color: var(--green); opacity: 1; }
+
+        .footer__tagline {
+            width: 100%;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ========================================
+           DIVIDER
+           ======================================== */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 72px 0;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px; }
+            .nav__links { display: none; }
+            .nav__links--open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: var(--bg-surface);
+                border-bottom: 1px solid var(--border);
+                padding: 12px;
+                gap: 4px;
+            }
+            .mobile-menu-btn { display: flex; }
+            .main { padding: calc(var(--nav-height) + 40px) 20px 60px; }
+            .facts-grid { grid-template-columns: 1fr; }
+            .fact-item { border-right: none; }
+            .talking-grid { grid-template-columns: 1fr; }
+            .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+            .quotes-grid { grid-template-columns: 1fr; }
+            .press-release { padding: 28px 24px; }
+            .brand-section { grid-template-columns: 1fr; }
+            .footer { flex-direction: column; align-items: flex-start; }
+            .color-palette { gap: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero__title { font-size: 32px; }
+            .section-title { font-size: 24px; }
+            .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-card { padding: 28px 20px; }
+        }
+
+        /* ========================================
+           PRINT
+           ======================================== */
+        @media print {
+            .bg-grid, .glow-orb, .nav, .theme-toggle, .mobile-menu-btn { display: none !important; }
+            body { background: #fff; color: #111; }
+            .main { padding: 20px; max-width: 100%; }
+            .facts-card, .talking-card, .faq-item, .press-release, .quote-card { border: 1px solid #ddd; }
+            a { color: #111; text-decoration: underline; }
+            .reveal { opacity: 1; transform: none; }
+            .section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background effects -->
+<div class="bg-grid"></div>
+<div class="glow-orb glow-orb--1"></div>
+<div class="glow-orb glow-orb--2"></div>
+<div class="glow-orb glow-orb--3"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <a href="../index.html" class="nav__logo">Sagelight <span>Studio</span></a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="../docs/sagebills.html" class="nav__link">SageBills</a></li>
+        <li><a href="index.html" class="nav__link">Legal</a></li>
+        <li><a href="press-kit.html" class="nav__link nav__link--active">Press Kit</a></li>
+    </ul>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme">
+            <span id="themeIcon">&#9790;</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu">&#9776;</button>
+    </div>
+</nav>
+
+<main class="main">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero animate-in">
+        <div class="badge">Press Kit</div>
+        <h1 class="hero__title">SageBills &mdash; <em>Press</em> Resources</h1>
+        <p class="hero__subtitle">Everything journalists and content creators need to cover SageBills. Download assets, read the release, and get in touch.</p>
+        <div class="hero__cta-row">
+            <a href="mailto:contact@sagelight-studio.com" class="btn btn--primary">&#9993; Contact Press Team</a>
+            <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener" class="btn btn--outline">&#8599; App Store Listing</a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         QUICK FACTS
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">At a Glance</div>
+        <h2 class="section-title">Quick <em>Facts</em></h2>
+
+        <div class="facts-card">
+            <div class="facts-card__header">
+                <div class="app-icon-mini">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M16 4C10 4 6 9 6 14c0 3.5 1.8 6.5 4.5 8.2L16 28l5.5-5.8C24.2 20.5 26 17.5 26 14c0-5-4-10-10-10z" fill="rgba(255,255,255,0.9)"/>
+                        <path d="M16 8c-1.5 3-1.5 6 0 8 1.5-2 1.5-5 0-8z" fill="rgba(0,180,90,0.7)"/>
+                    </svg>
+                </div>
+                <div class="facts-card__header-text">
+                    <h3>SageBills</h3>
+                    <p>Smart Utility Bill Tracker &mdash; iOS &amp; macOS</p>
+                </div>
+            </div>
+            <div class="facts-grid">
+                <div class="fact-item">
+                    <div class="fact-item__label">App</div>
+                    <div class="fact-item__value">SageBills &mdash; Smart Utility Bill Tracker</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Platform</div>
+                    <div class="fact-item__value">iOS 17+ / macOS 14+ (Sonoma)</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Price</div>
+                    <div class="fact-item__value">Free &mdash; no subscription, no in-app purchases</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Launch</div>
+                    <div class="fact-item__value">April 2026</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Markets</div>
+                    <div class="fact-item__value">27 EU countries</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Pre-loaded Providers</div>
+                    <div class="fact-item__value">39 utility providers</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Bill Categories</div>
+                    <div class="fact-item__value">40+ bill types</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Currencies</div>
+                    <div class="fact-item__value">12+ supported</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Privacy</div>
+                    <div class="fact-item__value">Zero third-party SDKs &mdash; no account required</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Developer</div>
+                    <div class="fact-item__value">Sagelight Studio (Romania, EU)</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">App Store</div>
+                    <div class="fact-item__value"><a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener">apps.apple.com/us/app/sagebills/id6762021142</a></div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-item__label">Press Contact</div>
+                    <div class="fact-item__value"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         PRESS RELEASE
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">Official Release</div>
+        <h2 class="section-title">Press <em>Release</em></h2>
+
+        <div class="press-release">
+            <div class="pr-release-line">For Immediate Release</div>
+
+            <h3 class="pr-headline">Sagelight Studio Launches SageBills &mdash; The Privacy-First Utility Tracker Built for European Households</h3>
+
+            <div class="pr-dateline">ROMANIA, April 2026 &mdash; Sagelight Studio</div>
+
+            <div class="pr-body">
+                <p><strong>ROMANIA &mdash;</strong> Sagelight Studio today announced the launch of <strong>SageBills</strong>, a free utility bill tracking application for iPhone and Mac designed specifically for European households. SageBills addresses a critical gap in the personal finance market: while over 27 million Central and Eastern European (CEE) households manage multiple utility contracts across electricity, gas, water, internet, and heating, no dedicated tool has existed to track, analyze, and predict these recurring expenses &mdash; until now.</p>
+
+                <p>Available immediately on the App Store for iOS 17+ and macOS 14+, SageBills provides a private, offline-first experience built around the realities of European utility billing: regional providers, local currencies, paper invoices, and the unpredictable cost swings characteristic of CEE energy markets.</p>
+
+                <div class="pr-subhead">Addressing a Market Ignored by Western Apps</div>
+
+                <p>Popular budgeting applications such as Mint, YNAB, and Spendee are designed primarily for North American or Western European markets, offering bank integrations and subscription tracking that do not map to Eastern European utility structures. SageBills is built from the ground up for the CEE context: 27 EU countries, 39 pre-loaded providers, 40+ bill categories, and 12+ supported currencies.</p>
+
+                <div class="pr-subhead">Privacy as Architecture, Not Policy</div>
+
+                <p>Unlike most financial apps, SageBills collects no user data whatsoever. The application contains zero third-party SDKs, requires no account or email registration, and operates entirely on-device. All bill data is stored locally using Apple's SwiftData framework with NSFileProtectionComplete encryption. No analytics, telemetry, or advertising identifiers of any kind are present in the codebase.</p>
+
+                <p>"Privacy in financial apps is usually a checkbox &mdash; a policy document. We made it an architectural constraint," said the founder of Sagelight Studio. "SageBills cannot leak your data because it never touches our servers. That's not a feature; it's the foundation."</p>
+
+                <div class="pr-subhead">On-Device Intelligence</div>
+
+                <p>SageBills includes AI-powered bill predictions and anomaly detection that run entirely on-device using Core ML. The app can identify unusual spikes in utility costs, forecast upcoming bills based on historical patterns, and surface savings opportunities &mdash; all without transmitting any data to external servers. OCR scanning for paper invoices is also processed locally.</p>
+
+                <div class="pr-subhead">Key Features</div>
+                <ul>
+                    <li><strong>Bill tracking dashboard</strong> with monthly and annual summaries</li>
+                    <li><strong>Calendar heatmap</strong> visualizing spending across the year</li>
+                    <li><strong>On-device AI predictions</strong> for upcoming bills and cost anomaly alerts</li>
+                    <li><strong>OCR document scanning</strong> for paper invoices (fully local)</li>
+                    <li><strong>39 pre-loaded utility providers</strong> across 27 EU countries</li>
+                    <li><strong>12+ currency support</strong> including RON, HUF, CZK, PLN, and more</li>
+                    <li><strong>Savings goals</strong> and budget tracking per utility category</li>
+                    <li><strong>iCloud sync</strong> across iPhone and Mac (zero Sagelight servers involved)</li>
+                </ul>
+
+                <div class="pr-subhead">Availability and Pricing</div>
+
+                <p>SageBills is available now on the App Store at no cost. There is no freemium model, no subscription tier, no advertising, and no in-app purchases. The app is supported solely by the developer's commitment to building honest software.</p>
+            </div>
+
+            <div class="pr-boilerplate">
+                <div class="pr-boilerplate-label">About Sagelight Studio</div>
+                <p>Sagelight Studio is an independent software studio based in Romania, European Union, founded by a solo developer with a focus on privacy-respecting productivity and personal finance tools for European users. Current apps include SageBills (utility bill tracking), SageMeet (AI meeting recorder), and SageDocs (encrypted document vault). All Sagelight Studio apps are built with zero third-party SDKs and are GDPR-native by design.</p>
+            </div>
+
+            <div class="pr-contact">
+                <div class="pr-contact-label">Media Contact</div>
+                <p><strong>Sagelight Studio</strong> &mdash; Press Inquiries<br>
+                Email: <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a><br>
+                App Store: <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener">apps.apple.com/us/app/sagebills/id6762021142</a><br>
+                Website: <a href="https://sagelight-studio.com">sagelight-studio.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         TALKING POINTS
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">Editorial Angles</div>
+        <h2 class="section-title">Key <em>Talking Points</em></h2>
+
+        <div class="talking-grid">
+            <div class="talking-card reveal reveal--d1">
+                <div class="talking-card__num">01 / The CEE Gap</div>
+                <div class="talking-card__title">Most Finance Apps Ignore European Utility Patterns</div>
+                <div class="talking-card__body">Western budgeting tools are built around bank feeds, credit card tracking, and subscription management. CEE households pay 5&ndash;8 separate utility bills monthly, often in cash or via local bank transfer, with providers that Mint or YNAB have never heard of. SageBills is the first app built for this reality.</div>
+            </div>
+
+            <div class="talking-card reveal reveal--d2">
+                <div class="talking-card__num">02 / Privacy as a Feature</div>
+                <div class="talking-card__title">Zero SDKs, Zero Tracking, Zero Accounts</div>
+                <div class="talking-card__body">SageBills collects nothing. No analytics framework, no advertising SDK, no crash reporter, no account system. The app is structurally incapable of leaking financial data because it never transmits any. In an era of financial data breaches, this is the only responsible architecture for a bill-tracking app.</div>
+            </div>
+
+            <div class="talking-card reveal reveal--d1">
+                <div class="talking-card__num">03 / AI That Works Offline</div>
+                <div class="talking-card__title">Predictions and Anomaly Detection Run On-Device</div>
+                <div class="talking-card__body">Bill cost predictions, seasonal forecasting, and anomaly alerts are powered by Core ML and run entirely on the user's device. No data is sent to OpenAI, no API key is required, and the features work in airplane mode. This is AI built the right way for sensitive financial data.</div>
+            </div>
+
+            <div class="talking-card reveal reveal--d2">
+                <div class="talking-card__num">04 / Built for Real Bills</div>
+                <div class="talking-card__title">39 Providers Pre-Loaded, OCR for Local Invoices</div>
+                <div class="talking-card__body">SageBills ships with 39 utility providers across 27 EU countries, covering electricity, gas, water, internet, heating, and waste. For providers not in the database, on-device OCR scanning reads paper invoices directly. No manual data entry for the majority of European users.</div>
+            </div>
+
+            <div class="talking-card reveal reveal--d1">
+                <div class="talking-card__num">05 / Free With No Catch</div>
+                <div class="talking-card__title">No Freemium, No Ads, No Data Monetization</div>
+                <div class="talking-card__body">SageBills is free &mdash; completely. No premium tier locks away useful features. No ads appear between your bill entries. The developer does not sell or monetize user data (and couldn't, because none is collected). The business model is honest software: build something good, charge fairly, and respect users.</div>
+            </div>
+
+            <div class="talking-card reveal reveal--d2">
+                <div class="talking-card__num">06 / Made in Europe</div>
+                <div class="talking-card__title">Romanian Indie Developer, GDPR-Native</div>
+                <div class="talking-card__body">Sagelight Studio is a Romanian indie developer building for the European market from within it. GDPR compliance is not a legal afterthought &mdash; it is the starting architecture. SageBills was designed to be fully GDPR compliant even before a single line of code was written, because the developer operates under GDPR themselves.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">Journalist Resources</div>
+        <h2 class="section-title">FAQ for <em>Journalists</em></h2>
+
+        <div class="faq-list" id="faqList">
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What is SageBills?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>SageBills is a free utility bill tracking application for iPhone and Mac, built specifically for European households. It lets users log, categorize, and analyze recurring utility expenses &mdash; electricity, gas, water, internet, heating, and more &mdash; using a fully local, privacy-first architecture. The app includes AI-powered predictions, OCR invoice scanning, a calendar heatmap, and savings goal tracking, all without requiring an account or transmitting any data off-device.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How does it make money if it's free?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Currently, SageBills is supported directly by the developer as part of building a portfolio of honest, privacy-respecting apps. There are no ads, no in-app purchases, and no data monetization of any kind. The long-term model for Sagelight Studio is building a suite of apps that users trust enough to pay for directly &mdash; either as one-time purchases or optional support tiers. For now, SageBills is genuinely free with no hidden costs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What makes it different from Mint, YNAB, or Spendee?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>SageBills is purpose-built for utility bill tracking rather than general budgeting. The key differences are:</p>
+                        <p><strong>European-first:</strong> 39 pre-loaded EU providers, regional currencies, and bill structures that Western apps don't support. <strong>No bank connection required:</strong> Most budgeting apps require linking your bank account. SageBills is entirely manual and local. <strong>Zero accounts:</strong> No sign-up, no email, no cloud account. <strong>On-device AI:</strong> Bill predictions without any data leaving the device. <strong>Free, truly:</strong> No freemium walls hiding essential features.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How does the AI prediction work?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>SageBills uses Apple's Core ML framework to run prediction models directly on the user's device. The models analyze historical bill data stored locally &mdash; amounts, dates, seasonal patterns, and provider behavior &mdash; to forecast upcoming bills and flag anomalies (e.g., an electricity bill that is 40% higher than the seasonal average). No data is sent to any external API. The predictions improve as the user logs more bills over time, all without any server involvement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Does it access my bank account?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>No.</strong> SageBills does not connect to bank accounts, payment systems, or any financial institution. All bill data is entered manually by the user (or captured via OCR from paper invoices). This is a deliberate design decision: connecting to a bank account requires trusting a third-party service with sensitive credentials, which contradicts SageBills' privacy-first architecture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What data does it collect?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p><strong>None.</strong> SageBills collects no data. There are no analytics SDKs, no telemetry, no crash reporters, no advertising identifiers, and no usage tracking of any kind. The app is built entirely with Apple's first-party frameworks. The only data that exists is the bill data you enter, stored locally on your device under NSFileProtectionComplete encryption. Sagelight Studio has no technical ability to access it, because it never leaves your device.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Which countries and providers are supported?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>SageBills ships with 39 pre-loaded utility providers across all 27 EU member states, with particular depth in Central and Eastern European markets. Pre-loaded providers cover electricity, natural gas, water, internet/telecom, and district heating. Support spans 12+ currencies including EUR, RON, HUF, CZK, PLN, BGN, HRK, and others. Users can also add any custom provider for bills outside the pre-loaded database.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Is it available on Android?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Not currently. SageBills is an iOS and macOS application built with SwiftUI, SwiftData, and Apple's Core ML framework. An Android version would require a significant rebuild from the ground up. There is no announced timeline for Android support. The developer is focused on delivering the best possible iOS/macOS experience first.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Who is behind Sagelight Studio?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Sagelight Studio is a one-person independent software studio based in Romania, European Union. The studio was founded with a focus on building privacy-respecting productivity and personal finance tools specifically designed for the European market. Current apps include SageBills, SageMeet (AI meeting recorder with local-first architecture), and SageDocs (AES-256-GCM encrypted document vault). All apps share the same privacy-first, zero third-party SDK philosophy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How can I get a demo or schedule an interview?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Please reach out directly by email at <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>. We are happy to provide app access for review, schedule a video call demo, answer detailed technical questions, or arrange a written Q&amp;A. We typically respond within 24 hours. For expedited requests (publication deadline), please indicate that in your subject line and we will prioritize accordingly.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         BRAND ASSETS
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">Visual Identity</div>
+        <h2 class="section-title">Brand <em>Assets</em></h2>
+
+        <div class="brand-section">
+            <!-- App Icon -->
+            <div>
+                <div class="app-icon-large" aria-label="SageBills app icon">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Leaf shape -->
+                        <path d="M40 10C24 10 14 22 14 34c0 8.5 4.5 16 11 20.5L40 70l15-15.5C61.5 50 66 42.5 66 34c0-12-10-24-26-24z" fill="rgba(255,255,255,0.92)"/>
+                        <!-- Leaf vein -->
+                        <path d="M40 16c-3.5 7-3.5 14 0 20 3.5-6 3.5-13 0-20z" fill="rgba(0,168,85,0.65)"/>
+                        <!-- Secondary vein -->
+                        <path d="M40 28c-5 4-8 9-8 14" stroke="rgba(0,168,85,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M40 28c5 4 8 9 8 14" stroke="rgba(0,168,85,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin-top:14px;text-align:center;">App Icon &mdash; 1024px master</p>
+            </div>
+
+            <!-- Colors + Typography -->
+            <div>
+                <p class="section-label" style="margin-bottom:16px;">Brand Colors</p>
+                <div class="color-palette">
+                    <div class="color-swatch">
+                        <div class="color-swatch__chip" style="background:#00d672;" title="Sage Green"></div>
+                        <div class="color-swatch__name">Sage Green</div>
+                        <div class="color-swatch__hex">#00d672</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-swatch__chip" style="background:#050505;border-color:#333;" title="Carbon Dark"></div>
+                        <div class="color-swatch__name">Carbon Dark</div>
+                        <div class="color-swatch__hex">#050505</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-swatch__chip" style="background:#fafaf9;border-color:#ddd;" title="Warm Light"></div>
+                        <div class="color-swatch__name">Warm Light</div>
+                        <div class="color-swatch__hex">#fafaf9</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-swatch__chip" style="background:#e8e8ed;border-color:#ccc;" title="Soft Text"></div>
+                        <div class="color-swatch__name">Soft Text</div>
+                        <div class="color-swatch__hex">#e8e8ed</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-swatch__chip" style="background:#0d0d10;border-color:#333;" title="Card Surface"></div>
+                        <div class="color-swatch__name">Card Surface</div>
+                        <div class="color-swatch__hex">#0d0d10</div>
+                    </div>
+                </div>
+
+                <div class="type-samples">
+                    <div class="type-sample">
+                        <div class="type-sample__label">Display &mdash; Playfair Display 700/900</div>
+                        <div class="type-sample__display">SageBills</div>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample__label">Body &mdash; DM Sans 300/400/600</div>
+                        <div class="type-sample__body">Smart utility bill tracking for European households.</div>
+                    </div>
+                </div>
+
+                <div class="download-btn-wrap">
+                    <button class="btn btn--outline" onclick="alert('Brand asset download coming soon. Contact contact@sagelight-studio.com for an immediate press package.')">&#8595; Download Brand Assets</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         SCREENSHOTS
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">App Screenshots</div>
+        <h2 class="section-title">In-App <em>Screens</em></h2>
+
+        <div class="screenshots-grid">
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#128200;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--w65"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">Dashboard</div>
+            </div>
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#128196;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--w65"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">Bill List</div>
+            </div>
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#128247;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w65"></div>
+                            <div class="screen-bar screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--w45"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">OCR Scan</div>
+            </div>
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#129302;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--w65"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--w45"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">Predictions</div>
+            </div>
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#127919;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--w65"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">Savings Goals</div>
+            </div>
+
+            <div class="screenshot-frame">
+                <div class="screenshot-phone">
+                    <div class="screenshot-phone__content">
+                        <div class="screenshot-icon">&#128197;</div>
+                        <div class="screen-bars">
+                            <div class="screen-bar screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w65"></div>
+                            <div class="screen-bar screen-bar--w80"></div>
+                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
+                            <div class="screen-bar screen-bar--w45"></div>
+                        </div>
+                        <div class="screenshot-placeholder-text">Screenshot</div>
+                    </div>
+                </div>
+                <div class="screenshot-caption">Calendar Heatmap</div>
+            </div>
+
+        </div>
+
+        <div style="margin-top:28px;">
+            <button class="btn btn--outline" onclick="alert('Screenshot download coming soon. Contact contact@sagelight-studio.com for high-resolution assets.')">&#8595; Download All Screenshots</button>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         COVERAGE & QUOTES
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="section-label">Press Coverage</div>
+        <h2 class="section-title">Coverage &amp; <em>Quotes</em></h2>
+
+        <div class="coverage-placeholder">
+            <p>Coverage placements will appear here as reviews are published</p>
+        </div>
+
+        <div class="quotes-grid">
+            <div class="quote-card">
+                <p class="quote-card__text">"Finally, a utility tracker that understands that European households don't all bank with Chase. SageBills is the kind of thoughtful, privacy-respecting app the App Store needs more of."</p>
+                <div class="quote-card__author">
+                    <span class="quote-card__name">Placeholder Reviewer</span>
+                    <span class="quote-card__pub">Tech Publication &mdash; Pending</span>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <p class="quote-card__text">"The on-device AI is the standout feature. Predicting next month's electricity bill without sending a single byte to the cloud is exactly the kind of innovation Apple's own privacy messaging should highlight."</p>
+                <div class="quote-card__author">
+                    <span class="quote-card__name">Placeholder Reviewer</span>
+                    <span class="quote-card__pub">App Review Blog &mdash; Pending</span>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                <p class="quote-card__text">"Sagelight Studio is building the kind of indie apps that made the App Store worth caring about. SageBills is focused, polished, and honest. That's increasingly rare."</p>
+                <div class="quote-card__author">
+                    <span class="quote-card__name">Placeholder Reviewer</span>
+                    <span class="quote-card__pub">Indie App Coverage &mdash; Pending</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label" style="margin-bottom:16px;">As Seen In</div>
+        <div class="seen-in-row">
+            <div class="publication-badge">TechCrunch</div>
+            <div class="publication-badge">9to5Mac</div>
+            <div class="publication-badge">MacStories</div>
+            <div class="publication-badge">The Verge</div>
+            <div class="publication-badge">AppAdvice</div>
+            <div class="publication-badge">iMore</div>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-top:12px;text-transform:uppercase;letter-spacing:1px;">Coverage placements pending publication</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section class="section reveal">
+        <div class="contact-card">
+            <h2 class="contact-card__title">Get in <em>Touch</em></h2>
+            <p class="contact-card__subtitle">Ready to cover SageBills? We would love to hear from you. High-resolution assets, demo access, and interviews are all available.</p>
+
+            <div style="display:flex;flex-direction:column;align-items:center;">
+                <a href="mailto:contact@sagelight-studio.com" class="contact-email">
+                    <span>&#9993;</span>
+                    contact@sagelight-studio.com
+                </a>
+                <p class="contact-meta">We typically respond within 24 hours</p>
+            </div>
+
+            <div class="social-row">
+                <span class="social-btn">&#64; Twitter / X <span style="color:var(--text-muted);margin-left:4px;">Coming soon</span></span>
+                <span class="social-btn">&#128279; LinkedIn <span style="color:var(--text-muted);margin-left:4px;">Coming soon</span></span>
+                <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener" class="social-btn">&#63743; App Store</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__brand">
+            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet &middot; SageDocs
+        </div>
+        <div class="footer__links">
+            <a href="index.html">Privacy</a>
+            <a href="index.html#gdpr">GDPR</a>
+            <a href="index.html#terms">Terms</a>
+            <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener">App Store</a>
+        </div>
+        <div class="footer__tagline">Sagelight Studio &mdash; Built with care in Romania, EU &middot; &copy; 2026</div>
+    </footer>
+
+</main>
+
+<script>
+    // ========================================
+    // THEME MANAGEMENT
+    // ========================================
+    var themes = ['dark', 'light', 'system'];
+    var themeIcons = { dark: '\u263E', light: '\u2600', system: '\u25D1' };
+    var currentThemeIndex = 0;
+
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+        var resolved = theme === 'system' ? getSystemTheme() : theme;
+        document.documentElement.setAttribute('data-theme', resolved);
+        document.getElementById('themeIcon').textContent = themeIcons[theme];
+        localStorage.setItem('sage-theme', theme);
+    }
+
+    function cycleTheme() {
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        applyTheme(themes[currentThemeIndex]);
+    }
+
+    // Init theme
+    (function() {
+        var saved = localStorage.getItem('sage-theme');
+        if (saved && themes.indexOf(saved) !== -1) {
+            currentThemeIndex = themes.indexOf(saved);
+        }
+        applyTheme(themes[currentThemeIndex]);
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            if (themes[currentThemeIndex] === 'system') applyTheme('system');
+        });
+    })();
+
+    // ========================================
+    // MOBILE MENU
+    // ========================================
+    function toggleMobileMenu() {
+        var links = document.getElementById('navLinks');
+        links.classList.toggle('nav__links--open');
+    }
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav__link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('navLinks').classList.remove('nav__links--open');
+        });
+    });
+
+    // ========================================
+    // FAQ ACCORDION
+    // ========================================
+    function toggleFaq(btn) {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        var icon = btn.querySelector('.faq-icon');
+
+        // Close all others
+        document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-icon').textContent = '+';
+        });
+
+        // Toggle current
+        if (!isOpen) {
+            item.classList.add('open');
+            icon.textContent = '\u2212'; // minus sign
+        }
+    }
+
+    // ========================================
+    // SCROLL REVEAL (IntersectionObserver)
+    // ========================================
+    (function() {
+        var revealEls = document.querySelectorAll('.reveal');
+
+        if (!('IntersectionObserver' in window)) {
+            revealEls.forEach(function(el) {
+                el.classList.add('visible');
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -48px 0px'
+        });
+
+        revealEls.forEach(function(el) {
+            observer.observe(el);
+        });
+    })();
+
+    // ========================================
+    // NAV SCROLL BEHAVIOR
+    // ========================================
+    (function() {
+        var nav = document.querySelector('.nav');
+        var lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset;
+            if (currentScroll > 80) {
+                nav.style.borderBottomColor = 'var(--border)';
+            } else {
+                nav.style.borderBottomColor = 'transparent';
+            }
+            lastScroll = currentScroll;
+        }, { passive: true });
+    })();
+</script>
+
+</body>
+</html>

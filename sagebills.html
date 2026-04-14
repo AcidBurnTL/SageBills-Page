@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageBills — Every bill. Every provider. One app.</title>
+    <meta name="description" content="The smart utility tracker built for European households. Track, predict, and save — with zero data leaving your device. Free, no account required, GDPR compliant.">
+    <meta property="og:title" content="SageBills — Every bill. Every provider. One app.">
+    <meta property="og:description" content="Track utility bills, predict costs, detect anomalies. Built for Europe. Free forever.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagelight-studio.com/sagebills.html">
+    <meta property="og:site_name" content="Sagelight Studio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:locale:alternate" content="pl_PL">
+    <meta property="og:locale:alternate" content="hu_HU">
+    <meta property="og:locale:alternate" content="cs_CZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SageBills — Every bill. Every provider. One app.">
+    <meta name="twitter:description" content="The smart utility tracker built for European households. Free, private, no account required.">
+    <meta name="apple-itunes-app" content="app-id=6762021142">
+    <meta name="application-name" content="SageBills">
+    <meta name="theme-color" content="#00d672">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sagelight-studio.com/sagebills.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SageBills",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "iOS 17+, macOS 14+",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Smart Utility Bill Tracker for European households. Track 40+ bill categories, scan invoices with OCR, predict future costs, detect anomalies, and set savings goals.",
+        "url": "https://apps.apple.com/us/app/sagebills/id6762021142",
+        "author": {
+            "@type": "Organization",
+            "name": "Sagelight Studio",
+            "url": "https://sagelight-studio.com"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+        }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           SAGE DESIGN SYSTEM — CSS Variables
+           ======================================== */
+        :root {
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 20px;
+            --transition: all 0.3s ease;
+            --nav-height: 64px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #050505;
+            --bg-surface: #0a0a0a;
+            --bg-surface-2: #111113;
+            --bg-surface-3: #1a1a1e;
+            --green: #00d672;
+            --green-dim: rgba(0, 214, 114, 0.2);
+            --green-glow: rgba(0, 214, 114, 0.08);
+            --green-muted: #0a8a4a;
+            --text: #e8e8ed;
+            --text-secondary: #a0a0ab;
+            --text-dim: #6e6e78;
+            --text-muted: #3a3a42;
+            --border: #1e1e24;
+            --border-hover: #2e2e36;
+            --card-bg: #0d0d10;
+            --card-border: #1e1e24;
+            --highlight-bg: rgba(0, 214, 114, 0.06);
+            --scrollbar-track: #111113;
+            --scrollbar-thumb: #2a2a32;
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        [data-theme="light"] {
+            --bg: #fafaf9;
+            --bg-surface: #ffffff;
+            --bg-surface-2: #f5f5f3;
+            --bg-surface-3: #eeeee9;
+            --green: #059652;
+            --green-dim: rgba(5, 150, 82, 0.12);
+            --green-glow: rgba(5, 150, 82, 0.06);
+            --green-muted: #078a4c;
+            --text: #1a1a1e;
+            --text-secondary: #52525b;
+            --text-dim: #8a8a96;
+            --text-muted: #c0c0c8;
+            --border: #e4e4e0;
+            --border-hover: #d0d0cc;
+            --card-bg: #ffffff;
+            --card-border: #e4e4e0;
+            --highlight-bg: rgba(5, 150, 82, 0.04);
+            --scrollbar-track: #f0f0ee;
+            --scrollbar-thumb: #ccccc8;
+            --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 24px);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover { opacity: 0.8; }
+
+        /* ========================================
+           BACKGROUND EFFECTS
+           ======================================== */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+        .glow-orb--1 {
+            width: 600px;
+            height: 600px;
+            top: -150px;
+            right: -120px;
+            background: radial-gradient(circle, var(--green-dim) 0%, transparent 70%);
+            animation: float-1 10s ease-in-out infinite;
+        }
+        .glow-orb--2 {
+            width: 500px;
+            height: 500px;
+            bottom: 20%;
+            left: -100px;
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+            animation: float-2 8s ease-in-out infinite;
+        }
+        .glow-orb--3 {
+            width: 400px;
+            height: 400px;
+            top: 60%;
+            right: -80px;
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+            animation: float-1 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, 20px); }
+        }
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -15px); }
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: background 0.4s ease;
+        }
+
+        [data-theme="light"] .nav {
+            background: rgba(250, 250, 249, 0.85);
+        }
+
+        .nav__logo {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .nav__logo-leaf {
+            width: 28px;
+            height: 28px;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .nav__logo span { color: var(--green); }
+
+        .nav__links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav__link {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            background: none;
+            white-space: nowrap;
+            text-decoration: none;
+            display: block;
+        }
+        .nav__link:hover {
+            color: var(--text);
+            background: var(--bg-surface-2);
+            opacity: 1;
+        }
+
+        .nav__actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        .theme-toggle:hover {
+            color: var(--green);
+            border-color: var(--green-dim);
+            background: var(--green-glow);
+        }
+
+        .btn-nav-cta {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #050505;
+            background: var(--green);
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-nav-cta:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-dim);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* ========================================
+           LAYOUT
+           ======================================== */
+        main { position: relative; z-index: 1; }
+        section { position: relative; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ========================================
+           SCROLL ANIMATIONS
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ========================================
+           BADGES
+           ======================================== */
+        .label-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--green);
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px;
+            padding: 6px 16px;
+        }
+        .label-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+        }
+
+        /* ========================================
+           SECTION HEADINGS
+           ======================================== */
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .section-heading em {
+            font-style: italic;
+            color: var(--green);
+        }
+        .section-sub {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 560px;
+        }
+        .section-header { margin-bottom: 56px; }
+        .section-header--center { text-align: center; }
+        .section-header--center .section-sub { margin: 0 auto; }
+
+        /* ========================================
+           HERO
+           ======================================== */
+        .hero {
+            padding: calc(var(--nav-height) + 80px) 0 100px;
+            overflow: hidden;
+        }
+
+        .hero__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero__badge { margin-bottom: 24px; }
+
+        .hero__title {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 900;
+            line-height: 1.05;
+            color: var(--text);
+            margin-bottom: 24px;
+        }
+        .hero__title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .hero__sub {
+            font-size: 19px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        .hero__actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: #050505;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(0, 214, 114, 0.25);
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 214, 114, 0.35);
+        }
+        [data-theme="light"] .btn-primary {
+            box-shadow: 0 4px 20px rgba(5, 150, 82, 0.25);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .btn-secondary:hover {
+            color: var(--text);
+            border-color: var(--border-hover);
+            background: var(--bg-surface-2);
+            opacity: 1;
+        }
+
+        .trust-badges { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            background: var(--bg-surface-2);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 5px 12px;
+        }
+        .trust-badge::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+        }
+
+        /* iPhone mockup */
+        .hero__visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .iphone-mockup {
+            position: relative;
+            width: 260px;
+            height: 520px;
+            background: var(--bg-surface-3);
+            border-radius: 44px;
+            border: 2px solid var(--border-hover);
+            box-shadow:
+                0 0 0 1px var(--border),
+                0 30px 80px rgba(0,0,0,0.6),
+                inset 0 1px 0 rgba(255,255,255,0.05);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        [data-theme="light"] .iphone-mockup {
+            border-color: #d0d0cc;
+            box-shadow:
+                0 0 0 1px #e0e0dc,
+                0 30px 80px rgba(0,0,0,0.15);
+        }
+
+        .iphone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 28px;
+            background: var(--bg-surface-3);
+            border-radius: 0 0 18px 18px;
+            z-index: 10;
+        }
+
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, #0a0a10 0%, #050510 100%);
+            padding: 44px 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        [data-theme="light"] .iphone-screen {
+            background: linear-gradient(160deg, #f0f0f8 0%, #e8e8f0 100%);
+        }
+
+        .iphone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 4px;
+        }
+
+        .iphone-title {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .iphone-total {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: #00d672;
+            line-height: 1;
+        }
+        [data-theme="light"] .iphone-total { color: #059652; }
+
+        .iphone-total-label {
+            font-size: 9px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .iphone-chart {
+            height: 64px;
+            background: var(--bg-surface);
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            overflow: hidden;
+        }
+        [data-theme="light"] .iphone-chart { background: rgba(255,255,255,0.8); }
+
+        .chart-bar {
+            flex: 1;
+            border-radius: 3px 3px 0 0;
+            min-height: 8px;
+            transition: height 0.6s ease;
+        }
+
+        .iphone-bills {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .iphone-bill-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-surface);
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+        [data-theme="light"] .iphone-bill-row { background: rgba(255,255,255,0.7); }
+
+        .bill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .bill-info { flex: 1; }
+
+        .bill-name {
+            font-size: 9px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 2px;
+            color: #e8e8ed;
+        }
+        [data-theme="light"] .bill-name { color: #1a1a1e; }
+
+        .bill-provider {
+            font-size: 8px;
+            color: var(--text-dim);
+            line-height: 1;
+        }
+
+        .bill-amount {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 500;
+            color: #e8e8ed;
+        }
+        [data-theme="light"] .bill-amount { color: #1a1a1e; }
+
+        .iphone-badge-row { display: flex; gap: 6px; }
+
+        .iphone-tag {
+            font-size: 7px;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .iphone-tag--green { background: rgba(0,214,114,0.15); color: #00d672; }
+        [data-theme="light"] .iphone-tag--green { background: rgba(5,150,82,0.12); color: #059652; }
+        .iphone-tag--amber { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .iphone-tag--blue { background: rgba(99,102,241,0.15); color: #818cf8; }
+
+        .hero__glow-ring {
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--green-glow) 0%, transparent 60%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ========================================
+           PROBLEM SECTION
+           ======================================== */
+        .section-problem {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            padding: 40px 36px;
+            position: relative;
+            transition: var(--transition);
+        }
+        .problem-card:hover { background: var(--bg-surface-2); }
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+        .problem-card:hover::before { transform: scaleX(1); }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-surface-3);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .problem-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ========================================
+           FEATURES SECTION
+           ======================================== */
+        .section-features {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 36px 32px;
+            position: relative;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            background: var(--bg-surface-2);
+        }
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background: radial-gradient(ellipse at 20% 20%, var(--green-glow) 0%, transparent 60%);
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .feature-card:hover::after { opacity: 1; }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--green);
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            margin-top: 16px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--green);
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px;
+            padding: 3px 10px;
+        }
+
+        /* ========================================
+           PROVIDERS SECTION
+           ======================================== */
+        .section-providers {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .providers-ticker {
+            overflow: hidden;
+            position: relative;
+            margin: 0 -40px;
+        }
+        .providers-ticker::before,
+        .providers-ticker::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 80px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .providers-ticker::before {
+            left: 0;
+            background: linear-gradient(90deg, var(--bg) 0%, transparent 100%);
+        }
+        .providers-ticker::after {
+            right: 0;
+            background: linear-gradient(-90deg, var(--bg) 0%, transparent 100%);
+        }
+
+        .providers-track {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            animation: ticker-scroll 30s linear infinite;
+            width: max-content;
+        }
+        .providers-track:hover { animation-play-state: paused; }
+
+        @keyframes ticker-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .provider-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 18px;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        .provider-chip:hover {
+            color: var(--text);
+            border-color: var(--border-hover);
+        }
+
+        .provider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .countries-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 36px;
+        }
+
+        .country-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            background: var(--bg-surface-2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           PRIVACY SECTION
+           ======================================== */
+        .section-privacy {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .privacy-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .privacy-shield {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shield-wrap {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shield-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--green-dim);
+            animation: shield-pulse 3s ease-in-out infinite;
+        }
+        .shield-ring--2 { inset: 20px; animation-delay: 0.5s; }
+        .shield-ring--3 { inset: 40px; animation-delay: 1s; }
+
+        @keyframes shield-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.02); }
+        }
+
+        .shield-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        .shield-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--green);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .privacy-points {
+            list-style: none;
+            margin: 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .privacy-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .privacy-point-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .privacy-point-check svg {
+            width: 12px;
+            height: 12px;
+            stroke: var(--green);
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .gdpr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--green);
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: var(--radius-sm);
+            padding: 10px 18px;
+        }
+
+        /* ========================================
+           HOW IT WORKS
+           ======================================== */
+        .section-how {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: calc(16.6% + 24px);
+            right: calc(16.6% + 24px);
+            height: 1px;
+            background: var(--green-dim);
+        }
+
+        .step {
+            text-align: center;
+            padding: 0 32px;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--green);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ========================================
+           TESTIMONIALS
+           ======================================== */
+        .section-testimonials {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: var(--transition);
+        }
+        .testimonial-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 16px;
+        }
+        .star { color: #f59e0b; font-size: 14px; }
+
+        .testimonial-quote {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+            position: relative;
+            padding-top: 28px;
+        }
+        .testimonial-quote::before {
+            content: '\201C';
+            font-family: var(--font-display);
+            font-size: 48px;
+            color: var(--green-muted);
+            line-height: 1;
+            position: absolute;
+            top: -8px;
+            left: -4px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .testimonial-location {
+            font-size: 11px;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+        }
+
+        /* ========================================
+           CURRENCIES
+           ======================================== */
+        .section-currencies {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .currencies-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .currency-cell {
+            background: var(--card-bg);
+            padding: 28px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .currency-cell:hover { background: var(--bg-surface-2); }
+
+        .currency-code {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .currency-name {
+            font-size: 10px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================
+           FINAL CTA / DOWNLOAD
+           ======================================== */
+        .section-cta {
+            padding: 120px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--green-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        .cta-title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .cta-sub {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 44px;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .cta-no-catch {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 20px;
+        }
+
+        /* Email signup */
+        .email-signup {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .email-signup-label {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .email-input {
+            background: var(--bg-surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 14px;
+            padding: 10px 16px;
+            width: 240px;
+            outline: none;
+            transition: var(--transition);
+        }
+        .email-input::placeholder { color: var(--text-dim); }
+        .email-input:focus {
+            border-color: var(--green-dim);
+            background: var(--bg-surface);
+            box-shadow: 0 0 0 3px var(--green-glow);
+        }
+
+        .btn-email-submit {
+            background: var(--bg-surface-3);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .btn-email-submit:hover {
+            background: var(--green);
+            color: #050505;
+            border-color: var(--green);
+        }
+        .btn-email-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .email-success {
+            display: none;
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--green);
+            font-family: var(--font-mono);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer__inner {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .footer__brand-logo {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+        .footer__brand-logo span { color: var(--green); }
+
+        .footer__logo-leaf {
+            width: 22px;
+            height: 22px;
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        .footer__brand-tagline {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .footer__brand-contact {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+        .footer__brand-contact a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        .footer__brand-contact a:hover { color: var(--green); }
+
+        .footer__appstore-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+        .footer__appstore-link:hover { color: var(--green); opacity: 1; }
+        .footer__appstore-link svg { fill: currentColor; opacity: 0.6; }
+
+        .footer__links-col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer__links-heading {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            margin-bottom: 4px;
+        }
+
+        .footer__links-col a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .footer__links-col a:hover { color: var(--green); opacity: 1; }
+
+        .footer__bottom {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer__copy {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .footer__built {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .currencies-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 900px) {
+            .hero__inner { grid-template-columns: 1fr; gap: 48px; }
+            .hero__visual { order: -1; }
+            .iphone-mockup { width: 220px; height: 440px; }
+            .privacy-inner { grid-template-columns: 1fr; gap: 48px; }
+            .privacy-shield { order: -1; }
+            .footer__inner { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .nav { padding: 0 20px; }
+            .nav__links { display: none; }
+            .nav__links--open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0; right: 0;
+                background: var(--bg-surface);
+                border-bottom: 1px solid var(--border);
+                padding: 12px;
+                gap: 4px;
+                z-index: 999;
+            }
+            .mobile-menu-btn { display: flex; }
+            .problem-cards { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; gap: 32px; }
+            .steps::before { display: none; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .currencies-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero { padding: calc(var(--nav-height) + 48px) 0 64px; }
+            .section-problem,
+            .section-features,
+            .section-providers,
+            .section-privacy,
+            .section-how,
+            .section-testimonials,
+            .section-currencies,
+            .section-cta { padding: 64px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .hero__title { font-size: 36px; }
+            .currencies-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-badges { gap: 8px; }
+        }
+
+        /* ========================================
+           PRINT
+           ======================================== */
+        @media print {
+            .bg-grid, .glow-orb, .nav, .theme-toggle,
+            .mobile-menu-btn, .cta-glow, .shield-ring,
+            .hero__glow-ring, .iphone-mockup { display: none !important; }
+            body { background: #fff; color: #111; }
+            section { padding: 32px 0 !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background effects -->
+<div class="bg-grid"></div>
+<div class="glow-orb glow-orb--1"></div>
+<div class="glow-orb glow-orb--2"></div>
+<div class="glow-orb glow-orb--3"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+    <a href="index.html" class="nav__logo">
+        <span class="nav__logo-leaf">&#127807;</span>
+        Sagelight <span>Studio</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+        <li><a href="#features" class="nav__link">Features</a></li>
+        <li><a href="#how" class="nav__link">How It Works</a></li>
+        <li><a href="#savings" class="nav__link">Savings</a></li>
+        <li><a href="#download" class="nav__link">Download</a></li>
+    </ul>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme" title="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">&#9790;</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
+            &#9776;
+        </button>
+        <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener noreferrer" class="btn-nav-cta">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            Download Free
+        </a>
+    </div>
+</nav>
+
+<main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__inner">
+                <div class="hero__content">
+                    <div class="hero__badge reveal">
+                        <span class="label-badge">Free iOS App</span>
+                    </div>
+                    <h1 class="hero__title reveal reveal-delay-1">
+                        Every bill.<br>Every provider.<br><em>One app.</em>
+                    </h1>
+                    <p class="hero__sub reveal reveal-delay-2">
+                        The smart utility tracker built for European households. Track, predict, and save — with zero data leaving your device.
+                    </p>
+                    <div class="hero__actions reveal reveal-delay-3">
+                        <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            Download on the App Store
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 8 12 12 14 14"/>
+                            </svg>
+                            See how it works
+                        </a>
+                    </div>
+                    <div class="trust-badges reveal reveal-delay-4">
+                        <span class="trust-badge">100% Free</span>
+                        <span class="trust-badge">No Account Required</span>
+                        <span class="trust-badge">GDPR Compliant</span>
+                        <span class="trust-badge">Zero Tracking</span>
+                    </div>
+                </div>
+
+                <div class="hero__visual reveal reveal-delay-2">
+                    <div class="hero__glow-ring" aria-hidden="true"></div>
+                    <div class="iphone-mockup" aria-label="SageBills app screenshot">
+                        <div class="iphone-notch" aria-hidden="true"></div>
+                        <div class="iphone-screen" aria-hidden="true">
+                            <div class="iphone-header">
+                                <div>
+                                    <div class="iphone-title">SageBills</div>
+                                    <div class="iphone-total">247.80</div>
+                                    <div class="iphone-total-label">RON &middot; This month</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-size:8px;color:#6e6e78;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">vs last month</div>
+                                    <div style="font-size:11px;font-weight:700;color:#00d672;">-12.4%</div>
+                                </div>
+                            </div>
+                            <div class="iphone-chart" id="demoChart">
+                                <div class="chart-bar" data-h="30" style="background:rgba(0,214,114,0.3);"></div>
+                                <div class="chart-bar" data-h="55" style="background:rgba(0,214,114,0.4);"></div>
+                                <div class="chart-bar" data-h="45" style="background:rgba(0,214,114,0.35);"></div>
+                                <div class="chart-bar" data-h="70" style="background:rgba(0,214,114,0.5);"></div>
+                                <div class="chart-bar" data-h="60" style="background:rgba(0,214,114,0.45);"></div>
+                                <div class="chart-bar" data-h="80" style="background:rgba(0,214,114,0.55);"></div>
+                                <div class="chart-bar" data-h="65" style="background:rgba(0,214,114,0.5);"></div>
+                                <div class="chart-bar" data-h="100" style="background:#00d672;"></div>
+                            </div>
+                            <div class="iphone-bills">
+                                <div class="iphone-bill-row">
+                                    <div class="bill-dot" style="background:#00d672;"></div>
+                                    <div class="bill-info">
+                                        <div class="bill-name">Electricity</div>
+                                        <div class="bill-provider">Enel Romania</div>
+                                    </div>
+                                    <div class="bill-amount">89.40 RON</div>
+                                </div>
+                                <div class="iphone-bill-row">
+                                    <div class="bill-dot" style="background:#818cf8;"></div>
+                                    <div class="bill-info">
+                                        <div class="bill-name">Internet</div>
+                                        <div class="bill-provider">RCS &amp; RDS</div>
+                                    </div>
+                                    <div class="bill-amount">39.00 RON</div>
+                                </div>
+                                <div class="iphone-bill-row">
+                                    <div class="bill-dot" style="background:#f59e0b;"></div>
+                                    <div class="bill-info">
+                                        <div class="bill-name">Natural Gas</div>
+                                        <div class="bill-provider">ENGIE Romania</div>
+                                    </div>
+                                    <div class="bill-amount">71.20 RON</div>
+                                </div>
+                                <div class="iphone-bill-row">
+                                    <div class="bill-dot" style="background:#f87171;"></div>
+                                    <div class="bill-info">
+                                        <div class="bill-name">Mobile</div>
+                                        <div class="bill-provider">Orange Romania</div>
+                                    </div>
+                                    <div class="bill-amount">48.20 RON</div>
+                                </div>
+                            </div>
+                            <div class="iphone-badge-row">
+                                <div class="iphone-tag iphone-tag--green">On budget</div>
+                                <div class="iphone-tag iphone-tag--amber">Gas alert</div>
+                                <div class="iphone-tag iphone-tag--blue">AI forecast</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROBLEM
+         ============================================================ -->
+    <section class="section-problem" id="problem">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="label-badge" style="margin-bottom:20px;">The Problem</div>
+                <h2 class="section-heading">Utility bills shouldn&rsquo;t be<br><em>this hard</em></h2>
+                <p class="section-sub">Most households track bills in spreadsheets, paper folders, or not at all. There&rsquo;s a better way.</p>
+            </div>
+            <div class="problem-cards">
+                <div class="problem-card reveal reveal-delay-1">
+                    <div class="problem-icon">&#128196;</div>
+                    <div class="problem-title">Paper chaos</div>
+                    <p class="problem-desc">Invoices scattered across drawers, email folders, and PDF downloads. Finding last month&rsquo;s electricity bill takes twenty minutes.</p>
+                </div>
+                <div class="problem-card reveal reveal-delay-2">
+                    <div class="problem-icon">&#9889;</div>
+                    <div class="problem-title">Surprise bills</div>
+                    <p class="problem-desc">No warning when your heating bill doubles in January. You open the invoice and the number is already overdue.</p>
+                </div>
+                <div class="problem-card reveal reveal-delay-3">
+                    <div class="problem-icon">&#128202;</div>
+                    <div class="problem-title">No visibility</div>
+                    <p class="problem-desc">Impossible to see how much you&rsquo;re spending across all utilities, let alone identify patterns or opportunities to save.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES
+         ============================================================ -->
+    <section class="section-features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="label-badge" style="margin-bottom:20px;">Features</div>
+                <h2 class="section-heading">Built for how Europeans<br><em>actually manage bills</em></h2>
+                <p class="section-sub">Every feature is designed around real household needs, not Silicon Valley assumptions.</p>
+            </div>
+            <div class="features-grid">
+
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="feature-title">Smart Tracking</div>
+                    <p class="feature-desc">40+ bill categories from electricity and gas to streaming subscriptions and insurance. Every household expense in one place.</p>
+                    <span class="feature-tag">40+ categories</span>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                    <div class="feature-title">OCR Scanning</div>
+                    <p class="feature-desc">Snap a photo of any paper invoice. Data extracted instantly &mdash; provider, amount, date, category. No manual typing required.</p>
+                    <span class="feature-tag">Instant extraction</span>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <div class="feature-title">AI Predictions</div>
+                    <p class="feature-desc">Know next month&rsquo;s costs before they arrive. The app learns your seasonal patterns and gives you early warning of high-cost months.</p>
+                    <span class="feature-tag">Predictive model</span>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="feature-title">Anomaly Detection</div>
+                    <p class="feature-desc">Automatically flagged when a bill is unusually high compared to your history. Catch billing errors and provider overcharges before you pay them.</p>
+                    <span class="feature-tag">Auto-alerts</span>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-5" id="savings">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div class="feature-title">Savings Goals</div>
+                    <p class="feature-desc">Set monthly or annual targets for each category. Track your progress with visual charts and get nudged when you&rsquo;re trending over budget.</p>
+                    <span class="feature-tag">Goal tracking</span>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-6">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="feature-title">Bill Sharing</div>
+                    <p class="feature-desc">Split and delegate bills with household members. Shared accountability means nothing falls through the cracks when you&rsquo;re living together.</p>
+                    <span class="feature-tag">Household ready</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROVIDERS
+         ============================================================ -->
+    <section class="section-providers" id="providers">
+        <div class="container">
+            <div class="section-header section-header--center reveal">
+                <div class="label-badge" style="margin-bottom:20px;">Provider Database</div>
+                <h2 class="section-heading">Your providers,<br><em>pre-loaded</em></h2>
+                <p class="section-sub">39 CEE providers built-in. Romania, Poland, Hungary, Czech Republic, and 23 more EU countries.</p>
+            </div>
+        </div>
+
+        <div class="providers-ticker reveal" aria-label="Provider list: Enel, E.ON, Vodafone, Orange, Digi, ENGIE, Electrica, PGNiG, Tauron, MVM, CEZ, innogy, RCS and RDS">
+            <div class="providers-track" id="providerTrack">
+                <div class="provider-chip"><div class="provider-dot" style="background:#00d672;" aria-hidden="true"></div>Enel</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#f59e0b;" aria-hidden="true"></div>E.ON</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#f87171;" aria-hidden="true"></div>Vodafone</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#818cf8;" aria-hidden="true"></div>Orange</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#34d399;" aria-hidden="true"></div>Digi</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#60a5fa;" aria-hidden="true"></div>ENGIE</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#c084fc;" aria-hidden="true"></div>Electrica</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#fb923c;" aria-hidden="true"></div>PGNiG</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#4ade80;" aria-hidden="true"></div>Tauron</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#38bdf8;" aria-hidden="true"></div>MVM</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#f472b6;" aria-hidden="true"></div>CEZ</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#facc15;" aria-hidden="true"></div>innogy</div>
+                <div class="provider-chip"><div class="provider-dot" style="background:#a78bfa;" aria-hidden="true"></div>RCS &amp; RDS</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#00d672;"></div>Enel</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#f59e0b;"></div>E.ON</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#f87171;"></div>Vodafone</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#818cf8;"></div>Orange</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#34d399;"></div>Digi</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#60a5fa;"></div>ENGIE</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#c084fc;"></div>Electrica</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#fb923c;"></div>PGNiG</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#4ade80;"></div>Tauron</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#38bdf8;"></div>MVM</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#f472b6;"></div>CEZ</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#facc15;"></div>innogy</div>
+                <div class="provider-chip" aria-hidden="true"><div class="provider-dot" style="background:#a78bfa;"></div>RCS &amp; RDS</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="countries-row reveal">
+                <span class="country-chip">&#127479;&#127476; Romania</span>
+                <span class="country-chip">&#127477;&#127473; Poland</span>
+                <span class="country-chip">&#127469;&#127482; Hungary</span>
+                <span class="country-chip">&#127464;&#127487; Czech Republic</span>
+                <span class="country-chip">&#127463;&#127468; Bulgaria</span>
+                <span class="country-chip">&#127469;&#127479; Croatia</span>
+                <span class="country-chip">&#127480;&#127472; Slovakia</span>
+                <span class="country-chip">&#127465;&#127466; Germany</span>
+                <span class="country-chip">&#127462;&#127481; Austria</span>
+                <span class="country-chip" style="color:var(--text-dim);font-style:italic;">+23 more EU</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PRIVACY
+         ============================================================ -->
+    <section class="section-privacy" id="privacy">
+        <div class="container">
+            <div class="privacy-inner">
+                <div>
+                    <div class="label-badge reveal" style="margin-bottom:20px;">Privacy First</div>
+                    <h2 class="section-heading reveal">Your data stays yours.<br><em>Period.</em></h2>
+                    <p class="section-sub reveal">We built SageBills from scratch with privacy as a constraint, not an afterthought. There is no server that receives your financial data.</p>
+                    <ul class="privacy-points reveal" role="list">
+                        <li class="privacy-point">
+                            <span class="privacy-point-check" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            Zero third-party SDKs
+                        </li>
+                        <li class="privacy-point">
+                            <span class="privacy-point-check" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            No account required
+                        </li>
+                        <li class="privacy-point">
+                            <span class="privacy-point-check" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            No analytics, no tracking
+                        </li>
+                        <li class="privacy-point">
+                            <span class="privacy-point-check" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            Data lives on your device + your private iCloud
+                        </li>
+                    </ul>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;" class="reveal">
+                        <span class="gdpr-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            GDPR Compliant &mdash; Built in Romania, EU
+                        </span>
+                        <a href="index.html#privacy" style="font-size:13px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;">Read privacy policy &rarr;</a>
+                    </div>
+                </div>
+                <div class="privacy-shield reveal" aria-hidden="true">
+                    <div class="shield-wrap">
+                        <div class="shield-ring shield-ring--1"></div>
+                        <div class="shield-ring shield-ring--2"></div>
+                        <div class="shield-ring shield-ring--3"></div>
+                        <div class="shield-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         HOW IT WORKS
+         ============================================================ -->
+    <section class="section-how" id="how">
+        <div class="container">
+            <div class="section-header section-header--center reveal">
+                <div class="label-badge" style="margin-bottom:20px;">Process</div>
+                <h2 class="section-heading">Three steps to<br><em>financial clarity</em></h2>
+            </div>
+            <div class="steps">
+                <div class="step reveal reveal-delay-1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Add your bills</div>
+                    <p class="step-desc">Manual entry takes under a minute, or snap a photo of any paper invoice and OCR fills in the details automatically.</p>
+                </div>
+                <div class="step reveal reveal-delay-2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Watch patterns emerge</div>
+                    <p class="step-desc">Charts, monthly heatmaps, and AI predictions build over time. After two months you&rsquo;ll understand your spending like never before.</p>
+                </div>
+                <div class="step reveal reveal-delay-3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Save money</div>
+                    <p class="step-desc">Anomaly alerts catch overbilling. Savings goals keep you accountable. Provider comparisons show when switching makes sense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         ============================================================ -->
+    <section class="section-testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header section-header--center reveal">
+                <div class="label-badge" style="margin-bottom:20px;">Reviews</div>
+                <h2 class="section-heading">Join thousands of<br><em>European households</em></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars" aria-label="5 stars">
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                    </div>
+                    <p class="testimonial-quote">I finally know exactly what I spend on utilities every month. The anomaly detection caught my electricity provider double-billing me &mdash; saved over 120 RON.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:rgba(0,214,114,0.15);color:#00d672;" aria-hidden="true">IA</div>
+                        <div>
+                            <div class="testimonial-name">Ioana Andreescu</div>
+                            <div class="testimonial-location">&#127479;&#127476; Bucharest, Romania</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars" aria-label="5 stars">
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                    </div>
+                    <p class="testimonial-quote">The privacy aspect is what sold me. My financial data stays on my phone, no cloud service that can be breached or sold. A rare thing in 2026.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:rgba(129,140,248,0.15);color:#818cf8;" aria-hidden="true">MW</div>
+                        <div>
+                            <div class="testimonial-name">Marek Wierzbicki</div>
+                            <div class="testimonial-location">&#127477;&#127473; Warsaw, Poland</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-stars" aria-label="5 stars">
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                        <span class="star" aria-hidden="true">&#9733;</span>
+                    </div>
+                    <p class="testimonial-quote">We use the bill sharing feature for our apartment &mdash; four of us split gas, internet, and water. No more awkward &ldquo;who owes what&rdquo; conversations.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background:rgba(245,158,11,0.15);color:#f59e0b;" aria-hidden="true">NK</div>
+                        <div>
+                            <div class="testimonial-name">N&oacute;ra Kov&aacute;cs</div>
+                            <div class="testimonial-location">&#127469;&#127482; Budapest, Hungary</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CURRENCIES
+         ============================================================ -->
+    <section class="section-currencies" id="currencies">
+        <div class="container">
+            <div class="section-header section-header--center reveal">
+                <div class="label-badge" style="margin-bottom:20px;">Multi-currency</div>
+                <h2 class="section-heading">Your currency,<br><em>your way</em></h2>
+                <p class="section-sub">Auto-detects your region. Supports 12+ currencies across the entire European Union and beyond.</p>
+            </div>
+            <div class="currencies-grid reveal">
+                <div class="currency-cell">
+                    <span class="currency-code">RON</span>
+                    <span class="currency-name">Romanian Leu</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">PLN</span>
+                    <span class="currency-name">Polish Zloty</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">HUF</span>
+                    <span class="currency-name">Hungarian Forint</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">CZK</span>
+                    <span class="currency-name">Czech Koruna</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">EUR</span>
+                    <span class="currency-name">Euro</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">BGN</span>
+                    <span class="currency-name">Bulgarian Lev</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">HRK</span>
+                    <span class="currency-name">Croatian Kuna</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">DKK</span>
+                    <span class="currency-name">Danish Krone</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">SEK</span>
+                    <span class="currency-name">Swedish Krona</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">GBP</span>
+                    <span class="currency-name">British Pound</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">CHF</span>
+                    <span class="currency-name">Swiss Franc</span>
+                </div>
+                <div class="currency-cell">
+                    <span class="currency-code">USD</span>
+                    <span class="currency-name">US Dollar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA / DOWNLOAD
+         ============================================================ -->
+    <section class="section-cta" id="download">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="container">
+            <div class="label-badge reveal" style="margin-bottom:24px;">Get started</div>
+            <h2 class="cta-title reveal">Start tracking today.<br><em>It&rsquo;s free.</em></h2>
+            <p class="cta-sub reveal">No subscription. No account. No catch.</p>
+            <div class="cta-actions reveal">
+                <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:17px;padding:16px 36px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    Download on the App Store
+                </a>
+            </div>
+            <p class="cta-no-catch reveal">Available on iOS &amp; iPadOS &middot; macOS coming soon</p>
+
+            <form class="email-signup reveal" id="emailForm" novalidate>
+                <span class="email-signup-label">Get notified about updates</span>
+                <label for="emailInput" class="sr-only">Email address</label>
+                <input type="email" class="email-input" placeholder="your@email.com" id="emailInput" autocomplete="email">
+                <button type="submit" class="btn-email-submit" id="emailSubmitBtn">Notify Me</button>
+            </form>
+            <p class="email-success" id="emailSuccess" role="status">Thanks! We&rsquo;ll be in touch.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div>
+                    <a href="#" class="footer__brand-logo">
+                        <span class="footer__logo-leaf" aria-hidden="true">&#127807;</span>
+                        Sagelight <span>Studio</span>
+                    </a>
+                    <div class="footer__brand-tagline">Built with care in Romania, EU</div>
+                    <div class="footer__brand-contact">
+                        <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>
+                    </div>
+                    <div>
+                        <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener noreferrer" class="footer__appstore-link">
+                            <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            App Store
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links-col">
+                    <div class="footer__links-heading">Legal</div>
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <a href="index.html#gdpr">GDPR Disclosure</a>
+                    <a href="index.html#terms">Terms of Service</a>
+                </div>
+                <div class="footer__links-col">
+                    <div class="footer__links-heading">App</div>
+                    <a href="#features">Features</a>
+                    <a href="#how">How It Works</a>
+                    <a href="#providers">Providers</a>
+                    <a href="#download">Download</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span class="footer__copy">&copy; 2026 Sagelight Studio. All rights reserved.</span>
+                <span class="footer__built">&#127807; SageBills &mdash; Made in Romania, EU</span>
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+<style>
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+    }
+</style>
+
+<script>
+    /* ========================================
+       THEME TOGGLE
+       ======================================== */
+    var THEMES = ['dark', 'light', 'system'];
+    var THEME_ICONS = { dark: '\u263E', light: '\u2600', system: '\u2699' };
+    var themeIndex = 0;
+
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+        var effective = (theme === 'system') ? getSystemTheme() : theme;
+        document.documentElement.setAttribute('data-theme', effective);
+        var iconEl = document.getElementById('themeIcon');
+        if (iconEl) {
+            iconEl.textContent = THEME_ICONS[theme];
+        }
+        try { localStorage.setItem('sb-theme', theme); } catch (e) {}
+    }
+
+    function cycleTheme() {
+        themeIndex = (themeIndex + 1) % THEMES.length;
+        applyTheme(THEMES[themeIndex]);
+    }
+
+    (function initTheme() {
+        var saved = 'dark';
+        try { saved = localStorage.getItem('sb-theme') || 'dark'; } catch (e) {}
+        var idx = THEMES.indexOf(saved);
+        themeIndex = (idx === -1) ? 0 : idx;
+        applyTheme(THEMES[themeIndex]);
+    })();
+
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function () {
+        if (THEMES[themeIndex] === 'system') applyTheme('system');
+    });
+
+    /* ========================================
+       MOBILE MENU
+       ======================================== */
+    function toggleMobileMenu() {
+        var links = document.getElementById('navLinks');
+        var btn = document.getElementById('mobileMenuBtn');
+        var isOpen = links.classList.toggle('nav__links--open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    document.querySelectorAll('.nav__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+            var links = document.getElementById('navLinks');
+            var btn = document.getElementById('mobileMenuBtn');
+            links.classList.remove('nav__links--open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    /* ========================================
+       SCROLL ANIMATIONS (IntersectionObserver)
+       ======================================== */
+    var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+        revealObserver.observe(el);
+    });
+
+    /* ========================================
+       CHART BAR ANIMATION
+       ======================================== */
+    var chartAnimated = false;
+    var chartEl = document.getElementById('demoChart');
+
+    if (chartEl) {
+        var chartObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && !chartAnimated) {
+                    chartAnimated = true;
+                    var bars = chartEl.querySelectorAll('.chart-bar');
+                    bars.forEach(function (bar, i) {
+                        var targetH = (bar.getAttribute('data-h') || '50') + '%';
+                        bar.style.height = '0%';
+                        setTimeout(function () {
+                            bar.style.height = targetH;
+                        }, i * 90);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        chartObserver.observe(chartEl);
+    }
+
+    /* ========================================
+       EMAIL FORM
+       ======================================== */
+    var emailForm = document.getElementById('emailForm');
+    if (emailForm) {
+        emailForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var input = document.getElementById('emailInput');
+            var submitBtn = document.getElementById('emailSubmitBtn');
+            var successMsg = document.getElementById('emailSuccess');
+
+            if (!input || !input.value || !input.value.includes('@')) {
+                input.focus();
+                return;
+            }
+
+            input.disabled = true;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitted';
+            if (successMsg) successMsg.style.display = 'block';
+        });
+    }
+</script>
+
+</body>
+</html>
