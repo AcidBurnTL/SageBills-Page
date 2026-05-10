@@ -3,10 +3,16 @@
 // Conversion helper. Fires Google Ads conversion (cookieless under default-denied
 // Consent Mode v2) without preventing default link behavior — so target="_blank"
 // links still open new tabs and gtag.js sendBeacon ensures the conversion ping
-// survives navigation.
+// survives navigation. Generates a unique transaction_id per click so Google can
+// deduplicate cleanly when "Una" counting is selected.
 window.gtagReportConversion = function (sendTo) {
     if (typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', { 'send_to': sendTo });
+        var txId = 'sgl-' + Date.now().toString(36) + '-' +
+                   Math.random().toString(36).slice(2, 10);
+        window.gtag('event', 'conversion', {
+            'send_to': sendTo,
+            'transaction_id': txId
+        });
     }
     return true;
 };
