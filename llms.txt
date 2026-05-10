@@ -23,6 +23,7 @@
 
 - Independent sole-proprietor app studio based in Romania, EU.
 - Contact: contact@sagelight-studio.com
-- All apps are built entirely with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit). No third-party SDKs, no analytics, no telemetry.
+- All apps are built entirely with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit). No third-party SDKs, no analytics, no telemetry inside any app.
+- The marketing website (sagelight-studio.com) loads the Google Ads conversion tag (AW-17758801825) under Google Consent Mode v2 with all signals defaulted to "denied" — cookieless modeled measurement only, until a visitor explicitly opts in. No GA4, no remarketing, no profile-building.
 - Lawful basis for processing under GDPR Art. 6(1)(a) (consent) for SageBills and SageDocs; consent + contractual necessity (Art. 6(1)(b)) for SageMeet.
 - Romanian supervisory authority: ANSPDCP (www.dataprotection.ro).

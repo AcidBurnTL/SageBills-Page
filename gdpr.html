@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Ads — Consent Mode v2 (default denied; banner will update on opt-in) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'AW-17758801825');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>GDPR Disclosure — Sagelight Studio (Articles 13 &amp; 14)</title>
     <meta name="description" content="GDPR Disclosure (EU 2016/679 Articles 13 &amp; 14) for SageBills, SageMeet, and SageDocs. Controller, lawful basis, recipients, retention, and your rights.">
     <meta name="keywords" content="GDPR disclosure, GDPR Articles 13 14, EU 2016/679, SageBills GDPR, SageMeet GDPR, SageDocs GDPR, ANSPDCP">
@@ -322,7 +337,21 @@
                     </tbody>
                 </table>
             </div>
-            <p>No advertising networks, analytics providers, or other third parties receive data from any app.</p>
+            <p>No advertising networks, analytics providers, or other third parties receive data from inside any app. The marketing website (sagelight-studio.com) is treated separately &mdash; see below.</p>
+
+            <h3 class="section__subheading">Marketing website (sagelight-studio.com)</h3>
+            <p>The marketing website loads the Google Ads conversion tag (<code>AW-17758801825</code>) under <strong>Consent Mode v2</strong> with all signals defaulted to "denied":</p>
+            <div class="table-wrap">
+                <table>
+                    <caption class="visually-hidden">Marketing website — Recipients</caption>
+                    <thead><tr><th scope="col">Recipient</th><th scope="col">Role</th><th scope="col">Data Received</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Google Ireland Limited</strong></td><td>Data processor (Art. 28) &mdash; EU establishment</td><td>Cookieless ping: IP address, user agent, page URL, ad campaign click ID (gclid) where present. No cookies stored unless visitor explicitly opts in.</td></tr>
+                        <tr><td><strong>Google LLC (United States)</strong></td><td>Sub-processor &mdash; under EU-US Data Privacy Framework</td><td>Same as above; aggregated and modeled for conversion measurement.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>This tag is exclusive to the marketing website. It is not present in any Sagelight Studio app.</p>
         </section>
 
         <section class="section" id="g7">
@@ -331,6 +360,7 @@
             <p><strong>SageBills:</strong> No international transfers occur.</p>
             <p><strong>SageMeet:</strong> Data transferred to the US (OpenAI) under the <strong>EU-US Data Privacy Framework</strong>. No transfers when Private Mode is enabled.</p>
             <p><strong>SageDocs:</strong> No international transfers to third parties. iCloud sync managed by Apple under Apple's own agreements.</p>
+            <p><strong>Marketing website (sagelight-studio.com):</strong> Cookieless tag pings transferred to Google LLC (United States) under the <strong>EU-US Data Privacy Framework</strong>.</p>
         </section>
 
         <section class="section" id="g8">
