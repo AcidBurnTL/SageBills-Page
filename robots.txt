@@ -1,7 +1,63 @@
+# Sagelight Studio — sagelight-studio.com
+# Privacy-first iOS & macOS apps from Europe.
+# SageBills · SageMeet · SageDocs
+
+# Default — search engines welcome
 User-agent: *
 Allow: /
 
-Sitemap: https://sagelight-studio.com/sitemap.xml
+# Block raw markdown copies of legal docs in favor of HTML pages
+Disallow: /privacy-policy.md
+Disallow: /gdpr-policy.md
+Disallow: /terms-of-service.md
 
-# SageBills — sagelight-studio.com
-# Privacy-first utility tracker for European households
+# AI training crawlers — disallowed per privacy-first brand values.
+# We don't want our content used to train commercial models without consent.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+# Citation-respecting AI assistants — explicitly allowed.
+# These cite source URLs in their output, sending real traffic.
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://sagelight-studio.com/sitemap.xml

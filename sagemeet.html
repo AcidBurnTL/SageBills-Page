@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageMeet — AI Meeting Recorder &amp; Transcription for iPhone</title>
+    <meta name="description" content="AI meeting recorder for iPhone. Whisper transcripts and GPT-4o summaries with your own OpenAI key. Private Mode disables all external data. Free, GDPR-ready.">
+    <meta name="keywords" content="SageMeet, meeting recorder iOS, AI transcription iPhone, OpenAI Whisper app, meeting notes app, GPT-4o meeting summary, BYOK meeting app, GDPR meeting recorder, private meeting transcription">
+    <meta property="og:title" content="SageMeet — AI Meeting Recorder &amp; Transcription">
+    <meta property="og:description" content="Record meetings. Get Whisper transcripts and GPT-4o summaries with your own API key. Private Mode for full local control. Free for iOS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagelight-studio.com/sagemeet.html">
+    <meta property="og:site_name" content="Sagelight Studio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://sagelight-studio.com/assets/og/sagemeet.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SageMeet — AI meeting recorder and transcription for iPhone">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SageMeet — AI Meeting Recorder for iPhone">
+    <meta name="twitter:description" content="Whisper transcripts, GPT-4o summaries, BYOK. Free for iOS.">
+    <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagemeet.png">
+    <meta name="apple-itunes-app" content="app-id=6761443109">
+    <meta name="application-name" content="SageMeet">
+    <meta name="theme-color" content="#00d672">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sagelight-studio.com/sagemeet.html">
+    <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagemeet.html">
+    <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagemeet.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/legal.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SageMeet",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS 17+",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "AI meeting recorder and transcription for iPhone. Whisper transcription, GPT-4o note generation, semantic search. Bring-your-own-key OpenAI integration with full Private Mode.",
+        "url": "https://apps.apple.com/us/app/sagemeet/id6761443109",
+        "image": "https://sagelight-studio.com/assets/og/sagemeet.png",
+        "author": {
+            "@type": "Organization",
+            "name": "Sagelight Studio",
+            "url": "https://sagelight-studio.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sagelight Studio"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sagelight-studio.com/"},
+            {"@type": "ListItem", "position": 2, "name": "SageMeet", "item": "https://sagelight-studio.com/sagemeet.html"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is SageMeet free?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes — SageMeet is free on the App Store. You provide your own OpenAI API key for AI features (Whisper transcription and GPT-4o summarization), so you pay OpenAI directly for usage rather than paying a subscription to us."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does SageMeet send my audio to OpenAI?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Only when you explicitly run an AI feature (transcription, summarization, semantic search) and only via your own OpenAI API key. Recording itself is fully local. Private Mode disables every external request, so you can use SageMeet purely as a local recorder if you prefer."}
+            },
+            {
+                "@type": "Question",
+                "name": "What is BYOK?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Bring Your Own Key. Instead of a subscription, you bring your own OpenAI API key. The key is stored in the iOS Keychain and only used to authenticate requests you initiate. We have no backend, so we cannot bill you."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does OpenAI use my recordings to train its models?",
+                "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI's API terms explicitly state that data sent via the API is not used for model training. OpenAI is also certified under the EU-US Data Privacy Framework."}
+            },
+            {
+                "@type": "Question",
+                "name": "Where are recordings stored?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Recordings, transcripts, and AI-generated notes live on your iPhone, with optional iCloud sync to your other Apple devices. Sagelight Studio never receives or stores any of your meeting data."}
+            },
+            {
+                "@type": "Question",
+                "name": "What is Private Mode?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Private Mode is a single toggle that disables all external API calls. Recording, local playback, and on-device organization continue working — but no audio, text, or metadata leaves your device."}
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .hero {
+            position: relative; z-index: 1;
+            padding: calc(var(--nav-height) + 80px) 40px 60px;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .hero__inner {
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px;
+            align-items: center;
+        }
+        .hero__eyebrow {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--green); background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+        }
+        .hero__eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+        .hero__title {
+            font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900; line-height: 1.05; color: var(--text);
+            margin-bottom: 24px; letter-spacing: -0.02em;
+        }
+        .hero__title em { font-style: italic; color: var(--green); }
+        .hero__sub {
+            font-size: 19px; font-weight: 300; color: var(--text-secondary);
+            line-height: 1.6; max-width: 560px; margin-bottom: 32px;
+        }
+        .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 28px; border-radius: 100px;
+            font-family: var(--font-body); font-size: 15px; font-weight: 600;
+            text-decoration: none; transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .btn--primary { background: var(--green); color: #0a0a0a; }
+        .btn--primary:hover { opacity: 1; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,214,114,0.3); }
+        [data-theme="light"] .btn--primary { color: #fff; }
+        .btn--ghost { background: transparent; color: var(--text); border-color: var(--border-hover); }
+        .btn--ghost:hover { opacity: 1; border-color: var(--green); color: var(--green); }
+        .trust-badges { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+        .trust-badge {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
+            color: var(--text-dim); text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .trust-badge::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+        /* Meeting mockup */
+        .meet-mockup {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius); padding: 24px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+            position: relative; overflow: hidden;
+        }
+        [data-theme="light"] .meet-mockup { box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+        .meet-mockup::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px; background: linear-gradient(90deg, var(--green), var(--green-muted));
+        }
+        .meet-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+        .meet-title {
+            font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--text);
+        }
+        .meet-meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 2px; letter-spacing: 0.5px; }
+        .recording-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+            background: rgba(248,113,113,0.1); color: #f87171;
+            padding: 4px 10px; border-radius: 100px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .recording-pill::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: #f87171; animation: pulse 1.4s infinite;
+        }
+        .waveform {
+            display: flex; gap: 3px; align-items: end; height: 40px;
+            margin: 12px 0 16px; padding: 4px 0;
+        }
+        .waveform .bar {
+            flex: 1; background: var(--green); opacity: 0.6;
+            border-radius: 2px;
+            animation: wave 1.5s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.4); }
+            50% { transform: scaleY(1); }
+        }
+        .waveform .bar:nth-child(1) { animation-delay: 0s; }
+        .waveform .bar:nth-child(2) { animation-delay: 0.1s; }
+        .waveform .bar:nth-child(3) { animation-delay: 0.2s; }
+        .waveform .bar:nth-child(4) { animation-delay: 0.3s; }
+        .waveform .bar:nth-child(5) { animation-delay: 0.4s; }
+        .waveform .bar:nth-child(6) { animation-delay: 0.5s; }
+        .waveform .bar:nth-child(7) { animation-delay: 0.6s; }
+        .waveform .bar:nth-child(8) { animation-delay: 0.7s; }
+        .waveform .bar:nth-child(9) { animation-delay: 0.8s; }
+        .waveform .bar:nth-child(10) { animation-delay: 0.9s; }
+        .waveform .bar:nth-child(11) { animation-delay: 1s; }
+        .waveform .bar:nth-child(12) { animation-delay: 1.1s; }
+        .waveform .bar:nth-child(13) { animation-delay: 1.2s; }
+        .waveform .bar:nth-child(14) { animation-delay: 1.3s; }
+        .waveform .bar:nth-child(15) { animation-delay: 1.4s; }
+
+        .transcript-line {
+            display: grid; grid-template-columns: auto 1fr; gap: 12px;
+            margin-bottom: 12px; align-items: start;
+        }
+        .speaker-tag {
+            font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+            color: var(--green); background: var(--green-glow);
+            padding: 4px 10px; border-radius: 6px;
+            white-space: nowrap;
+            border: 1px solid var(--green-dim);
+        }
+        .speaker-tag--alt {
+            color: #818cf8; background: rgba(129, 140, 248, 0.1);
+            border-color: rgba(129, 140, 248, 0.3);
+        }
+        .transcript-text {
+            font-size: 13px; color: var(--text-secondary); line-height: 1.6;
+        }
+        .summary-box {
+            background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: var(--radius-sm);
+            padding: 14px; margin-top: 16px;
+        }
+        .summary-label {
+            font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+            color: var(--green); letter-spacing: 1.5px; text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .summary-text {
+            font-size: 13px; color: var(--text); line-height: 1.6;
+        }
+
+        /* Sections */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .section-pad { padding: 80px 0; position: relative; z-index: 1; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 {
+            font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900; color: var(--text); margin-bottom: 16px;
+        }
+        .section-header h2 em { font-style: italic; color: var(--green); }
+        .section-header p {
+            font-size: 17px; color: var(--text-secondary); font-weight: 300;
+            max-width: 620px; margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius); padding: 32px;
+            transition: var(--transition);
+        }
+        .feature-card:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+        .feature-icon {
+            width: 48px; height: 48px; border-radius: var(--radius-sm);
+            background: var(--green-glow); border: 1px solid var(--green-dim);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 22px;
+        }
+        .feature-title {
+            font-family: var(--font-display); font-size: 20px; font-weight: 700;
+            color: var(--text); margin-bottom: 10px;
+        }
+        .feature-desc { color: var(--text-secondary); font-weight: 300; font-size: 14px; line-height: 1.7; }
+
+        /* Workflow */
+        .workflow-bg { background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .workflow-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .workflow-step {
+            text-align: left;
+            padding: 32px; background: var(--card-bg);
+            border: 1px solid var(--card-border); border-radius: var(--radius);
+            position: relative;
+        }
+        .workflow-num {
+            font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+            color: var(--green); letter-spacing: 2px; margin-bottom: 12px;
+            display: inline-block;
+        }
+        .workflow-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+        .workflow-desc { color: var(--text-secondary); font-weight: 300; font-size: 14px; line-height: 1.6; }
+
+        /* Privacy banner */
+        .privacy-banner {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center;
+        }
+        .privacy-banner h3 {
+            font-family: var(--font-display); font-size: 28px; font-weight: 700;
+            color: var(--text); margin-bottom: 12px;
+        }
+        .privacy-banner h3 em { font-style: italic; color: var(--green); }
+        .privacy-banner p {
+            color: var(--text-secondary); font-weight: 300; font-size: 16px;
+            line-height: 1.7; margin-bottom: 16px;
+        }
+        .privacy-list { list-style: none; padding: 0; }
+        .privacy-list li {
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+            display: flex; gap: 14px; align-items: start;
+        }
+        .privacy-list li:last-child { border-bottom: none; }
+        .privacy-list strong { color: var(--text); font-size: 15px; display: block; margin-bottom: 4px; }
+        .privacy-list span { color: var(--text-secondary); font-weight: 300; font-size: 14px; line-height: 1.5; }
+        .privacy-list .ok-icon {
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--green-glow); color: var(--green);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700;
+            border: 1px solid var(--green-dim);
+            flex-shrink: 0;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 100px 40px;
+            position: relative; z-index: 1;
+        }
+        .cta-section h2 {
+            font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900; color: var(--text); margin-bottom: 20px;
+        }
+        .cta-section h2 em { font-style: italic; color: var(--green); }
+        .cta-section p {
+            font-size: 18px; color: var(--text-secondary); font-weight: 300;
+            margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        @media (max-width: 900px) {
+            .hero__inner, .privacy-banner { grid-template-columns: 1fr; }
+            .hero { padding: calc(var(--nav-height) + 48px) 20px 40px; }
+            .container { padding: 0 20px; }
+            .section-pad { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">
+        <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+        Sagelight <span>Studio</span>
+    </a>
+    <ul class="nav__tabs" id="navTabs" role="list">
+        <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+        <li><a href="sagemeet.html" class="nav__tab nav__tab--active" aria-current="page">SageMeet</a></li>
+        <li><a href="sagedocs.html" class="nav__tab">SageDocs</a></li>
+        <li><a href="blog.html" class="nav__tab">Blog</a></li>
+        <li><a href="press-kit.html" class="nav__tab">Press</a></li>
+    </ul>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme" title="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+        <a href="https://apps.apple.com/us/app/sagemeet/id6761443109" target="_blank" rel="noopener" class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">Download</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+</nav>
+
+<main>
+    <section class="hero">
+        <div class="hero__inner">
+            <div>
+                <div class="hero__eyebrow">Free · iOS · BYOK</div>
+                <h1 class="hero__title">Record. Transcribe.<br><em>Remember everything</em> — AI meeting recorder for iPhone.</h1>
+                <p class="hero__sub">
+                    SageMeet records your meetings, transcribes them with Whisper, and generates summaries and action items with GPT-4o &mdash; all using your own OpenAI key. Private Mode disables every external request, so you stay in control.
+                </p>
+                <div class="hero__actions">
+                    <a href="https://apps.apple.com/us/app/sagemeet/id6761443109" target="_blank" rel="noopener" class="btn btn--primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Download on the App Store
+                    </a>
+                    <a href="#features" class="btn btn--ghost">See features</a>
+                </div>
+                <div class="trust-badges">
+                    <span class="trust-badge">100% Free</span>
+                    <span class="trust-badge">Bring your own key</span>
+                    <span class="trust-badge">Private Mode</span>
+                    <span class="trust-badge">GDPR Compliant</span>
+                </div>
+            </div>
+
+            <div class="meet-mockup" aria-label="Preview of SageMeet recording interface">
+                <div class="meet-header">
+                    <div>
+                        <div class="meet-title">Q2 Strategy Sync</div>
+                        <div class="meet-meta">14 MIN · 4 PARTICIPANTS · LIVE</div>
+                    </div>
+                    <span class="recording-pill">REC</span>
+                </div>
+                <div class="waveform" aria-hidden="true">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
+                <div class="transcript-line">
+                    <span class="speaker-tag">Speaker 1</span>
+                    <span class="transcript-text">Let's lock the Q2 budget this week — we're already two days behind and finance needs the numbers by Friday.</span>
+                </div>
+                <div class="transcript-line">
+                    <span class="speaker-tag speaker-tag--alt">Speaker 2</span>
+                    <span class="transcript-text">Agreed. I'll circulate the v3 draft tonight and we close it Wednesday morning.</span>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">AI Summary &middot; GPT-4o</div>
+                    <div class="summary-text">Q2 budget review — finalize by Wednesday. <strong>Action:</strong> Speaker 2 sends v3 draft tonight; group reviews and locks figures Wednesday AM ahead of Friday finance deadline.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" id="features">
+        <div class="container">
+            <header class="section-header">
+                <h2>Designed for <em>real meetings</em></h2>
+                <p>The kind of meetings where you can't take notes and pay attention at the same time &mdash; and notes from memory always miss the part that mattered.</p>
+            </header>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🎙</div>
+                    <h3 class="feature-title">High-Quality Recording</h3>
+                    <p class="feature-desc">Capture audio in your meetings with native iOS recording. Files are stored locally first &mdash; nothing leaves your phone unless you ask.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📝</div>
+                    <h3 class="feature-title">Whisper Transcription</h3>
+                    <p class="feature-desc">When you choose to transcribe, audio is sent to OpenAI Whisper via your own API key. Accurate across accents, multilingual, and fast.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🤖</div>
+                    <h3 class="feature-title">GPT-4o Summaries &amp; Action Items</h3>
+                    <p class="feature-desc">Get clean meeting notes, decisions, and action items. SageMeet structures the output so you can paste it directly into Notion, Linear, or email.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🔍</div>
+                    <h3 class="feature-title">Semantic Search</h3>
+                    <p class="feature-desc">Find a topic, a quote, or a decision across all your recorded meetings. Embeddings live in a local SQLite store on your device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">👥</div>
+                    <h3 class="feature-title">Speaker Analytics</h3>
+                    <p class="feature-desc">Understand participation patterns &mdash; speaking time, question rate, follow-through &mdash; powered by GPT-4o-mini.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📅</div>
+                    <h3 class="feature-title">Calendar-Aware</h3>
+                    <p class="feature-desc">SageMeet reads your calendar (read-only) for meeting context. We never modify your events.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">☁️</div>
+                    <h3 class="feature-title">iCloud Sync</h3>
+                    <p class="feature-desc">Your recordings, transcripts, and notes can sync across your Apple devices via iCloud Drive &mdash; under Apple's GDPR commitments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🔑</div>
+                    <h3 class="feature-title">Bring Your Own Key (BYOK)</h3>
+                    <p class="feature-desc">Use your own OpenAI API key, stored in Keychain. You pay OpenAI directly for usage. We don't run a backend, so we don't bill you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🛡</div>
+                    <h3 class="feature-title">Private Mode</h3>
+                    <p class="feature-desc">One toggle disables all external API calls. Recording and local playback continue working &mdash; no data ever leaves the device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad workflow-bg" id="workflow">
+        <div class="container">
+            <header class="section-header">
+                <h2>How it <em>works</em></h2>
+                <p>Four steps from "press record" to "paste the action items into your tracker."</p>
+            </header>
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <div class="workflow-num">01</div>
+                    <h3 class="workflow-title">Record</h3>
+                    <p class="workflow-desc">Tap record in SageMeet or start it from a Calendar event. Audio captures natively, locally, on your iPhone.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">02</div>
+                    <h3 class="workflow-title">Transcribe</h3>
+                    <p class="workflow-desc">After the meeting, choose to transcribe. Whisper handles the audio via your own API key &mdash; or skip this entirely with Private Mode.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">03</div>
+                    <h3 class="workflow-title">Summarize</h3>
+                    <p class="workflow-desc">GPT-4o generates clean notes, decisions, and a list of action items. Edit anything you want, then save.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="workflow-num">04</div>
+                    <h3 class="workflow-title">Search &amp; Reuse</h3>
+                    <p class="workflow-desc">Semantic search finds the meeting where it was decided. Spotlight indexes everything for system-wide search.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" id="privacy">
+        <div class="container">
+            <div class="privacy-banner">
+                <div>
+                    <h3>Built around <em>your privacy</em></h3>
+                    <p>Most "AI meeting" apps require an account, run a server-side pipeline that holds your audio, and train models on the data they collect.</p>
+                    <p>SageMeet doesn't.</p>
+                </div>
+                <ul class="privacy-list">
+                    <li>
+                        <span class="ok-icon">✓</span>
+                        <div>
+                            <strong>No backend, no account</strong>
+                            <span>SageMeet has no servers. There is nothing for us to log, store, or analyze.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ok-icon">✓</span>
+                        <div>
+                            <strong>You own the OpenAI relationship</strong>
+                            <span>Bring your own API key. OpenAI does not use API data to train models, and is EU-US DPF certified.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ok-icon">✓</span>
+                        <div>
+                            <strong>Private Mode disables AI completely</strong>
+                            <span>Record locally, play back locally, organize locally. Zero external data transmission.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ok-icon">✓</span>
+                        <div>
+                            <strong>Keychain-protected API key</strong>
+                            <span>Hardware-backed Keychain storage with strict access controls. Used only to authenticate your requests.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ok-icon">✓</span>
+                        <div>
+                            <strong>No analytics, no telemetry</strong>
+                            <span>No third-party SDKs. No crash reports. No event tracking. The app works offline by design.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Stop taking <em>worse notes</em>.</h2>
+        <p>SageMeet is free. You bring your own OpenAI key. Recording and Private Mode don't require any external service at all.</p>
+        <div class="cta-actions">
+            <a href="https://apps.apple.com/us/app/sagemeet/id6761443109" target="_blank" rel="noopener" class="btn btn--primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download on the App Store
+            </a>
+            <a href="privacy-policy.html" class="btn btn--ghost">Read the privacy policy</a>
+        </div>
+        <p style="font-size: 14px; margin-top: 24px; color: var(--text-dim);">iOS 17+ &middot; iPadOS 17+ &middot; Free</p>
+    </section>
+
+    <footer class="footer" style="max-width: 1200px; margin: 0 auto; padding: 40px;">
+        <div class="footer__brand">
+            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet &middot; SageDocs
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="sagebills.html">SageBills</a>
+            <a href="sagedocs.html">SageDocs</a>
+            <a href="blog.html">Blog</a>
+            <a href="press-kit.html">Press</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="gdpr.html">GDPR</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <div class="footer__tagline">© 2026 Sagelight Studio &mdash; Built with care in Romania, EU</div>
+    </footer>
+</main>
+
+<script src="assets/theme.js"></script>
+</body>
+</html>

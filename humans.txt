@@ -1,0 +1,15 @@
+/* TEAM */
+Founder & Developer: Sagelight Studio
+Contact: contact [at] sagelight-studio.com
+Location: Romania, European Union
+
+/* SITE */
+Last update: 2026-05-10
+Standards: HTML5, CSS3, ES2015
+Components: Static HTML — no build step, no tracking
+Hosted on: GitHub Pages
+Software: Built with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit)
+
+/* PHILOSOPHY */
+Privacy by design. Local-first by default. No accounts, no analytics, no third-party SDKs.
+Built with care in Romania, EU. 🌿

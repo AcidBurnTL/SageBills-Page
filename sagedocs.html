@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageDocs — Encrypted Personal Document Vault for iPhone &amp; Mac</title>
+    <meta name="description" content="AES-256 encrypted vault for IDs, contracts, insurance, and medical records. Biometric-protected. Encrypted iCloud sync. Free for iPhone and Mac.">
+    <meta name="keywords" content="SageDocs, encrypted document vault, secure document storage iOS, AES-256 document app, personal vault Mac, encrypted iCloud, GDPR document vault, biometric document app">
+    <meta property="og:title" content="SageDocs — Encrypted Personal Document Vault">
+    <meta property="og:description" content="AES-256 encrypted vault for IDs, contracts, insurance, and personal documents. Biometric-protected. Free for iOS &amp; macOS.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagelight-studio.com/sagedocs.html">
+    <meta property="og:site_name" content="Sagelight Studio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://sagelight-studio.com/assets/og/sagedocs.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SageDocs — encrypted personal document vault for iPhone and Mac">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SageDocs — Encrypted Personal Document Vault">
+    <meta name="twitter:description" content="AES-256 encrypted vault. Biometric-protected. Free for iOS &amp; macOS.">
+    <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagedocs.png">
+    <meta name="apple-itunes-app" content="app-id=6762064711">
+    <meta name="application-name" content="SageDocs">
+    <meta name="theme-color" content="#00d672">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sagelight-studio.com/sagedocs.html">
+    <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagedocs.html">
+    <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagedocs.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/legal.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SageDocs",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS 17+, macOS 14+",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Encrypted personal document vault. AES-256-GCM encryption, biometric/PIN protection, encrypted iCloud sync, expiry tracking. Built for privacy.",
+        "url": "https://apps.apple.com/us/app/sagedocs/id6762064711",
+        "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
+        "author": {
+            "@type": "Organization",
+            "name": "Sagelight Studio",
+            "url": "https://sagelight-studio.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sagelight Studio"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sagelight-studio.com/"},
+            {"@type": "ListItem", "position": 2, "name": "SageDocs", "item": "https://sagelight-studio.com/sagedocs.html"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is SageDocs free?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes — SageDocs is free on the App Store. No subscription, no in-app purchases, no account required."}
+            },
+            {
+                "@type": "Question",
+                "name": "How is my data encrypted?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Every attachment is encrypted with AES-256-GCM before storage. Encryption keys are derived from your master PIN using PBKDF2-SHA256 with 600,000 iterations and a 256-bit per-installation salt. Keys live in the iOS Keychain and are biometric-protected."}
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I forget my master PIN?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Your encrypted documents cannot be recovered. We do not have a backdoor or any way to reset your encryption keys — that is the point of the design. Choose a PIN you can remember, and consider enabling biometric unlock as a backup path."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does iCloud see my documents?",
+                "acceptedAnswer": {"@type": "Answer", "text": "No. Documents are encrypted on-device with AES-256-GCM before being synced to iCloud via CloudKit. Apple stores ciphertext only — even Apple cannot decrypt your documents."}
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share a document from SageDocs?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. Documents are temporarily decrypted for the share you initiate (e.g., emailing your insurance card). The temporary file is securely wiped immediately after."}
+            },
+            {
+                "@type": "Question",
+                "name": "Is SageDocs available for Mac?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. SageDocs is a universal binary running natively on iPhone (iOS 17+), iPad (iPadOS 17+), and Mac (macOS 14+). Documents sync encrypted across all your Apple devices via iCloud."}
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .hero {
+            position: relative; z-index: 1;
+            padding: calc(var(--nav-height) + 80px) 40px 60px;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .hero__inner {
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px;
+            align-items: center;
+        }
+        .hero__eyebrow {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--green); background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+        }
+        .hero__eyebrow::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+        }
+        .hero__title {
+            font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900; line-height: 1.05; color: var(--text);
+            margin-bottom: 24px; letter-spacing: -0.02em;
+        }
+        .hero__title em { font-style: italic; color: var(--green); }
+        .hero__sub {
+            font-size: 19px; font-weight: 300; color: var(--text-secondary);
+            line-height: 1.6; max-width: 560px; margin-bottom: 32px;
+        }
+        .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 28px; border-radius: 100px;
+            font-family: var(--font-body); font-size: 15px; font-weight: 600;
+            text-decoration: none; transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .btn--primary { background: var(--green); color: #0a0a0a; }
+        .btn--primary:hover { opacity: 1; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,214,114,0.3); }
+        [data-theme="light"] .btn--primary { color: #fff; }
+        .btn--ghost { background: transparent; color: var(--text); border-color: var(--border-hover); }
+        .btn--ghost:hover { opacity: 1; border-color: var(--green); color: var(--green); }
+        .trust-badges {
+            display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;
+        }
+        .trust-badge {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
+            color: var(--text-dim); text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .trust-badge::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+        .vault-mockup {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius); padding: 28px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+            position: relative; overflow: hidden;
+        }
+        [data-theme="light"] .vault-mockup { box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+        .vault-mockup::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px; background: linear-gradient(90deg, var(--green), var(--green-muted));
+        }
+        .vault-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 16px; border-bottom: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+        .vault-title {
+            font-family: var(--font-display); font-size: 18px; font-weight: 700;
+            color: var(--text);
+        }
+        .vault-status {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px;
+            color: var(--green); text-transform: uppercase;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .vault-status::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--green); animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .doc-row {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+        }
+        .doc-row:last-child { border-bottom: none; }
+        .doc-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--green-glow); border: 1px solid var(--green-dim);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+        }
+        .doc-info { flex: 1; }
+        .doc-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .doc-meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.5px; }
+        .doc-status {
+            font-size: 11px; font-weight: 600;
+            padding: 4px 10px; border-radius: 100px;
+        }
+        .doc-status--ok { background: var(--green-glow); color: var(--green); }
+        .doc-status--warn { background: rgba(255,180,0,0.1); color: #ffb400; }
+        .doc-status--exp { background: rgba(248,113,113,0.1); color: #f87171; }
+
+        /* Sections */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .section-pad { padding: 80px 0; position: relative; z-index: 1; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 {
+            font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900; color: var(--text); margin-bottom: 16px;
+        }
+        .section-header h2 em { font-style: italic; color: var(--green); }
+        .section-header p {
+            font-size: 17px; color: var(--text-secondary); font-weight: 300;
+            max-width: 620px; margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius); padding: 32px;
+            transition: var(--transition);
+        }
+        .feature-card:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+        .feature-icon {
+            width: 48px; height: 48px; border-radius: var(--radius-sm);
+            background: var(--green-glow); border: 1px solid var(--green-dim);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 22px;
+        }
+        .feature-title {
+            font-family: var(--font-display); font-size: 20px; font-weight: 700;
+            color: var(--text); margin-bottom: 10px;
+        }
+        .feature-desc { color: var(--text-secondary); font-weight: 300; font-size: 14px; line-height: 1.7; }
+
+        /* Security section */
+        .security-bg {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .security-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .security-list { list-style: none; padding: 0; }
+        .security-list li {
+            display: flex; gap: 16px; padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .security-list li:last-child { border-bottom: none; }
+        .security-list strong {
+            display: block; color: var(--text); font-size: 15px; font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .security-list span {
+            color: var(--text-secondary); font-weight: 300; font-size: 14px;
+            line-height: 1.6;
+        }
+        .security-list .badge {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.5px;
+            color: var(--green); background: var(--green-glow);
+            border: 1px solid var(--green-dim);
+            padding: 4px 10px; border-radius: 100px;
+            flex-shrink: 0; height: fit-content;
+            text-transform: uppercase;
+        }
+
+        /* Use cases */
+        .uses-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1px; background: var(--border);
+            border-radius: var(--radius); overflow: hidden;
+        }
+        .use-card {
+            background: var(--card-bg); padding: 28px; transition: var(--transition);
+        }
+        .use-card:hover { background: var(--bg-surface-2); }
+        .use-card__icon { font-size: 24px; margin-bottom: 12px; }
+        .use-card__name { font-weight: 600; color: var(--text); margin-bottom: 6px; font-size: 15px; }
+        .use-card__desc { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 100px 40px;
+            position: relative; z-index: 1;
+        }
+        .cta-section h2 {
+            font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900; color: var(--text); margin-bottom: 20px;
+        }
+        .cta-section h2 em { font-style: italic; color: var(--green); }
+        .cta-section p {
+            font-size: 18px; color: var(--text-secondary); font-weight: 300;
+            margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        @media (max-width: 900px) {
+            .hero__inner, .security-grid { grid-template-columns: 1fr; }
+            .hero { padding: calc(var(--nav-height) + 48px) 20px 40px; }
+            .container { padding: 0 20px; }
+            .section-pad { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">
+        <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+        Sagelight <span>Studio</span>
+    </a>
+    <ul class="nav__tabs" id="navTabs" role="list">
+        <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+        <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
+        <li><a href="sagedocs.html" class="nav__tab nav__tab--active" aria-current="page">SageDocs</a></li>
+        <li><a href="blog.html" class="nav__tab">Blog</a></li>
+        <li><a href="press-kit.html" class="nav__tab">Press</a></li>
+    </ul>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme" title="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+        <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" target="_blank" rel="noopener" class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">Download</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+</nav>
+
+<main>
+    <section class="hero">
+        <div class="hero__inner">
+            <div>
+                <div class="hero__eyebrow">Free · iOS &amp; macOS</div>
+                <h1 class="hero__title">Your documents. <em>Encrypted</em>.<br>Personal document vault for iPhone &amp; Mac.</h1>
+                <p class="hero__sub">
+                    SageDocs is an encrypted vault for IDs, contracts, insurance, medical records, and everything in between. AES-256 encryption, biometric authentication, and encrypted iCloud sync &mdash; on iPhone, iPad, and Mac.
+                </p>
+                <div class="hero__actions">
+                    <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" target="_blank" rel="noopener" class="btn btn--primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Download on the App Store
+                    </a>
+                    <a href="#features" class="btn btn--ghost">See features</a>
+                </div>
+                <div class="trust-badges">
+                    <span class="trust-badge">100% Free</span>
+                    <span class="trust-badge">No Account</span>
+                    <span class="trust-badge">AES-256-GCM</span>
+                    <span class="trust-badge">GDPR Compliant</span>
+                </div>
+            </div>
+
+            <div class="vault-mockup" aria-label="Preview of SageDocs vault interface">
+                <div class="vault-header">
+                    <div>
+                        <div class="vault-title">Personal Vault</div>
+                        <div style="font-size:11px;color:var(--text-dim);font-family:var(--font-mono);margin-top:2px;">12 documents · encrypted</div>
+                    </div>
+                    <div class="vault-status">Locked → Unlocked</div>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon" aria-hidden="true">🪪</div>
+                    <div class="doc-info">
+                        <div class="doc-name">National ID Card</div>
+                        <div class="doc-meta">EXPIRES · 2031-08-14</div>
+                    </div>
+                    <div class="doc-status doc-status--ok">Valid</div>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon" aria-hidden="true">🏥</div>
+                    <div class="doc-info">
+                        <div class="doc-name">Health Insurance</div>
+                        <div class="doc-meta">EXPIRES · 2026-09-30</div>
+                    </div>
+                    <div class="doc-status doc-status--warn">Renew soon</div>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon" aria-hidden="true">🚗</div>
+                    <div class="doc-info">
+                        <div class="doc-name">Driver's License</div>
+                        <div class="doc-meta">EXPIRES · 2030-04-22</div>
+                    </div>
+                    <div class="doc-status doc-status--ok">Valid</div>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon" aria-hidden="true">📄</div>
+                    <div class="doc-info">
+                        <div class="doc-name">Mortgage Contract</div>
+                        <div class="doc-meta">SIGNED · 2024-11-12</div>
+                    </div>
+                    <div class="doc-status doc-status--ok">Active</div>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon" aria-hidden="true">✈️</div>
+                    <div class="doc-info">
+                        <div class="doc-name">Passport</div>
+                        <div class="doc-meta">EXPIRES · 2025-12-15</div>
+                    </div>
+                    <div class="doc-status doc-status--exp">Expired</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" id="features">
+        <div class="container">
+            <header class="section-header">
+                <h2>Built for what <em>actually matters</em></h2>
+                <p>The papers we panic-search-for during emergencies, deserve better than a kitchen drawer or a notes app screenshot.</p>
+            </header>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🔐</div>
+                    <h3 class="feature-title">AES-256-GCM Encryption</h3>
+                    <p class="feature-desc">Every attachment is encrypted with AES-256-GCM before it touches storage. Keys are derived from your master PIN via PBKDF2-SHA256 with 600,000 iterations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">👤</div>
+                    <h3 class="feature-title">Biometric &amp; PIN Lock</h3>
+                    <p class="feature-desc">Unlock with Face ID or Touch ID, fall back to a master PIN. Constant-time PIN verification and progressive lockout protect against brute-force attempts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📷</div>
+                    <h3 class="feature-title">Built-in Document Scanner</h3>
+                    <p class="feature-desc">Scan with your camera using the on-device Vision framework. No third-party scanner SDKs, no images sent to a cloud service.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">⏰</div>
+                    <h3 class="feature-title">Expiry Tracking &amp; Reminders</h3>
+                    <p class="feature-desc">Track expiry dates for IDs, insurance, contracts, and certifications. Get local notifications well in advance &mdash; never get caught at the airport again.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">☁️</div>
+                    <h3 class="feature-title">Encrypted iCloud Sync</h3>
+                    <p class="feature-desc">Documents sync between your iPhone, iPad, and Mac via Apple CloudKit &mdash; <em>after</em> they're encrypted on-device. Your iCloud sees ciphertext, never content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🗂</div>
+                    <h3 class="feature-title">Smart Categories</h3>
+                    <p class="feature-desc">Organize across identity, insurance, finance, medical, contracts, education, vehicles, and more. Search by title, issuer, reference number, or notes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📤</div>
+                    <h3 class="feature-title">Secure Sharing</h3>
+                    <p class="feature-desc">Need to email your insurance card? Decrypt temporarily for a one-shot share, with the temp file securely wiped immediately afterward.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">🚫</div>
+                    <h3 class="feature-title">Zero Third Parties</h3>
+                    <p class="feature-desc">No analytics. No ads. No tracking. No third-party SDKs. Built entirely with Apple frameworks. We never see your documents.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">📜</div>
+                    <h3 class="feature-title">Privacy-Respecting Logs</h3>
+                    <p class="feature-desc">Security events are logged via OSLog &mdash; without ever recording PINs, encryption keys, or document content. Auditable, but never invasive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad security-bg" id="security">
+        <div class="container">
+            <div class="security-grid">
+                <div>
+                    <header class="section-header" style="text-align:left; margin-bottom: 24px;">
+                        <h2 style="text-align:left;">Security <em>in depth</em></h2>
+                        <p style="text-align:left; margin: 0;">SageDocs is what an iCloud-synced vault should look like when it's designed by someone who actually reads the GDPR &mdash; security at every layer, not just on the marketing page.</p>
+                    </header>
+                </div>
+                <ul class="security-list">
+                    <li>
+                        <span class="badge">AES-256</span>
+                        <div>
+                            <strong>Authenticated encryption</strong>
+                            <span>AES-256-GCM provides confidentiality and integrity. Every attachment is encrypted with a unique nonce.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="badge">PBKDF2</span>
+                        <div>
+                            <strong>Key derivation hardening</strong>
+                            <span>PBKDF2-SHA256 with 600,000 iterations and a 256-bit per-installation salt makes brute force impractical.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="badge">Keychain</span>
+                        <div>
+                            <strong>Hardware-backed key storage</strong>
+                            <span>Encryption keys live in the Secure Enclave-backed Keychain, biometric-protected and invalidated when biometrics change.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="badge">Lockout</span>
+                        <div>
+                            <strong>Progressive lockout</strong>
+                            <span>Constant-time PIN comparison with escalating cooldowns after failed attempts. No timing leaks.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="badge">CloudKit</span>
+                        <div>
+                            <strong>End-to-end encrypted sync</strong>
+                            <span>Encrypted before it ever reaches iCloud. Apple stores ciphertext only &mdash; even Apple cannot decrypt it.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" id="uses">
+        <div class="container">
+            <header class="section-header">
+                <h2>What people <em>actually keep here</em></h2>
+                <p>The kind of paperwork you only think about when you need it &mdash; and need it now.</p>
+            </header>
+            <div class="uses-grid">
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🪪</div>
+                    <div class="use-card__name">Identity</div>
+                    <div class="use-card__desc">National ID, passport, driver's license, residence permits.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🏥</div>
+                    <div class="use-card__name">Medical</div>
+                    <div class="use-card__desc">Health insurance card, prescriptions, vaccination records.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🛡️</div>
+                    <div class="use-card__name">Insurance</div>
+                    <div class="use-card__desc">Home, auto, travel, and life policies with renewal reminders.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">📄</div>
+                    <div class="use-card__name">Contracts</div>
+                    <div class="use-card__desc">Mortgage, rent, employment, NDAs, service agreements.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🚗</div>
+                    <div class="use-card__name">Vehicles</div>
+                    <div class="use-card__desc">Registration, ITP/MOT, insurance, service history.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🎓</div>
+                    <div class="use-card__name">Education</div>
+                    <div class="use-card__desc">Diplomas, certifications, transcripts, professional licenses.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🏦</div>
+                    <div class="use-card__name">Finance</div>
+                    <div class="use-card__desc">Loan documents, account info, tax statements, receipts.</div>
+                </div>
+                <div class="use-card">
+                    <div class="use-card__icon" aria-hidden="true">🏠</div>
+                    <div class="use-card__name">Home</div>
+                    <div class="use-card__desc">Property deed, utility contracts, warranty registrations.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>The vault you'll <em>actually open</em>.</h2>
+        <p>Free for iPhone, iPad, and Mac. No account, no subscription, no catch &mdash; just a small native app that takes encryption seriously.</p>
+        <div class="cta-actions">
+            <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" target="_blank" rel="noopener" class="btn btn--primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download on the App Store
+            </a>
+            <a href="privacy-policy.html" class="btn btn--ghost">Read the privacy policy</a>
+        </div>
+        <p style="font-size: 14px; margin-top: 24px; color: var(--text-dim);">iOS 17+ · iPadOS 17+ · macOS 14+ &middot; Universal binary</p>
+    </section>
+
+    <footer class="footer" style="max-width: 1200px; margin: 0 auto; padding: 40px;">
+        <div class="footer__brand">
+            <strong>Sagelight <span>Studio</span></strong> &mdash; SageBills &middot; SageMeet &middot; SageDocs
+        </div>
+        <nav class="footer__links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="sagebills.html">SageBills</a>
+            <a href="sagemeet.html">SageMeet</a>
+            <a href="blog.html">Blog</a>
+            <a href="press-kit.html">Press</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="gdpr.html">GDPR</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+        <div class="footer__tagline">© 2026 Sagelight Studio &mdash; Built with care in Romania, EU</div>
+    </footer>
+</main>
+
+<script src="assets/theme.js"></script>
+</body>
+</html>

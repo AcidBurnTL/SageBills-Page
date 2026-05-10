@@ -1,0 +1,28 @@
+# Sagelight Studio
+
+> Independent app studio in Romania, EU. We build privacy-first iOS and macOS apps for the everyday work most apps overcomplicate — bills, meetings, and personal documents. No tracking. No ads. No accounts. Local-first by default.
+
+## Apps
+
+- [SageBills](https://sagelight-studio.com/sagebills.html): Smart utility bill tracker for European households. 40+ bill categories, on-device OCR invoice scanning, cost predictions, anomaly detection. iOS 17+ and macOS 14+. Free. Local-only architecture — zero data leaves the device.
+- [SageMeet](https://sagelight-studio.com/sagemeet.html): AI meeting recorder and transcription for iPhone. Whisper transcription and GPT-4o note generation using a user-provided OpenAI API key (BYOK). Includes Private Mode that disables all external transmission. Free.
+- [SageDocs](https://sagelight-studio.com/sagedocs.html): Encrypted personal document vault for IDs, contracts, insurance, and medical records. AES-256-GCM encryption with PBKDF2-SHA256 key derivation. Biometric/PIN auth, encrypted iCloud sync via CloudKit. iOS 17+ and macOS 14+. Free.
+
+## Legal
+
+- [Privacy Policy](https://sagelight-studio.com/privacy-policy.html): How Sagelight Studio handles user data. Local-first, GDPR-compliant, zero analytics, zero tracking.
+- [GDPR Disclosure](https://sagelight-studio.com/gdpr.html): Articles 13 and 14 disclosure under EU Regulation 2016/679. Controller, lawful basis, recipients, transfers, retention, supervisory authority (ANSPDCP).
+- [Terms of Service](https://sagelight-studio.com/terms.html): Romanian governing law with full EU consumer rights preserved. Free of charge.
+
+## Content
+
+- [Blog](https://sagelight-studio.com/blog.html): Money-saving guides and product updates for European households. Topics include utility bill optimization, electricity contract audits, gas pricing, smart home savings, and country-specific guides for Romania, Poland, Hungary, and Czech Republic.
+- [Press Kit](https://sagelight-studio.com/press-kit.html): Brand assets, press release, and media contact for Sagelight Studio.
+
+## About
+
+- Independent sole-proprietor app studio based in Romania, EU.
+- Contact: contact@sagelight-studio.com
+- All apps are built entirely with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit). No third-party SDKs, no analytics, no telemetry.
+- Lawful basis for processing under GDPR Art. 6(1)(a) (consent) for SageBills and SageDocs; consent + contractual necessity (Art. 6(1)(b)) for SageMeet.
+- Romanian supervisory authority: ANSPDCP (www.dataprotection.ro).

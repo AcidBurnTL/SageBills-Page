@@ -15,14 +15,26 @@
     <meta property="og:locale:alternate" content="pl_PL">
     <meta property="og:locale:alternate" content="hu_HU">
     <meta property="og:locale:alternate" content="cs_CZ">
+    <meta property="og:image" content="https://sagelight-studio.com/assets/og/sagebills.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SageBills — Every bill. Every provider. One app.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SageBills — Every bill. Every provider. One app.">
     <meta name="twitter:description" content="The smart utility tracker built for European households. Free, private, no account required.">
+    <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagebills.png">
     <meta name="apple-itunes-app" content="app-id=6762021142">
     <meta name="application-name" content="SageBills">
     <meta name="theme-color" content="#00d672">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://sagelight-studio.com/sagebills.html">
+    <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagebills.html">
+    <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagebills.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -37,16 +49,64 @@
         },
         "description": "Smart Utility Bill Tracker for European households. Track 40+ bill categories, scan invoices with OCR, predict future costs, detect anomalies, and set savings goals.",
         "url": "https://apps.apple.com/us/app/sagebills/id6762021142",
+        "image": "https://sagelight-studio.com/assets/og/sagebills.png",
         "author": {
             "@type": "Organization",
             "name": "Sagelight Studio",
             "url": "https://sagelight-studio.com"
         },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "ratingCount": "1"
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sagelight Studio"
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sagelight-studio.com/"},
+            {"@type": "ListItem", "position": 2, "name": "SageBills", "item": "https://sagelight-studio.com/sagebills.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is SageBills free?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes — SageBills is free on the App Store with no subscription, no in-app purchases, and no account required."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does SageBills work for Romanian utility providers?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. SageBills is built for European households and works for any provider in any country. Romanian providers like Enel, Electrica, ENGIE, Hidroelectrica, RCS &amp; RDS, Orange, Vodafone, and Digi are commonly tracked. You can add custom providers in any country."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does SageBills send my bill data anywhere?",
+                "acceptedAnswer": {"@type": "Answer", "text": "No. SageBills is a local-only app. Your bill data, OCR-extracted invoice text, predictions, and savings goals all stay on your device. There is no backend server, no analytics, and no third-party SDKs."}
+            },
+            {
+                "@type": "Question",
+                "name": "How does invoice OCR scanning work?",
+                "acceptedAnswer": {"@type": "Answer", "text": "SageBills uses Apple's on-device Vision framework to extract amounts, dates, providers, and account numbers from photographed invoices. The image and extracted text never leave your device."}
+            },
+            {
+                "@type": "Question",
+                "name": "Is SageBills GDPR compliant?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. Because all processing happens on-device with no data transmission to Sagelight Studio or any third party (other than optional Apple iCloud sync), SageBills is fully GDPR compliant by design."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does SageBills work offline?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. All core features — bill tracking, predictions, anomaly detection, OCR scanning, CSV export — work entirely offline. An internet connection is only needed to download the app."}
+            }
+        ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,8 +138,8 @@
             --green-muted: #0a8a4a;
             --text: #e8e8ed;
             --text-secondary: #a0a0ab;
-            --text-dim: #6e6e78;
-            --text-muted: #3a3a42;
+            --text-dim: #9a9aa6;
+            --text-muted: #717179;
             --border: #1e1e24;
             --border-hover: #2e2e36;
             --card-bg: #0d0d10;
@@ -88,6 +148,7 @@
             --scrollbar-track: #111113;
             --scrollbar-thumb: #2a2a32;
             --shadow-card: 0 1px 3px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.4);
+            --btn-primary-fg: #0a0a0a;
         }
 
         [data-theme="light"] {
@@ -95,22 +156,23 @@
             --bg-surface: #ffffff;
             --bg-surface-2: #f5f5f3;
             --bg-surface-3: #eeeee9;
-            --green: #059652;
-            --green-dim: rgba(5, 150, 82, 0.12);
-            --green-glow: rgba(5, 150, 82, 0.06);
-            --green-muted: #078a4c;
+            --green: #036b3a;
+            --green-dim: rgba(3, 107, 58, 0.14);
+            --green-glow: rgba(3, 107, 58, 0.06);
+            --green-muted: #027a42;
             --text: #1a1a1e;
             --text-secondary: #52525b;
-            --text-dim: #8a8a96;
-            --text-muted: #c0c0c8;
+            --text-dim: #6b6b77;
+            --text-muted: #888892;
             --border: #e4e4e0;
             --border-hover: #d0d0cc;
             --card-bg: #ffffff;
             --card-border: #e4e4e0;
-            --highlight-bg: rgba(5, 150, 82, 0.04);
+            --highlight-bg: rgba(3, 107, 58, 0.05);
             --scrollbar-track: #f0f0ee;
             --scrollbar-thumb: #ccccc8;
             --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+            --btn-primary-fg: #ffffff;
         }
 
         /* ========================================
@@ -1611,27 +1673,46 @@
             body { background: #fff; color: #111; }
             section { padding: 32px 0 !important; }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .bg-grid, .glow-orb, .shield-ring, .hero__glow-ring,
+            .providers-track, .chart-bar, .reveal { animation: none !important; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
 
 <!-- Background effects -->
-<div class="bg-grid"></div>
-<div class="glow-orb glow-orb--1"></div>
-<div class="glow-orb glow-orb--2"></div>
-<div class="glow-orb glow-orb--3"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--3" aria-hidden="true"></div>
 
 <!-- Navigation -->
-<nav class="nav" id="mainNav">
+<nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav__logo">
-        <span class="nav__logo-leaf">&#127807;</span>
+        <span class="nav__logo-leaf" aria-hidden="true">&#127807;</span>
         Sagelight <span>Studio</span>
     </a>
     <ul class="nav__links" id="navLinks">
         <li><a href="#features" class="nav__link">Features</a></li>
-        <li><a href="#how" class="nav__link">How It Works</a></li>
-        <li><a href="#savings" class="nav__link">Savings</a></li>
-        <li><a href="#download" class="nav__link">Download</a></li>
+        <li><a href="sagemeet.html" class="nav__link">SageMeet</a></li>
+        <li><a href="sagedocs.html" class="nav__link">SageDocs</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+        <li><a href="press-kit.html" class="nav__link">Press</a></li>
     </ul>
     <div class="nav__actions">
         <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme" title="Toggle theme">
@@ -1662,10 +1743,10 @@
                         <span class="label-badge">Free iOS App</span>
                     </div>
                     <h1 class="hero__title reveal reveal-delay-1">
-                        Every bill.<br>Every provider.<br><em>One app.</em>
+                        Every bill. Every provider.<br><em>One app</em> — the utility tracker for European households.
                     </h1>
                     <p class="hero__sub reveal reveal-delay-2">
-                        The smart utility tracker built for European households. Track, predict, and save — with zero data leaving your device.
+                        SageBills is a smart utility bill tracker for iPhone and Mac. Track, predict, and save — with zero data leaving your device.
                     </p>
                     <div class="hero__actions reveal reveal-delay-3">
                         <a href="https://apps.apple.com/us/app/sagebills/id6762021142" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -1692,7 +1773,7 @@
 
                 <div class="hero__visual reveal reveal-delay-2">
                     <div class="hero__glow-ring" aria-hidden="true"></div>
-                    <div class="iphone-mockup" aria-label="SageBills app screenshot">
+                    <div class="iphone-mockup" role="img" aria-label="SageBills app dashboard showing monthly utilities — Electricity from Enel Romania 89.40 RON, Internet from RCS &amp; RDS 39 RON, Natural Gas from ENGIE Romania 71.20 RON, Mobile from Orange Romania 48.20 RON. Total 247.80 RON, 12.4% under last month, with on-budget, gas alert, and AI forecast tags.">
                         <div class="iphone-notch" aria-hidden="true"></div>
                         <div class="iphone-screen" aria-hidden="true">
                             <div class="iphone-header">
@@ -1963,7 +2044,7 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             GDPR Compliant &mdash; Built in Romania, EU
                         </span>
-                        <a href="index.html#privacy" style="font-size:13px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;">Read privacy policy &rarr;</a>
+                        <a href="privacy-policy.html" style="font-size:13px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;">Read privacy policy &rarr;</a>
                     </div>
                 </div>
                 <div class="privacy-shield reveal" aria-hidden="true">
@@ -2156,13 +2237,8 @@
             </div>
             <p class="cta-no-catch reveal">Available on iOS &amp; iPadOS &middot; macOS coming soon</p>
 
-            <form class="email-signup reveal" id="emailForm" novalidate>
-                <span class="email-signup-label">Get notified about updates</span>
-                <label for="emailInput" class="sr-only">Email address</label>
-                <input type="email" class="email-input" placeholder="your@email.com" id="emailInput" autocomplete="email">
-                <button type="submit" class="btn-email-submit" id="emailSubmitBtn">Notify Me</button>
-            </form>
-            <p class="email-success" id="emailSuccess" role="status">Thanks! We&rsquo;ll be in touch.</p>
+            <!-- Newsletter signup temporarily disabled — coming soon -->
+            <p class="cta-no-catch reveal" style="margin-top: 8px; opacity: 0.7;">Update notifications coming soon &middot; follow on the App Store for now</p>
         </div>
     </section>
 
@@ -2189,10 +2265,18 @@
                     </div>
                 </div>
                 <div class="footer__links-col">
+                    <div class="footer__links-heading">Studio</div>
+                    <a href="index.html">Sagelight Studio</a>
+                    <a href="sagemeet.html">SageMeet</a>
+                    <a href="sagedocs.html">SageDocs</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="press-kit.html">Press Kit</a>
+                </div>
+                <div class="footer__links-col">
                     <div class="footer__links-heading">Legal</div>
-                    <a href="index.html#privacy">Privacy Policy</a>
-                    <a href="index.html#gdpr">GDPR Disclosure</a>
-                    <a href="index.html#terms">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="gdpr.html">GDPR Disclosure</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
                 <div class="footer__links-col">
                     <div class="footer__links-heading">App</div>
@@ -2327,27 +2411,8 @@
     }
 
     /* ========================================
-       EMAIL FORM
+       EMAIL FORM — disabled until backend is wired up
        ======================================== */
-    var emailForm = document.getElementById('emailForm');
-    if (emailForm) {
-        emailForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            var input = document.getElementById('emailInput');
-            var submitBtn = document.getElementById('emailSubmitBtn');
-            var successMsg = document.getElementById('emailSuccess');
-
-            if (!input || !input.value || !input.value.includes('@')) {
-                input.focus();
-                return;
-            }
-
-            input.disabled = true;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitted';
-            if (successMsg) successMsg.style.display = 'block';
-        });
-    }
 </script>
 
 </body>

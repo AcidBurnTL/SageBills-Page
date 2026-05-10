@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Sagelight Studio</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Browse Sagelight Studio's apps — SageBills, SageMeet, and SageDocs.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#00d672">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/legal.css">
+    <style>
+        .nf-wrap {
+            max-width: 720px; margin: 0 auto;
+            padding: calc(var(--nav-height) + 80px) 40px 80px;
+            text-align: center;
+            position: relative; z-index: 1;
+        }
+        .nf-code {
+            font-family: var(--font-display);
+            font-size: clamp(80px, 18vw, 180px);
+            font-weight: 900; line-height: 1;
+            color: var(--green); margin-bottom: 16px;
+            font-style: italic;
+        }
+        .nf-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 900; color: var(--text); margin-bottom: 16px;
+        }
+        .nf-sub {
+            font-size: 18px; color: var(--text-secondary); font-weight: 300;
+            line-height: 1.6; margin-bottom: 32px;
+        }
+        .nf-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px; margin-bottom: 32px;
+        }
+        .nf-link {
+            display: block; padding: 16px 20px;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            color: var(--text); text-decoration: none;
+            transition: var(--transition);
+        }
+        .nf-link:hover {
+            border-color: var(--green-dim); color: var(--green); opacity: 1;
+            transform: translateY(-1px);
+        }
+        .nf-link__name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+        .nf-link__desc {
+            font-family: var(--font-mono); font-size: 11px;
+            color: var(--text-dim); letter-spacing: 0.5px;
+        }
+        .nf-home {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 100px;
+            background: var(--green); color: #0a0a0a;
+            font-weight: 600; text-decoration: none;
+            transition: var(--transition);
+        }
+        .nf-home:hover { opacity: 1; transform: translateY(-1px); }
+        [data-theme="light"] .nf-home { color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav__logo">
+        <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+        Sagelight <span>Studio</span>
+    </a>
+    <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" onclick="cycleTheme()" aria-label="Toggle theme" title="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </div>
+</nav>
+
+<main class="nf-wrap">
+    <div class="nf-code">404</div>
+    <h1 class="nf-title">Page not found</h1>
+    <p class="nf-sub">The page you're looking for has either moved or never existed. Here's where you might want to go instead.</p>
+
+    <div class="nf-grid">
+        <a class="nf-link" href="/sagebills.html">
+            <div class="nf-link__name">SageBills</div>
+            <div class="nf-link__desc">UTILITY BILL TRACKER</div>
+        </a>
+        <a class="nf-link" href="/sagemeet.html">
+            <div class="nf-link__name">SageMeet</div>
+            <div class="nf-link__desc">AI MEETING RECORDER</div>
+        </a>
+        <a class="nf-link" href="/sagedocs.html">
+            <div class="nf-link__name">SageDocs</div>
+            <div class="nf-link__desc">DOCUMENT VAULT</div>
+        </a>
+        <a class="nf-link" href="/blog.html">
+            <div class="nf-link__name">Blog</div>
+            <div class="nf-link__desc">TIPS &amp; INSIGHTS</div>
+        </a>
+        <a class="nf-link" href="/privacy-policy.html">
+            <div class="nf-link__name">Privacy Policy</div>
+            <div class="nf-link__desc">LEGAL</div>
+        </a>
+        <a class="nf-link" href="/press-kit.html">
+            <div class="nf-link__name">Press Kit</div>
+            <div class="nf-link__desc">MEDIA RESOURCES</div>
+        </a>
+    </div>
+
+    <a href="/" class="nf-home">← Back to Sagelight Studio</a>
+</main>
+
+<script src="/assets/theme.js"></script>
+</body>
+</html>
