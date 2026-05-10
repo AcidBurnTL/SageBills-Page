@@ -19,7 +19,7 @@
     <meta name="twitter:title" content="Press Kit — Sagelight Studio">
     <meta name="twitter:description" content="Brand assets, press release, contact info for Sagelight Studio's apps.">
     <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/press.png">
-    <meta name="theme-color" content="#00d672">
+    <meta name="theme-color" content="#55ee71">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://sagelight-studio.com/press-kit.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -58,63 +58,19 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/sage.css">
     <style>
         /* ========================================
            SAGE DESIGN SYSTEM — CSS Variables
            ======================================== */
+        /* Tokens inherited from sage.css; only page-specific extras here */
         :root {
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-            --radius: 12px;
-            --radius-sm: 8px;
-            --transition: all 0.3s ease;
-            --nav-height: 64px;
-        }
-
-        [data-theme="dark"] {
-            --bg: #050505;
-            --bg-surface: #0a0a0a;
-            --bg-surface-2: #111113;
-            --bg-surface-3: #1a1a1e;
-            --green: #00d672;
-            --green-dim: rgba(0, 214, 114, 0.2);
-            --green-glow: rgba(0, 214, 114, 0.08);
-            --green-muted: #0a8a4a;
-            --text: #e8e8ed;
-            --text-secondary: #a0a0ab;
-            --text-dim: #9a9aa6;
-            --text-muted: #717179;
-            --border: #1e1e24;
-            --border-hover: #2e2e36;
-            --card-bg: #0d0d10;
-            --card-border: #1e1e24;
-            --highlight-bg: rgba(0, 214, 114, 0.06);
-            --scrollbar-track: #111113;
-            --scrollbar-thumb: #2a2a32;
-        }
-
-        [data-theme="light"] {
-            --bg: #fafaf9;
-            --bg-surface: #ffffff;
-            --bg-surface-2: #f5f5f3;
-            --bg-surface-3: #eeeee9;
-            --green: #036b3a;
-            --green-dim: rgba(3, 107, 58, 0.14);
-            --green-glow: rgba(3, 107, 58, 0.06);
-            --green-muted: #027a42;
-            --text: #1a1a1e;
-            --text-secondary: #52525b;
-            --text-dim: #6b6b77;
-            --text-muted: #888892;
-            --border: #e4e4e0;
-            --border-hover: #d0d0cc;
-            --card-bg: #ffffff;
-            --card-border: #e4e4e0;
-            --highlight-bg: rgba(5, 150, 82, 0.04);
-            --scrollbar-track: #f0f0ee;
-            --scrollbar-thumb: #ccccc8;
+            --border-hover: var(--border-strong);
+            --highlight-bg: var(--green-glow);
+            --scrollbar-track: var(--bg);
+            --scrollbar-thumb: var(--border-strong);
         }
 
         /* ========================================
@@ -533,7 +489,7 @@
             width: 56px;
             height: 56px;
             border-radius: 14px;
-            background: linear-gradient(135deg, #00d672 0%, #00a855 100%);
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -890,7 +846,7 @@
             width: 140px;
             height: 140px;
             border-radius: 32px;
-            background: linear-gradient(135deg, #00d672 0%, #00a855 60%, #007d40 100%);
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 60%, #02502b 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1793,40 +1749,44 @@
                 <p class="section-label" style="margin-bottom:16px;">Brand Colors</p>
                 <div class="color-palette">
                     <div class="color-swatch">
-                        <div class="color-swatch__chip" style="background:#00d672;" title="Sage Green"></div>
+                        <div class="color-swatch__chip" style="background:#55ee71;" title="Sage Green"></div>
                         <div class="color-swatch__name">Sage Green</div>
-                        <div class="color-swatch__hex">#00d672</div>
+                        <div class="color-swatch__hex">#55ee71</div>
                     </div>
                     <div class="color-swatch">
-                        <div class="color-swatch__chip" style="background:#050505;border-color:#333;" title="Carbon Dark"></div>
-                        <div class="color-swatch__name">Carbon Dark</div>
-                        <div class="color-swatch__hex">#050505</div>
+                        <div class="color-swatch__chip" style="background:#0d150d;border-color:#333;" title="Forest Dark"></div>
+                        <div class="color-swatch__name">Forest Dark</div>
+                        <div class="color-swatch__hex">#0d150d</div>
                     </div>
                     <div class="color-swatch">
-                        <div class="color-swatch__chip" style="background:#fafaf9;border-color:#ddd;" title="Warm Light"></div>
+                        <div class="color-swatch__chip" style="background:#fafaf6;border-color:#ddd;" title="Warm Light"></div>
                         <div class="color-swatch__name">Warm Light</div>
-                        <div class="color-swatch__hex">#fafaf9</div>
+                        <div class="color-swatch__hex">#fafaf6</div>
                     </div>
                     <div class="color-swatch">
-                        <div class="color-swatch__chip" style="background:#e8e8ed;border-color:#ccc;" title="Soft Text"></div>
+                        <div class="color-swatch__chip" style="background:#dce5d7;border-color:#ccc;" title="Soft Text"></div>
                         <div class="color-swatch__name">Soft Text</div>
-                        <div class="color-swatch__hex">#e8e8ed</div>
+                        <div class="color-swatch__hex">#dce5d7</div>
                     </div>
                     <div class="color-swatch">
-                        <div class="color-swatch__chip" style="background:#0d0d10;border-color:#333;" title="Card Surface"></div>
+                        <div class="color-swatch__chip" style="background:#161e15;border-color:#333;" title="Card Surface"></div>
                         <div class="color-swatch__name">Card Surface</div>
-                        <div class="color-swatch__hex">#0d0d10</div>
+                        <div class="color-swatch__hex">#161e15</div>
                     </div>
                 </div>
 
                 <div class="type-samples">
                     <div class="type-sample">
-                        <div class="type-sample__label">Display &mdash; Playfair Display 700/900</div>
-                        <div class="type-sample__display">SageBills</div>
+                        <div class="type-sample__label">Display &mdash; Hanken Grotesk 700/800</div>
+                        <div class="type-sample__display" style="font-family: 'Hanken Grotesk', sans-serif;">SageBills</div>
                     </div>
                     <div class="type-sample">
-                        <div class="type-sample__label">Body &mdash; DM Sans 300/400/600</div>
-                        <div class="type-sample__body">Smart utility bill tracking for European households.</div>
+                        <div class="type-sample__label">Editorial &mdash; Playfair Display Italic 400/500</div>
+                        <div class="type-sample__display" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic;">noisy bits</div>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample__label">Body &mdash; Inter 400/500/600</div>
+                        <div class="type-sample__body" style="font-family: 'Inter', sans-serif;">Smart utility bill tracking for European households.</div>
                     </div>
                 </div>
 
