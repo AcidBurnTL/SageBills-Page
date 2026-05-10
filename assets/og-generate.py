@@ -8,31 +8,35 @@ Run:
 """
 
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "og")
+FONTS = os.path.join(ROOT, "assets", "fonts")
 os.makedirs(OUT, exist_ok=True)
 
 W, H = 1200, 630
 
-BG = (5, 5, 5)
-GREEN = (0, 214, 114)
-GREEN_DIM = (0, 214, 114, 60)
-TEXT = (232, 232, 237)
-SUB = (160, 160, 171)
-DIM = (110, 110, 120)
-BORDER = (40, 40, 48)
+# Palette — pure-native direction (Stitch iteration 3)
+BG = (13, 21, 13)            # #0d150d forest dark
+BG_SURFACE = (22, 30, 21)    # #161e15
+GREEN = (85, 238, 113)       # #55ee71
+GREEN_BRIGHT = (108, 255, 130)
+GREEN_DEEP = (48, 209, 88)
+TEXT = (220, 229, 215)       # #dce5d7
+SUB = (188, 203, 183)        # #bccbb7
+DIM = (134, 149, 131)        # #869583
+BORDER = (61, 74, 59)        # #3d4a3b
+BORDER_SOFT = (32, 42, 30)
 
-GEORGIA_BOLD = "/System/Library/Fonts/Supplemental/Georgia Bold.ttf"
-GEORGIA_BOLD_ITALIC = "/System/Library/Fonts/Supplemental/Georgia Bold Italic.ttf"
-HELVETICA = "/System/Library/Fonts/Helvetica.ttc"
-MENLO = "/System/Library/Fonts/Menlo.ttc"
+# Fonts (downloaded into assets/fonts/)
+F_DISPLAY = os.path.join(FONTS, "HankenGrotesk-Bold.ttf")
+F_ITALIC = os.path.join(FONTS, "PlayfairDisplay-Italic.ttf")
+F_BODY = os.path.join(FONTS, "Inter-Regular.ttf")
+F_MONO = os.path.join(FONTS, "JetBrainsMono-Regular.ttf")
 
 
-def font(path, size, index=0):
-    if path.endswith(".ttc"):
-        return ImageFont.truetype(path, size, index=index)
+def font(path, size):
     return ImageFont.truetype(path, size)
 
 
@@ -40,41 +44,47 @@ def base_canvas():
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img, "RGBA")
 
-    for i in range(0, W, 60):
-        d.line([(i, 0), (i, H)], fill=BORDER + (), width=1)
-    for i in range(0, H, 60):
-        d.line([(0, i), (W, i)], fill=BORDER, width=1)
+    # Subtle grid that fades toward the bottom
+    grid_color = BORDER_SOFT
+    for i in range(0, W, 80):
+        d.line([(i, 0), (i, H)], fill=grid_color, width=1)
+    for i in range(0, H, 80):
+        d.line([(0, i), (W, i)], fill=grid_color, width=1)
 
+    # Soft green glow orbs
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow)
-    gd.ellipse((W - 480, -180, W + 120, 420), fill=(0, 214, 114, 40))
-    gd.ellipse((-200, H - 320, 400, H + 200), fill=(0, 214, 114, 24))
-    glow = glow.filter_nothing() if False else glow
-    from PIL import ImageFilter
-    glow = glow.filter(ImageFilter.GaussianBlur(radius=80))
+    gd.ellipse((W - 540, -200, W + 140, 460), fill=(85, 238, 113, 50))
+    gd.ellipse((-220, H - 360, 420, H + 220), fill=(85, 238, 113, 26))
+    glow = glow.filter(ImageFilter.GaussianBlur(radius=90))
     img.paste(glow, (0, 0), glow)
 
     d = ImageDraw.Draw(img, "RGBA")
-    d.rectangle((0, 0, W, 4), fill=GREEN)
 
-    cx, cy = 76, 76
-    leaf = [
-        (cx, cy - 22),
-        (cx + 18, cy - 14),
-        (cx + 22, cy + 4),
-        (cx + 14, cy + 18),
-        (cx, cy + 22),
-        (cx - 12, cy + 12),
-        (cx - 18, cy - 4),
-        (cx - 12, cy - 16),
+    # Top accent line
+    d.rectangle((0, 0, W, 3), fill=GREEN)
+
+    # Logo — leaf glyph + wordmark
+    cx, cy = 76, 80
+    leaf = []
+    # Stylized leaf path drawn via points
+    pts = [
+        (0, -1.0), (0.55, -0.85), (0.85, -0.4), (0.95, 0.05),
+        (0.78, 0.55), (0.4, 0.92), (0, 1.0),
+        (-0.35, 0.85), (-0.55, 0.55), (-0.55, 0.18),
+        (-0.4, -0.05), (-0.18, -0.25), (0, -0.35),
     ]
+    r = 24
+    for nx, ny in pts:
+        leaf.append((cx + int(nx * r), cy + int(ny * r)))
     d.polygon(leaf, fill=GREEN)
-    d.line([(cx, cy - 18), (cx, cy + 18)], fill=BG, width=2)
+    # Vein
+    d.line([(cx, cy - 20), (cx, cy + 20)], fill=BG, width=2)
 
-    logo_font = font(HELVETICA, 28, index=1)
-    d.text((110, 60), "Sagelight Studio", font=logo_font, fill=TEXT)
-    domain = font(MENLO, 18, index=0)
-    d.text((W - 64 - 280, 70), "sagelight-studio.com", font=domain, fill=DIM)
+    logo_font = font(F_DISPLAY, 30)
+    d.text((114, 64), "Sagelight Studio", font=logo_font, fill=TEXT)
+    domain = font(F_MONO, 16)
+    d.text((W - 64 - 240, 76), "sagelight-studio.com", font=domain, fill=DIM)
 
     return img, d
 
@@ -83,20 +93,26 @@ def draw_pill(d, x, y, text, font_obj):
     bbox = d.textbbox((0, 0), text, font=font_obj)
     tw = bbox[2] - bbox[0]
     th = bbox[3] - bbox[1]
-    pw = tw + 28
-    ph = th + 16
+    pw = tw + 32
+    ph = th + 18
+    # Pulse dot
+    dot_r = 4
+    d.ellipse(
+        (x + 14 - dot_r, y + ph // 2 - dot_r, x + 14 + dot_r, y + ph // 2 + dot_r),
+        fill=GREEN,
+    )
     d.rounded_rectangle(
         (x, y, x + pw, y + ph),
         radius=ph // 2,
-        fill=(0, 214, 114, 26),
-        outline=(0, 214, 114, 90),
+        fill=(85, 238, 113, 28),
+        outline=(85, 238, 113, 100),
         width=1,
     )
-    d.text((x + 14, y + 6), text, font=font_obj, fill=GREEN)
+    d.text((x + 26, y + 8), text, font=font_obj, fill=GREEN)
     return pw
 
 
-def text_with_em(d, x, y, parts, font_reg, font_em, fill_reg, fill_em, line_h=None):
+def text_with_em(d, x, y, parts, font_reg, font_em, fill_reg, fill_em):
     cx = x
     for txt, kind in parts:
         f = font_em if kind == "em" else font_reg
@@ -109,24 +125,24 @@ def text_with_em(d, x, y, parts, font_reg, font_em, fill_reg, fill_em, line_h=No
 def page(out_name, eyebrow, title_lines, subtitle, footer):
     img, d = base_canvas()
 
-    pill_font = font(MENLO, 16, index=0)
-    draw_pill(d, 64, 140, eyebrow.upper(), pill_font)
+    pill_font = font(F_MONO, 16)
+    draw_pill(d, 64, 150, eyebrow.upper(), pill_font)
 
-    title_font = font(GEORGIA_BOLD, 86)
-    title_em = font(GEORGIA_BOLD_ITALIC, 86)
-    y = 210
+    title_font = font(F_DISPLAY, 92)
+    title_em = font(F_ITALIC, 92)
+    y = 220
     for line in title_lines:
         text_with_em(d, 64, y, line, title_font, title_em, TEXT, GREEN)
-        y += 102
+        y += 108
 
-    sub_font = font(HELVETICA, 26, index=2)
+    sub_font = font(F_BODY, 26)
     wrap = wrap_text(d, subtitle, sub_font, W - 128)
-    sy = y + 20
+    sy = y + 24
     for ln in wrap[:3]:
         d.text((64, sy), ln, font=sub_font, fill=SUB)
         sy += 38
 
-    footer_font = font(MENLO, 16, index=0)
+    footer_font = font(F_MONO, 16)
     d.text((64, H - 64), footer.upper(), font=footer_font, fill=DIM)
 
     out_path = os.path.join(OUT, out_name)
@@ -156,49 +172,70 @@ PAGES = [
     {
         "out": "home.png",
         "eyebrow": "Privacy-first · EU-built",
-        "title_lines": [[("Calm software for the ", "reg")], [("noisy bits ", "em"), ("of life", "reg")]],
+        "title_lines": [
+            [("Calm software for the", "reg")],
+            [("noisy bits ", "em"), ("of life", "reg")],
+        ],
         "subtitle": "SageBills · SageMeet · SageDocs — three privacy-first iOS & macOS apps from an independent studio in Romania, EU.",
         "footer": "iOS · macOS · GDPR Compliant · Zero Tracking",
     },
     {
         "out": "sagebills.png",
         "eyebrow": "SageBills · iOS & macOS · Free",
-        "title_lines": [[("Every bill.", "reg")], [("Every provider. ", "reg"), ("One app.", "em")]],
+        "title_lines": [
+            [("Every bill.", "reg")],
+            [("Every provider. ", "reg"), ("One app.", "em")],
+        ],
         "subtitle": "The smart utility tracker built for European households. Track, predict, and save — with zero data leaving your device.",
         "footer": "40+ Categories · OCR Scanning · GDPR Compliant",
     },
     {
         "out": "sagemeet.png",
         "eyebrow": "SageMeet · iOS · BYOK",
-        "title_lines": [[("Record. Transcribe.", "reg")], [("Remember ", "em"), ("everything.", "reg")]],
+        "title_lines": [
+            [("Record. Transcribe.", "reg")],
+            [("Remember ", "em"), ("everything.", "reg")],
+        ],
         "subtitle": "AI meeting recorder for iPhone. Whisper transcripts and GPT-4o summaries with your own OpenAI key. Private Mode disables all external data.",
         "footer": "Whisper · GPT-4o · Bring Your Own Key · Private Mode",
     },
     {
         "out": "sagedocs.png",
         "eyebrow": "SageDocs · iOS & macOS · Free",
-        "title_lines": [[("Your documents.", "reg")], [("Encrypted. ", "em"), ("Yours.", "em")]],
+        "title_lines": [
+            [("Your documents.", "reg")],
+            [("Encrypted. ", "em"), ("Yours.", "em")],
+        ],
         "subtitle": "AES-256 encrypted vault for IDs, contracts, insurance, and personal documents. Biometric-protected. Encrypted iCloud sync.",
         "footer": "AES-256-GCM · Face ID · Encrypted iCloud · Free",
     },
     {
         "out": "blog.png",
         "eyebrow": "Sagelight Studio · Blog",
-        "title_lines": [[("Tips, insights,", "reg")], [("and ", "reg"), ("smart bills", "em"), (".", "reg")]],
+        "title_lines": [
+            [("Tips, insights,", "reg")],
+            [("and ", "reg"), ("smart bills", "em"), (".", "reg")],
+        ],
         "subtitle": "Money-saving guides and product updates for European households who want to spend less and know more about their utilities.",
         "footer": "Money Saving · Guides · Market Insights",
     },
     {
         "out": "press.png",
         "eyebrow": "Sagelight Studio · Press Kit",
-        "title_lines": [[("Press resources", "reg")], [("for ", "reg"), ("Sagelight ", "em"), ("Studio", "reg")]],
+        "title_lines": [
+            [("Press resources", "reg")],
+            [("for ", "reg"), ("Sagelight ", "em"), ("Studio", "reg")],
+        ],
         "subtitle": "Brand assets, press releases, screenshots, and contact info. Everything journalists and content creators need to cover our apps.",
         "footer": "contact@sagelight-studio.com",
     },
     {
         "out": "legal.png",
         "eyebrow": "Sagelight Studio · Legal",
-        "title_lines": [[("Privacy. GDPR.", "reg")], [("Terms ", "em"), ("of Service.", "reg")]],
+        "title_lines": [
+            [("Privacy. GDPR.", "reg")],
+            [("Terms ", "em"), ("of Service.", "reg")],
+        ],
         "subtitle": "Local-first apps. Zero tracking. Full GDPR compliance. Read exactly how we handle your data — short version: we don't.",
         "footer": "GDPR · Articles 13 & 14 · ePrivacy",
     },

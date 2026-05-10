@@ -9,6 +9,8 @@ Standards: HTML5, CSS3, ES2015
 Components: Static HTML — no build step, no tracking
 Hosted on: GitHub Pages
 Software: Built with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit)
+Typography: Hanken Grotesk · Inter · Playfair Display · JetBrains Mono
+Brand color: #55ee71 (Sage Green) on #0d150d (Forest Dark)
 
 /* PHILOSOPHY */
 Privacy by design. Local-first by default. No accounts, no analytics, no third-party SDKs.

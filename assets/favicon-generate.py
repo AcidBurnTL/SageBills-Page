@@ -7,9 +7,10 @@ from PIL import Image, ImageDraw
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = ROOT
 
-BG = (5, 5, 5)
-GREEN = (0, 214, 114)
-GREEN_DARK = (5, 150, 82)
+# Pure-native direction palette
+BG = (13, 21, 13)            # #0d150d
+GREEN = (85, 238, 113)       # #55ee71
+GREEN_DARK = (48, 209, 88)   # #30d158
 
 
 def render(size: int, padding_ratio: float = 0.08) -> Image.Image:
