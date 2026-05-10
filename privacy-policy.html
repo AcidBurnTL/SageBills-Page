@@ -14,6 +14,8 @@
         'analytics_storage': 'denied',
         'wait_for_update': 500
       });
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
@@ -482,15 +484,28 @@
 
                 <h3 class="section__subheading">On this marketing website (sagelight-studio.com)</h3>
                 <p>The marketing website loads the <strong>Google Ads</strong> conversion tag (<code>AW-17758801825</code>) to measure the effectiveness of paid advertising campaigns that link to the App Store.</p>
-                <p>The tag is loaded with <strong>Google Consent Mode v2 set to "denied" by default</strong> for <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>, and <code>analytics_storage</code>. This means:</p>
+                <p>The tag is configured under <strong>Google Consent Mode v2 (Advanced)</strong> with all four signals set to "denied" by default:</p>
                 <ul>
-                    <li><strong>No cookies are stored</strong> on your device unless you explicitly opt in via a consent banner.</li>
-                    <li>Google receives a cookieless, anonymized signal that a page was visited (IP address, user agent, page URL). Google uses this only for "modeled" conversion measurement; no individual user is identified.</li>
-                    <li>If you opt in via the consent banner (when published), full conversion tracking activates: a Google Ads cookie may be set to attribute App Store visits to specific ad campaigns.</li>
+                    <li><code>ad_storage</code> &mdash; denied (no advertising cookies stored)</li>
+                    <li><code>ad_user_data</code> &mdash; denied (no user data shared with Google for ads)</li>
+                    <li><code>ad_personalization</code> &mdash; denied (no personalised advertising)</li>
+                    <li><code>analytics_storage</code> &mdash; denied (no analytics cookies; reserved for future use)</li>
                 </ul>
-                <p><strong>Legal basis:</strong> Article 6(1)(f) GDPR (legitimate interest in measuring marketing effectiveness without storing identifiers) for the default-denied state; Article 6(1)(a) GDPR (consent) for the opted-in state.</p>
-                <p><strong>Data recipient:</strong> Google Ireland Limited and Google LLC (United States), under the <strong>EU-US Data Privacy Framework</strong>.</p>
-                <p>You can opt out at any time by clearing site cookies, using a browser-level tracking blocker, or sending us a request at <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>. The tag does not run inside any of our apps; it is exclusive to this marketing website.</p>
+                <p>Two further protective flags are also set on every page:</p>
+                <ul>
+                    <li><code>ads_data_redaction: true</code> &mdash; Google redacts identifying information from the cookieless pings sent while consent is denied.</li>
+                    <li><code>url_passthrough: true</code> &mdash; when consent is denied, click identifiers (gclid) travel via URL parameters only, never via cookies, so ad attribution survives without device storage.</li>
+                </ul>
+                <p>In practice:</p>
+                <ul>
+                    <li><strong>No cookies are stored</strong> on your device unless you explicitly opt in via the consent banner.</li>
+                    <li>While consent is denied, Google receives only redacted, cookieless "pings" containing minimal functional information &mdash; timestamp, user agent, source URL, a boolean indicating whether a click identifier was present, a per-pageview random number, and the consent state itself. These pings power Google's <em>modelled</em> (estimated) conversion reporting; no individual is identified.</li>
+                    <li>If you opt in via the banner, you can grant <strong>Advertising</strong> and <strong>Analytics</strong> consent independently. A Google Ads cookie may then be stored to attribute App Store visits to specific ad campaigns.</li>
+                </ul>
+                <p><strong>Legal basis:</strong> Article 6(1)(f) GDPR (legitimate interest in measuring marketing effectiveness without storing identifiers) for the cookieless default-denied state; Article 6(1)(a) GDPR (specific, informed, freely-given consent) for the opted-in state.</p>
+                <p><strong>Data recipient:</strong> Google Ireland Limited (processor, EU establishment) and Google LLC (sub-processor, United States), under the <strong>EU-US Data Privacy Framework</strong>.</p>
+                <p><strong>Withdrawal of consent:</strong> at any time via the <strong>Cookie preferences</strong> link in the footer, by clearing site cookies, by using a browser-level tracking blocker, or by emailing us at <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>. Your choice is persisted only in your browser's localStorage; nothing about it is transmitted to us.</p>
+                <p>The tag does not run inside any of our apps; it is exclusive to this marketing website.</p>
             </section>
 
             <section class="section" id="p12">

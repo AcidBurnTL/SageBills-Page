@@ -14,6 +14,8 @@
         'analytics_storage': 'denied',
         'wait_for_update': 500
       });
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
@@ -340,17 +342,18 @@
             <p>No advertising networks, analytics providers, or other third parties receive data from inside any app. The marketing website (sagelight-studio.com) is treated separately &mdash; see below.</p>
 
             <h3 class="section__subheading">Marketing website (sagelight-studio.com)</h3>
-            <p>The marketing website loads the Google Ads conversion tag (<code>AW-17758801825</code>) under <strong>Consent Mode v2</strong> with all signals defaulted to "denied":</p>
+            <p>The marketing website loads the Google Ads conversion tag (<code>AW-17758801825</code>) under <strong>Google Consent Mode v2 (Advanced)</strong>. All four signals are defaulted to "denied"; additionally, the tag is configured with <code>ads_data_redaction: true</code> (Google redacts identifying data from cookieless pings) and <code>url_passthrough: true</code> (click IDs travel via URL parameters, never via cookies, while consent is denied).</p>
             <div class="table-wrap">
                 <table>
-                    <caption class="visually-hidden">Marketing website — Recipients</caption>
+                    <caption class="visually-hidden">Marketing website &mdash; Recipients</caption>
                     <thead><tr><th scope="col">Recipient</th><th scope="col">Role</th><th scope="col">Data Received</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Google Ireland Limited</strong></td><td>Data processor (Art. 28) &mdash; EU establishment</td><td>Cookieless ping: IP address, user agent, page URL, ad campaign click ID (gclid) where present. No cookies stored unless visitor explicitly opts in.</td></tr>
-                        <tr><td><strong>Google LLC (United States)</strong></td><td>Sub-processor &mdash; under EU-US Data Privacy Framework</td><td>Same as above; aggregated and modeled for conversion measurement.</td></tr>
+                        <tr><td><strong>Google Ireland Limited</strong></td><td>Data processor (Art. 28) &mdash; EU establishment</td><td>While consent is denied: a redacted cookieless ping containing timestamp, user agent, source URL, a boolean indicating whether a click ID is present, a per-pageview random number, and the consent state. No cookies stored, no individual identification. When the visitor opts in: full conversion data including the gclid.</td></tr>
+                        <tr><td><strong>Google LLC (United States)</strong></td><td>Sub-processor &mdash; under EU-US Data Privacy Framework</td><td>Same as above; aggregated for modelled measurement under denial, observed measurement after opt-in.</td></tr>
                     </tbody>
                 </table>
             </div>
+            <p><strong>Consent granularity:</strong> the banner lets the visitor toggle <em>Advertising</em> (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) and <em>Analytics</em> (<code>analytics_storage</code>) independently. The choice is persisted in browser <code>localStorage</code> only and can be withdrawn at any time via the <strong>Cookie preferences</strong> link in the footer. No record of the visitor's consent decision is ever transmitted to Sagelight Studio.</p>
             <p>This tag is exclusive to the marketing website. It is not present in any Sagelight Studio app.</p>
         </section>
 

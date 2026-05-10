@@ -1,12 +1,17 @@
 /* ============================================================
-   Sagelight Studio — Cookie Consent (Google Consent Mode v2)
+   Sagelight Studio — Cookie Consent (Google Consent Mode v2 — Advanced)
    Loaded on every page after gtag is initialized in <head>.
+   Implements granular advertising / analytics consent per GDPR Art. 7.
    ============================================================ */
 (function () {
     'use strict';
 
-    var STORAGE_KEY = 'sage-consent-v1';
-    var SIGNALS = ['ad_storage', 'ad_user_data', 'ad_personalization', 'analytics_storage'];
+    var STORAGE_KEY = 'sage-consent-v2';
+    // Map our two user-facing categories onto Google's four signals.
+    var SIGNAL_GROUPS = {
+        advertising: ['ad_storage', 'ad_user_data', 'ad_personalization'],
+        analytics:   ['analytics_storage']
+    };
 
     function gtag() {
         if (typeof window.gtag === 'function') {
@@ -18,7 +23,12 @@
         try {
             var raw = localStorage.getItem(STORAGE_KEY);
             if (!raw) return null;
-            return JSON.parse(raw);
+            var parsed = JSON.parse(raw);
+            // Backward compat with v1 single-toggle storage:
+            if (parsed && typeof parsed.analytics === 'undefined' && typeof parsed.advertising === 'boolean') {
+                parsed.analytics = parsed.advertising;
+            }
+            return parsed;
         } catch (e) { return null; }
     }
 
@@ -28,12 +38,14 @@
 
     function applyChoice(choice) {
         var update = {};
-        var state = choice.advertising ? 'granted' : 'denied';
-        SIGNALS.forEach(function (s) { update[s] = state; });
+        Object.keys(SIGNAL_GROUPS).forEach(function (group) {
+            var state = choice[group] ? 'granted' : 'denied';
+            SIGNAL_GROUPS[group].forEach(function (s) { update[s] = state; });
+        });
         gtag('consent', 'update', update);
     }
 
-    // ---------- Tiny DOM helper ----------
+    // ---------- DOM helper ----------
     function el(tag, attrs, children) {
         var node = document.createElement(tag);
         if (attrs) {
@@ -41,13 +53,7 @@
                 var v = attrs[k];
                 if (v == null) return;
                 if (k === 'class') node.className = v;
-                else if (k === 'text') node.textContent = v;
-                else if (k === 'html') {
-                    // Whitespace-tolerant: only used for the &mdash; entity which
-                    // textContent renders correctly anyway. Kept explicit to avoid
-                    // confusion later.
-                    node.textContent = v;
-                } else node.setAttribute(k, v);
+                else node.setAttribute(k, v);
             });
         }
         if (children) {
@@ -60,8 +66,22 @@
         return node;
     }
 
-    function link(href, text) {
-        return el('a', { href: href }, text);
+    function link(href, text) { return el('a', { href: href }, text); }
+
+    function toggleRow(prefKey, title, desc, ariaLabel) {
+        return el('div', { 'class': 'consent-row' }, [
+            el('div', { 'class': 'consent-row__text' }, [
+                el('div', { 'class': 'consent-row__title' }, title),
+                el('div', { 'class': 'consent-row__desc' }, desc)
+            ]),
+            el('label', { 'class': 'consent-toggle' }, [
+                el('input', { type: 'checkbox', 'data-pref': prefKey }),
+                el('span', { 'class': 'consent-toggle__track', 'aria-hidden': 'true' }, [
+                    el('span', { 'class': 'consent-toggle__knob' })
+                ]),
+                el('span', { 'class': 'visually-hidden' }, ariaLabel)
+            ])
+        ]);
     }
 
     // ---------- Banner construction ----------
@@ -95,7 +115,7 @@
             el('div', { 'class': 'consent-banner__actions' }, [
                 el('button', { type: 'button', 'class': 'consent-btn consent-btn--ghost', 'data-action': 'reject' }, 'Reject all'),
                 el('button', { type: 'button', 'class': 'consent-btn consent-btn--ghost', 'data-action': 'customize' }, 'Customize'),
-                el('button', { type: 'button', 'class': 'consent-btn consent-btn--primary', 'data-action': 'accept' }, 'Accept')
+                el('button', { type: 'button', 'class': 'consent-btn consent-btn--primary', 'data-action': 'accept' }, 'Accept all')
             ])
         ]);
 
@@ -112,24 +132,24 @@
             el('div', { 'class': 'consent-row' }, [
                 el('div', { 'class': 'consent-row__text' }, [
                     el('div', { 'class': 'consent-row__title' }, 'Essential'),
-                    el('div', { 'class': 'consent-row__desc' }, 'Required for the site to function (theme, navigation). No tracking. No cookies stored.')
+                    el('div', { 'class': 'consent-row__desc' }, 'Required for the site to function (theme, navigation, the consent banner itself). Stored only in your browser. No data sent off-device.')
                 ]),
                 el('div', { 'class': 'consent-row__status consent-row__status--on' }, 'Always on')
             ]),
 
-            el('div', { 'class': 'consent-row' }, [
-                el('div', { 'class': 'consent-row__text' }, [
-                    el('div', { 'class': 'consent-row__title' }, 'Advertising measurement'),
-                    el('div', { 'class': 'consent-row__desc' }, 'Google Ads conversion tag (AW-17758801825). Helps us see which ads bring people to the App Store. Cookieless until you opt in.')
-                ]),
-                el('label', { 'class': 'consent-toggle' }, [
-                    el('input', { type: 'checkbox', 'data-pref': 'advertising' }),
-                    el('span', { 'class': 'consent-toggle__track', 'aria-hidden': 'true' }, [
-                        el('span', { 'class': 'consent-toggle__knob' })
-                    ]),
-                    el('span', { 'class': 'visually-hidden' }, 'Toggle advertising measurement')
-                ])
-            ]),
+            toggleRow(
+                'advertising',
+                'Advertising measurement',
+                'Google Ads conversion tag (AW-17758801825). Sends ad_storage, ad_user_data and ad_personalization signals so we can see which paid ads bring people to the App Store. Cookieless and redacted until you opt in.',
+                'Toggle advertising measurement'
+            ),
+
+            toggleRow(
+                'analytics',
+                'Analytics',
+                'Reserved for future site analytics (e.g. anonymized page-view counts). Currently unused — no analytics tag is loaded today. Toggling has no effect right now but is recorded for when we add one.',
+                'Toggle analytics'
+            ),
 
             el('div', { 'class': 'consent-banner__actions' }, [
                 el('button', { type: 'button', 'class': 'consent-btn consent-btn--ghost', 'data-action': 'back' }, 'Back'),
@@ -175,18 +195,24 @@
             var btn = e.target.closest('[data-action]');
             if (!btn) return;
             var action = btn.getAttribute('data-action');
-            if (action === 'reject') finish({ advertising: false });
-            else if (action === 'accept') finish({ advertising: true });
+            if (action === 'reject') finish({ advertising: false, analytics: false });
+            else if (action === 'accept') finish({ advertising: true, analytics: true });
             else if (action === 'customize') {
-                var stored = readChoice() || { advertising: false };
-                var toggle = bannerEl.querySelector('[data-pref="advertising"]');
-                if (toggle) toggle.checked = !!stored.advertising;
+                var stored = readChoice() || { advertising: false, analytics: false };
+                var ad = bannerEl.querySelector('[data-pref="advertising"]');
+                var an = bannerEl.querySelector('[data-pref="analytics"]');
+                if (ad) ad.checked = !!stored.advertising;
+                if (an) an.checked = !!stored.analytics;
                 showView('prefs');
             }
             else if (action === 'back') showView('main');
             else if (action === 'save') {
-                var t = bannerEl.querySelector('[data-pref="advertising"]');
-                finish({ advertising: !!(t && t.checked) });
+                var ad2 = bannerEl.querySelector('[data-pref="advertising"]');
+                var an2 = bannerEl.querySelector('[data-pref="analytics"]');
+                finish({
+                    advertising: !!(ad2 && ad2.checked),
+                    analytics:   !!(an2 && an2.checked)
+                });
             }
         });
 
@@ -195,7 +221,7 @@
 
     function escHandler(e) {
         if (e.key === 'Escape' && bannerEl && bannerEl.classList.contains('consent-banner--visible')) {
-            if (!readChoice()) finish({ advertising: false });
+            if (!readChoice()) finish({ advertising: false, analytics: false });
             else closeBanner();
         }
     }
