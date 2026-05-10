@@ -1,4 +1,17 @@
-/* Shared theme + mobile menu — Sagelight Studio */
+/* Shared theme + mobile menu + Google Ads conversion helper — Sagelight Studio */
+
+// Conversion helper. Fires Google Ads conversion (cookieless under default-denied
+// Consent Mode v2) without preventing default link behavior — so target="_blank"
+// links still open new tabs and gtag.js sendBeacon ensures the conversion ping
+// survives navigation.
+window.gtagReportConversion = function (sendTo) {
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', { 'send_to': sendTo });
+    }
+    return true;
+};
+
+
 (function () {
     var themes = ['dark', 'light', 'system'];
     var icons = { dark: '☾', light: '☀', system: '◑' };
