@@ -56,10 +56,9 @@
         "name": "SageDocs", "applicationCategory": "SecurityApplication",
         "operatingSystem": "iOS 17+, macOS 14+",
         "offers": {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Subskrypcja miesięczna"},
-        "description": "Zaszyfrowany sejf dla osobistych dokumentów. Szyfrowanie AES-256-GCM, ochrona biometryczna/PIN, zaszyfrowana synchronizacja iCloud, śledzenie wygaśnięcia.",
+        "description": "Zaszyfrowany sejf dla osobistych dokumentów. Szyfrowanie AES-256-GCM, ochrona biometryczna/PIN, zaszyfrowana synchronizacja iCloud.",
         "inLanguage": "pl",
         "url": "https://apps.apple.com/pl/app/sagedocs/id6762064711",
-        "downloadUrl": "https://apps.apple.com/pl/app/sagedocs/id6762064711",
         "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
         "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
     }
@@ -67,39 +66,105 @@
 
     <style>
         .hero-docs { text-align: center; padding-top: calc(var(--nav-height) + 96px); }
-        .hero-docs h1 { margin: 24px auto 28px; max-width: 18ch; }
+        .hero-docs h1 { margin: 24px auto 28px; max-width: 16ch; }
         .hero-docs p.lead { max-width: 620px; margin: 0 auto 36px; }
         .hero-docs .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        @media (max-width: 880px) { .feature-grid { grid-template-columns: 1fr; } }
-        .feature-card { padding: 32px; }
-        .feature-card .card-icon { margin-bottom: 20px; color: var(--green); }
-        .feature-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        .lang-switch { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); }
-        .lang-switch a { color: var(--green); text-decoration: none; }
-        .pricing-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-        .pricing-card { padding: 32px; min-width: 220px; }
-        .pricing-card__price { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--green); margin: 8px 0; }
-        .pricing-card__period { color: var(--text-dim); font-size: 14px; }
+
+        .vault { position: relative; padding: 36px; border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
+        @media (max-width: 880px) { .vault { grid-template-columns: 1fr; padding: 24px; } }
+        .vault::before { content: 'enhanced_encryption'; font-family: 'Material Symbols Outlined'; font-size: 320px; position: absolute; top: -40px; right: -60px; color: var(--green); opacity: 0.04; pointer-events: none; }
+        .vault::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); animation: scan 3.5s linear infinite; pointer-events: none; }
+        @keyframes scan { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(640px); opacity: 0; } }
+        .vault__main { position: relative; z-index: 1; text-align: left; }
+        .vault__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .vault__head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text); }
+        .doc-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--card-border); border-radius: var(--radius); margin-bottom: 12px; transition: var(--transition-fast); cursor: pointer; }
+        .doc-row:hover { transform: translateY(-3px); border-color: var(--green-dim); box-shadow: 0 10px 30px -10px var(--green-shadow); }
+        .doc-row__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+        .doc-row__icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--bg-surface-3); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 22px; flex-shrink: 0; }
+        .doc-row__name { font-weight: 500; font-size: 15px; color: var(--text); }
+        .doc-row__filename { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+        .doc-row__right { display: flex; align-items: center; gap: 16px; }
+        .doc-row__modified { display: none; flex-direction: column; align-items: flex-end; }
+        @media (min-width: 700px) { .doc-row__modified { display: flex; } }
+        .doc-row__modified .label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .doc-row__modified .value { font-size: 12px; color: var(--text-secondary); }
+        .doc-row__chip { font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .doc-row__chip--secure { background: rgba(85, 238, 113, 0.1); border: 1px solid rgba(85, 238, 113, 0.3); color: var(--green); }
+        .doc-row__chip--warn { background: rgba(255, 196, 186, 0.08); border: 1px solid rgba(255, 196, 186, 0.3); color: #ffc4ba; }
+        .doc-row .arrow { color: var(--text-dim); transition: transform 0.2s ease; font-size: 22px; }
+        .doc-row:hover .arrow { color: var(--green); transform: translateX(2px); }
+        .vault__sidebar { position: relative; z-index: 1; text-align: left; }
+        .status-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--green-dim); border-radius: var(--radius); padding: 24px; }
+        .status-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .status-card__head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
+        .status-card__head .label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; }
+        .status-card__row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+        .status-card__row:last-child { border-bottom: none; }
+        .status-card__row .k { color: var(--text-dim); }
+        .status-card__row .v { font-family: var(--font-mono); color: var(--text); }
+        .status-card__row .v--green { color: var(--green); }
+
+        .specs-section { background: var(--bg-surface); padding: 120px 0; }
+        @media (max-width: 700px) { .specs-section { padding: 72px 0; } }
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        @media (max-width: 880px) { .specs-grid { grid-template-columns: 1fr; gap: 48px; } }
+        .specs-list { display: flex; flex-direction: column; gap: 32px; margin-top: 36px; }
+        .spec { display: flex; gap: 20px; }
+        .spec__icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: var(--radius); background: var(--bg-surface-2); border: 0.5px solid var(--green-dim); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 24px; }
+        .spec h4 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .spec p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .spec .mono-spec { font-family: var(--font-mono); font-size: 11px; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+        .spec .mono-spec span.dim { color: var(--text-dim); }
+
+        .spec-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .spec-tile { background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--card-border); border-radius: var(--radius); padding: 28px 16px; text-align: center; transition: var(--transition-fast); }
+        .spec-tile:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+        .spec-tile .material-symbols-outlined { color: var(--green); font-size: 32px; margin-bottom: 12px; }
+        .spec-tile .label { font-family: var(--font-mono); font-size: 12px; color: var(--text); }
+
+        .layers { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; }
+        .layer { text-align: center; max-width: 200px; }
+        .layer__circle { width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 50%; background: var(--green-glow); border: 2px solid var(--green-dim); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 36px; transition: var(--transition); }
+        .layer:hover .layer__circle { background: var(--green-fade); border-color: var(--green); transform: scale(1.05); box-shadow: 0 0 30px var(--green-shadow); }
+        .layer h5 { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .layer p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+        .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq { border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition-fast); background: var(--bg-surface); }
+        .faq[open] { border-color: var(--green-dim); }
+        .faq summary { padding: 18px 24px; cursor: pointer; font-weight: 500; font-size: 16px; color: var(--text); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: 'add'; font-family: 'Material Symbols Outlined'; color: var(--text-dim); font-size: 22px; }
+        .faq[open] summary::after { content: 'remove'; color: var(--green); }
+        .faq__body { padding: 0 24px 22px; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+        .final-cta { padding: 96px 56px; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); text-align: center; }
+        .final-cta h2 { margin-bottom: 16px; }
+        .final-cta p { max-width: 520px; margin: 0 auto 36px; }
+        .final-cta .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 700px) { .final-cta { padding: 64px 20px; } }
     </style>
 </head>
 <body>
 
 <div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
 
 <nav class="nav" role="navigation" aria-label="Nawigacja główna">
     <div class="nav__inner">
         <a href="../index.html" class="nav__logo"><span class="nav__logo-leaf" aria-hidden="true">🌿</span>Sagelight <span>Studio</span></a>
         <ul class="nav__tabs" id="navTabs" role="list">
-            <li><a href="sagedocs.html" class="nav__tab nav__tab--active" aria-current="page">SageDocs</a></li>
+            <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
             <li><a href="../sagebills.html" class="nav__tab">SageBills</a></li>
             <li><a href="../sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="../blog.html" class="nav__tab">Blog</a></li>
+            <li><a href="../press-kit.html" class="nav__tab">Prasa</a></li>
         </ul>
         <div class="nav__actions">
-            <span class="lang-switch"><a href="../sagedocs.html" hreflang="en" rel="alternate">EN</a> · PL</span>
             <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Zmień motyw"><span id="themeIcon" aria-hidden="true">☾</span></button>
+            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
         </div>
     </div>
 </nav>
@@ -108,8 +173,8 @@
     <section class="hero hero-docs">
         <div class="container">
             <div class="hero__inner">
-                <div class="eyebrow fade-up d1">SageDocs · Zaszyfrowany Sejf</div>
-                <h1 class="h-display fade-up d2">Twoje dokumenty. <em class="italic-em">Zaszyfrowane.</em></h1>
+                <div class="eyebrow fade-up d1">Szyfrowanie End-to-End</div>
+                <h1 class="h-display fade-up d2">Twoje dokumenty.<br><span class="italic-em">Zaszyfrowane.</span></h1>
                 <p class="text-lead lead fade-up d3">
                     Cyfrowy sejf na Twoje najwrażliwsze dane &mdash; dowód osobisty, paszport, umowy, polisy, dokumenty medyczne. Szyfrowanie AES-256-GCM na Twoim urządzeniu. Dostęp tylko dla Ciebie.
                 </p>
@@ -117,6 +182,125 @@
                     <a href="https://apps.apple.com/pl/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Pobierz SageDocs z App Store"><img src="../assets/badges/app-store-badge.svg" alt="Pobierz z App Store" width="200" height="60" loading="lazy"></a>
                     <a href="#security" class="btn btn--ghost btn--lg">Przeczytaj model bezpieczeństwa</a>
                 </div>
+
+                <div class="glass-card vault fade-up d5">
+                    <div class="vault__main">
+                        <div class="vault__head">
+                            <h2>Bezpieczne Dokumenty</h2>
+                            <button class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">
+                                <span class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
+                                Dodaj
+                            </button>
+                        </div>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">badge</span></div>
+                                <div>
+                                    <div class="doc-row__name">Dowód Osobisty &mdash; Podstawowy</div>
+                                    <div class="doc-row__filename">DOC_DO_9928_SECURE.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Zmieniono</span>
+                                    <span class="value">2 godziny temu</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--warn">Wkrótce wygasa</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">flight_takeoff</span></div>
+                                <div>
+                                    <div class="doc-row__name">Paszport</div>
+                                    <div class="doc-row__filename">PPT_2026_VALID.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Zmieniono</span>
+                                    <span class="value">12 sty 2026</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Zweryfikowany</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">description</span></div>
+                                <div>
+                                    <div class="doc-row__name">Umowa Sprzedaży Nieruchomości</div>
+                                    <div class="doc-row__filename">CONTRACT_2025.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Zmieniono</span>
+                                    <span class="value">05 gru 2025</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Zweryfikowana</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="vault__sidebar">
+                        <div class="status-card">
+                            <div class="status-card__head">
+                                <span class="dot"></span>
+                                <span class="label">SEJF · AKTYWNY</span>
+                            </div>
+                            <div class="status-card__row"><span class="k">Cipher</span><span class="v">AES-256-GCM</span></div>
+                            <div class="status-card__row"><span class="k">Entropia</span><span class="v">256-bit</span></div>
+                            <div class="status-card__row"><span class="k">KDF</span><span class="v">PBKDF2 · 600k</span></div>
+                            <div class="status-card__row"><span class="k">Sesje</span><span class="v">01 (bieżąca)</span></div>
+                            <div class="status-card__row"><span class="k">Integralność</span><span class="v v--green">Zweryfikowana</span></div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="specs-section">
+        <div class="container">
+            <div class="specs-grid">
+                <div class="reveal">
+                    <div class="eyebrow eyebrow--static">Kryptografia</div>
+                    <h2 class="h-section" style="margin-top: 16px;">Bezpieczeństwo bez <span class="italic-em">kompromisów</span>.</h2>
+                    <div class="specs-list">
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">key</span></div>
+                            <div>
+                                <h4>Uwierzytelnione szyfrowanie AES-256-GCM</h4>
+                                <p>Każdy załącznik jest szyfrowany za pomocą AES-256-GCM &mdash; tego samego szyfru używanego do danych ściśle tajnych. Każdy plik ma własny nonce i znacznik integralności.</p>
+                                <div class="mono-spec"><span class="dim">Specyfikacja:</span> KLUCZ SYMETRYCZNY 256-BIT · TRYB GCM</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">vibration</span></div>
+                            <div>
+                                <h4>Wyprowadzenie klucza PBKDF2-SHA256</h4>
+                                <p>Twój PIN główny jest rozciągany przez 600 000 iteracji z 256-bitową solą na instalację. Ataki brute-force są matematycznie niewykonalne przy obecnych mocach obliczeniowych.</p>
+                                <div class="mono-spec"><span class="dim">Specyfikacja:</span> 600 000 ITERACJI · HMAC-SHA256</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">fingerprint</span></div>
+                            <div>
+                                <h4>Keychain + ochrona biometryczna</h4>
+                                <p>Klucze szyfrowania przechowywane są w iOS Keychain, chronione przez Face ID, Touch ID lub PIN. Nigdy nie pojawiają się w postaci jawnej poza Secure Enclave.</p>
+                                <div class="mono-spec"><span class="dim">Specyfikacja:</span> SECURE ENCLAVE · BIOMETRIA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-tiles reveal">
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">shield_lock</span><div class="label">Prywatność</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">fingerprint</span><div class="label">Biometria</div></div>
+                </div>
             </div>
         </div>
     </section>
@@ -124,62 +308,71 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Ceny</div>
-                <h2 class="h-section">Proste i <span class="italic-em">uczciwe</span> ceny.</h2>
-                <p>Dwie opcje subskrypcji w App Store. Anulowanie w dowolnej chwili w ustawieniach Apple ID.</p>
+                <div class="eyebrow eyebrow--static">Obrona w głąb</div>
+                <h2 class="h-section">Bezpieczeństwo w <span class="italic-em">warstwach</span>.</h2>
+                <p>Wiele niezależnych warstw chroniących Twoją tożsamość cyfrową &mdash; nawet jeśli jedna padnie, reszta wytrzyma.</p>
             </div>
-            <div class="pricing-row">
-                <div class="glass-card pricing-card reveal" style="text-align: center;">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim);">Miesięcznie</div>
-                    <div class="pricing-card__price">$2.99</div>
-                    <div class="pricing-card__period">miesięcznie</div>
+            <div class="layers">
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">lock</span></div>
+                    <h5>Warstwa sejfu</h5>
+                    <p>AES-256-GCM dla każdego załącznika. Klucze na plik.</p>
                 </div>
-                <div class="glass-card pricing-card reveal" style="text-align: center; border-color: var(--green-dim);">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green);">Rocznie · Oszczędność 30%</div>
-                    <div class="pricing-card__price">$24.99</div>
-                    <div class="pricing-card__period">rocznie &middot; ~$2,08/mies.</div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">vpn_key</span></div>
+                    <h5>Warstwa dostępu</h5>
+                    <p>PIN, Face ID, Touch ID. PBKDF2 wyprowadzenie klucza.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">cloud</span></div>
+                    <h5>Warstwa synchronizacji</h5>
+                    <p>Zaszyfrowany w spoczynku iCloud przez CloudKit. Apple przechowuje tylko szyfrogram.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">visibility_off</span></div>
+                    <h5>Warstwa prywatności</h5>
+                    <p>Bez telemetrii, bez analityki, bez zbierania metadanych. Nigdy.</p>
                 </div>
             </div>
-            <p style="text-align: center; color: var(--text-dim); font-size: 13px; margin-top: 24px; max-width: 540px; margin-left: auto; margin-right: auto;">Subskrypcja odnawia się automatycznie, jeśli nie zostanie anulowana co najmniej 24 godziny przed końcem bieżącego okresu. Zarządzaj w Ustawienia → Apple ID → Subskrypcje.</p>
         </div>
     </section>
 
-    <section id="security" class="section--lg">
+    <section>
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Model Bezpieczeństwa</div>
-                <h2 class="h-section">Profesjonalne <span class="italic-em">szyfrowanie</span>, nie marketing.</h2>
+                <h2 class="h-section">Więcej niż samo <span class="italic-em">przechowywanie</span>.</h2>
+                <p>SageDocs zarządza cyklem życia Twoich ważnych dokumentów &mdash; nie tylko ich lokalizacją.</p>
             </div>
-            <div class="feature-grid">
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">enhanced_encryption</span></div>
-                    <h3>AES-256-GCM</h3>
-                    <p>Każdy załącznik jest szyfrowany AES-256-GCM przed zapisaniem. Standard branżowy używany przez banki i agencje rządowe.</p>
+            <div class="bento">
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">event</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Śledzenie wygaśnięcia</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Otrzymasz przypomnienie zanim wygaśnie Twój paszport, dowód, polisa lub dowód rejestracyjny. Przypomnienia działają na Twoim urządzeniu.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">key</span></div>
-                    <h3>PBKDF2 600 000 iteracji</h3>
-                    <p>Twój klucz szyfrowania pochodzi z PIN-u głównego poprzez PBKDF2-SHA256 z 600 000 iteracjami &mdash; przekracza zalecenie OWASP 2023.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Zaszyfrowana synchronizacja iCloud</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Opcjonalna synchronizacja z iPhone, iPad i Mac. Zaszyfrowane na urządzeniu, przekazane do Apple jako szyfrogram.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">fingerprint</span></div>
-                    <h3>Face ID / Touch ID</h3>
-                    <p>Klucz przechowywany w Keychain iOS z dostępem biometrycznym. Jeśli zmienisz dane biometryczne, aplikacja wymaga ponownego PIN.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Selektywne udostępnianie</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Odszyfruj i udostępnij tylko wybrany dokument. Pliki tymczasowe są bezpiecznie usuwane po udostępnieniu.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">cloud_done</span></div>
-                    <h3>Zaszyfrowana synchronizacja iCloud</h3>
-                    <p>Dokumenty są szyfrowane na urządzeniu przed wysłaniem do CloudKit. Apple przechowuje tylko szyfrogram.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">iPhone, iPad, Mac</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Uniwersalny binar działający natywnie na wszystkich urządzeniach Apple. iOS 17+ i macOS 14+.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">timer</span></div>
-                    <h3>Powiadomienia o wygaśnięciu</h3>
-                    <p>Ustaw datę wygaśnięcia dla dowodu, prawa jazdy, polis, umów. SageDocs przypomni przed wygaśnięciem &mdash; lokalnie, bez serwera.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">ios_share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Zaszyfrowany eksport</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Zabierz swoje dane ze sobą. Wyeksportuj wszystko jako zaszyfrowany pakiet &mdash; przenośny, odzyskiwalny, Twój.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">block</span></div>
-                    <h3>Progresywna blokada</h3>
-                    <p>Nieudane próby uwierzytelnienia powodują rosnące okresy oczekiwania. Ochrona przed atakami brute-force.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">delete_forever</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Trwałe usuwanie</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Usuń dokument, a szyfrogram zniknie. Bez miękkiego usuwania, bez kopii cieni, bez sejfu odzyskiwania.</p>
                 </div>
             </div>
         </div>
@@ -188,38 +381,46 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Często zadawane pytania</div>
-                <h2 class="h-section">FAQ</h2>
+                <div class="eyebrow eyebrow--static">Pytania</div>
+                <h2 class="h-section">Co ludzie pytają <span class="italic-em">najpierw</span>.</h2>
             </div>
-            <div style="max-width: 720px; margin: 0 auto;">
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Ile kosztuje SageDocs?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">$2,99/mies. lub $24,99/rok jako subskrypcja z automatycznym odnawianiem. Możesz anulować w dowolnej chwili.</div>
+            <div class="faq-list">
+                <details class="faq reveal">
+                    <summary>Ile kosztuje SageDocs?</summary>
+                    <div class="faq__body">SageDocs to subskrypcja z automatycznym odnawianiem w App Store: $2,99/mies. lub $24,99/rok. Możesz anulować w dowolnej chwili w Ustawienia &rarr; [Apple ID] &rarr; Subskrypcje; anulowanie wchodzi w życie na końcu bieżącego okresu.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Co się stanie, jeśli zapomnę PIN-u głównego?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Twoje zaszyfrowane dokumenty nie mogą zostać odzyskane. Nie ma backdoor &mdash; taki jest cel projektu. Zapisz PIN w bezpiecznym miejscu lub korzystaj z biometrii.</div>
+                <details class="faq reveal">
+                    <summary>Jak moje dane są szyfrowane?</summary>
+                    <div class="faq__body">Każdy załącznik jest szyfrowany <strong>AES-256-GCM</strong> przed zapisaniem. Klucze szyfrowania są wyprowadzane z PIN-u głównego przez PBKDF2-SHA256 z <strong>600 000 iteracji</strong> i 256-bitową solą na instalację. Klucze przechowywane są w iOS Keychain i chronione biometrycznie.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Czy iCloud widzi moje dokumenty?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Nie. Dokumenty są szyfrowane AES-256-GCM przed synchronizacją CloudKit. Apple przechowuje tylko szyfrogram.</div>
+                <details class="faq reveal">
+                    <summary>Co się stanie, jeśli zapomnę PIN-u głównego?</summary>
+                    <div class="faq__body">Twoje zaszyfrowane dokumenty nie mogą zostać odzyskane. Nie mamy backdoor ani sposobu na zresetowanie kluczy szyfrowania &mdash; to jest cel tego projektu. Wybierz PIN, który zapamiętasz i rozważ włączenie biometrii jako kopii zapasowej.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Czy jest dostępny na Mac?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Tak. Uniwersalny binar działający natywnie na iPhone (iOS 17+), iPad (iPadOS 17+) i Mac (macOS 14+) z szyfrowaną synchronizacją iCloud.</div>
+                <details class="faq reveal">
+                    <summary>Czy iCloud widzi moje dokumenty?</summary>
+                    <div class="faq__body">Nie. Dokumenty są szyfrowane na urządzeniu za pomocą AES-256-GCM <em>przed</em> synchronizacją do iCloud przez CloudKit. Apple przechowuje tylko szyfrogram &mdash; nawet Apple nie może odszyfrować Twoich dokumentów.</div>
+                </details>
+                <details class="faq reveal">
+                    <summary>Czy mogę udostępnić dokument z SageDocs?</summary>
+                    <div class="faq__body">Tak. Dokumenty są tymczasowo odszyfrowywane do udostępnienia, które inicjujesz (np. e-mail z polisą ubezpieczeniową). Plik tymczasowy jest bezpiecznie usuwany natychmiast po.</div>
+                </details>
+                <details class="faq reveal">
+                    <summary>Czy SageDocs jest dostępny na Mac?</summary>
+                    <div class="faq__body">Tak. SageDocs to uniwersalny binar działający natywnie na iPhone (iOS 17+), iPad (iPadOS 17+) i Mac (macOS 14+). Dokumenty synchronizują się zaszyfrowane między wszystkimi urządzeniami Apple przez iCloud.</div>
                 </details>
             </div>
         </div>
     </section>
 
-    <section class="section--lg">
+    <section>
         <div class="container">
-            <div class="glass-card cta-block reveal" style="position: relative; overflow: hidden; padding: 80px 56px; text-align: center; border-radius: var(--radius-xl); border-color: var(--green-dim);">
+            <div class="final-cta reveal">
                 <h2 class="h-section">Suwerenne przechowywanie Twoich <span class="italic-em">najwrażliwszych</span> dokumentów.</h2>
                 <p class="text-lead">$2,99/mies. lub $24,99/rok w App Store. Zaszyfrowane domyślnie. Dostępne tylko dla Ciebie.</p>
-                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <div class="ctas">
                     <a href="https://apps.apple.com/pl/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Pobierz SageDocs z App Store"><img src="../assets/badges/app-store-badge.svg" alt="Pobierz z App Store" width="200" height="60" loading="lazy"></a>
-                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Zobacz politykę prywatności</a>
+                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Przeczytaj politykę prywatności</a>
                 </div>
             </div>
         </div>
@@ -229,7 +430,7 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span> Sagelight <span>Studio</span></div>
+            <div class="footer__brand"><span aria-hidden="true">🌿</span>Sagelight <span>Studio</span></div>
             <p class="footer__tagline">Prywatność przez przejrzystość. Niezależne studio tworzące lokalne aplikacje iOS i macOS w Rumunii, UE.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>
@@ -237,13 +438,26 @@
         <div><div class="footer__col-title">Studio</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Kontakt</a></li></ul></div>
         <div><div class="footer__col-title">Prawne</div><ul class="footer__list"><li><a href="privacy-policy.html">Polityka Prywatności</a></li><li><a href="gdpr.html">RODO</a></li><li><a href="terms.html">Regulamin</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Preferencje cookies</button></li></ul></div>
     </div>
-    <div class="footer__bottom">
-        <span>© 2026 Sagelight Studio · Wykonane z troską w Rumunii, UE</span>
-        <span>Prywatność przez przejrzystość</span>
-    </div>
+    <div class="footer__bottom"><span>© 2026 Sagelight Studio · Wykonane z troską w Rumunii, UE</span><span>Prywatność przez przejrzystość</span></div>
 </footer>
 
 <script src="../assets/theme.js"></script>
 <script src="../assets/consent.js" defer></script>
+<script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('is-visible'), i * 50);
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+</script>
 </body>
 </html>

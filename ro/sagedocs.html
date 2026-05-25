@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Ads — Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -16,8 +15,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>SageDocs — Seif Criptat AES-256 pentru iPhone</title>
     <meta name="description" content="Seif criptat AES-256 pentru buletine, contracte, asigurări și documente medicale. Protejat biometric. Sincronizare iCloud criptată. Abonament pe iPhone și Mac.">
+    <meta name="keywords" content="SageDocs, seif documente criptat, stocare documente sigură iOS, aplicație documente AES-256, seif personal Mac, iCloud criptat, seif documente GDPR, aplicație documente biometric">
     <meta property="og:title" content="SageDocs — Seif Criptat de Documente Personale">
-    <meta property="og:description" content="Seif criptat AES-256 pentru buletine, contracte, asigurări și documente medicale. Protejat biometric. Pe iOS și macOS.">
+    <meta property="og:description" content="Seif criptat AES-256 pentru buletine, contracte, asigurări și documente personale. Protejat biometric. Abonament pe iOS și macOS.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sagelight-studio.com/ro/sagedocs.html">
     <meta property="og:site_name" content="Sagelight Studio">
@@ -26,9 +26,10 @@
     <meta property="og:image" content="https://sagelight-studio.com/assets/og/sagedocs.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SageDocs — seif criptat de documente personale pentru iPhone și Mac">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SageDocs — Seif Criptat de Documente Personale">
-    <meta name="twitter:description" content="Seif criptat AES-256 pentru documente personale. Pe iOS și macOS.">
+    <meta name="twitter:description" content="Seif criptat AES-256. Protejat biometric. Abonament pe iOS și macOS.">
     <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagedocs.png">
     <meta name="apple-itunes-app" content="app-id=6762064711">
     <meta name="application-name" content="SageDocs">
@@ -58,46 +59,210 @@
         "name": "SageDocs", "applicationCategory": "SecurityApplication",
         "operatingSystem": "iOS 17+, macOS 14+",
         "offers": {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Abonament lunar"},
-        "description": "Seif criptat pentru documente personale. Criptare AES-256-GCM, protecție biometric/PIN, sincronizare iCloud criptată, urmărire expirări. Construit pentru confidențialitate.",
+        "description": "Seif criptat pentru documente personale. Criptare AES-256-GCM, protecție biometric/PIN, sincronizare iCloud criptată, urmărire expirări.",
         "inLanguage": "ro",
         "url": "https://apps.apple.com/ro/app/sagedocs/id6762064711",
-        "downloadUrl": "https://apps.apple.com/ro/app/sagedocs/id6762064711",
         "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
         "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
     }
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ro", "mainEntity": [
-        {"@type": "Question", "name": "Cât costă SageDocs?", "acceptedAnswer": {"@type": "Answer", "text": "SageDocs este un abonament cu reînnoire automată pe App Store: $2.99/lună sau $24.99/an. Poți anula oricând din Setări iPhone → [Apple ID-ul tău] → Abonamente; anularea intră în vigoare la sfârșitul perioadei curente."}},
-        {"@type": "Question", "name": "Cum sunt criptate datele mele?", "acceptedAnswer": {"@type": "Answer", "text": "Fiecare atașament este criptat cu AES-256-GCM înainte de stocare. Cheile de criptare sunt derivate din PIN-ul master prin PBKDF2-SHA256 cu 600.000 de iterații și un salt de 256 biți per instalare. Cheile stau în Keychain-ul iOS și sunt protejate biometric."}},
-        {"@type": "Question", "name": "Ce se întâmplă dacă uit PIN-ul master?", "acceptedAnswer": {"@type": "Answer", "text": "Documentele tale criptate nu pot fi recuperate. Nu avem un backdoor sau o modalitate de a reseta cheile tale de criptare &mdash; acesta este scopul designului."}},
-        {"@type": "Question", "name": "Vede iCloud documentele mele?", "acceptedAnswer": {"@type": "Answer", "text": "Nu. Documentele sunt criptate pe dispozitiv cu AES-256-GCM înainte de a fi sincronizate prin CloudKit. Apple stochează doar ciphertext &mdash; nici Apple nu poate decripta documentele tale."}},
-        {"@type": "Question", "name": "Este disponibil și pe Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Da. SageDocs este un binary universal care rulează nativ pe iPhone (iOS 17+), iPad (iPadOS 17+) și Mac (macOS 14+). Documentele se sincronizează criptate pe toate dispozitivele Apple prin iCloud."}}
+        {"@type": "Question", "name": "Cât costă SageDocs?", "acceptedAnswer": {"@type": "Answer", "text": "SageDocs este un abonament cu reînnoire automată pe App Store: $2.99/lună sau $24.99/an. Poți anula oricând din Setări iPhone → [Apple ID-ul tău] → Abonamente."}},
+        {"@type": "Question", "name": "Cum sunt criptate datele mele?", "acceptedAnswer": {"@type": "Answer", "text": "Fiecare atașament este criptat cu AES-256-GCM înainte de stocare. Cheile sunt derivate din PIN-ul master prin PBKDF2-SHA256 cu 600.000 de iterații și un salt de 256 biți per instalare."}},
+        {"@type": "Question", "name": "Ce se întâmplă dacă uit PIN-ul master?", "acceptedAnswer": {"@type": "Answer", "text": "Documentele tale criptate nu pot fi recuperate. Nu avem un backdoor sau o modalitate de a reseta cheile tale de criptare."}},
+        {"@type": "Question", "name": "Vede iCloud documentele mele?", "acceptedAnswer": {"@type": "Answer", "text": "Nu. Documentele sunt criptate pe dispozitiv cu AES-256-GCM înainte de a fi sincronizate prin CloudKit. Apple stochează doar ciphertext."}},
+        {"@type": "Question", "name": "Este disponibil și pe Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Da. SageDocs este un binary universal care rulează nativ pe iPhone (iOS 17+), iPad (iPadOS 17+) și Mac (macOS 14+)."}}
     ]}
     </script>
 
     <style>
         .hero-docs { text-align: center; padding-top: calc(var(--nav-height) + 96px); }
-        .hero-docs h1 { margin: 24px auto 28px; max-width: 18ch; }
+        .hero-docs h1 { margin: 24px auto 28px; max-width: 16ch; }
         .hero-docs p.lead { max-width: 620px; margin: 0 auto 36px; }
         .hero-docs .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        @media (max-width: 880px) { .feature-grid { grid-template-columns: 1fr; } }
-        .feature-card { padding: 32px; }
-        .feature-card .card-icon { margin-bottom: 20px; color: var(--green); }
-        .feature-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        .lang-switch { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); }
-        .lang-switch a { color: var(--green); text-decoration: none; }
-        .pricing-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-        .pricing-card { padding: 32px; min-width: 220px; }
-        .pricing-card__price { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--green); margin: 8px 0; }
-        .pricing-card__period { color: var(--text-dim); font-size: 14px; }
+
+        .vault {
+            position: relative;
+            padding: 36px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+        @media (max-width: 880px) { .vault { grid-template-columns: 1fr; padding: 24px; } }
+        .vault::before {
+            content: 'enhanced_encryption';
+            font-family: 'Material Symbols Outlined';
+            font-size: 320px;
+            position: absolute;
+            top: -40px; right: -60px;
+            color: var(--green);
+            opacity: 0.04;
+            pointer-events: none;
+        }
+        .vault::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+            animation: scan 3.5s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scan {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(640px); opacity: 0; }
+        }
+
+        .vault__main { position: relative; z-index: 1; text-align: left; }
+        .vault__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .vault__head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text); }
+
+        .doc-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid var(--card-border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+        .doc-row:hover {
+            transform: translateY(-3px);
+            border-color: var(--green-dim);
+            box-shadow: 0 10px 30px -10px var(--green-shadow);
+        }
+        .doc-row__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+        .doc-row__icon {
+            width: 44px; height: 44px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-surface-3);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green); font-size: 22px;
+            flex-shrink: 0;
+        }
+        .doc-row__name { font-weight: 500; font-size: 15px; color: var(--text); }
+        .doc-row__filename { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+        .doc-row__right { display: flex; align-items: center; gap: 16px; }
+        .doc-row__modified { display: none; flex-direction: column; align-items: flex-end; }
+        @media (min-width: 700px) { .doc-row__modified { display: flex; } }
+        .doc-row__modified .label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .doc-row__modified .value { font-size: 12px; color: var(--text-secondary); }
+        .doc-row__chip {
+            font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+            padding: 4px 10px; border-radius: 100px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .doc-row__chip--secure { background: rgba(85, 238, 113, 0.1); border: 1px solid rgba(85, 238, 113, 0.3); color: var(--green); }
+        .doc-row__chip--warn { background: rgba(255, 196, 186, 0.08); border: 1px solid rgba(255, 196, 186, 0.3); color: #ffc4ba; }
+        .doc-row .arrow { color: var(--text-dim); transition: transform 0.2s ease; font-size: 22px; }
+        .doc-row:hover .arrow { color: var(--green); transform: translateX(2px); }
+
+        .vault__sidebar { position: relative; z-index: 1; text-align: left; }
+        .status-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid var(--green-dim);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+        .status-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .status-card__head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
+        .status-card__head .label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; }
+        .status-card__row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0;
+            border-bottom: 0.5px solid var(--border);
+            font-size: 13px;
+        }
+        .status-card__row:last-child { border-bottom: none; }
+        .status-card__row .k { color: var(--text-dim); }
+        .status-card__row .v { font-family: var(--font-mono); color: var(--text); }
+        .status-card__row .v--green { color: var(--green); }
+
+        .specs-section { background: var(--bg-surface); padding: 120px 0; }
+        @media (max-width: 700px) { .specs-section { padding: 72px 0; } }
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        @media (max-width: 880px) { .specs-grid { grid-template-columns: 1fr; gap: 48px; } }
+        .specs-list { display: flex; flex-direction: column; gap: 32px; margin-top: 36px; }
+        .spec { display: flex; gap: 20px; }
+        .spec__icon {
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            border-radius: var(--radius);
+            background: var(--bg-surface-2); border: 0.5px solid var(--green-dim);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green); font-size: 24px;
+        }
+        .spec h4 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .spec p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .spec .mono-spec {
+            font-family: var(--font-mono); font-size: 11px;
+            color: var(--green); text-transform: uppercase; letter-spacing: 1px;
+            margin-top: 8px;
+        }
+        .spec .mono-spec span.dim { color: var(--text-dim); }
+
+        .spec-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .spec-tile {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 28px 16px;
+            text-align: center;
+            transition: var(--transition-fast);
+        }
+        .spec-tile:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+        .spec-tile .material-symbols-outlined { color: var(--green); font-size: 32px; margin-bottom: 12px; }
+        .spec-tile .label { font-family: var(--font-mono); font-size: 12px; color: var(--text); }
+
+        .layers { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; }
+        .layer { text-align: center; max-width: 200px; }
+        .layer__circle {
+            width: 96px; height: 96px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: var(--green-glow);
+            border: 2px solid var(--green-dim);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green); font-size: 36px;
+            transition: var(--transition);
+        }
+        .layer:hover .layer__circle {
+            background: var(--green-fade);
+            border-color: var(--green);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--green-shadow);
+        }
+        .layer h5 { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .layer p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+        .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq { border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition-fast); background: var(--bg-surface); }
+        .faq[open] { border-color: var(--green-dim); }
+        .faq summary { padding: 18px 24px; cursor: pointer; font-weight: 500; font-size: 16px; color: var(--text); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: 'add'; font-family: 'Material Symbols Outlined'; color: var(--text-dim); font-size: 22px; }
+        .faq[open] summary::after { content: 'remove'; color: var(--green); }
+        .faq__body { padding: 0 24px 22px; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+        .final-cta { padding: 96px 56px; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); text-align: center; }
+        .final-cta h2 { margin-bottom: 16px; }
+        .final-cta p { max-width: 520px; margin: 0 auto 36px; }
+        .final-cta .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 700px) { .final-cta { padding: 64px 20px; } }
     </style>
 </head>
 <body>
 
 <div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
 
 <nav class="nav" role="navigation" aria-label="Navigare principală">
     <div class="nav__inner">
@@ -106,15 +271,18 @@
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
-            <li><a href="sagedocs.html" class="nav__tab nav__tab--active" aria-current="page">SageDocs</a></li>
+            <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
             <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
             <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="../blog.html" class="nav__tab">Blog</a></li>
+            <li><a href="../press-kit.html" class="nav__tab">Presă</a></li>
         </ul>
         <div class="nav__actions">
-            <span class="lang-switch"><a href="../sagedocs.html" hreflang="en" rel="alternate">EN</a> · RO</span>
-            <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Schimbă tema">
+            <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Schimbă tema" title="Schimbă tema">
                 <span id="themeIcon" aria-hidden="true">☾</span>
+            </button>
+            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Deschide meniul" aria-expanded="false">
+                <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
@@ -124,8 +292,11 @@
     <section class="hero hero-docs">
         <div class="container">
             <div class="hero__inner">
-                <div class="eyebrow fade-up d1">SageDocs · Seif Criptat</div>
-                <h1 class="h-display fade-up d2">Documentele tale. <em class="italic-em">Criptate.</em></h1>
+                <div class="eyebrow fade-up d1">Criptat end-to-end</div>
+                <h1 class="h-display fade-up d2">
+                    Documentele tale.<br>
+                    <span class="italic-em">Criptate.</span>
+                </h1>
                 <p class="text-lead lead fade-up d3">
                     Seiful digital pentru cele mai sensibile date ale tale &mdash; buletin, pașaport, contracte, asigurări, documente medicale. Criptare AES-256-GCM pe dispozitivul tău. Recuperabil doar de tine.
                 </p>
@@ -133,6 +304,127 @@
                     <a href="https://apps.apple.com/ro/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Descarcă SageDocs din App Store"><img src="../assets/badges/app-store-badge.svg" alt="Descarcă din App Store" width="200" height="60" loading="lazy"></a>
                     <a href="#security" class="btn btn--ghost btn--lg">Citește modelul de securitate</a>
                 </div>
+
+                <div class="glass-card vault fade-up d5">
+                    <div class="vault__main">
+                        <div class="vault__head">
+                            <h2>Documente Sigure</h2>
+                            <button class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">
+                                <span class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
+                                Adaugă
+                            </button>
+                        </div>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">badge</span></div>
+                                <div>
+                                    <div class="doc-row__name">Carte de Identitate &mdash; Principală</div>
+                                    <div class="doc-row__filename">DOC_CI_9928_SECURE.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Modificat</span>
+                                    <span class="value">acum 2 ore</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--warn">Expiră curând</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">flight_takeoff</span></div>
+                                <div>
+                                    <div class="doc-row__name">Pașaport Internațional</div>
+                                    <div class="doc-row__filename">PPT_2026_VALID.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Modificat</span>
+                                    <span class="value">12 ian. 2026</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Verificat</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">description</span></div>
+                                <div>
+                                    <div class="doc-row__name">Contract Vânzare-Cumpărare</div>
+                                    <div class="doc-row__filename">CONTRACT_2025.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Modificat</span>
+                                    <span class="value">05 dec. 2025</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Verificat</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="vault__sidebar">
+                        <div class="status-card">
+                            <div class="status-card__head">
+                                <span class="dot"></span>
+                                <span class="label">SEIF · ACTIV</span>
+                            </div>
+                            <div class="status-card__row"><span class="k">Cipher</span><span class="v">AES-256-GCM</span></div>
+                            <div class="status-card__row"><span class="k">Entropie</span><span class="v">256-bit</span></div>
+                            <div class="status-card__row"><span class="k">KDF</span><span class="v">PBKDF2 · 600k</span></div>
+                            <div class="status-card__row"><span class="k">Sesiuni</span><span class="v">01 (curentă)</span></div>
+                            <div class="status-card__row"><span class="k">Integritate</span><span class="v v--green">Verificată</span></div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="specs-section">
+        <div class="container">
+            <div class="specs-grid">
+                <div class="reveal">
+                    <div class="eyebrow eyebrow--static">Criptografia</div>
+                    <h2 class="h-section" style="margin-top: 16px;">
+                        Securitate fără <span class="italic-em">compromis</span>.
+                    </h2>
+                    <div class="specs-list">
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">key</span></div>
+                            <div>
+                                <h4>Criptare autentificată AES-256-GCM</h4>
+                                <p>Fiecare atașament este criptat cu AES-256-GCM &mdash; același cifru de încredere folosit pentru date top-secret. Fiecare fișier are propriul nonce și tag de integritate.</p>
+                                <div class="mono-spec"><span class="dim">Specificație:</span> CHEIE SIMETRICĂ 256-BIȚI · MOD GCM</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">vibration</span></div>
+                            <div>
+                                <h4>Derivare cheie PBKDF2-SHA256</h4>
+                                <p>PIN-ul tău master este întins prin 600.000 de iterații cu un salt de 256-biți per instalare. Atacurile brute-force devin matematic impracticabile la orice scară de calcul actuală.</p>
+                                <div class="mono-spec"><span class="dim">Specificație:</span> 600.000 ITERAȚII · HMAC-SHA256</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">fingerprint</span></div>
+                            <div>
+                                <h4>Keychain + protecție biometrică</h4>
+                                <p>Cheile de criptare stau în Keychain-ul iOS protejate de Face ID, Touch ID sau PIN-ul master. Nu apar niciodată în clar în afara Secure Enclave.</p>
+                                <div class="mono-spec"><span class="dim">Specificație:</span> SECURE ENCLAVE · CU POARTĂ BIOMETRICĂ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-tiles reveal">
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">shield_lock</span><div class="label">Confidențialitate</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">fingerprint</span><div class="label">Link biometric</div></div>
+                </div>
             </div>
         </div>
     </section>
@@ -140,62 +432,71 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Prețuri</div>
-                <h2 class="h-section">Prețuri <span class="italic-em">simple și oneste</span>.</h2>
-                <p>Două opțiuni de abonament prin App Store. Anulezi oricând din setările Apple ID.</p>
+                <div class="eyebrow eyebrow--static">Apărare în adâncime</div>
+                <h2 class="h-section">Securitate pe <span class="italic-em">straturi</span>.</h2>
+                <p>Mai multe fortificații independente îți protejează identitatea digitală &mdash; chiar dacă una cedează, restul rezistă.</p>
             </div>
-            <div class="pricing-row">
-                <div class="glass-card pricing-card reveal" style="text-align: center;">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim);">Lunar</div>
-                    <div class="pricing-card__price">$2.99</div>
-                    <div class="pricing-card__period">pe lună</div>
+            <div class="layers">
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">lock</span></div>
+                    <h5>Stratul seifului</h5>
+                    <p>AES-256-GCM pe fiecare atașament. Chei per fișier.</p>
                 </div>
-                <div class="glass-card pricing-card reveal" style="text-align: center; border-color: var(--green-dim);">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green);">Anual · Economisești 30%</div>
-                    <div class="pricing-card__price">$24.99</div>
-                    <div class="pricing-card__period">pe an &middot; ~$2.08/lună</div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">vpn_key</span></div>
+                    <h5>Stratul de acces</h5>
+                    <p>PIN master, Face ID, Touch ID. Derivare cheie PBKDF2.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">cloud</span></div>
+                    <h5>Stratul de sincronizare</h5>
+                    <p>iCloud criptat-în-repaus prin CloudKit. Apple stochează doar ciphertext.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">visibility_off</span></div>
+                    <h5>Stratul de confidențialitate</h5>
+                    <p>Fără telemetrie, fără analitică, fără colectare de metadate.</p>
                 </div>
             </div>
-            <p style="text-align: center; color: var(--text-dim); font-size: 13px; margin-top: 24px; max-width: 540px; margin-left: auto; margin-right: auto;">Abonamentul se reînnoiește automat dacă nu este anulat cu cel puțin 24 de ore înainte de sfârșitul perioadei curente. Gestionezi abonamentul din Setări iPhone → Apple ID → Abonamente.</p>
         </div>
     </section>
 
-    <section id="security" class="section--lg">
+    <section>
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Modelul de Securitate</div>
-                <h2 class="h-section">Criptare <span class="italic-em">profesională</span>, nu marketing.</h2>
+                <h2 class="h-section">Mai mult decât simplă <span class="italic-em">stocare</span>.</h2>
+                <p>SageDocs gestionează ciclul de viață al documentelor tale importante &mdash; nu doar locul unde sunt.</p>
             </div>
-            <div class="feature-grid">
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">enhanced_encryption</span></div>
-                    <h3>AES-256-GCM</h3>
-                    <p>Fiecare atașament este criptat cu AES-256-GCM înainte de stocare. Standard industrial, folosit de bănci și agenții guvernamentale.</p>
+            <div class="bento">
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">event</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Urmărirea expirării</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Primești memento înainte să expire pașaportul, buletinul, asigurarea sau talonul auto. Memento-urile rulează pe dispozitivul tău.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">key</span></div>
-                    <h3>PBKDF2 600.000 iterații</h3>
-                    <p>Cheia ta de criptare este derivată din PIN-ul master prin PBKDF2-SHA256 cu 600.000 de iterații &mdash; depășește recomandarea OWASP 2023.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Sincronizare iCloud criptată</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Sincronizare opțională pe iPhone, iPad și Mac. Criptat pe dispozitiv, apoi predat la Apple ca ciphertext.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">fingerprint</span></div>
-                    <h3>Face ID / Touch ID</h3>
-                    <p>Cheia stă în Keychain-ul iOS cu acces biometric. Dacă schimbi amprenta sau Face ID-ul, aplicația cere re-autentificare cu PIN pentru securitate.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Partajare selectivă</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Decriptezi și partajezi doar documentul ales. Fișierele temporare sunt șterse securizat după partajare.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">cloud_done</span></div>
-                    <h3>iCloud sincronizat criptat</h3>
-                    <p>Documentele sunt criptate pe dispozitiv înainte să ajungă în CloudKit. Apple stochează doar ciphertext &mdash; nici Apple, nici noi nu putem citi documentele tale.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">iPhone, iPad, Mac</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Binar universal care rulează nativ pe toate dispozitivele tale Apple. iOS 17+ și macOS 14+.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">timer</span></div>
-                    <h3>Notificări de expirare</h3>
-                    <p>Stabilește data de expirare pentru buletin, carnet auto, asigurări, contracte. SageDocs te anunță înainte să expire &mdash; local, fără server.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">ios_share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Export criptat</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Iei datele cu tine. Exportă totul ca un pachet criptat &mdash; portabil, recuperabil, al tău.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">block</span></div>
-                    <h3>Lockout progresiv</h3>
-                    <p>Tentativele eșuate de autentificare declanșează perioade crescătoare de cooldown. Protejează împotriva atacurilor de tip brute-force.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">delete_forever</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Ștergere definitivă</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Ștergi un document și ciphertext-ul este eliminat. Fără ștergere soft, fără copii shadow, fără seif de recuperare.</p>
                 </div>
             </div>
         </div>
@@ -204,42 +505,46 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Întrebări frecvente</div>
-                <h2 class="h-section">FAQ</h2>
+                <div class="eyebrow eyebrow--static">Întrebări</div>
+                <h2 class="h-section">Ce întreabă oamenii <span class="italic-em">primul</span>.</h2>
             </div>
-            <div style="max-width: 720px; margin: 0 auto;">
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Cât costă SageDocs?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">SageDocs este un abonament cu reînnoire automată pe App Store: $2.99/lună sau $24.99/an. Poți anula oricând din Setări iPhone &rarr; [Apple ID-ul tău] &rarr; Abonamente; anularea intră în vigoare la sfârșitul perioadei curente.</div>
+            <div class="faq-list">
+                <details class="faq reveal">
+                    <summary>Cât costă SageDocs?</summary>
+                    <div class="faq__body">SageDocs este un abonament cu reînnoire automată pe App Store: $2.99/lună sau $24.99/an. Poți anula oricând din Setări iPhone &rarr; [Apple ID-ul tău] &rarr; Abonamente; anularea intră în vigoare la sfârșitul perioadei curente.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Ce se întâmplă dacă uit PIN-ul master?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Documentele tale criptate nu pot fi recuperate. Nu avem un backdoor sau o modalitate de a reseta cheile tale de criptare &mdash; acesta este scopul designului. Notează-ți PIN-ul într-un loc sigur sau folosește exclusiv autentificare biometrică.</div>
+                <details class="faq reveal">
+                    <summary>Cum sunt criptate datele mele?</summary>
+                    <div class="faq__body">Fiecare atașament este criptat cu <strong>AES-256-GCM</strong> înainte de stocare. Cheile de criptare sunt derivate din PIN-ul master prin PBKDF2-SHA256 cu <strong>600.000 de iterații</strong> și un salt de 256 biți per instalare. Cheile stau în Keychain-ul iOS și sunt protejate biometric.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Vede iCloud documentele mele?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Nu. Documentele sunt criptate pe dispozitiv cu AES-256-GCM înainte de a fi sincronizate prin CloudKit. Apple stochează doar ciphertext &mdash; nici Apple nu poate decripta documentele tale.</div>
+                <details class="faq reveal">
+                    <summary>Ce se întâmplă dacă uit PIN-ul master?</summary>
+                    <div class="faq__body">Documentele tale criptate nu pot fi recuperate. Nu avem un backdoor sau o modalitate de a reseta cheile tale de criptare &mdash; acesta este scopul designului. Alege un PIN pe care îl poți reține și ia în considerare activarea autentificării biometrice ca rezervă.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Pot partaja un document din SageDocs?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Da. Documentele sunt decriptate temporar pentru share-ul pe care îl inițiezi. Fișierul temporar este șters securizat imediat după.</div>
+                <details class="faq reveal">
+                    <summary>Vede iCloud documentele mele?</summary>
+                    <div class="faq__body">Nu. Documentele sunt criptate pe dispozitiv cu AES-256-GCM <em>înainte</em> de a fi sincronizate prin CloudKit. Apple stochează doar ciphertext &mdash; nici Apple nu poate decripta documentele tale.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Este disponibil și pe Mac?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Da. SageDocs este un binary universal care rulează nativ pe iPhone (iOS 17+), iPad (iPadOS 17+) și Mac (macOS 14+). Documentele se sincronizează criptate pe toate dispozitivele Apple prin iCloud.</div>
+                <details class="faq reveal">
+                    <summary>Pot partaja un document din SageDocs?</summary>
+                    <div class="faq__body">Da. Documentele sunt decriptate temporar pentru partajarea pe care o inițiezi (ex. trimiterea poliței de asigurare). Fișierul temporar este șters securizat imediat după.</div>
+                </details>
+                <details class="faq reveal">
+                    <summary>Este disponibil și pe Mac?</summary>
+                    <div class="faq__body">Da. SageDocs este un binar universal care rulează nativ pe iPhone (iOS 17+), iPad (iPadOS 17+) și Mac (macOS 14+). Documentele se sincronizează criptate pe toate dispozitivele Apple prin iCloud.</div>
                 </details>
             </div>
         </div>
     </section>
 
-    <section class="section--lg">
+    <section>
         <div class="container">
-            <div class="glass-card cta-block reveal" style="position: relative; overflow: hidden; padding: 80px 56px; text-align: center; border-radius: var(--radius-xl); border-color: var(--green-dim);">
-                <h2 class="h-section">Stocare suverană pentru documentele tale <span class="italic-em">cele mai sensibile</span>.</h2>
+            <div class="final-cta reveal">
+                <h2 class="h-section">Stocare suverană pentru cele mai <span class="italic-em">sensibile</span> documente.</h2>
                 <p class="text-lead">$2.99/lună sau $24.99/an pe App Store. Criptat by design. Recuperabil doar de tine.</p>
-                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <div class="ctas">
                     <a href="https://apps.apple.com/ro/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Descarcă SageDocs din App Store"><img src="../assets/badges/app-store-badge.svg" alt="Descarcă din App Store" width="200" height="60" loading="lazy"></a>
-                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Vezi politica de confidențialitate</a>
+                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Citește politica de confidențialitate</a>
                 </div>
             </div>
         </div>
@@ -249,21 +554,62 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span> Sagelight <span>Studio</span></div>
-            <p class="footer__tagline">Privacy through clarity. Un studio independent care construiește aplicații iOS și macOS local-first, din România, UE.</p>
+            <div class="footer__brand">
+                <span aria-hidden="true">🌿</span>
+                Sagelight <span>Studio</span>
+            </div>
+            <p class="footer__tagline">Confidențialitate prin claritate. Un studio independent care construiește aplicații local-first iOS și macOS din România, UE.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>
-        <div><div class="footer__col-title">Aplicații</div><ul class="footer__list"><li><a href="sagedocs.html">SageDocs</a></li><li><a href="sagebills.html">SageBills</a></li><li><a href="sagemeet.html">SageMeet</a></li></ul></div>
-        <div><div class="footer__col-title">Studio</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Contact</a></li></ul></div>
-        <div><div class="footer__col-title">Juridic</div><ul class="footer__list"><li><a href="privacy-policy.html">Politica de Confidențialitate</a></li><li><a href="gdpr.html">RGPD</a></li><li><a href="terms.html">Termeni</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Preferințe cookies</button></li></ul></div>
+        <div>
+            <div class="footer__col-title">Aplicații</div>
+            <ul class="footer__list">
+                <li><a href="sagedocs.html">SageDocs</a></li>
+                <li><a href="sagebills.html">SageBills</a></li>
+                <li><a href="sagemeet.html">SageMeet</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer__col-title">Studio</div>
+            <ul class="footer__list">
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../press-kit.html">Press Kit</a></li>
+                <li><a href="mailto:contact@sagelight-studio.com">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer__col-title">Juridic</div>
+            <ul class="footer__list">
+                <li><a href="privacy-policy.html">Politica de Confidențialitate</a></li>
+                <li><a href="gdpr.html">RGPD</a></li>
+                <li><a href="terms.html">Termeni</a></li>
+                <li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Preferințe cookies</button></li>
+            </ul>
+        </div>
     </div>
     <div class="footer__bottom">
         <span>© 2026 Sagelight Studio · Construit cu grijă în România, UE</span>
-        <span>Privacy through clarity</span>
+        <span>Confidențialitate prin claritate</span>
     </div>
 </footer>
 
 <script src="../assets/theme.js"></script>
 <script src="../assets/consent.js" defer></script>
+<script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('is-visible'), i * 50);
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+</script>
 </body>
 </html>

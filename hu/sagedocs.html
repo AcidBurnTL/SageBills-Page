@@ -56,57 +56,115 @@
         "name": "SageDocs", "applicationCategory": "SecurityApplication",
         "operatingSystem": "iOS 17+, macOS 14+",
         "offers": {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Havi előfizetés"},
-        "description": "Titkosított személyes dokumentumtároló. AES-256-GCM titkosítás, biometrikus/PIN védelem, titkosított iCloud szinkronizálás, lejárati követés.",
+        "description": "Titkosított személyes dokumentumtároló. AES-256-GCM titkosítás, biometrikus/PIN védelem, titkosított iCloud szinkronizálás.",
         "inLanguage": "hu",
         "url": "https://apps.apple.com/hu/app/sagedocs/id6762064711",
-        "downloadUrl": "https://apps.apple.com/hu/app/sagedocs/id6762064711",
         "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
         "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
     }
     </script>
-    <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "hu", "mainEntity": [
-        {"@type": "Question", "name": "Mennyibe kerül a SageDocs?", "acceptedAnswer": {"@type": "Answer", "text": "A SageDocs automatikusan megújuló előfizetés az App Store-ban: $2,99/hó vagy $24,99/év. Bármikor lemondhatod a Beállítások → [Apple ID] → Előfizetések menüpontban."}},
-        {"@type": "Question", "name": "Hogyan vannak titkosítva az adataim?", "acceptedAnswer": {"@type": "Answer", "text": "Minden melléklet AES-256-GCM-mel van titkosítva tárolás előtt. A titkosítási kulcsok a mester PIN-ből származnak PBKDF2-SHA256 (600 000 iteráció) segítségével, és biometrikusan védett Keychain elemekben tárolódnak."}},
-        {"@type": "Question", "name": "Mi történik, ha elfelejtem a mester PIN-t?", "acceptedAnswer": {"@type": "Answer", "text": "A titkosított dokumentumaid nem helyreállíthatók. Nincs hátsó ajtó."}}
-    ]}
-    </script>
 
     <style>
         .hero-docs { text-align: center; padding-top: calc(var(--nav-height) + 96px); }
-        .hero-docs h1 { margin: 24px auto 28px; max-width: 18ch; }
+        .hero-docs h1 { margin: 24px auto 28px; max-width: 16ch; }
         .hero-docs p.lead { max-width: 620px; margin: 0 auto 36px; }
         .hero-docs .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        @media (max-width: 880px) { .feature-grid { grid-template-columns: 1fr; } }
-        .feature-card { padding: 32px; }
-        .feature-card .card-icon { margin-bottom: 20px; color: var(--green); }
-        .feature-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        .lang-switch { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); }
-        .lang-switch a { color: var(--green); text-decoration: none; }
-        .pricing-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-        .pricing-card { padding: 32px; min-width: 220px; }
-        .pricing-card__price { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--green); margin: 8px 0; }
-        .pricing-card__period { color: var(--text-dim); font-size: 14px; }
+
+        .vault { position: relative; padding: 36px; border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
+        @media (max-width: 880px) { .vault { grid-template-columns: 1fr; padding: 24px; } }
+        .vault::before { content: 'enhanced_encryption'; font-family: 'Material Symbols Outlined'; font-size: 320px; position: absolute; top: -40px; right: -60px; color: var(--green); opacity: 0.04; pointer-events: none; }
+        .vault::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); animation: scan 3.5s linear infinite; pointer-events: none; }
+        @keyframes scan { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(640px); opacity: 0; } }
+        .vault__main { position: relative; z-index: 1; text-align: left; }
+        .vault__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .vault__head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text); }
+        .doc-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--card-border); border-radius: var(--radius); margin-bottom: 12px; transition: var(--transition-fast); cursor: pointer; }
+        .doc-row:hover { transform: translateY(-3px); border-color: var(--green-dim); box-shadow: 0 10px 30px -10px var(--green-shadow); }
+        .doc-row__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+        .doc-row__icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--bg-surface-3); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 22px; flex-shrink: 0; }
+        .doc-row__name { font-weight: 500; font-size: 15px; color: var(--text); }
+        .doc-row__filename { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+        .doc-row__right { display: flex; align-items: center; gap: 16px; }
+        .doc-row__modified { display: none; flex-direction: column; align-items: flex-end; }
+        @media (min-width: 700px) { .doc-row__modified { display: flex; } }
+        .doc-row__modified .label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .doc-row__modified .value { font-size: 12px; color: var(--text-secondary); }
+        .doc-row__chip { font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .doc-row__chip--secure { background: rgba(85, 238, 113, 0.1); border: 1px solid rgba(85, 238, 113, 0.3); color: var(--green); }
+        .doc-row__chip--warn { background: rgba(255, 196, 186, 0.08); border: 1px solid rgba(255, 196, 186, 0.3); color: #ffc4ba; }
+        .doc-row .arrow { color: var(--text-dim); transition: transform 0.2s ease; font-size: 22px; }
+        .doc-row:hover .arrow { color: var(--green); transform: translateX(2px); }
+        .vault__sidebar { position: relative; z-index: 1; text-align: left; }
+        .status-card { background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--green-dim); border-radius: var(--radius); padding: 24px; }
+        .status-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .status-card__head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
+        .status-card__head .label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; }
+        .status-card__row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+        .status-card__row:last-child { border-bottom: none; }
+        .status-card__row .k { color: var(--text-dim); }
+        .status-card__row .v { font-family: var(--font-mono); color: var(--text); }
+        .status-card__row .v--green { color: var(--green); }
+
+        .specs-section { background: var(--bg-surface); padding: 120px 0; }
+        @media (max-width: 700px) { .specs-section { padding: 72px 0; } }
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        @media (max-width: 880px) { .specs-grid { grid-template-columns: 1fr; gap: 48px; } }
+        .specs-list { display: flex; flex-direction: column; gap: 32px; margin-top: 36px; }
+        .spec { display: flex; gap: 20px; }
+        .spec__icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: var(--radius); background: var(--bg-surface-2); border: 0.5px solid var(--green-dim); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 24px; }
+        .spec h4 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .spec p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .spec .mono-spec { font-family: var(--font-mono); font-size: 11px; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+        .spec .mono-spec span.dim { color: var(--text-dim); }
+
+        .spec-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .spec-tile { background: var(--card-bg); backdrop-filter: blur(20px); border: 0.5px solid var(--card-border); border-radius: var(--radius); padding: 28px 16px; text-align: center; transition: var(--transition-fast); }
+        .spec-tile:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+        .spec-tile .material-symbols-outlined { color: var(--green); font-size: 32px; margin-bottom: 12px; }
+        .spec-tile .label { font-family: var(--font-mono); font-size: 12px; color: var(--text); }
+
+        .layers { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; }
+        .layer { text-align: center; max-width: 200px; }
+        .layer__circle { width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 50%; background: var(--green-glow); border: 2px solid var(--green-dim); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 36px; transition: var(--transition); }
+        .layer:hover .layer__circle { background: var(--green-fade); border-color: var(--green); transform: scale(1.05); box-shadow: 0 0 30px var(--green-shadow); }
+        .layer h5 { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .layer p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+        .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq { border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition-fast); background: var(--bg-surface); }
+        .faq[open] { border-color: var(--green-dim); }
+        .faq summary { padding: 18px 24px; cursor: pointer; font-weight: 500; font-size: 16px; color: var(--text); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: 'add'; font-family: 'Material Symbols Outlined'; color: var(--text-dim); font-size: 22px; }
+        .faq[open] summary::after { content: 'remove'; color: var(--green); }
+        .faq__body { padding: 0 24px 22px; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+
+        .final-cta { padding: 96px 56px; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); text-align: center; }
+        .final-cta h2 { margin-bottom: 16px; }
+        .final-cta p { max-width: 520px; margin: 0 auto 36px; }
+        .final-cta .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        @media (max-width: 700px) { .final-cta { padding: 64px 20px; } }
     </style>
 </head>
 <body>
 
 <div class="bg-grid" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--1" aria-hidden="true"></div>
+<div class="glow-orb glow-orb--2" aria-hidden="true"></div>
 
 <nav class="nav" role="navigation" aria-label="Fő navigáció">
     <div class="nav__inner">
         <a href="../index.html" class="nav__logo"><span class="nav__logo-leaf" aria-hidden="true">🌿</span>Sagelight <span>Studio</span></a>
         <ul class="nav__tabs" id="navTabs" role="list">
-            <li><a href="sagedocs.html" class="nav__tab nav__tab--active" aria-current="page">SageDocs</a></li>
+            <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
             <li><a href="../sagebills.html" class="nav__tab">SageBills</a></li>
             <li><a href="../sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="../blog.html" class="nav__tab">Blog</a></li>
+            <li><a href="../press-kit.html" class="nav__tab">Sajtó</a></li>
         </ul>
         <div class="nav__actions">
-            <span class="lang-switch"><a href="../sagedocs.html" hreflang="en" rel="alternate">EN</a> · HU</span>
             <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Téma váltása"><span id="themeIcon" aria-hidden="true">☾</span></button>
+            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menü"><span class="material-symbols-outlined">menu</span></button>
         </div>
     </div>
 </nav>
@@ -115,8 +173,8 @@
     <section class="hero hero-docs">
         <div class="container">
             <div class="hero__inner">
-                <div class="eyebrow fade-up d1">SageDocs · Titkosított Széf</div>
-                <h1 class="h-display fade-up d2">A dokumentumaid. <em class="italic-em">Titkosítva.</em></h1>
+                <div class="eyebrow fade-up d1">Végpontok közötti titkosítás</div>
+                <h1 class="h-display fade-up d2">A dokumentumaid.<br><span class="italic-em">Titkosítva.</span></h1>
                 <p class="text-lead lead fade-up d3">
                     Digitális széf a legérzékenyebb adataidnak &mdash; személyi igazolvány, útlevél, szerződések, biztosítások, orvosi dokumentumok. AES-256-GCM titkosítás a készülékeden. Csak te férhetsz hozzá.
                 </p>
@@ -124,6 +182,125 @@
                     <a href="https://apps.apple.com/hu/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Töltsd le a SageDocs-ot az App Store-ból"><img src="../assets/badges/app-store-badge.svg" alt="Töltsd le az App Store-ból" width="200" height="60" loading="lazy"></a>
                     <a href="#security" class="btn btn--ghost btn--lg">Olvasd el a biztonsági modellt</a>
                 </div>
+
+                <div class="glass-card vault fade-up d5">
+                    <div class="vault__main">
+                        <div class="vault__head">
+                            <h2>Biztonságos Dokumentumok</h2>
+                            <button class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">
+                                <span class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
+                                Új hozzáadása
+                            </button>
+                        </div>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">badge</span></div>
+                                <div>
+                                    <div class="doc-row__name">Személyi Igazolvány &mdash; Elsődleges</div>
+                                    <div class="doc-row__filename">SZIG_9928_SECURE.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Módosítva</span>
+                                    <span class="value">2 órája</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--warn">Hamarosan lejár</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">flight_takeoff</span></div>
+                                <div>
+                                    <div class="doc-row__name">Útlevél</div>
+                                    <div class="doc-row__filename">PPT_2026_VALID.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Módosítva</span>
+                                    <span class="value">2026. jan. 12.</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Hitelesítve</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                        <article class="doc-row">
+                            <div class="doc-row__left">
+                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">description</span></div>
+                                <div>
+                                    <div class="doc-row__name">Adásvételi Szerződés</div>
+                                    <div class="doc-row__filename">CONTRACT_2025.enc</div>
+                                </div>
+                            </div>
+                            <div class="doc-row__right">
+                                <div class="doc-row__modified">
+                                    <span class="label">Módosítva</span>
+                                    <span class="value">2025. dec. 05.</span>
+                                </div>
+                                <span class="doc-row__chip doc-row__chip--secure">Hitelesítve</span>
+                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="vault__sidebar">
+                        <div class="status-card">
+                            <div class="status-card__head">
+                                <span class="dot"></span>
+                                <span class="label">SZÉF · AKTÍV</span>
+                            </div>
+                            <div class="status-card__row"><span class="k">Cipher</span><span class="v">AES-256-GCM</span></div>
+                            <div class="status-card__row"><span class="k">Entrópia</span><span class="v">256-bit</span></div>
+                            <div class="status-card__row"><span class="k">KDF</span><span class="v">PBKDF2 · 600k</span></div>
+                            <div class="status-card__row"><span class="k">Munkamenetek</span><span class="v">01 (jelenlegi)</span></div>
+                            <div class="status-card__row"><span class="k">Integritás</span><span class="v v--green">Ellenőrzött</span></div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="specs-section">
+        <div class="container">
+            <div class="specs-grid">
+                <div class="reveal">
+                    <div class="eyebrow eyebrow--static">A kriptográfia</div>
+                    <h2 class="h-section" style="margin-top: 16px;">Biztonság <span class="italic-em">kompromisszum</span> nélkül.</h2>
+                    <div class="specs-list">
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">key</span></div>
+                            <div>
+                                <h4>AES-256-GCM hitelesített titkosítás</h4>
+                                <p>Minden melléklet AES-256-GCM-mel titkosítva &mdash; ugyanaz a titkosítás, amelyet legfelsőbb minősített adatokhoz használnak. Minden fájl saját nonce-szal és integritási taggel rendelkezik.</p>
+                                <div class="mono-spec"><span class="dim">Specifikáció:</span> 256-BITES SZIMMETRIKUS KULCS · GCM MÓD</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">vibration</span></div>
+                            <div>
+                                <h4>PBKDF2-SHA256 kulcs származtatás</h4>
+                                <p>A mester PIN-edet 600.000 iterációval és 256-bites telepítésenkénti sóval nyújtjuk meg. A brute-force támadás matematikailag kivitelezhetetlen jelenlegi számítási kapacitással.</p>
+                                <div class="mono-spec"><span class="dim">Specifikáció:</span> 600.000 ITERÁCIÓ · HMAC-SHA256</div>
+                            </div>
+                        </div>
+                        <div class="spec">
+                            <div class="spec__icon"><span class="material-symbols-outlined fill">fingerprint</span></div>
+                            <div>
+                                <h4>Keychain + biometrikus védelem</h4>
+                                <p>A titkosítási kulcsok az iOS Keychain-ben vannak Face ID, Touch ID vagy mester PIN védelemmel. Sosem jelennek meg sima szövegként a Secure Enclave-en kívül.</p>
+                                <div class="mono-spec"><span class="dim">Specifikáció:</span> SECURE ENCLAVE · BIOMETRIKUS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-tiles reveal">
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">shield_lock</span><div class="label">Adatvédelem első</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
+                    <div class="spec-tile"><span class="material-symbols-outlined fill">fingerprint</span><div class="label">Biometrikus</div></div>
+                </div>
             </div>
         </div>
     </section>
@@ -131,62 +308,71 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Árazás</div>
-                <h2 class="h-section">Egyszerű és <span class="italic-em">tisztességes</span> árazás.</h2>
-                <p>Két előfizetési lehetőség az App Store-ban. Bármikor lemondhatod az Apple ID beállításaiban.</p>
+                <div class="eyebrow eyebrow--static">Mélyreható védelem</div>
+                <h2 class="h-section">Biztonság <span class="italic-em">rétegekben</span>.</h2>
+                <p>Több, független erődítmény védi a digitális személyazonosságodat &mdash; még ha az egyik elesik is, a többi tartja.</p>
             </div>
-            <div class="pricing-row">
-                <div class="glass-card pricing-card reveal" style="text-align: center;">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim);">Havi</div>
-                    <div class="pricing-card__price">$2.99</div>
-                    <div class="pricing-card__period">havonta</div>
+            <div class="layers">
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">lock</span></div>
+                    <h5>Széf réteg</h5>
+                    <p>AES-256-GCM minden mellékletre. Fájlonkénti kulcsok.</p>
                 </div>
-                <div class="glass-card pricing-card reveal" style="text-align: center; border-color: var(--green-dim);">
-                    <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green);">Éves · 30% kedvezmény</div>
-                    <div class="pricing-card__price">$24.99</div>
-                    <div class="pricing-card__period">évente &middot; ~$2,08/hó</div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">vpn_key</span></div>
+                    <h5>Hozzáférési réteg</h5>
+                    <p>Mester PIN, Face ID, Touch ID. PBKDF2 kulcs származtatás.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">cloud</span></div>
+                    <h5>Szinkronizációs réteg</h5>
+                    <p>iCloud nyugalmi állapotban titkosítva CloudKit-en keresztül. Az Apple csak titkosított szöveget tárol.</p>
+                </div>
+                <div class="layer reveal">
+                    <div class="layer__circle"><span class="material-symbols-outlined fill">visibility_off</span></div>
+                    <h5>Adatvédelmi réteg</h5>
+                    <p>Nincs telemetria, nincs analitika, nincs metaadat-gyűjtés. Soha.</p>
                 </div>
             </div>
-            <p style="text-align: center; color: var(--text-dim); font-size: 13px; margin-top: 24px; max-width: 540px; margin-left: auto; margin-right: auto;">Az előfizetés automatikusan megújul, ha nem mondod le legalább 24 órával az aktuális időszak vége előtt. Kezelése: Beállítások → Apple ID → Előfizetések.</p>
         </div>
     </section>
 
-    <section id="security" class="section--lg">
+    <section>
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Biztonsági Modell</div>
-                <h2 class="h-section">Professzionális <span class="italic-em">titkosítás</span>, nem marketing.</h2>
+                <h2 class="h-section">Több, mint puszta <span class="italic-em">tárolás</span>.</h2>
+                <p>A SageDocs kezeli a fontos dokumentumaid életciklusát &mdash; nem csak azt, hol vannak.</p>
             </div>
-            <div class="feature-grid">
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">enhanced_encryption</span></div>
-                    <h3>AES-256-GCM</h3>
-                    <p>Minden melléklet AES-256-GCM-mel van titkosítva tárolás előtt. Ipari szabvány, bankok és kormányügynökségek által használt.</p>
+            <div class="bento">
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">event</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Lejárati követés</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Emlékeztetőt kapsz, mielőtt lejárna az útleveled, igazolványod, biztosításod vagy a gépjárműved okmánya. Az emlékeztetők a készülékeden futnak.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">key</span></div>
-                    <h3>PBKDF2 600 000 iteráció</h3>
-                    <p>A titkosítási kulcs a mester PIN-ből származik PBKDF2-SHA256-tal 600 000 iterációval &mdash; meghaladja az OWASP 2023 ajánlást.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Titkosított iCloud szinkronizálás</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Opcionális szinkronizálás iPhone, iPad és Mac között. A készüléken titkosítva, majd átadva az Apple-nek titkosított szövegként.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">fingerprint</span></div>
-                    <h3>Face ID / Touch ID</h3>
-                    <p>A kulcs az iOS Keychain-ben van biometrikus hozzáféréssel. Ha megváltoztatod a biometriát, az alkalmazás PIN-újraellenőrzést kér.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Szelektív megosztás</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Csak a kiválasztott dokumentumot dekódolod és osztod meg. Az ideiglenes fájlok megosztás után biztonságosan törlődnek.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">cloud_done</span></div>
-                    <h3>Titkosított iCloud szinkronizálás</h3>
-                    <p>A dokumentumok titkosítva vannak a készüléken, mielőtt a CloudKit-be kerülnének. Az Apple csak titkosított adatot tárol.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">iPhone, iPad, Mac</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Univerzális bináris, amely natívan fut minden Apple készüléken. iOS 17+ és macOS 14+.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">timer</span></div>
-                    <h3>Lejárati értesítések</h3>
-                    <p>Állíts be lejárati dátumot okmányokhoz, szerződésekhez. A SageDocs előre szól &mdash; helyileg, szerver nélkül.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">ios_share</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Titkosított export</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Vidd magaddal az adataid. Exportálj mindent titkosított csomagként &mdash; hordozható, helyreállítható, a tied.</p>
                 </div>
-                <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">block</span></div>
-                    <h3>Progresszív zárolás</h3>
-                    <p>A sikertelen hitelesítési kísérletek növekvő várakozási időt eredményeznek. Védelem a brute-force támadások ellen.</p>
+                <div class="solid-card col-4" style="padding: 36px;">
+                    <div class="card-icon"><span class="material-symbols-outlined">delete_forever</span></div>
+                    <h3 class="h-card" style="margin-bottom: 8px;">Alapértelmezett törlés</h3>
+                    <p style="color: var(--text-secondary); font-size: 15px;">Ha töröl egy dokumentumot, a titkosított szöveg törlődik. Nincs lágy törlés, nincs árnyékmásolat, nincs visszaállító széf.</p>
                 </div>
             </div>
         </div>
@@ -195,38 +381,46 @@
     <section class="section--lg">
         <div class="container">
             <div class="section-head reveal">
-                <div class="eyebrow eyebrow--static">Gyakori kérdések</div>
-                <h2 class="h-section">GYIK</h2>
+                <div class="eyebrow eyebrow--static">Kérdések</div>
+                <h2 class="h-section">Amit először <span class="italic-em">megkérdeznek</span>.</h2>
             </div>
-            <div style="max-width: 720px; margin: 0 auto;">
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Mennyibe kerül a SageDocs?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">$2,99/hó vagy $24,99/év automatikusan megújuló előfizetés. Bármikor lemondható.</div>
+            <div class="faq-list">
+                <details class="faq reveal">
+                    <summary>Mennyibe kerül a SageDocs?</summary>
+                    <div class="faq__body">A SageDocs automatikusan megújuló előfizetés az App Store-ban: $2,99/hó vagy $24,99/év. Bármikor lemondhatod a Beállítások → [Apple ID] → Előfizetések menüpontban; a lemondás az aktuális időszak végén lép életbe.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Mi történik, ha elfelejtem a mester PIN-t?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">A titkosított dokumentumaid nem helyreállíthatók. Nincs hátsó ajtó &mdash; ez a tervezés célja. Jegyezd fel biztonságos helyre.</div>
+                <details class="faq reveal">
+                    <summary>Hogyan vannak titkosítva az adataim?</summary>
+                    <div class="faq__body">Minden melléklet <strong>AES-256-GCM</strong>-mel van titkosítva tárolás előtt. A titkosítási kulcsok a mester PIN-ből származnak PBKDF2-SHA256 segítségével, <strong>600.000 iterációval</strong> és 256-bites telepítésenkénti sóval. A kulcsok az iOS Keychain-ben vannak, biometrikusan védettek.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Látja az iCloud a dokumentumaimat?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Nem. A dokumentumok AES-256-GCM-mel vannak titkosítva, mielőtt CloudKit-en keresztül szinkronizálódnak. Az Apple csak titkosított adatot tárol.</div>
+                <details class="faq reveal">
+                    <summary>Mi történik, ha elfelejtem a mester PIN-t?</summary>
+                    <div class="faq__body">A titkosított dokumentumaid nem helyreállíthatók. Nincs hátsó ajtó vagy mód a titkosítási kulcsok visszaállítására &mdash; ez a tervezés célja. Válassz olyan PIN-t, amelyre emlékezni tudsz, és fontold meg a biometrikus zárfeloldást tartalékként.</div>
                 </details>
-                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
-                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Elérhető Mac-en is?</summary>
-                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Igen. Univerzális bináris iPhone (iOS 17+), iPad (iPadOS 17+) és Mac (macOS 14+) számára. iCloud szinkronizálással titkosítva.</div>
+                <details class="faq reveal">
+                    <summary>Látja az iCloud a dokumentumaimat?</summary>
+                    <div class="faq__body">Nem. A dokumentumok a készüléken AES-256-GCM-mel <em>vannak</em> titkosítva, mielőtt CloudKit-en keresztül szinkronizálódnak. Az Apple csak titkosított szöveget tárol &mdash; még az Apple sem tudja dekódolni a dokumentumaidat.</div>
+                </details>
+                <details class="faq reveal">
+                    <summary>Megoszthatok egy dokumentumot a SageDocs-ból?</summary>
+                    <div class="faq__body">Igen. A dokumentumok ideiglenesen dekódolódnak az általad kezdeményezett megosztáshoz (pl. biztosítási kártyád e-mailben küldése). Az ideiglenes fájl utána biztonságosan törlődik.</div>
+                </details>
+                <details class="faq reveal">
+                    <summary>Elérhető a SageDocs Mac-en is?</summary>
+                    <div class="faq__body">Igen. A SageDocs univerzális bináris, amely natívan fut iPhone (iOS 17+), iPad (iPadOS 17+) és Mac (macOS 14+) készülékeken. A dokumentumok titkosítva szinkronizálódnak az összes Apple-eszközöd között iCloud-on keresztül.</div>
                 </details>
             </div>
         </div>
     </section>
 
-    <section class="section--lg">
+    <section>
         <div class="container">
-            <div class="glass-card cta-block reveal" style="position: relative; overflow: hidden; padding: 80px 56px; text-align: center; border-radius: var(--radius-xl); border-color: var(--green-dim);">
+            <div class="final-cta reveal">
                 <h2 class="h-section">Szuverén tárolás a <span class="italic-em">legérzékenyebb</span> dokumentumaidnak.</h2>
                 <p class="text-lead">$2,99/hó vagy $24,99/év az App Store-ban. Titkosítva tervezésileg. Csak te férhetsz hozzá.</p>
-                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <div class="ctas">
                     <a href="https://apps.apple.com/hu/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Töltsd le a SageDocs-ot az App Store-ból"><img src="../assets/badges/app-store-badge.svg" alt="Töltsd le az App Store-ból" width="200" height="60" loading="lazy"></a>
-                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Tekintsd meg az adatvédelmi szabályzatot</a>
+                    <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Olvasd el az adatvédelmi szabályzatot</a>
                 </div>
             </div>
         </div>
@@ -236,7 +430,7 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span> Sagelight <span>Studio</span></div>
+            <div class="footer__brand"><span aria-hidden="true">🌿</span>Sagelight <span>Studio</span></div>
             <p class="footer__tagline">Adatvédelem világossággal. Független stúdió, helyi-első iOS és macOS alkalmazásokat épít Romániában, EU.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>
@@ -244,13 +438,26 @@
         <div><div class="footer__col-title">Stúdió</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Kapcsolat</a></li></ul></div>
         <div><div class="footer__col-title">Jogi</div><ul class="footer__list"><li><a href="privacy-policy.html">Adatvédelmi Szabályzat</a></li><li><a href="gdpr.html">GDPR</a></li><li><a href="terms.html">Feltételek</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Süti beállítások</button></li></ul></div>
     </div>
-    <div class="footer__bottom">
-        <span>© 2026 Sagelight Studio · Gondossággal készült Romániában, EU</span>
-        <span>Adatvédelem világossággal</span>
-    </div>
+    <div class="footer__bottom"><span>© 2026 Sagelight Studio · Gondossággal készült Romániában, EU</span><span>Adatvédelem világossággal</span></div>
 </footer>
 
 <script src="../assets/theme.js"></script>
 <script src="../assets/consent.js" defer></script>
+<script>
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('is-visible'), i * 50);
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(el => io.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+</script>
 </body>
 </html>
