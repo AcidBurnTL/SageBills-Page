@@ -1,6 +1,6 @@
 # Sagelight Studio GDPR Data Processing Disclosure
 
-**Last Updated:** April 11, 2026 | **GDPR (EU) 2016/679**
+**Last Updated:** May 21, 2026 | **GDPR (EU) 2016/679**
 
 ---
 
@@ -40,9 +40,14 @@
 
 ## 1. Data Controller
 
-**Controller:** Sagelight Studio (individual developer / sole proprietor)
-**Location:** Romania, European Union
-**Email:** contact@sagelight-studio.com
+- **Data Controller (Art. 4(7)):** Florin Nica — natural person
+- **Trading as:** Sagelight Studio
+- **Legal status:** Independent individual developer; no separate legal entity (no PFA, no SRL, no other registered form)
+- **Location:** Romania, European Union
+- **Verified developer of record:** [apps.apple.com/developer/sagelight-studio](https://apps.apple.com/developer/sagelight-studio) — Florin Nica has been identity-verified by Apple under the Apple Developer Program
+- **Email:** contact@sagelight-studio.com
+
+Per **Article 13(1)(a)**, Florin Nica, acting in his own name as a natural person under the trading name Sagelight Studio, is the data controller. He personally determines the purposes and means of processing for all Sagelight Studio apps.
 
 Per **Article 13(1)(a)** and **Article 14(1)(a)**, the developer is the data controller for all Sagelight Studio apps. For SageBills, the controller does not receive, access, or store any personal data — all processing occurs on the user's device. For SageMeet, data is processed locally except when the user initiates AI features, which transmit data to OpenAI as a data processor (Art. 28). For SageDocs, all data is processed locally and optionally synced to the user's private iCloud account; all attachments are encrypted before storage.
 
@@ -189,7 +194,9 @@ Per **Article 13(1)(f)**:
 
 **SageBills:** No international transfers occur. All data is processed on your local device.
 
-**SageMeet:** When AI features are used, data is transferred to the United States (OpenAI's servers). These transfers are lawful under the **EU-US Data Privacy Framework** (DPF, Chapter V), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.
+**SageMeet:** When AI features are used, data is transferred to the United States (OpenAI's servers). Transfers are conducted under **two complementary GDPR Chapter V mechanisms**: (1) the **EU-US Data Privacy Framework (DPF)** under Commission Implementing Decision (EU) 2023/1795, under which OpenAI LLC is a certified participant; and (2) the **Standard Contractual Clauses (SCCs)** under Commission Implementing Decision (EU) 2021/914, incorporated into OpenAI's Data Processing Addendum (Art. 46(2)(c)). If the DPF is invalidated, SCCs remain the independent lawful basis. When Private Mode is enabled, no international transfers occur.
+
+**Website (sagelight-studio.com — Google Ads):** Cookieless tag pings from the marketing website are transferred to Google LLC (US) under the same dual mechanism — DPF + SCCs incorporated into Google's Controller-Controller Data Protection Terms.
 
 **SageDocs:** No international transfers to third parties occur. iCloud sync is managed by Apple under Apple's own international data transfer agreements and GDPR commitments.
 

@@ -1,6 +1,6 @@
 # Sagelight Studio Privacy Policy
 
-**Last Updated:** April 11, 2026 | **Effective:** April 11, 2026
+**Last Updated:** May 21, 2026 | **Effective:** May 21, 2026
 
 ---
 
@@ -46,9 +46,14 @@ This policy complies with the General Data Protection Regulation (GDPR), the ePr
 
 ## 2. Who We Are
 
-Sagelight Studio apps are developed and maintained by a sole proprietor based in Romania, European Union.
+Sagelight Studio is the trading name under which **Florin Nica**, an independent individual developer based in Romania, European Union, builds and maintains the apps covered by this policy. For the purposes of the GDPR (Article 4(7)), Florin Nica is the data controller.
 
-- **Contact:** contact@sagelight-studio.com
+- **Data Controller:** Florin Nica (natural person)
+- **Trading as:** Sagelight Studio
+- **Legal status:** Independent individual developer; no separate legal entity (no PFA, no SRL, no other registered form)
+- **Location:** Romania, European Union
+- **Verified developer of record:** [apps.apple.com/developer/sagelight-studio](https://apps.apple.com/developer/sagelight-studio) — Apple has verified the identity of the controller as part of the Apple Developer Program enrollment
+- **Contact (general & data subject requests):** contact@sagelight-studio.com
 
 For the purposes of the GDPR, the developer acts as the data controller. For SageBills, all data processing occurs locally on your device and your data never reaches us. For SageMeet, data is processed locally except when you explicitly use AI features, which transmit data to OpenAI (see Sections 9 and 10). For SageDocs, data is stored locally and synced to your private iCloud account; no data is transmitted to Sagelight Studio or any third party other than Apple.
 
@@ -252,13 +257,30 @@ SageBills and SageDocs contain **no third-party SDKs, frameworks, libraries, or 
 
 **SageBills** does not transfer your data internationally. Your data remains on your device at all times.
 
-**SageMeet** transfers data to the United States when you use AI features, as OpenAI's API servers are located in the US. These transfers are lawful under the **EU-US Data Privacy Framework** (DPF), under which OpenAI is a certified participant. When Private Mode is enabled, no international transfers occur.
+**SageMeet** transfers data to the United States when you use AI features, as OpenAI's API infrastructure is located in the US. These transfers are conducted under **two complementary lawful mechanisms**:
+
+1. The **EU-US Data Privacy Framework (DPF)** under Commission Implementing Decision (EU) 2023/1795, under which OpenAI LLC is a certified participant; and
+2. The **Standard Contractual Clauses (SCCs)** for the transfer of personal data to third countries (Commission Implementing Decision (EU) 2021/914), which are incorporated into OpenAI's Data Processing Addendum.
+
+If the DPF is invalidated by a future court decision (as occurred with the earlier Safe Harbor and Privacy Shield frameworks), the SCCs remain in place as the independent lawful transfer mechanism. When Private Mode is enabled, no international transfers occur.
+
+**Website (Google Ads):** Cookieless tag pings are transferred to Google LLC (US) under the same dual mechanism — DPF + SCCs incorporated into Google's Controller-Controller Data Protection Terms.
 
 **SageDocs** does not transfer your data to any third party. iCloud sync is handled by Apple under Apple's own GDPR commitments and data processing agreements.
 
 ## 11. Cookies and Tracking
 
-No Sagelight Studio app uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. No app contains any advertising.
+**Apps:** No Sagelight Studio app uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. No app contains advertising.
+
+**Website (sagelight-studio.com):** The Sagelight Studio website loads the Google Ads conversion tag (`AW-17758801825`) operated by Google Ireland Limited, with Google LLC (US) as sub-processor. The tag runs under **Google Consent Mode v2**, with all consent signals set to **denied by default**. In the denied state, the tag transmits a cookieless ping to Google containing: timestamp, browser user agent, source URL, consent state, and a per-pageview random number; no cookies are stored and no individual identification occurs. If you opt in via the **Cookie preferences** link in the footer, the tag collects full conversion data including the Google Click ID (`gclid`).
+
+- **Lawful basis (denied state):** Legitimate interest (Art. 6(1)(f)) — understanding aggregate advertising effectiveness without identifying individuals.
+- **Lawful basis (opted-in state):** Consent (Art. 6(1)(a)).
+- **Recipients:** Google Ireland Limited (data processor, Art. 28); Google LLC, US (sub-processor).
+- **Transfer mechanism:** EU-US Data Privacy Framework + Standard Contractual Clauses incorporated into Google's Controller-Controller Data Protection Terms.
+- **Retention:** Per Google Ads default retention settings (currently 14 months for ad conversion data; you can request deletion via the cookie preferences interface).
+
+This Google Ads tag is **exclusive to the website** and is not present in any Sagelight Studio app.
 
 ## 12. Your Rights Under GDPR
 

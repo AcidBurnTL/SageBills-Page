@@ -20,11 +20,11 @@
       gtag('config', 'AW-17758801825');
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
-    <title>SageDocs — Encrypted Personal Document Vault for iPhone &amp; Mac</title>
-    <meta name="description" content="AES-256 encrypted vault for IDs, contracts, insurance, and medical records. Biometric-protected. Encrypted iCloud sync. Free for iPhone and Mac.">
+    <title>SageDocs — AES-256 Encrypted Document Vault for iPhone</title>
+    <meta name="description" content="AES-256 encrypted vault for IDs, contracts, insurance, and medical records. Biometric-protected. Encrypted iCloud sync. Subscription on iPhone &amp; Mac.">
     <meta name="keywords" content="SageDocs, encrypted document vault, secure document storage iOS, AES-256 document app, personal vault Mac, encrypted iCloud, GDPR document vault, biometric document app">
     <meta property="og:title" content="SageDocs — Encrypted Personal Document Vault">
-    <meta property="og:description" content="AES-256 encrypted vault for IDs, contracts, insurance, and personal documents. Biometric-protected. Free for iOS &amp; macOS.">
+    <meta property="og:description" content="AES-256 encrypted vault for IDs, contracts, insurance, and personal documents. Biometric-protected. Subscription on iOS &amp; macOS.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sagelight-studio.com/sagedocs.html">
     <meta property="og:site_name" content="Sagelight Studio">
@@ -35,7 +35,7 @@
     <meta property="og:image:alt" content="SageDocs — encrypted personal document vault for iPhone and Mac">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SageDocs — Encrypted Personal Document Vault">
-    <meta name="twitter:description" content="AES-256 encrypted vault. Biometric-protected. Free for iOS &amp; macOS.">
+    <meta name="twitter:description" content="AES-256 encrypted vault. Biometric-protected. Subscription on iOS &amp; macOS.">
     <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagedocs.png">
     <meta name="apple-itunes-app" content="app-id=6762064711">
     <meta name="application-name" content="SageDocs">
@@ -43,6 +43,10 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://sagelight-studio.com/sagedocs.html">
     <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagedocs.html">
+    <link rel="alternate" hreflang="ro" href="https://sagelight-studio.com/ro/sagedocs.html">
+    <link rel="alternate" hreflang="hu" href="https://sagelight-studio.com/hu/sagedocs.html">
+    <link rel="alternate" hreflang="pl" href="https://sagelight-studio.com/pl/sagedocs.html">
+    <link rel="alternate" hreflang="cs" href="https://sagelight-studio.com/cz/sagedocs.html">
     <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagedocs.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -58,7 +62,7 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org", "@type": "SoftwareApplication",
-        "name": "SageDocs", "applicationCategory": "UtilitiesApplication",
+        "name": "SageDocs", "applicationCategory": "SecurityApplication",
         "operatingSystem": "iOS 17+, macOS 14+",
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
         "description": "Encrypted personal document vault. AES-256-GCM encryption, biometric/PIN protection, encrypted iCloud sync, expiry tracking. Built for privacy.",
@@ -76,7 +80,7 @@
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-        {"@type": "Question", "name": "Is SageDocs free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SageDocs is free on the App Store. No subscription, no in-app purchases, no account required."}},
+        {"@type": "Question", "name": "How much does SageDocs cost?", "acceptedAnswer": {"@type": "Answer", "text": "SageDocs is offered as an auto-renewing subscription via the App Store at $2.99 per month or $24.99 per year. You can cancel anytime in iPhone Settings → [your Apple ID] → Subscriptions; cancellation takes effect at the end of the current period."}},
         {"@type": "Question", "name": "How is my data encrypted?", "acceptedAnswer": {"@type": "Answer", "text": "Every attachment is encrypted with AES-256-GCM before storage. Encryption keys are derived from your master PIN using PBKDF2-SHA256 with 600,000 iterations and a 256-bit per-installation salt. Keys live in the iOS Keychain and are biometric-protected."}},
         {"@type": "Question", "name": "What happens if I forget my master PIN?", "acceptedAnswer": {"@type": "Answer", "text": "Your encrypted documents cannot be recovered. We do not have a backdoor or any way to reset your encryption keys — that is the point of the design."}},
         {"@type": "Question", "name": "Does iCloud see my documents?", "acceptedAnswer": {"@type": "Answer", "text": "No. Documents are encrypted on-device with AES-256-GCM before being synced to iCloud via CloudKit. Apple stores ciphertext only — even Apple cannot decrypt your documents."}},
@@ -288,9 +292,9 @@
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
+            <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
             <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
             <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
-            <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
             <li><a href="blog.html" class="nav__tab">Blog</a></li>
             <li><a href="press-kit.html" class="nav__tab">Press</a></li>
         </ul>
@@ -318,10 +322,7 @@
                     The digital vault for your most sensitive data &mdash; IDs, contracts, insurance, medical records. AES-256-GCM encrypted on your device. Recoverable only by you.
                 </p>
                 <div class="ctas fade-up d4">
-                    <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="btn btn--primary btn--lg">
-                        <span class="material-symbols-outlined icon">download</span>
-                        Download on the App Store
-                    </a>
+                    <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Download SageDocs on the App Store"><img src="assets/badges/app-store-badge.svg" alt="Download on the App Store" width="200" height="60" loading="lazy"></a>
                     <a href="#security" class="btn btn--ghost btn--lg">Read security model</a>
                 </div>
 
@@ -534,8 +535,8 @@
             </div>
             <div class="faq-list">
                 <details class="faq reveal">
-                    <summary>Is SageDocs free?</summary>
-                    <div class="faq__body">Yes &mdash; SageDocs is free on the App Store. No subscription, no in-app purchases, no account required.</div>
+                    <summary>How much does SageDocs cost?</summary>
+                    <div class="faq__body">SageDocs is offered as an auto-renewing subscription via the App Store at $2.99 per month or $24.99 per year. You can cancel anytime in iPhone Settings &rarr; [your Apple ID] &rarr; Subscriptions; cancellation takes effect at the end of the current period.</div>
                 </details>
                 <details class="faq reveal">
                     <summary>How is my data encrypted?</summary>
@@ -566,12 +567,9 @@
         <div class="container">
             <div class="final-cta reveal">
                 <h2 class="h-section">Sovereign storage for your <span class="italic-em">most sensitive</span> documents.</h2>
-                <p class="text-lead">Free for iPhone, iPad, and Mac. Encrypted by design. Recoverable only by you.</p>
+                <p class="text-lead">$2.99/month or $24.99/year on the App Store. Encrypted by design. Recoverable only by you.</p>
                 <div class="ctas">
-                    <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="btn btn--primary btn--xl">
-                        <span class="material-symbols-outlined icon">download</span>
-                        Download on the App Store
-                    </a>
+                    <a href="https://apps.apple.com/us/app/sagedocs/id6762064711" onclick="gtagReportConversion('AW-17758801825/fQISCOmi2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Download SageDocs on the App Store"><img src="assets/badges/app-store-badge.svg" alt="Download on the App Store" width="200" height="60" loading="lazy"></a>
                     <a href="privacy-policy.html" class="btn btn--ghost btn--xl">Read privacy policy</a>
                 </div>
             </div>
@@ -592,9 +590,9 @@
         <div>
             <div class="footer__col-title">Apps</div>
             <ul class="footer__list">
+                <li><a href="sagedocs.html">SageDocs</a></li>
                 <li><a href="sagebills.html">SageBills</a></li>
                 <li><a href="sagemeet.html">SageMeet</a></li>
-                <li><a href="sagedocs.html">SageDocs</a></li>
             </ul>
         </div>
         <div>

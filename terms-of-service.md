@@ -1,6 +1,6 @@
 # Sagelight Studio Terms of Service
 
-**Last Updated:** April 11, 2026 | **Effective:** April 11, 2026
+**Last Updated:** May 21, 2026 | **Effective:** May 21, 2026
 
 ---
 
@@ -11,7 +11,7 @@
 ## Key Points
 
 - **Your Data, Your Control** — SageBills data stays local. SageMeet data is local except when you use AI features. SageDocs data is encrypted and synced via your private iCloud.
-- **Free to Use** — All Sagelight Studio apps are currently provided free of charge.
+- **Transparent Pricing** — SageBills and SageMeet are free. SageDocs is offered as a subscription at $2.99/month or $24.99/year.
 - **EU Consumer Rights** — Romanian law, with full EU consumer protection preserved.
 
 ---
@@ -38,7 +38,7 @@
 
 By downloading, installing, or using any Sagelight Studio app ("the App"), you agree to these Terms. If you do not agree, do not use the App.
 
-These Terms constitute a legal agreement between you and Sagelight Studio, a sole proprietor based in Romania, EU. Your use is also governed by our [Privacy Policy](privacy-policy.md) and [GDPR Disclosure](gdpr-policy.md).
+These Terms constitute a legal agreement between you and **Florin Nica**, an independent individual developer trading as Sagelight Studio, based in Romania, EU. Your use is also governed by our [Privacy Policy](privacy-policy.md) and [GDPR Disclosure](gdpr-policy.md).
 
 ## 2. Description of Service
 
@@ -83,11 +83,28 @@ SageDocs is a personal document vault application for iOS and macOS. Features in
 
 ## 4. Pricing
 
-All Sagelight Studio apps are currently provided **free of charge**. No subscription or payment is required.
+### SageBills
 
-For SageMeet, you provide your own OpenAI API key to use AI features; usage costs are billed directly by OpenAI under your own account.
+SageBills is free to download. No subscription, no in-app purchases, and no account required. Monetization may be introduced in a future release and will be communicated clearly in advance; existing free functionality will not be removed without adequate notice.
 
-We reserve the right to introduce optional subscription tiers in the future. Any paid features will be clearly communicated, and existing free functionality will not be removed.
+### SageMeet
+
+SageMeet is free to download. No subscription is required. AI features (transcription, summarization, semantic search, speaker analytics) require a user-provided OpenAI API key; usage costs are billed directly by OpenAI under your own account. Sagelight Studio does not receive any portion of OpenAI charges.
+
+### SageDocs
+
+SageDocs is offered as an auto-renewing subscription via the App Store:
+
+- **Monthly:** $2.99 per month
+- **Yearly:** $24.99 per year
+
+Payment is charged to your Apple ID account at confirmation of purchase. The subscription automatically renews unless cancelled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours prior to the end of the current period. You may manage and cancel your subscription in **Settings → [your Apple ID] → Subscriptions** at any time; cancellation takes effect at the end of the current billing period. Local taxes (VAT) may apply.
+
+> **EU 14-day right of withdrawal:** Under Directive 2011/83/EU, EU consumers have 14 days to withdraw from a digital service purchase. By starting to use SageDocs Pro features immediately upon purchase, you expressly request immediate performance and acknowledge that you lose the 14-day withdrawal right (Art. 16(m) of the Directive). The App Store handles refund requests in line with Apple's refund policy.
+
+### Future pricing
+
+We reserve the right to revise pricing or introduce new tiers. Any pricing changes will be communicated in advance and will not affect already-purchased lifetime upgrades. Free features in current versions will not be removed without adequate notice.
 
 ## 5. Data Storage Model
 
@@ -157,7 +174,13 @@ These Terms are governed by **Romanian law**. EU consumers also benefit from man
 
 ## 11. Dispute Resolution
 
-We encourage informal resolution first via contact@sagelight-studio.com. EU consumers may use the [Online Dispute Resolution platform](https://ec.europa.eu/consumers/odr). Otherwise, disputes are resolved by competent Romanian courts (EU consumers may also use courts of their residence).
+We encourage informal resolution first via contact@sagelight-studio.com. We aim to respond to all complaints within 30 days.
+
+If a dispute cannot be resolved informally, EU consumers may seek recourse through **Alternative Dispute Resolution (ADR)** pursuant to Directive 2013/11/EU. In Romania, the National Authority for Consumer Protection (ANPC) offers a conciliation service ([anpc.ro](https://anpc.ro)). Sagelight Studio does not currently participate in a specific ADR scheme.
+
+> **Note:** The EU Online Dispute Resolution (ODR) platform established under Regulation (EU) 524/2013 was discontinued by the European Commission in July 2025 and is no longer available. The right to ADR under Directive 2013/11/EU remains in force.
+
+Disputes that cannot be resolved otherwise are resolved by competent **Romanian courts**. EU consumers resident in another Member State may also use the courts of their habitual residence (Regulation (EU) 1215/2012, Brussels I recast).
 
 ## 12. Termination
 

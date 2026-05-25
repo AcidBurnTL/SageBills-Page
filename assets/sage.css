@@ -4,6 +4,50 @@
    Used by all pages: index, sagebills, sagemeet, sagedocs, legal.
    ============================================================ */
 
+/* ============ Self-hosted fonts ============
+   Self-host the critical font weights from /assets/fonts/ to eliminate
+   third-party requests to Google Fonts (removes the DNS lookup + IP exposure
+   that prior versions sent to fonts.googleapis.com / fonts.gstatic.com).
+   font-display: swap renders the fallback text immediately and swaps when the
+   webfont arrives — eliminates FOIT and improves LCP.
+   Google Fonts CDN remains as a network fallback (referenced by <link> tags
+   in HTML <head>) for any weight not shipped locally.
+   TODO: subset these TTFs (e.g. via pyftsubset) to WOFF2 latin-only files for
+   a 60–80% size reduction. Today they ship as full unsubsetted TTFs.
+   ============================================================ */
+
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('fonts/HankenGrotesk-Bold.ttf') format('truetype');
+    font-weight: 700 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+    font-weight: 400 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --font-display: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -233,6 +277,96 @@ img, svg { display: block; max-width: 100%; }
 }
 .mobile-menu-btn { display: none; }
 
+/* Language picker (auto-injected by theme.js) */
+.lang-picker { position: relative; }
+.lang-picker__btn {
+    width: auto;
+    min-width: 64px;
+    padding: 0 12px;
+    gap: 6px;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+.lang-picker__current { line-height: 1; }
+.lang-picker__caret {
+    font-size: 9px;
+    opacity: 0.55;
+    transition: transform .2s ease;
+}
+.lang-picker--open .lang-picker__caret { transform: rotate(180deg); }
+.lang-picker--open .lang-picker__btn {
+    color: var(--green);
+    border-color: var(--green-dim);
+    background: var(--green-glow);
+}
+.lang-picker__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    margin: 0;
+    padding: 6px;
+    background: var(--bg-surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    list-style: none;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+    z-index: 1000;
+}
+.lang-picker--open .lang-picker__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.lang-picker__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    color: var(--text-secondary, var(--text-dim));
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background .15s ease, color .15s ease;
+}
+.lang-picker__item:hover,
+.lang-picker__item:focus-visible {
+    background: var(--green-glow);
+    color: var(--green-bright, var(--green));
+    outline: none;
+}
+.lang-picker__item--current {
+    color: var(--green);
+    background: var(--green-glow);
+}
+.lang-picker__code {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    min-width: 26px;
+    padding: 3px 6px;
+    border-radius: 6px;
+    background: var(--border-soft, rgba(255,255,255,.06));
+    text-align: center;
+}
+.lang-picker__item--current .lang-picker__code {
+    background: var(--green);
+    color: var(--on-green, #0a1f0e);
+}
+.lang-picker__name { flex: 1; }
+
+@media (max-width: 640px) {
+    .lang-picker__menu { right: -4px; min-width: 180px; }
+}
+
 @media (max-width: 880px) {
     .nav { padding: 0 20px; }
     .nav__tabs {
@@ -393,6 +527,33 @@ em.italic, .italic-em {
 .btn--lg { padding: 18px 32px; font-size: 16px; }
 .btn--xl { padding: 20px 36px; font-size: 17px; }
 .btn .icon { font-size: 20px; line-height: 1; }
+
+/* ============ App Store badge ============ */
+.app-store-badge-link {
+    display: inline-block;
+    line-height: 0;
+    border-radius: 12px;
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+.app-store-badge-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.app-store-badge-link:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 4px;
+}
+.app-store-badge-link img,
+.app-store-badge-link svg {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+.app-store-badge-link--sm img,
+.app-store-badge-link--sm svg {
+    height: 44px;
+}
 
 /* ============ Cards ============ */
 .glass-card {

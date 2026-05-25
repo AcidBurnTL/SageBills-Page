@@ -1,18 +1,18 @@
 # Sagelight Studio
 
-> Independent app studio in Romania, EU. We build privacy-first iOS and macOS apps for the everyday work most apps overcomplicate — bills, meetings, and personal documents. No tracking. No ads. No accounts. Local-first by default.
+> Independent app studio in Romania, EU. We build privacy-first iOS and macOS apps led by SageDocs, our encrypted document vault. Three apps, one architectural philosophy: local-first, no tracking, no ads, no accounts, no studio-operated servers holding user data.
 
 ## Apps
 
+- [SageDocs](https://sagelight-studio.com/sagedocs.html) — **flagship product**. Encrypted personal document vault for IDs, contracts, insurance, and medical records. AES-256-GCM encryption with PBKDF2-SHA256 key derivation (600,000 iterations). Biometric/PIN auth, encrypted iCloud sync via CloudKit. The studio cannot read the documents — by design. iOS 17+ and macOS 14+. **Subscription:** $2.99/month or $24.99/year via the App Store, with a 7-day free trial. Read-only mode after trial expiry; users on v1.0.5 or earlier are grandfathered to free Pro access.
 - [SageBills](https://sagelight-studio.com/sagebills.html): Smart utility bill tracker for European households. 40+ bill categories, on-device OCR invoice scanning, cost predictions, anomaly detection. iOS 17+ and macOS 14+. Free. Local-only architecture — zero data leaves the device.
 - [SageMeet](https://sagelight-studio.com/sagemeet.html): AI meeting recorder and transcription for iPhone. Whisper transcription and GPT-4o note generation using a user-provided OpenAI API key (BYOK). Includes Private Mode that disables all external transmission. Free.
-- [SageDocs](https://sagelight-studio.com/sagedocs.html): Encrypted personal document vault for IDs, contracts, insurance, and medical records. AES-256-GCM encryption with PBKDF2-SHA256 key derivation. Biometric/PIN auth, encrypted iCloud sync via CloudKit. iOS 17+ and macOS 14+. Free.
 
 ## Legal
 
 - [Privacy Policy](https://sagelight-studio.com/privacy-policy.html): How Sagelight Studio handles user data. Local-first, GDPR-compliant, zero analytics, zero tracking.
 - [GDPR Disclosure](https://sagelight-studio.com/gdpr.html): Articles 13 and 14 disclosure under EU Regulation 2016/679. Controller, lawful basis, recipients, transfers, retention, supervisory authority (ANSPDCP).
-- [Terms of Service](https://sagelight-studio.com/terms.html): Romanian governing law with full EU consumer rights preserved. Free of charge.
+- [Terms of Service](https://sagelight-studio.com/terms.html): Romanian governing law with full EU consumer rights preserved. SageBills and SageMeet are free; SageDocs is a $2.99/month or $24.99/year App Store subscription.
 
 ## Content
 
@@ -21,7 +21,8 @@
 
 ## About
 
-- Independent sole-proprietor app studio based in Romania, EU.
+- Sagelight Studio is the trading name of Florin Nica, an independent individual developer (natural person) based in Romania, EU. No separate legal entity.
+- Apple Developer (publicly verified): https://apps.apple.com/developer/sagelight-studio
 - Contact: contact@sagelight-studio.com
 - All apps are built entirely with Apple frameworks (SwiftData, SwiftUI, Vision, CoreSpotlight, CloudKit). No third-party SDKs, no analytics, no telemetry inside any app.
 - The marketing website (sagelight-studio.com) loads the Google Ads conversion tag (AW-17758801825) under Google Consent Mode v2 with all signals defaulted to "denied" — cookieless modeled measurement only, until a visitor explicitly opts in. No GA4, no remarketing, no profile-building.

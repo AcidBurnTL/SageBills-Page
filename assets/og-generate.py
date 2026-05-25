@@ -201,7 +201,7 @@ PAGES = [
     },
     {
         "out": "sagedocs.png",
-        "eyebrow": "SageDocs · iOS & macOS · Free",
+        "eyebrow": "SageDocs · iOS & macOS · From $2.99/mo",
         "title_lines": [
             [("Your documents.", "reg")],
             [("Encrypted. ", "em"), ("Yours.", "em")],
