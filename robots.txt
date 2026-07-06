@@ -16,12 +16,6 @@ Disallow: /terms-of-service.md
 User-agent: GPTBot
 Disallow: /
 
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: OAI-SearchBot
-Disallow: /
-
 User-agent: ClaudeBot
 Disallow: /
 
@@ -54,6 +48,14 @@ Disallow: /
 
 # Citation-respecting AI assistants — explicitly allowed.
 # These cite source URLs in their output, sending real traffic.
+# OAI-SearchBot powers ChatGPT search results (citations, not training);
+# ChatGPT-User only fetches pages a user explicitly asks about.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 

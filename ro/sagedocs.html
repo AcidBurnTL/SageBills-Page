@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -12,13 +13,14 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>SageDocs — Seif Criptat AES-256 pentru iPhone</title>
     <meta name="description" content="Seif criptat AES-256 pentru buletine, contracte, asigurări și documente medicale. Protejat biometric. Sincronizare iCloud criptată. Abonament pe iPhone și Mac.">
     <meta name="keywords" content="SageDocs, seif documente criptat, stocare documente sigură iOS, aplicație documente AES-256, seif personal Mac, iCloud criptat, seif documente GDPR, aplicație documente biometric">
     <meta property="og:title" content="SageDocs — Seif Criptat de Documente Personale">
     <meta property="og:description" content="Seif criptat AES-256 pentru buletine, contracte, asigurări și documente personale. Protejat biometric. Abonament pe iOS și macOS.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="product">
     <meta property="og:url" content="https://sagelight-studio.com/ro/sagedocs.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="ro_RO">
@@ -47,10 +49,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <link rel="stylesheet" href="../assets/sage.css">
 
     <script type="application/ld+json">
@@ -63,8 +63,15 @@
         "inLanguage": "ro",
         "url": "https://apps.apple.com/ro/app/sagedocs/id6762064711",
         "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
-        "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
+        "author": {"@id": "https://sagelight-studio.com/#organization"},
+        "publisher": {"@id": "https://sagelight-studio.com/#organization"}
     }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://sagelight-studio.com/ro/"},
+        {"@type": "ListItem", "position": 2, "name": "SageDocs", "item": "https://sagelight-studio.com/ro/sagedocs.html"}
+    ]}
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ro", "mainEntity": [
@@ -267,7 +274,7 @@
 <nav class="nav" role="navigation" aria-label="Navigare principală">
     <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-            <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
@@ -282,7 +289,7 @@
                 <span id="themeIcon" aria-hidden="true">☾</span>
             </button>
             <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Deschide meniul" aria-expanded="false">
-                <span class="material-symbols-outlined">menu</span>
+                <span aria-hidden="true" class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
@@ -294,8 +301,8 @@
             <div class="hero__inner">
                 <div class="eyebrow fade-up d1">Criptat end-to-end</div>
                 <h1 class="h-display fade-up d2">
-                    Documentele tale.<br>
-                    <span class="italic-em">Criptate.</span>
+                    Seif criptat de documente<br>
+                    <span class="italic-em">pentru iPhone și Mac.</span>
                 </h1>
                 <p class="text-lead lead fade-up d3">
                     Seiful digital pentru cele mai sensibile date ale tale &mdash; buletin, pașaport, contracte, asigurări, documente medicale. Criptare AES-256-GCM pe dispozitivul tău. Recuperabil doar de tine.
@@ -310,13 +317,13 @@
                         <div class="vault__head">
                             <h2>Documente Sigure</h2>
                             <button class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">
-                                <span class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
+                                <span aria-hidden="true" class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
                                 Adaugă
                             </button>
                         </div>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">badge</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">badge</span></div>
                                 <div>
                                     <div class="doc-row__name">Carte de Identitate &mdash; Principală</div>
                                     <div class="doc-row__filename">DOC_CI_9928_SECURE.enc</div>
@@ -328,12 +335,12 @@
                                     <span class="value">acum 2 ore</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--warn">Expiră curând</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">flight_takeoff</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">flight_takeoff</span></div>
                                 <div>
                                     <div class="doc-row__name">Pașaport Internațional</div>
                                     <div class="doc-row__filename">PPT_2026_VALID.enc</div>
@@ -345,12 +352,12 @@
                                     <span class="value">12 ian. 2026</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--secure">Verificat</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">description</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">description</span></div>
                                 <div>
                                     <div class="doc-row__name">Contract Vânzare-Cumpărare</div>
                                     <div class="doc-row__filename">CONTRACT_2025.enc</div>
@@ -362,7 +369,7 @@
                                     <span class="value">05 dec. 2025</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--secure">Verificat</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                     </div>
@@ -394,7 +401,7 @@
                     </h2>
                     <div class="specs-list">
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">key</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">key</span></div>
                             <div>
                                 <h4>Criptare autentificată AES-256-GCM</h4>
                                 <p>Fiecare atașament este criptat cu AES-256-GCM &mdash; același cifru de încredere folosit pentru date top-secret. Fiecare fișier are propriul nonce și tag de integritate.</p>
@@ -402,7 +409,7 @@
                             </div>
                         </div>
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">vibration</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">vibration</span></div>
                             <div>
                                 <h4>Derivare cheie PBKDF2-SHA256</h4>
                                 <p>PIN-ul tău master este întins prin 600.000 de iterații cu un salt de 256-biți per instalare. Atacurile brute-force devin matematic impracticabile la orice scară de calcul actuală.</p>
@@ -410,7 +417,7 @@
                             </div>
                         </div>
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">fingerprint</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">fingerprint</span></div>
                             <div>
                                 <h4>Keychain + protecție biometrică</h4>
                                 <p>Cheile de criptare stau în Keychain-ul iOS protejate de Face ID, Touch ID sau PIN-ul master. Nu apar niciodată în clar în afara Secure Enclave.</p>
@@ -420,10 +427,10 @@
                     </div>
                 </div>
                 <div class="spec-tiles reveal">
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">shield_lock</span><div class="label">Confidențialitate</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">fingerprint</span><div class="label">Link biometric</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">shield_lock</span><div class="label">Confidențialitate</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">fingerprint</span><div class="label">Link biometric</div></div>
                 </div>
             </div>
         </div>
@@ -438,22 +445,22 @@
             </div>
             <div class="layers">
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">lock</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">lock</span></div>
                     <h5>Stratul seifului</h5>
                     <p>AES-256-GCM pe fiecare atașament. Chei per fișier.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">vpn_key</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">vpn_key</span></div>
                     <h5>Stratul de acces</h5>
                     <p>PIN master, Face ID, Touch ID. Derivare cheie PBKDF2.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">cloud</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">cloud</span></div>
                     <h5>Stratul de sincronizare</h5>
                     <p>iCloud criptat-în-repaus prin CloudKit. Apple stochează doar ciphertext.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">visibility_off</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">visibility_off</span></div>
                     <h5>Stratul de confidențialitate</h5>
                     <p>Fără telemetrie, fără analitică, fără colectare de metadate.</p>
                 </div>
@@ -469,32 +476,32 @@
             </div>
             <div class="bento">
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">event</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">event</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Urmărirea expirării</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Primești memento înainte să expire pașaportul, buletinul, asigurarea sau talonul auto. Memento-urile rulează pe dispozitivul tău.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">cloud_sync</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Sincronizare iCloud criptată</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Sincronizare opțională pe iPhone, iPad și Mac. Criptat pe dispozitiv, apoi predat la Apple ca ciphertext.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">share</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">share</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Partajare selectivă</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Decriptezi și partajezi doar documentul ales. Fișierele temporare sunt șterse securizat după partajare.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">phone_iphone</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">iPhone, iPad, Mac</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Binar universal care rulează nativ pe toate dispozitivele tale Apple. iOS 17+ și macOS 14+.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">ios_share</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">ios_share</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Export criptat</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Iei datele cu tine. Exportă totul ca un pachet criptat &mdash; portabil, recuperabil, al tău.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">delete_forever</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">delete_forever</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Ștergere definitivă</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Ștergi un document și ciphertext-ul este eliminat. Fără ștergere soft, fără copii shadow, fără seif de recuperare.</p>
                 </div>
@@ -555,7 +562,7 @@
     <div class="footer__inner">
         <div class="footer__brand-block">
             <div class="footer__brand">
-                <span aria-hidden="true">🌿</span>
+                <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
                 Sagelight <span>Studio</span>
             </div>
             <p class="footer__tagline">Confidențialitate prin claritate. Un studio independent care construiește aplicații local-first iOS și macOS din România, UE.</p>

@@ -19,6 +19,7 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>Press Kit — Sagelight Studio Apps</title>
     <meta name="description" content="Press kit for Sagelight Studio — privacy-first iOS &amp; macOS apps. Brand assets, press release, contact info, and download links for journalists.">
@@ -75,10 +76,8 @@
         }
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="stylesheet" href="assets/sage.css">
     <style>
         /* ========================================
@@ -971,104 +970,6 @@
         }
 
         /* ========================================
-           SCREENSHOTS
-           ======================================== */
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .screenshot-frame {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .screenshot-phone {
-            width: 100%;
-            aspect-ratio: 9/19.5;
-            background: var(--card-bg);
-            border: 2px solid var(--border);
-            border-radius: 28px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        .screenshot-phone:hover {
-            border-color: var(--green-dim);
-            box-shadow: 0 0 30px var(--green-glow);
-        }
-
-        .screenshot-phone::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 36px;
-            height: 6px;
-            background: var(--border);
-            border-radius: 3px;
-        }
-
-        .screenshot-phone__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            padding: 32px 20px 20px;
-            text-align: center;
-        }
-
-        .screenshot-icon {
-            font-size: 28px;
-            opacity: 0.4;
-        }
-
-        .screenshot-placeholder-text {
-            font-family: var(--font-mono);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
-
-        /* Simulated screen content */
-        .screen-bars {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding: 0 16px;
-        }
-        .screen-bar {
-            height: 8px;
-            border-radius: 4px;
-            background: var(--bg-surface-3);
-        }
-        .screen-bar--green {
-            background: var(--green-dim);
-        }
-        .screen-bar--w100 { width: 100%; }
-        .screen-bar--w80 { width: 80%; }
-        .screen-bar--w65 { width: 65%; }
-        .screen-bar--w45 { width: 45%; }
-
-        .screenshot-caption {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-dim);
-            text-align: center;
-        }
-
-        /* ========================================
            COVERAGE / QUOTES
            ======================================== */
         .quotes-grid {
@@ -1344,7 +1245,6 @@
             .facts-grid { grid-template-columns: 1fr; }
             .fact-item { border-right: none; }
             .talking-grid { grid-template-columns: 1fr; }
-            .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
             .quotes-grid { grid-template-columns: 1fr; }
             .press-release { padding: 28px 24px; }
             .brand-section { grid-template-columns: 1fr; }
@@ -1355,7 +1255,6 @@
         @media (max-width: 480px) {
             .hero__title { font-size: 32px; }
             .section-title { font-size: 24px; }
-            .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-card { padding: 28px 20px; }
         }
 
@@ -1945,126 +1844,6 @@
                     <a class="btn btn--outline" href="mailto:contact@sagelight-studio.com?subject=Sagelight%20Studio%20Press%20Kit%20Request">&#9993; Request Brand Assets</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ============================================================
-         SCREENSHOTS
-         ============================================================ -->
-    <section class="section reveal">
-        <div class="section-label">App Screenshots</div>
-        <h2 class="section-title">In-App <em>Screens</em></h2>
-
-        <div class="screenshots-grid">
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#128200;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--w65"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">Dashboard</div>
-            </div>
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#128196;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--w65"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">Bill List</div>
-            </div>
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#128247;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w65"></div>
-                            <div class="screen-bar screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--w45"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">OCR Scan</div>
-            </div>
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#129302;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--w65"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--w45"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">Predictions</div>
-            </div>
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#127919;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--green screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w45"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--w65"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">Savings Goals</div>
-            </div>
-
-            <div class="screenshot-frame">
-                <div class="screenshot-phone">
-                    <div class="screenshot-phone__content">
-                        <div class="screenshot-icon">&#128197;</div>
-                        <div class="screen-bars">
-                            <div class="screen-bar screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w65"></div>
-                            <div class="screen-bar screen-bar--w80"></div>
-                            <div class="screen-bar screen-bar--green screen-bar--w100"></div>
-                            <div class="screen-bar screen-bar--w45"></div>
-                        </div>
-                        <div class="screenshot-placeholder-text">Screenshot</div>
-                    </div>
-                </div>
-                <div class="screenshot-caption">Calendar Heatmap</div>
-            </div>
-
-        </div>
-
-        <div style="margin-top:28px;">
-            <button class="btn btn--outline" onclick="alert('Screenshot download coming soon. Contact contact@sagelight-studio.com for high-resolution assets.')">&#8595; Download All Screenshots</button>
         </div>
     </section>
 

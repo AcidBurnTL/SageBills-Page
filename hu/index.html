@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -12,9 +13,10 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>Sagelight Studio — Privacy-First iOS és macOS Alkalmazások</title>
-    <meta name="description" content="Privacy-first iOS és macOS alkalmazások Romániában építve. SageBills nyomon követi a rezsiszámláidat. SageMeet átírja a megbeszéléseket. SageDocs titkosítja a dokumentumokat. Soha semmilyen nyomkövetés.">
+    <meta name="description" content="Privacy-first iOS és macOS alkalmazások Romániából. A SageBills rezsiszámlákat követ, a SageMeet megbeszéléseket ír át, a SageDocs dokumentumokat titkosít.">
     <meta property="og:title" content="Sagelight Studio — Privacy-First iOS és macOS Alkalmazások">
     <meta property="og:description" content="Három privacy-first alkalmazás Romániában építve: SageBills (számlakövetés), SageMeet (AI megbeszélésekhez), SageDocs (titkosított széf).">
     <meta property="og:type" content="website">
@@ -44,11 +46,71 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <link rel="stylesheet" href="../assets/sage.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://sagelight-studio.com/#organization",
+        "name": "Sagelight Studio",
+        "url": "https://sagelight-studio.com/hu/",
+        "logo": "https://sagelight-studio.com/icon-512.png",
+        "image": "https://sagelight-studio.com/assets/og/home.png",
+        "email": "contact@sagelight-studio.com",
+        "description": "Független alkalmazásstúdió, amely privacy-first iOS és macOS alkalmazásokat épít a mindennapokra.",
+        "foundingDate": "2026",
+        "foundingLocation": {
+            "@type": "Place",
+            "address": {"@type": "PostalAddress", "addressCountry": "RO", "addressRegion": "Románia"}
+        },
+        "areaServed": [
+            {"@type": "Country", "name": "Európai Unió"},
+            {"@type": "Country", "name": "Románia"},
+            {"@type": "Country", "name": "Lengyelország"},
+            {"@type": "Country", "name": "Magyarország"},
+            {"@type": "Country", "name": "Csehország"},
+            {"@type": "Country", "name": "Egyesült Államok"},
+            {"@type": "Country", "name": "Egyesült Királyság"}
+        ],
+        "knowsAbout": [
+            "Beépített adatvédelem","GDPR-megfelelőség","iOS alkalmazásfejlesztés","macOS alkalmazásfejlesztés",
+            "Helyi-első szoftver","Rezsiszámla-követés","Megbeszélés-átírás","Dokumentumtitkosítás"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@sagelight-studio.com",
+            "contactType": "ügyfélszolgálat",
+            "availableLanguage": ["Magyar", "Angol", "Román"]
+        },
+        "sameAs": ["https://apps.apple.com/us/developer/sagelight-studio"],
+        "founder": {
+            "@type": "Person",
+            "@id": "https://sagelight-studio.com/#florin-nica",
+            "name": "Florin Nica",
+            "jobTitle": "Független fejlesztő",
+            "description": "Önálló iOS- és macOS-fejlesztő, aki privacy-first alkalmazásokat épít Romániában, az EU-ban; személyazonosságát az Apple Developer Program keretében ellenőrizték.",
+            "sameAs": ["https://apps.apple.com/us/developer/sagelight-studio"]
+        },
+        "makesOffer": [
+            {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "itemOffered": {"@type": "SoftwareApplication", "name": "SageDocs", "applicationCategory": "SecurityApplication", "operatingSystem": "iOS 17+, macOS 14+", "url": "https://sagelight-studio.com/hu/sagedocs.html"}},
+            {"@type": "Offer", "price": "0", "priceCurrency": "HUF", "itemOffered": {"@type": "SoftwareApplication", "name": "SageBills", "applicationCategory": "FinanceApplication", "operatingSystem": "iOS 17+, macOS 14+", "url": "https://sagelight-studio.com/hu/sagebills.html"}},
+            {"@type": "Offer", "price": "0", "priceCurrency": "HUF", "itemOffered": {"@type": "SoftwareApplication", "name": "SageMeet", "applicationCategory": "ProductivityApplication", "operatingSystem": "iOS 17+", "url": "https://sagelight-studio.com/hu/sagemeet.html"}}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "WebSite",
+        "@id": "https://sagelight-studio.com/#website",
+        "name": "Sagelight Studio", "url": "https://sagelight-studio.com/hu/",
+        "publisher": {"@id": "https://sagelight-studio.com/#organization"},
+        "inLanguage": "hu"
+    }
+    </script>
 
     <style>
         .hero-home { text-align: center; padding-top: calc(var(--nav-height) + 120px); }
@@ -79,10 +141,6 @@
         .principle__icon { flex-shrink: 0; width: 52px; height: 52px; border-radius: var(--radius); background: var(--bg-surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 24px; }
         .principle h4 { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
         .principle p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        .principles__visual { position: relative; aspect-ratio: 1 / 1; border-radius: var(--radius-xl); overflow: hidden; border: 0.5px solid var(--border); background: var(--bg-surface-2); }
-        .principles__visual::before { content: ''; position: absolute; inset: -2px; background: radial-gradient(circle at 30% 30%, var(--green-fade), transparent 60%); z-index: 1; pointer-events: none; }
-        .principles__visual-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(135deg, var(--green-glow), transparent 60%), radial-gradient(circle at 70% 70%, var(--green-fade), transparent 50%); }
-        .principles__leaf { font-size: 96px; filter: drop-shadow(0 0 40px var(--green)); opacity: 0.8; }
         .cta-block { position: relative; overflow: hidden; padding: 80px 56px; text-align: center; border-radius: var(--radius-xl); border-color: var(--green-dim); }
         .cta-block::before { content: ''; position: absolute; inset: -4px; background: radial-gradient(circle at 50% 0%, var(--green-fade), transparent 60%); z-index: 0; pointer-events: none; }
         .cta-block > * { position: relative; z-index: 1; }
@@ -101,13 +159,13 @@
 <nav class="nav" role="navigation" aria-label="Fő navigáció">
     <div class="nav__inner">
         <a href="../index.html" class="nav__logo">
-            <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
             <li><a href="sagedocs.html" class="nav__tab">SageDocs</a></li>
-            <li><a href="../sagebills.html" class="nav__tab">SageBills</a></li>
-            <li><a href="../sagemeet.html" class="nav__tab">SageMeet</a></li>
+            <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+            <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="../blog.html" class="nav__tab">Blog</a></li>
         </ul>
         <div class="nav__actions">
@@ -124,8 +182,8 @@
             <div class="hero__inner">
                 <div class="eyebrow fade-up d1">Független · Privacy-First · EU-ban Építve</div>
                 <h1 class="h-display fade-up d2">
-                    Csendes szoftver az élet<br>
-                    <em class="italic-em">zajos részeihez</em>.
+                    Privacy-first iOS és macOS alkalmazások<br>
+                    <em class="italic-em">az élet zajos részeihez</em>.
                 </h1>
                 <p class="text-lead lead fade-up d3">
                     A Sagelight Studio privacy-first iOS és macOS alkalmazásokat épít azokra a hétköznapi dolgokra, amelyeket a legtöbb alkalmazás feleslegesen bonyolulttá tesz &mdash; számlák, megbeszélések és személyes dokumentumok. Nincs nyomkövetés. Nincsenek reklámok. Nincsenek fiókok. Csak eszközök, amelyek tisztelik az adataidat.
@@ -133,15 +191,15 @@
                 <div class="ctas fade-up d4">
                     <a href="#apps" class="btn btn--primary btn--lg">
                         Nézd meg az alkalmazásokat
-                        <span class="material-symbols-outlined icon">arrow_forward</span>
+                        <span aria-hidden="true" class="material-symbols-outlined icon">arrow_forward</span>
                     </a>
                     <a href="#why" class="btn btn--ghost btn--lg">Miért Sagelight</a>
                 </div>
                 <div class="trust-row fade-up d5">
-                    <span><span class="material-symbols-outlined fill">verified_user</span> GDPR-megfelelő</span>
-                    <span><span class="material-symbols-outlined fill">visibility_off</span> Nulla nyomkövetés</span>
-                    <span><span class="material-symbols-outlined fill">public</span> Romániában építve</span>
-                    <span><span class="material-symbols-outlined fill">apple</span> iOS és macOS</span>
+                    <span><span aria-hidden="true" class="material-symbols-outlined fill">verified_user</span> GDPR-megfelelő</span>
+                    <span><span aria-hidden="true" class="material-symbols-outlined fill">visibility_off</span> Nulla nyomkövetés</span>
+                    <span><span aria-hidden="true" class="material-symbols-outlined fill">public</span> Romániában építve</span>
+                    <span><span aria-hidden="true" class="material-symbols-outlined fill">devices</span> iOS és macOS</span>
                 </div>
             </div>
         </div>
@@ -158,7 +216,7 @@
             <div class="apps-grid">
                 <a class="glass-card app-card reveal" href="sagedocs.html" aria-label="SageDocs — Titkosított dokumentumtároló">
                     <div class="card-icon card-icon--solid">
-                        <span class="material-symbols-outlined fill">shield_lock</span>
+                        <span aria-hidden="true" class="material-symbols-outlined fill">shield_lock</span>
                     </div>
                     <div class="app-tagline">Flagship · Titkosított Dokumentumtároló</div>
                     <h3 class="h-card">SageDocs</h3>
@@ -166,10 +224,10 @@
                         A fő termékünk. Tartsd a személyi igazolványod, szerződéseidet, biztosításaidat és orvosi dokumentumaidat egy AES-256-GCM titkosított széfben. Biometrikusan védett. Titkosítva szinkronizálva az iCloud-ban. Csak te tudod helyreállítani &mdash; még a stúdió sem tudja elolvasni a dokumentumaidat, by design.
                     </p>
                     <ul class="app-features">
-                        <li><span class="material-symbols-outlined">check</span> AES-256-GCM titkosítás</li>
-                        <li><span class="material-symbols-outlined">check</span> Face ID / Touch ID + mester PIN</li>
-                        <li><span class="material-symbols-outlined">check</span> Titkosított iCloud szinkronizálás</li>
-                        <li><span class="material-symbols-outlined">check</span> Lejárati értesítések</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> AES-256-GCM titkosítás</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Face ID / Touch ID + mester PIN</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Titkosított iCloud szinkronizálás</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Lejárati értesítések</li>
                     </ul>
                     <div class="app-meta">
                         <div class="platforms">
@@ -177,13 +235,13 @@
                             <span class="chip">macOS 14+</span>
                             <span class="chip chip--green">$2.99/hó-tól · 7 napos próba</span>
                         </div>
-                        <span class="material-symbols-outlined arrow">arrow_forward</span>
+                        <span aria-hidden="true" class="material-symbols-outlined arrow">arrow_forward</span>
                     </div>
                 </a>
 
-                <a class="glass-card app-card reveal" href="../sagebills.html" aria-label="SageBills — Rezsiszámla-követő">
+                <a class="glass-card app-card reveal" href="sagebills.html" aria-label="SageBills — Rezsiszámla-követő">
                     <div class="card-icon card-icon--solid">
-                        <span class="material-symbols-outlined fill">bolt</span>
+                        <span aria-hidden="true" class="material-symbols-outlined fill">bolt</span>
                     </div>
                     <div class="app-tagline">Rezsiszámla-Követő</div>
                     <h3 class="h-card">SageBills</h3>
@@ -191,10 +249,10 @@
                         Kövess nyomon minden közüzemi számlát &mdash; áram, gáz, víz, internet, távközlés. OCR számlabeolvasás, költségelőrejelzések, anomália-érzékelés &mdash; minden a készülékeden, adatok nem mennek sehová.
                     </p>
                     <ul class="app-features">
-                        <li><span class="material-symbols-outlined">check</span> 40+ számlakategória</li>
-                        <li><span class="material-symbols-outlined">check</span> OCR a készüléken</li>
-                        <li><span class="material-symbols-outlined">check</span> Helyi AI előrejelzések</li>
-                        <li><span class="material-symbols-outlined">check</span> Fiók nélkül</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> 40+ számlakategória</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> OCR a készüléken</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Helyi AI előrejelzések</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Fiók nélkül</li>
                     </ul>
                     <div class="app-meta">
                         <div class="platforms">
@@ -202,13 +260,13 @@
                             <span class="chip">macOS 14+</span>
                             <span class="chip chip--green">Ingyenes</span>
                         </div>
-                        <span class="material-symbols-outlined arrow">arrow_forward</span>
+                        <span aria-hidden="true" class="material-symbols-outlined arrow">arrow_forward</span>
                     </div>
                 </a>
 
-                <a class="glass-card app-card reveal" href="../sagemeet.html" aria-label="SageMeet — AI megbeszélés-rögzítő">
+                <a class="glass-card app-card reveal" href="sagemeet.html" aria-label="SageMeet — AI megbeszélés-rögzítő">
                     <div class="card-icon card-icon--solid">
-                        <span class="material-symbols-outlined fill">mic</span>
+                        <span aria-hidden="true" class="material-symbols-outlined fill">mic</span>
                     </div>
                     <div class="app-tagline">AI Megbeszélés-Rögzítő</div>
                     <h3 class="h-card">SageMeet</h3>
@@ -216,10 +274,10 @@
                         Rögzítsd a megbeszéléseket, pontos átiratokat, AI összefoglalókat és teendőket kapj &mdash; a saját OpenAI kulcsodat használva. A Privát mód kikapcsolja az összes külső átvitelt, így teljes irányítás marad nálad.
                     </p>
                     <ul class="app-features">
-                        <li><span class="material-symbols-outlined">check</span> Whisper átírás</li>
-                        <li><span class="material-symbols-outlined">check</span> GPT-4o-val generált jegyzetek</li>
-                        <li><span class="material-symbols-outlined">check</span> Szemantikus keresés</li>
-                        <li><span class="material-symbols-outlined">check</span> Privát mód (nulla külső adat)</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Whisper átírás</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> GPT-4o-val generált jegyzetek</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Szemantikus keresés</li>
+                        <li><span aria-hidden="true" class="material-symbols-outlined">check</span> Privát mód (nulla külső adat)</li>
                     </ul>
                     <div class="app-meta">
                         <div class="platforms">
@@ -227,7 +285,7 @@
                             <span class="chip chip--green">Ingyenes</span>
                             <span class="chip">BYOK</span>
                         </div>
-                        <span class="material-symbols-outlined arrow">arrow_forward</span>
+                        <span aria-hidden="true" class="material-symbols-outlined arrow">arrow_forward</span>
                     </div>
                 </a>
             </div>
@@ -244,42 +302,42 @@
                     </h2>
                     <div class="principles__list">
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">storage</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">storage</span></div>
                             <div>
                                 <h4>Alapértelmezetten helyi-első</h4>
                                 <p>Az adataid a készülékeden maradnak. Nem üzemeltetünk szervereket, amelyek a számláidat, megbeszéléseidet vagy dokumentumaidat tárolnák &mdash; még akkor sem férnénk hozzá, ha akarnánk.</p>
                             </div>
                         </div>
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">verified_user</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">verified_user</span></div>
                             <div>
                                 <h4>A GDPR a kiindulópont, nem a végcél</h4>
                                 <p>Minden alkalmazás a GDPR 5., 25. és 32. cikke köré épül. Privacy by design, privacy by default, az architektúrába épített biztonság.</p>
                             </div>
                         </div>
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">visibility_off</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">visibility_off</span></div>
                             <div>
                                 <h4>Nincs reklám. Nincs fiók. Nincs nyomkövetés.</h4>
                                 <p>Nincsenek harmadik féltől származó SDK-k, nincs analitika, nincsenek hirdetési azonosítók, nincs telemetria. Nulla. Megnyitod az alkalmazást, használod, bezárod. Soha nem látjuk, mit csinálsz.</p>
                             </div>
                         </div>
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">phone_iphone</span></div>
                             <div>
                                 <h4>Csak natív Apple keretrendszerek</h4>
                                 <p>SwiftData, SwiftUI, Vision, CoreSpotlight és CloudKit használatával. Nincs Electron, nincs React Native, nincsenek harmadik féltől származó platformok. Gyors, könnyű és idiomatikus.</p>
                             </div>
                         </div>
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">savings</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">savings</span></div>
                             <div>
                                 <h4>Tisztességes árazás</h4>
                                 <p>A SageBills és a SageMeet ingyenes; a SageDocs egyszerű $2,99/hó vagy $24,99/év előfizetés. Nincsenek dark patternek, nincsenek meglepetés-frissítések, nincsenek paywall mögé rejtett „prémium" funkciók.</p>
                             </div>
                         </div>
                         <div class="principle">
-                            <div class="principle__icon"><span class="material-symbols-outlined">person</span></div>
+                            <div class="principle__icon"><span aria-hidden="true" class="material-symbols-outlined">person</span></div>
                             <div>
                                 <h4>Egyetlen ember által épített, Romániában</h4>
                                 <p>Független egy fős operáció, az EU-ból. Nincsenek befektetők, nincs növekedési csapat, nincsenek engagement metrikák &mdash; csak gondossággal készített szoftver az embereknek, akik használják.</p>
@@ -287,9 +345,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="principles__visual reveal">
-                    <div class="principles__visual-inner">
-                        <div class="principles__leaf">🌿</div>
+                <div class="glass-card data-map reveal">
+                    <div class="data-map__label">Hol élnek az adataid</div>
+                    <div class="data-map__row">
+                        <div class="data-map__icon"><span aria-hidden="true" class="material-symbols-outlined">phone_iphone</span></div>
+                        <div class="data-map__text">
+                            <strong>Az iPhone-od és Mac-ed</strong>
+                            <span>SwiftData tároló, AES-256-GCM titkosítással</span>
+                        </div>
+                        <span class="chip chip--green">Az eszközön</span>
+                    </div>
+                    <div class="data-map__link" aria-hidden="true"></div>
+                    <div class="data-map__row">
+                        <div class="data-map__icon"><span aria-hidden="true" class="material-symbols-outlined">cloud_sync</span></div>
+                        <div class="data-map__text">
+                            <strong>A saját iCloudod — opcionális</strong>
+                            <span>Végpontok között titkosított szinkron, a saját Apple ID-ddal</span>
+                        </div>
+                        <span class="chip chip--green">Titkosítva</span>
+                    </div>
+                    <div class="data-map__link" aria-hidden="true"></div>
+                    <div class="data-map__row data-map__row--void">
+                        <div class="data-map__icon"><span aria-hidden="true" class="material-symbols-outlined">cloud_off</span></div>
+                        <div class="data-map__text">
+                            <strong>Sagelight szerverek</strong>
+                            <span>Nincsenek. Nem látjuk az adataidat — nincs mit feltörni.</span>
+                        </div>
+                        <span class="chip">Nulla</span>
                     </div>
                 </div>
             </div>
@@ -315,7 +397,7 @@
     <div class="footer__inner">
         <div class="footer__brand-block">
             <div class="footer__brand">
-                <span aria-hidden="true">🌿</span>
+                <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
                 Sagelight <span>Studio</span>
             </div>
             <p class="footer__tagline">
@@ -329,8 +411,8 @@
             <div class="footer__col-title">Alkalmazások</div>
             <ul class="footer__list">
                 <li><a href="sagedocs.html">SageDocs</a></li>
-                <li><a href="../sagebills.html">SageBills</a></li>
-                <li><a href="../sagemeet.html">SageMeet</a></li>
+                <li><a href="sagebills.html">SageBills</a></li>
+                <li><a href="sagemeet.html">SageMeet</a></li>
             </ul>
         </div>
         <div>

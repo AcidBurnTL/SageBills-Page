@@ -1,6 +1,6 @@
 # Sagelight Studio Privacy Policy
 
-**Last Updated:** May 21, 2026 | **Effective:** May 21, 2026
+**Last Updated:** June 14, 2026 | **Effective:** May 21, 2026
 
 ---
 
@@ -272,13 +272,28 @@ If the DPF is invalidated by a future court decision (as occurred with the earli
 
 **Apps:** No Sagelight Studio app uses cookies, web beacons, pixels, device fingerprinting, advertising identifiers, or any other tracking technology. No app contains advertising.
 
-**Website (sagelight-studio.com):** The Sagelight Studio website loads the Google Ads conversion tag (`AW-17758801825`) operated by Google Ireland Limited, with Google LLC (US) as sub-processor. The tag runs under **Google Consent Mode v2**, with all consent signals set to **denied by default**. In the denied state, the tag transmits a cookieless ping to Google containing: timestamp, browser user agent, source URL, consent state, and a per-pageview random number; no cookies are stored and no individual identification occurs. If you opt in via the **Cookie preferences** link in the footer, the tag collects full conversion data including the Google Click ID (`gclid`).
+**Website (sagelight-studio.com):** The Sagelight Studio website loads the Google Ads conversion tag (`AW-17758801825`) operated by Google Ireland Limited, with Google LLC (US) as sub-processor, to measure the effectiveness of paid advertising campaigns that link to the App Store.
+
+The tag is configured under **Google Consent Mode v2 (Advanced)**, with all four signals set to **denied by default**:
+
+- `ad_storage` — denied (no advertising cookies stored)
+- `ad_user_data` — denied (no user data shared with Google for ads)
+- `ad_personalization` — denied (no personalised advertising)
+- `analytics_storage` — denied (no analytics cookies; reserved for future use)
+
+Two further protective flags are set on every page:
+
+- `ads_data_redaction: true` — Google redacts identifying information from the cookieless pings sent while consent is denied.
+- `url_passthrough: true` — when consent is denied, click identifiers (`gclid`) travel via URL parameters only, never via cookies.
+
+While consent is denied, Google receives only redacted, cookieless pings containing minimal functional information — timestamp, browser user agent, source URL, a boolean indicating whether a click identifier was present, a per-pageview random number, and the consent state itself. No cookies are stored and no individual is identified; these pings power Google's *modelled* (estimated) conversion reporting. If you opt in via the **Cookie preferences** link in the footer, you can grant **Advertising** and **Analytics** consent independently, and a Google Ads cookie may then be stored to attribute App Store visits to specific ad campaigns (including the Google Click ID, `gclid`).
 
 - **Lawful basis (denied state):** Legitimate interest (Art. 6(1)(f)) — understanding aggregate advertising effectiveness without identifying individuals.
 - **Lawful basis (opted-in state):** Consent (Art. 6(1)(a)).
 - **Recipients:** Google Ireland Limited (data processor, Art. 28); Google LLC, US (sub-processor).
 - **Transfer mechanism:** EU-US Data Privacy Framework + Standard Contractual Clauses incorporated into Google's Controller-Controller Data Protection Terms.
 - **Retention:** Per Google Ads default retention settings (currently 14 months for ad conversion data; you can request deletion via the cookie preferences interface).
+- **Withdrawal of consent:** at any time via the **Cookie preferences** link in the footer, by clearing site cookies, by using a browser-level tracking blocker, or by emailing contact@sagelight-studio.com. Your choice is persisted only in your browser's localStorage; nothing about it is transmitted to us.
 
 This Google Ads tag is **exclusive to the website** and is not present in any Sagelight Studio app.
 

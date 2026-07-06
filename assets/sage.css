@@ -4,49 +4,9 @@
    Used by all pages: index, sagebills, sagemeet, sagedocs, legal.
    ============================================================ */
 
-/* ============ Self-hosted fonts ============
-   Self-host the critical font weights from /assets/fonts/ to eliminate
-   third-party requests to Google Fonts (removes the DNS lookup + IP exposure
-   that prior versions sent to fonts.googleapis.com / fonts.gstatic.com).
-   font-display: swap renders the fallback text immediately and swaps when the
-   webfont arrives — eliminates FOIT and improves LCP.
-   Google Fonts CDN remains as a network fallback (referenced by <link> tags
-   in HTML <head>) for any weight not shipped locally.
-   TODO: subset these TTFs (e.g. via pyftsubset) to WOFF2 latin-only files for
-   a 60–80% size reduction. Today they ship as full unsubsetted TTFs.
-   ============================================================ */
-
-@font-face {
-    font-family: 'Hanken Grotesk';
-    src: url('fonts/HankenGrotesk-Bold.ttf') format('truetype');
-    font-weight: 700 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/Inter-Regular.ttf') format('truetype');
-    font-weight: 400 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('fonts/PlayfairDisplay-Italic.ttf') format('truetype');
-    font-weight: 400 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
-    font-weight: 400 500;
-    font-style: normal;
-    font-display: swap;
-}
+/* Fonts are self-hosted via assets/fonts/fonts.css (subsetted variable woff2,
+   latin + latin-ext unicode-range splits). Do not add @font-face rules here —
+   later rules would shadow the woff2 declarations and pull the heavy TTFs. */
 
 :root {
     --font-display: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -102,8 +62,8 @@
     --warning: #ffc4ba;
 
     --grid-line: rgba(60, 74, 59, 0.18);
-    --orb-1: rgba(85, 238, 113, 0.12);
-    --orb-2: rgba(85, 238, 113, 0.06);
+    --orb-1: rgba(85, 238, 113, 0.07);
+    --orb-2: rgba(85, 238, 113, 0.04);
 
     --nav-bg: rgba(13, 21, 13, 0.72);
     --hero-glow: radial-gradient(circle at 50% 30%, rgba(85, 238, 113, 0.10), transparent 60%);
@@ -176,7 +136,13 @@ body {
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--green); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
 
 a { color: var(--green); text-decoration: none; transition: var(--transition); }
 a:hover { opacity: 0.8; }
@@ -236,9 +202,11 @@ img, svg { display: block; max-width: 100%; }
 }
 .nav__logo:hover { opacity: 1; color: var(--green); }
 .nav__logo-leaf {
-    font-size: 18px; line-height: 1;
-    filter: drop-shadow(0 0 8px var(--green-shadow));
+    width: 20px; height: 20px;
+    color: var(--green);
+    flex-shrink: 0;
 }
+.footer__brand .nav__logo-leaf { width: 18px; height: 18px; }
 .nav__logo span { color: var(--green); }
 
 .nav__tabs {
@@ -415,14 +383,8 @@ section.section--xl { padding: 160px 0; }
     border-radius: 100px;
 }
 .eyebrow::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    content: ''; width: 5px; height: 5px; border-radius: 50%;
     background: var(--green);
-    box-shadow: 0 0 8px var(--green);
-    animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
 }
 .eyebrow--static::before { animation: none; }
 
@@ -496,11 +458,11 @@ em.italic, .italic-em {
 .btn--primary {
     background: var(--green);
     color: var(--on-green);
-    box-shadow: 0 4px 18px -6px var(--green-shadow);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 4px 14px -8px var(--green-shadow);
 }
 .btn--primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 12px 26px -10px var(--green-shadow);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18), 0 8px 20px -10px var(--green-shadow);
     background: var(--green-bright);
 }
 .btn--ghost {
@@ -568,8 +530,9 @@ em.italic, .italic-em {
 }
 .glass-card:hover {
     border-color: var(--green-dim);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -15px var(--green-shadow);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -18px rgba(0, 0, 0, 0.5),
+                0 1px 0 0 var(--green-glow) inset;
 }
 .solid-card {
     background: var(--bg-surface);
@@ -606,6 +569,77 @@ em.italic, .italic-em {
     user-select: none;
 }
 .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+
+/* ============ Data map (local-first architecture panel) ============ */
+.data-map {
+    padding: 32px;
+    display: flex; flex-direction: column;
+    align-self: center;
+}
+.data-map__label {
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 10px;
+}
+.data-map__label::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.data-map__row {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px;
+    background: var(--bg-surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+}
+.data-map__icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border-radius: var(--radius-sm);
+    background: var(--green-glow);
+    border: 1px solid var(--green-dim);
+    color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+}
+.data-map__text { flex: 1; min-width: 0; }
+.data-map__text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+}
+.data-map__text span {
+    display: block;
+    font-size: 13.5px; color: var(--text-dim);
+    line-height: 1.45;
+}
+.data-map__link {
+    width: 44px; height: 22px; flex-shrink: 0;
+    margin-left: 18px;
+    border-left: 1px dashed var(--green-dim);
+    opacity: 0.7;
+}
+.data-map__row--void {
+    background: transparent;
+    border-style: dashed;
+    border-color: var(--border-strong);
+}
+.data-map__row--void .data-map__icon {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-strong);
+    color: var(--text-muted);
+}
+.data-map__row--void .data-map__text strong { color: var(--text-secondary); }
+.data-map__row .chip { flex-shrink: 0; }
+@media (max-width: 560px) {
+    .data-map { padding: 22px; }
+    .data-map__row { flex-wrap: wrap; }
+    .data-map__row .chip { margin-left: 60px; }
+}
 
 /* ============ Chips & Badges ============ */
 .chip {
@@ -785,9 +819,8 @@ em.italic, .italic-em {
     backdrop-filter: blur(28px) saturate(180%);
     -webkit-backdrop-filter: blur(28px) saturate(180%);
     border: 0.5px solid var(--green-dim);
-    box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.65),
-                0 0 0 0.5px rgba(85, 238, 113, 0.15),
-                0 0 40px -10px var(--green-shadow);
+    box-shadow: 0 24px 60px -16px rgba(0, 0, 0, 0.55),
+                0 2px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),

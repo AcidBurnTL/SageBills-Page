@@ -1,6 +1,6 @@
 # Sagelight Studio Terms of Service
 
-**Last Updated:** May 21, 2026 | **Effective:** May 21, 2026
+**Last Updated:** June 14, 2026 | **Effective:** May 21, 2026
 
 ---
 
@@ -38,7 +38,7 @@
 
 By downloading, installing, or using any Sagelight Studio app ("the App"), you agree to these Terms. If you do not agree, do not use the App.
 
-These Terms constitute a legal agreement between you and **Florin Nica**, an independent individual developer trading as Sagelight Studio, based in Romania, EU. Your use is also governed by our [Privacy Policy](privacy-policy.md) and [GDPR Disclosure](gdpr-policy.md).
+These Terms constitute a legal agreement between you and **Florin Nica**, an independent individual developer trading as Sagelight Studio, based in Romania, EU. Your use is also governed by our [Privacy Policy](privacy-policy.html) and [GDPR Disclosure](gdpr.html).
 
 ## 2. Description of Service
 
@@ -118,7 +118,7 @@ The app provides a CSV export feature for maintaining independent copies of your
 
 ### SageMeet
 
-SageMeet stores data locally and optionally syncs via iCloud. Audio recordings and AI-generated content may be stored in iCloud Drive when sync is enabled. When AI features are used, data is transmitted to OpenAI for processing (see our [Privacy Policy](privacy-policy.md) for details).
+SageMeet stores data locally and optionally syncs via iCloud. Audio recordings and AI-generated content may be stored in iCloud Drive when sync is enabled. When AI features are used, data is transmitted to OpenAI for processing (see our [Privacy Policy](privacy-policy.html) for details).
 
 > **Important:** You are responsible for backing up your recordings. We do not have access to your meeting data.
 

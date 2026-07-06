@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+      gtag('js', new Date());
+      gtag('config', 'AW-17758801825');
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
+    <title>SageMeet — AI Rejestrator Spotkań na iPhone</title>
+    <meta name="description" content="AI rejestrator spotkań na iPhone. Transkrypcje Whisper, podsumowania GPT-4o, własny klucz OpenAI. Tryb Prywatny. Bezpłatne, zgodne z RODO.">
+    <meta property="og:title" content="SageMeet — AI Rejestrator i Transkrypcja Spotkań">
+    <meta property="og:description" content="Nagrywaj spotkania. Otrzymuj transkrypcje Whisper i podsumowania GPT-4o z własnym kluczem API. Tryb Prywatny. Bezpłatne na iOS.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://sagelight-studio.com/pl/sagemeet.html">
+    <meta property="og:site_name" content="Sagelight Studio">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://sagelight-studio.com/assets/og/sagemeet.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SageMeet — AI Rejestrator Spotkań">
+    <meta name="twitter:image" content="https://sagelight-studio.com/assets/og/sagemeet.png">
+    <meta name="apple-itunes-app" content="app-id=6761443109">
+    <meta name="application-name" content="SageMeet">
+    <meta name="theme-color" content="#55ee71">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sagelight-studio.com/pl/sagemeet.html">
+    <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagemeet.html">
+    <link rel="alternate" hreflang="ro" href="https://sagelight-studio.com/ro/sagemeet.html">
+    <link rel="alternate" hreflang="hu" href="https://sagelight-studio.com/hu/sagemeet.html">
+    <link rel="alternate" hreflang="pl" href="https://sagelight-studio.com/pl/sagemeet.html">
+    <link rel="alternate" hreflang="cs" href="https://sagelight-studio.com/cz/sagemeet.html">
+    <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagemeet.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <link rel="stylesheet" href="../assets/sage.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "SoftwareApplication",
+        "name": "SageMeet", "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS 17+",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PLN"},
+        "description": "AI rejestrator spotkań i transkrypcja na iPhone. Transkrypcja Whisper, generowanie notatek GPT-4o, wyszukiwanie semantyczne. Integracja BYOK z OpenAI i pełny Tryb Prywatny.",
+        "inLanguage": "pl",
+        "url": "https://apps.apple.com/pl/app/sagemeet/id6761443109",
+        "image": "https://sagelight-studio.com/assets/og/sagemeet.png",
+        "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://sagelight-studio.com/pl/"},
+        {"@type": "ListItem", "position": 2, "name": "SageMeet", "item": "https://sagelight-studio.com/pl/sagemeet.html"}
+    ]}
+    </script>
+
+    <style>
+        .hero-meet { text-align: center; padding-top: calc(var(--nav-height) + 96px); }
+        .hero-meet h1 { margin: 24px auto 28px; max-width: 14ch; }
+        .hero-meet p.lead { max-width: 640px; margin: 0 auto 36px; }
+        .hero-meet .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        @media (max-width: 880px) { .feature-grid { grid-template-columns: 1fr; } }
+        .feature-card { padding: 32px; }
+        .feature-card .card-icon { margin-bottom: 20px; color: var(--green); }
+        .feature-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+    </style>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Czy SageMeet jest bezpłatny?", "acceptedAnswer": {"@type": "Answer", "text": "Tak — SageMeet jest bezpłatny w App Store. Przynosisz własny klucz OpenAI dla funkcji AI (transkrypcja Whisper i podsumowania GPT-4o), więc płacisz OpenAI bezpośrednio za użycie, a nie subskrypcję nam."}}, {"@type": "Question", "name": "Czy SageMeet wysyła audio do OpenAI?", "acceptedAnswer": {"@type": "Answer", "text": "Tylko gdy jawnie uruchomisz funkcję AI (transkrypcja, podsumowanie, wyszukiwanie semantyczne) i tylko przez Twój własny klucz OpenAI. Samo nagrywanie jest całkowicie lokalne. Tryb Prywatny wyłącza wszystkie zewnętrzne żądania."}}, {"@type": "Question", "name": "Co to jest BYOK?", "acceptedAnswer": {"@type": "Answer", "text": "Bring Your Own Key. Zamiast subskrypcji przynosisz własny klucz API OpenAI. Klucz jest przechowywany w iOS Keychain i używany tylko do uwierzytelniania żądań, które inicjujesz. Nie mamy backendu, więc nie możemy Cię obciążyć."}}, {"@type": "Question", "name": "Czy OpenAI używa nagrań do trenowania modeli?", "acceptedAnswer": {"@type": "Answer", "text": "Nie. Warunki API OpenAI wyraźnie określają, że dane wysyłane przez API nie są używane do trenowania modeli. OpenAI jest certyfikowane w ramach EU-US Data Privacy Framework."}}, {"@type": "Question", "name": "Gdzie są przechowywane nagrania?", "acceptedAnswer": {"@type": "Answer", "text": "Nagrania, transkrypcje i notatki AI pozostają na Twoim iPhone, z opcjonalną synchronizacją iCloud do innych urządzeń Apple. Sagelight Studio nigdy nie otrzymuje ani nie przechowuje danych Twoich spotkań."}}]}
+    </script>
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav__inner">
+        <a href="index.html" class="nav__logo"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></a>
+        <ul class="nav__tabs" id="navTabs" role="list">
+            <li><a href="sagedocs.html" class="nav__tab">SageDocs</a></li>
+            <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+            <li><a href="sagemeet.html" class="nav__tab nav__tab--active" aria-current="page">SageMeet</a></li>
+            <li><a href="../blog.html" class="nav__tab">Blog</a></li>
+        </ul>
+        <div class="nav__actions">
+            <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Zmień motyw"><span id="themeIcon" aria-hidden="true">☾</span></button>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="hero hero-meet">
+        <div class="container">
+            <div class="hero__inner">
+                <div class="eyebrow fade-up d1">NOWE · INTEGRACJA BYOK</div>
+                <h1 class="h-display fade-up d2">Rejestrator spotkań AI <em class="italic-em">i transkrypcja na iPhone.</em></h1>
+                <p class="text-lead lead fade-up d3">
+                    AI rejestrator spotkań na iPhone. Transkrypcje Whisper, podsumowania GPT-4o, wyszukiwanie semantyczne &mdash; z własnym kluczem OpenAI. Tryb Prywatny wyłącza całą transmisję zewnętrzną. Bezpłatne, zgodne z RODO.
+                </p>
+                <div class="ctas fade-up d4">
+                    <a href="https://apps.apple.com/pl/app/sagemeet/id6761443109" onclick="gtagReportConversion('AW-17758801825/RE8zCOai2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Pobierz SageMeet z App Store"><img src="../assets/badges/app-store-badge.svg" alt="Pobierz z App Store" width="200" height="60" loading="lazy"></a>
+                    <a href="#features" class="btn btn--ghost btn--lg">Zobacz funkcje</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section--lg">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="eyebrow eyebrow--static">Funkcje</div>
+                <h2 class="h-section">AI <span class="italic-em">pod Twoją kontrolą</span>.</h2>
+                <p>BYOK (Bring Your Own Key) oznacza, że Ty kontrolujesz dane i koszty. Nie mamy backendu, nigdy nie widzimy treści Twoich spotkań.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">graphic_eq</span></div>
+                    <h3>Transkrypcja Whisper</h3>
+                    <p>Audio konwertowane na tekst przez OpenAI Whisper API. Wysoka dokładność dla polskiego, angielskiego i innych języków europejskich.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">auto_awesome</span></div>
+                    <h3>Notatki generowane GPT-4o</h3>
+                    <p>Podsumowania spotkań, listy zadań, kluczowe decyzje &mdash; wszystko generowane przez GPT-4o. Edytuj, eksportuj lub usuń według uznania.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">search</span></div>
+                    <h3>Wyszukiwanie semantyczne</h3>
+                    <p>Osadzenia wektorowe treści spotkań przechowywane w lokalnej bazie SQLite. Szukasz według znaczenia, nie tylko słów kluczowych.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">vpn_lock</span></div>
+                    <h3>Tryb Prywatny</h3>
+                    <p>Jeden przełącznik wyłącza wszystkie wywołania zewnętrzne. Nagrywaj, odtwarzaj i organizuj lokalnie &mdash; zero danych wysłanych gdziekolwiek.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">key_vertical</span></div>
+                    <h3>Twój klucz, Twoje konto</h3>
+                    <p>Klucz OpenAI znajduje się w iOS Keychain. Płacisz OpenAI bezpośrednio za użycie. Nigdy nie widzimy Twojej treści ani kosztów.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">calendar_month</span></div>
+                    <h3>Integracja Kalendarza</h3>
+                    <p>Odczytuje (tylko do odczytu) Twój kalendarz dla kontekstu. SageMeet wie, do którego spotkania się odnosisz &mdash; nie modyfikuje niczego w kalendarzu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section--lg">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="eyebrow eyebrow--static">Często zadawane pytania</div>
+                <h2 class="h-section">FAQ</h2>
+            </div>
+            <div style="max-width: 720px; margin: 0 auto;">
+                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
+                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Czy SageMeet jest bezpłatny?</summary>
+                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Tak &mdash; SageMeet jest bezpłatny w App Store. Przynosisz własny klucz OpenAI dla funkcji AI (transkrypcja Whisper i podsumowania GPT-4o), więc płacisz OpenAI bezpośrednio za użycie, a nie subskrypcję nam.</div>
+                </details>
+                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
+                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Czy SageMeet wysyła audio do OpenAI?</summary>
+                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Tylko gdy jawnie uruchomisz funkcję AI (transkrypcja, podsumowanie, wyszukiwanie semantyczne) i tylko przez Twój własny klucz OpenAI. Samo nagrywanie jest całkowicie lokalne. Tryb Prywatny wyłącza wszystkie zewnętrzne żądania.</div>
+                </details>
+                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
+                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Co to jest BYOK?</summary>
+                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Bring Your Own Key. Zamiast subskrypcji przynosisz własny klucz API OpenAI. Klucz jest przechowywany w iOS Keychain i używany tylko do uwierzytelniania żądań, które inicjujesz. Nie mamy backendu, więc nie możemy Cię obciążyć.</div>
+                </details>
+                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
+                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Czy OpenAI używa nagrań do trenowania modeli?</summary>
+                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Nie. Warunki API OpenAI wyraźnie określają, że dane wysyłane przez API nie są używane do trenowania modeli. OpenAI jest certyfikowane w ramach EU-US Data Privacy Framework.</div>
+                </details>
+                <details class="faq" style="margin-bottom: 16px; padding: 20px 24px; background: var(--bg-surface-2); border-radius: var(--radius); border: 0.5px solid var(--border);">
+                    <summary style="font-weight: 600; cursor: pointer; font-size: 17px;">Gdzie są przechowywane nagrania?</summary>
+                    <div style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Nagrania, transkrypcje i notatki AI pozostają na Twoim iPhone, z opcjonalną synchronizacją iCloud do innych urządzeń Apple. Sagelight Studio nigdy nie otrzymuje ani nie przechowuje danych Twoich spotkań.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section--lg">
+        <div class="container">
+            <div class="glass-card cta-block reveal" style="position: relative; overflow: hidden; padding: 80px 56px; text-align: center; border-radius: var(--radius-xl); border-color: var(--green-dim);">
+                <h2 class="h-section">Zatrzymaj wszystko. <span class="italic-em">Prywatnie.</span></h2>
+                <p class="text-lead">Bezpłatne. Przynosisz własny klucz OpenAI. Na iPhone, iPad i Mac. Zgodne z RODO by design.</p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                    <a href="https://apps.apple.com/pl/app/sagemeet/id6761443109" onclick="gtagReportConversion('AW-17758801825/RE8zCOai2aocEKGfh5RC');" class="app-store-badge-link" aria-label="Pobierz SageMeet z App Store"><img src="../assets/badges/app-store-badge.svg" alt="Pobierz z App Store" width="200" height="60" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__brand-block">
+            <div class="footer__brand"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></div>
+            <p class="footer__tagline">Prywatność przez przejrzystość. Niezależne studio tworzące lokalne aplikacje iOS i macOS w Rumunii, UE.</p>
+            <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
+        </div>
+        <div><div class="footer__col-title">Aplikacje</div><ul class="footer__list"><li><a href="sagedocs.html">SageDocs</a></li><li><a href="sagebills.html">SageBills</a></li><li><a href="sagemeet.html">SageMeet</a></li></ul></div>
+        <div><div class="footer__col-title">Studio</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Kontakt</a></li></ul></div>
+        <div><div class="footer__col-title">Prawne</div><ul class="footer__list"><li><a href="privacy-policy.html">Polityka Prywatności</a></li><li><a href="gdpr.html">RODO</a></li><li><a href="terms.html">Regulamin</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Preferencje cookies</button></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Sagelight Studio · Wykonane z troską w Rumunii, UE</span><span>Prywatność przez przejrzystość</span></div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+<script src="../assets/consent.js" defer></script>
+</body>
+</html>

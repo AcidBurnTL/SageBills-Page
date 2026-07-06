@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -10,15 +11,20 @@
       gtag('set', 'url_passthrough', true); gtag('set', 'ads_data_redaction', true);
       gtag('js', new Date()); gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>Polityka Prywatności — Sagelight Studio</title>
     <meta name="description" content="Polityka Prywatności aplikacji Sagelight Studio — SageBills, SageMeet i SageDocs. Lokalne-pierwsze, zgodne z RODO. Zero analityki. Zero śledzenia.">
     <meta property="og:title" content="Polityka Prywatności — Sagelight Studio">
     <meta property="og:description" content="Jak Sagelight Studio obsługuje Twoje dane. Lokalne-pierwsze, zgodne z RODO, zero śledzenia.">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://sagelight-studio.com/pl/privacy-policy.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="pl_PL">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:locale:alternate" content="hu_HU">
+    <meta property="og:locale:alternate" content="cs_CZ">
     <meta property="og:image" content="https://sagelight-studio.com/assets/og/legal.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -36,12 +42,41 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <link rel="stylesheet" href="../assets/sage.css">
     <link rel="stylesheet" href="../assets/legal.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Polityka Prywatności — Sagelight Studio",
+        "url": "https://sagelight-studio.com/pl/privacy-policy.html",
+        "description": "Polityka Prywatności obejmująca SageBills, SageMeet i SageDocs od Sagelight Studio.",
+        "datePublished": "2026-05-21",
+        "dateModified": "2026-06-14",
+        "inLanguage": "pl",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Sagelight Studio",
+            "url": "https://sagelight-studio.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sagelight Studio",
+            "url": "https://sagelight-studio.com/",
+            "email": "contact@sagelight-studio.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://sagelight-studio.com/pl/"},
+                {"@type": "ListItem", "position": 2, "name": "Prawne", "item": "https://sagelight-studio.com/pl/privacy-policy.html"},
+                {"@type": "ListItem", "position": 3, "name": "Polityka Prywatności", "item": "https://sagelight-studio.com/pl/privacy-policy.html"}
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
 
@@ -51,18 +86,18 @@
 
 <nav class="nav" role="navigation" aria-label="Nawigacja główna">
     <div class="nav__inner">
-        <a href="../index.html" class="nav__logo"><span class="nav__logo-leaf" aria-hidden="true">🌿</span>Sagelight <span>Studio</span></a>
+        <a href="../index.html" class="nav__logo"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></a>
         <ul class="nav__tabs" id="navTabs" role="list">
-            <li><a href="../sagedocs.html" class="nav__tab">SageDocs</a></li>
-            <li><a href="../sagebills.html" class="nav__tab">SageBills</a></li>
-            <li><a href="../sagemeet.html" class="nav__tab">SageMeet</a></li>
+            <li><a href="sagedocs.html" class="nav__tab">SageDocs</a></li>
+            <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+            <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="privacy-policy.html" class="nav__tab nav__tab--active" aria-current="page">Prywatność</a></li>
             <li><a href="gdpr.html" class="nav__tab">RODO</a></li>
             <li><a href="terms.html" class="nav__tab">Regulamin</a></li>
         </ul>
         <div class="nav__actions">
             <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Zmień motyw"><span id="themeIcon" aria-hidden="true">☾</span></button>
-            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu"><span aria-hidden="true" class="material-symbols-outlined">menu</span></button>
         </div>
     </div>
 </nav>
@@ -73,7 +108,7 @@
             <div class="doc-header__badge">Prawne</div>
             <h1 class="doc-header__title">Polityka <em>Prywatności</em></h1>
             <p class="doc-header__subtitle">Niniejsza polityka obejmuje wszystkie aplikacje Sagelight Studio, w tym SageBills, SageMeet i SageDocs. Twoje dane należą do Ciebie.</p>
-            <div class="doc-header__meta"><span>Ostatnia aktualizacja: 21 maja 2026</span><span>Obowiązuje od: 21 maja 2026</span></div>
+            <div class="doc-header__meta"><span>Ostatnia aktualizacja: 14 czerwca 2026</span><span>Obowiązuje od: 21 maja 2026</span></div>
         </header>
 
         <div class="key-points animate-in animate-in--d1">
@@ -347,7 +382,7 @@
                 </ul>
                 <p>Dodatkowo: <code>ads_data_redaction: true</code> i <code>url_passthrough: true</code>.</p>
                 <p><strong>Podstawa prawna:</strong> art. 6(1)(f) RODO (uzasadniony interes) dla stanu domyślnego; art. 6(1)(a) RODO (zgoda) dla stanu opt-in.</p>
-                <p><strong>Odbiorcy danych:</strong> Google Ireland Limited (UE) i Google LLC (USA) w ramach EU-US DPF.</p>
+                <p><strong>Odbiorcy danych:</strong> Google Ireland Limited (podmiot przetwarzający, podmiot z siedzibą w UE) i Google LLC (podmiot podprzetwarzający, Stany Zjednoczone), w ramach <strong>EU-US Data Privacy Framework</strong> oraz <strong>Standardowych Klauzul Umownych (SCC)</strong> włączonych do Warunków Ochrony Danych Google obowiązujących między administratorami (Controller-Controller Data Protection Terms).</p>
                 <p><strong>Wycofanie zgody:</strong> w dowolnym momencie poprzez link <strong>Preferencje cookies</strong> w stopce.</p>
             </section>
 
@@ -358,7 +393,9 @@
                     <div class="right-card"><div class="right-card__article">art. 15</div><div class="right-card__title">Prawo dostępu</div><div class="right-card__desc">Wszystkie dane widoczne w aplikacji.</div></div>
                     <div class="right-card"><div class="right-card__article">art. 16</div><div class="right-card__title">Sprostowanie</div><div class="right-card__desc">Edytuj dane w aplikacji.</div></div>
                     <div class="right-card"><div class="right-card__article">art. 17</div><div class="right-card__title">Usunięcie</div><div class="right-card__desc">Usuń pojedyncze lub wszystkie rekordy.</div></div>
+                    <div class="right-card"><div class="right-card__article">art. 18</div><div class="right-card__title">Ograniczenie przetwarzania</div><div class="right-card__desc">Żądaj ograniczenia przetwarzania, pisząc na contact@sagelight-studio.com.</div></div>
                     <div class="right-card"><div class="right-card__article">art. 20</div><div class="right-card__title">Przenoszenie</div><div class="right-card__desc">Eksport z aplikacji.</div></div>
+                    <div class="right-card"><div class="right-card__article">art. 21</div><div class="right-card__title">Sprzeciw</div><div class="right-card__desc">Wnieś sprzeciw wobec przetwarzania lub wycofaj zgodę w Ustawieniach w dowolnym momencie.</div></div>
                     <div class="right-card"><div class="right-card__article">art. 7(3)</div><div class="right-card__title">Wycofanie zgody</div><div class="right-card__desc">W Ustawieniach.</div></div>
                     <div class="right-card"><div class="right-card__article">art. 77</div><div class="right-card__title">Skarga</div><div class="right-card__desc">Do krajowego organu ochrony danych.</div></div>
                 </div>
@@ -390,11 +427,11 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span>Sagelight <span>Studio</span></div>
+            <div class="footer__brand"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></div>
             <p class="footer__tagline">Prywatność przez przejrzystość. Niezależne studio tworzące lokalne aplikacje iOS i macOS w Rumunii, UE.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>
-        <div><div class="footer__col-title">Aplikacje</div><ul class="footer__list"><li><a href="../sagedocs.html">SageDocs</a></li><li><a href="../sagebills.html">SageBills</a></li><li><a href="../sagemeet.html">SageMeet</a></li></ul></div>
+        <div><div class="footer__col-title">Aplikacje</div><ul class="footer__list"><li><a href="sagedocs.html">SageDocs</a></li><li><a href="sagebills.html">SageBills</a></li><li><a href="sagemeet.html">SageMeet</a></li></ul></div>
         <div><div class="footer__col-title">Studio</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Kontakt</a></li></ul></div>
         <div><div class="footer__col-title">Prawne</div><ul class="footer__list"><li><a href="privacy-policy.html">Polityka Prywatności</a></li><li><a href="gdpr.html">RODO</a></li><li><a href="terms.html">Regulamin</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Preferencje cookies</button></li></ul></div>
     </div>

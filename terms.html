@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <!-- Google Ads — Consent Mode v2 (default denied; banner will update on opt-in) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,16 +20,21 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>Terms of Service — Sagelight Studio Apps</title>
     <meta name="description" content="Terms of Service for Sagelight Studio apps — SageBills, SageMeet, SageDocs. Transparent pricing, full EU consumer rights, Romanian governing law.">
     <meta name="keywords" content="Sagelight Studio terms of service, SageBills terms, SageMeet terms, SageDocs terms, EU consumer rights, Romanian law">
     <meta property="og:title" content="Terms of Service — Sagelight Studio">
     <meta property="og:description" content="The agreement between you and Sagelight Studio. Free to use, governed by Romanian law, full EU consumer rights preserved.">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://sagelight-studio.com/terms.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:locale:alternate" content="hu_HU">
+    <meta property="og:locale:alternate" content="pl_PL">
+    <meta property="og:locale:alternate" content="cs_CZ">
     <meta property="og:image" content="https://sagelight-studio.com/assets/og/legal.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -51,10 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="stylesheet" href="assets/sage.css">
     <link rel="stylesheet" href="assets/legal.css">
     <script type="application/ld+json">
@@ -64,7 +68,7 @@
         "name": "Terms of Service — Sagelight Studio",
         "url": "https://sagelight-studio.com/terms.html",
         "description": "Terms of Service for SageBills, SageMeet, and SageDocs by Sagelight Studio.",
-        "dateModified": "2026-05-21",
+        "dateModified": "2026-06-14",
         "inLanguage": "en",
         "isPartOf": {
             "@type": "WebSite",
@@ -79,6 +83,12 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sagelight-studio.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Terms of Service", "item": "https://sagelight-studio.com/terms.html"}
+    ]}
+    </script>
 </head>
 <body>
 
@@ -89,7 +99,7 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-            <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
@@ -105,7 +115,7 @@
                 <span id="themeIcon" aria-hidden="true">☾</span>
             </button>
             <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
-                <span class="material-symbols-outlined">menu</span>
+                <span aria-hidden="true" class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
@@ -118,7 +128,7 @@
             <h1 class="doc-header__title">Terms of <em>Service</em></h1>
             <p class="doc-header__subtitle">The agreement between you and Sagelight Studio, covering SageBills, SageMeet, and SageDocs. Clear, fair, and respectful of your rights as a European consumer.</p>
             <div class="doc-header__meta">
-                <span>Last updated: May 21, 2026</span>
+                <span>Last updated: June 14, 2026</span>
                 <span>Effective: May 21, 2026</span>
             </div>
         </header>
@@ -248,7 +258,7 @@
 
         <section class="section" id="t6">
             <h2 class="section__heading"><span class="section__num">06</span> Data Ownership</h2>
-            <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data.</p>
+            <p>All data you enter remains <strong>your property</strong>. We do not claim any ownership, license, or rights to your data. You are responsible for the accuracy of data you enter, including reviewing OCR-extracted results.</p>
             <p><strong>SageMeet AI outputs:</strong> AI-generated outputs are derived content. You own your recordings and input data. AI outputs are subject to <a href="https://openai.com/policies/terms-of-use" target="_blank" rel="noopener">OpenAI's usage policies</a>.</p>
             <p><strong>SageDocs:</strong> All documents and metadata you store remain entirely your property. Encrypted data synced to iCloud is protected by your personal encryption key.</p>
         </section>
@@ -257,6 +267,7 @@
             <h2 class="section__heading"><span class="section__num">07</span> Intellectual Property</h2>
             <p>The apps' design, code, UI, graphics, and icons are owned by Sagelight Studio and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license for personal use.</p>
             <p>You may not copy, modify, distribute, reverse-engineer, or use any app to develop a competing product.</p>
+            <p>If you provide feedback or suggestions, you grant us a non-exclusive, royalty-free right to incorporate that feedback without obligation.</p>
         </section>
 
         <section class="section" id="t8">
@@ -297,6 +308,7 @@
             <h2 class="section__heading"><span class="section__num">12</span> Termination</h2>
             <p>You may stop using any Sagelight Studio app at any time by uninstalling. Upon termination, your data remains on your device.</p>
             <p>We may update these Terms from time to time. Material changes will have at least <strong>30 days' notice</strong>. These Terms, together with the Privacy Policy and GDPR Disclosure, constitute the entire agreement.</p>
+            <p>Our apps are also subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement (EULA)</a>.</p>
         </section>
 
         <section class="section" id="t13">
@@ -313,7 +325,7 @@
     <div class="footer__inner">
         <div class="footer__brand-block">
             <div class="footer__brand">
-                <span aria-hidden="true">🌿</span>
+                <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
                 Sagelight <span>Studio</span>
             </div>
             <p class="footer__tagline">Privacy through clarity. An independent studio building local-first iOS and macOS apps from Romania, EU.</p>

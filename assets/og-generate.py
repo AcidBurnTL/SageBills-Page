@@ -242,10 +242,74 @@ PAGES = [
 ]
 
 
+BLOG_POSTS = [
+    {
+        "out": "blog-save-utility-bills-europe.png",
+        "eyebrow": "Blog · Money Saving",
+        "title_lines": [
+            [("Save ", "reg"), ("€1,200/year", "em")],
+            [("on utility bills.", "reg")],
+        ],
+        "subtitle": "Where European households overpay on electricity, gas, water, and building services — and how to recover it, country by country.",
+        "footer": "Electricity · Gas · Water · Building Fees",
+    },
+    {
+        "out": "blog-romanian-electricity-bill-guide.png",
+        "eyebrow": "Blog · Romania",
+        "title_lines": [
+            [("Your electricity bill,", "reg")],
+            [("decoded ", "em"), ("line by line.", "reg")],
+        ],
+        "subtitle": "A line-by-line decoder for Romanian electricity invoices: tariffs, network fees, green certificates, and how to spot errors.",
+        "footer": "Enel · Electrica · Tariffs · Certificates",
+    },
+    {
+        "out": "blog-sagebills-v1-launch.png",
+        "eyebrow": "Blog · Product Update",
+        "title_lines": [
+            [("SageBills v1.0", "reg")],
+            [("is ", "reg"), ("live.", "em")],
+        ],
+        "subtitle": "A transparent look at the 40+ bill categories, on-device OCR, anomaly detection, and what's coming next.",
+        "footer": "40+ Categories · OCR · On-device AI",
+    },
+    {
+        "out": "blog-winter-heating-cee-2025-2026.png",
+        "eyebrow": "Blog · Market Insights",
+        "title_lines": [
+            [("Winter heating in CEE:", "reg")],
+            [("2025–2026 ", "em"), ("review.", "reg")],
+        ],
+        "subtitle": "Gas, district heating, and price caps across Romania, Poland, Hungary, and Czechia — what this season actually cost households.",
+        "footer": "Romania · Poland · Hungary · Czechia",
+    },
+    {
+        "out": "blog-apps-european-renter-iphone.png",
+        "eyebrow": "Blog · Guides",
+        "title_lines": [
+            [("5 apps every", "reg")],
+            [("European renter ", "em"), ("needs.", "reg")],
+        ],
+        "subtitle": "The renter's essential iPhone workflow: utility tracking, document storage, cross-border payments, and invoice translation.",
+        "footer": "Renting · Utilities · Documents",
+    },
+    {
+        "out": "blog-building-maintenance-fees-romania.png",
+        "eyebrow": "Blog · Romania",
+        "title_lines": [
+            [("The hidden cost of", "reg")],
+            [("întreținere", "em"), (" fees.", "reg")],
+        ],
+        "subtitle": "Romanian building maintenance fees are rarely explained and almost never audited. What's mandatory, what's added, and your rights.",
+        "footer": "Întreținere · Audits · Tenant Rights",
+    },
+]
+
+
 def main():
-    for p in PAGES:
+    for p in PAGES + BLOG_POSTS:
         page(p["out"], p["eyebrow"], p["title_lines"], p["subtitle"], p["footer"])
-    print(f"\nGenerated {len(PAGES)} OG images in {OUT}")
+    print(f"\nGenerated {len(PAGES) + len(BLOG_POSTS)} OG images in {OUT}")
 
 
 if __name__ == "__main__":

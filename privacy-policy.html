@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <!-- Google Ads — Consent Mode v2 (default denied; banner will update on opt-in) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,16 +20,21 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>Privacy Policy — Sagelight Studio Apps</title>
     <meta name="description" content="Privacy Policy for Sagelight Studio apps — SageBills, SageMeet, and SageDocs. Local-first, GDPR-compliant. Zero analytics. Zero tracking.">
     <meta name="keywords" content="Sagelight Studio privacy policy, SageBills privacy, SageMeet privacy, SageDocs privacy, GDPR iOS app, local-first apps">
     <meta property="og:title" content="Privacy Policy — Sagelight Studio">
     <meta property="og:description" content="How Sagelight Studio handles your data. Local-first, GDPR-compliant, zero tracking. Covers SageBills, SageMeet, and SageDocs.">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://sagelight-studio.com/privacy-policy.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ro_RO">
+    <meta property="og:locale:alternate" content="hu_HU">
+    <meta property="og:locale:alternate" content="pl_PL">
+    <meta property="og:locale:alternate" content="cs_CZ">
     <meta property="og:image" content="https://sagelight-studio.com/assets/og/legal.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -51,10 +57,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     <link rel="stylesheet" href="assets/sage.css">
     <link rel="stylesheet" href="assets/legal.css">
     <script type="application/ld+json">
@@ -64,7 +68,8 @@
         "name": "Privacy Policy — Sagelight Studio",
         "url": "https://sagelight-studio.com/privacy-policy.html",
         "description": "Privacy Policy covering SageBills, SageMeet, and SageDocs by Sagelight Studio.",
-        "dateModified": "2026-05-21",
+        "datePublished": "2026-05-21",
+        "dateModified": "2026-06-14",
         "inLanguage": "en",
         "isPartOf": {
             "@type": "WebSite",
@@ -97,7 +102,7 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-            <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
@@ -113,7 +118,7 @@
                 <span id="themeIcon" aria-hidden="true">☾</span>
             </button>
             <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">
-                <span class="material-symbols-outlined">menu</span>
+                <span aria-hidden="true" class="material-symbols-outlined">menu</span>
             </button>
         </div>
     </div>
@@ -126,7 +131,7 @@
             <h1 class="doc-header__title">Privacy <em>Policy</em></h1>
             <p class="doc-header__subtitle">This policy covers all Sagelight Studio apps, including SageBills, SageMeet, and SageDocs. Your data belongs to you.</p>
             <div class="doc-header__meta">
-                <span>Last updated: May 21, 2026</span>
+                <span>Last updated: June 14, 2026</span>
                 <span>Effective: May 21, 2026</span>
             </div>
         </header>
@@ -515,7 +520,7 @@
                     <li>If you opt in via the banner, you can grant <strong>Advertising</strong> and <strong>Analytics</strong> consent independently. A Google Ads cookie may then be stored to attribute App Store visits to specific ad campaigns.</li>
                 </ul>
                 <p><strong>Legal basis:</strong> Article 6(1)(f) GDPR (legitimate interest in measuring marketing effectiveness without storing identifiers) for the cookieless default-denied state; Article 6(1)(a) GDPR (specific, informed, freely-given consent) for the opted-in state.</p>
-                <p><strong>Data recipient:</strong> Google Ireland Limited (processor, EU establishment) and Google LLC (sub-processor, United States), under the <strong>EU-US Data Privacy Framework</strong>.</p>
+                <p><strong>Data recipient:</strong> Google Ireland Limited (processor, EU establishment) and Google LLC (sub-processor, United States), under the <strong>EU-US Data Privacy Framework</strong> and the <strong>Standard Contractual Clauses</strong> incorporated into Google's Controller-Controller Data Protection Terms.</p>
                 <p><strong>Withdrawal of consent:</strong> at any time via the <strong>Cookie preferences</strong> link in the footer, by clearing site cookies, by using a browser-level tracking blocker, or by emailing us at <a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a>. Your choice is persisted only in your browser's localStorage; nothing about it is transmitted to us.</p>
                 <p>The tag does not run inside any of our apps; it is exclusive to this marketing website.</p>
             </section>
@@ -540,9 +545,19 @@
                         <div class="right-card__desc">Delete individual records or all data via Settings.</div>
                     </div>
                     <div class="right-card">
+                        <div class="right-card__article">Art. 18</div>
+                        <div class="right-card__title">Right to Restriction</div>
+                        <div class="right-card__desc">Request restriction of processing by emailing contact@sagelight-studio.com.</div>
+                    </div>
+                    <div class="right-card">
                         <div class="right-card__article">Art. 20</div>
                         <div class="right-card__title">Right to Portability</div>
                         <div class="right-card__desc">Export your data from within the app.</div>
+                    </div>
+                    <div class="right-card">
+                        <div class="right-card__article">Art. 21</div>
+                        <div class="right-card__title">Right to Object</div>
+                        <div class="right-card__desc">Object to processing or withdraw consent in Settings at any time.</div>
                     </div>
                     <div class="right-card">
                         <div class="right-card__article">Art. 7(3)</div>
@@ -587,7 +602,7 @@
     <div class="footer__inner">
         <div class="footer__brand-block">
             <div class="footer__brand">
-                <span aria-hidden="true">🌿</span>
+                <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
                 Sagelight <span>Studio</span>
             </div>
             <p class="footer__tagline">Privacy through clarity. An independent studio building local-first iOS and macOS apps from Romania, EU.</p>

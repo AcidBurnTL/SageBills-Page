@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <!-- Google Ads — Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,12 +14,13 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
-    <title>SageBills — Tracker Privat de Facturi Utilități pentru iPhone</title>
+    <title>SageBills — Tracker de Facturi Utilități pentru iPhone</title>
     <meta name="description" content="Urmărește fiecare factură la utilități pe iPhone și Mac. Scanare OCR a facturilor, predicții de cost, alertă pentru anomalii. Gratuit, fără cont, conform GDPR.">
     <meta property="og:title" content="SageBills — Tracker Privat de Facturi Utilități">
     <meta property="og:description" content="Urmărește facturi la utilități, prezice costuri, detectează anomalii. Construit pentru România. Gratuit, fără cont.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="product">
     <meta property="og:url" content="https://sagelight-studio.com/ro/sagebills.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="ro_RO">
@@ -36,18 +38,19 @@
     <meta name="theme-color" content="#55ee71">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://sagelight-studio.com/ro/sagebills.html">
-    <link rel="alternate" hreflang="ro" href="https://sagelight-studio.com/ro/sagebills.html">
     <link rel="alternate" hreflang="en" href="https://sagelight-studio.com/sagebills.html">
+    <link rel="alternate" hreflang="ro" href="https://sagelight-studio.com/ro/sagebills.html">
+    <link rel="alternate" hreflang="hu" href="https://sagelight-studio.com/hu/sagebills.html">
+    <link rel="alternate" hreflang="pl" href="https://sagelight-studio.com/pl/sagebills.html">
+    <link rel="alternate" hreflang="cs" href="https://sagelight-studio.com/cz/sagebills.html">
     <link rel="alternate" hreflang="x-default" href="https://sagelight-studio.com/sagebills.html">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <link rel="stylesheet" href="../assets/sage.css">
 
     <script type="application/ld+json">
@@ -61,9 +64,15 @@
         "url": "https://apps.apple.com/ro/app/sagebills/id6762021142",
         "downloadUrl": "https://apps.apple.com/ro/app/sagebills/id6762021142",
         "image": "https://sagelight-studio.com/assets/og/sagebills.png",
-        "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com"},
-        "publisher": {"@type": "Organization", "name": "Sagelight Studio"}
+        "author": {"@id": "https://sagelight-studio.com/#organization"},
+        "publisher": {"@id": "https://sagelight-studio.com/#organization"}
     }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://sagelight-studio.com/ro/"},
+        {"@type": "ListItem", "position": 2, "name": "SageBills", "item": "https://sagelight-studio.com/ro/sagebills.html"}
+    ]}
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ro", "mainEntity": [
@@ -99,7 +108,7 @@
 <nav class="nav" role="navigation" aria-label="Navigare principală">
     <div class="nav__inner">
         <a href="index.html" class="nav__logo">
-            <span class="nav__logo-leaf" aria-hidden="true">🌿</span>
+            <svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>
             Sagelight <span>Studio</span>
         </a>
         <ul class="nav__tabs" id="navTabs" role="list">
@@ -123,7 +132,7 @@
             <div class="hero-bills__grid">
                 <div>
                     <div class="eyebrow fade-up d1">SageBills · Tracker Facturi</div>
-                    <h1 class="h-display fade-up d2">Fiecare factură. Fiecare <em class="italic-em">furnizor</em>. O singură aplicație.</h1>
+                    <h1 class="h-display fade-up d2">Tracker pentru facturi la utilități<br>pentru <em class="italic-em">fiecare furnizor european</em>.</h1>
                     <p class="text-lead lead fade-up d3">
                         Urmărește facturile la electricitate, gaz, apă, întreținere bloc, internet și mobil. Scanare OCR pentru facturile pe hârtie. Predicții de cost și alerte pentru anomalii. Totul pe iPhone și Mac &mdash; cu zero date care părăsesc dispozitivul.
                     </p>
@@ -154,32 +163,32 @@
 
             <div class="feature-grid">
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">document_scanner</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">document_scanner</span></div>
                     <h3>Scanare OCR pe dispozitiv</h3>
                     <p>Fotografiezi o factură Enel, Electrica, ENGIE, Digi sau orice furnizor &mdash; SageBills extrage suma, data și furnizorul folosind Vision framework-ul Apple, complet local.</p>
                 </div>
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">trending_up</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">trending_up</span></div>
                     <h3>Predicții de cost</h3>
                     <p>Predicții bazate pe medie mobilă din istoricul tău, pe furnizor și categorie. Vezi cât e probabil să plătești luna viitoare înainte să primești factura.</p>
                 </div>
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">notifications_active</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">notifications_active</span></div>
                     <h3>Detectare anomalii</h3>
                     <p>Orice factură care depășește baseline-ul tău istoric cu mai mult de 20% este marcată automat. Prinzi erorile de citire estimată și corecțiile întârziate.</p>
                 </div>
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">savings</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">savings</span></div>
                     <h3>Obiective de economisire</h3>
                     <p>Stabilește un buget lunar per categorie. Urmărește progresul în timpul ciclului de facturare. Vezi unde stai înainte să sosească facturile.</p>
                 </div>
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">cloud_off</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">cloud_off</span></div>
                     <h3>Zero servere</h3>
                     <p>Datele tale stau pe dispozitiv prin SwiftData, sincronizate doar prin iCloud-ul tău personal. Sagelight Studio nu poate accesa, citi sau recupera nimic.</p>
                 </div>
                 <div class="glass-card feature-card reveal">
-                    <div class="card-icon"><span class="material-symbols-outlined fill" style="font-size: 32px;">file_download</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined fill" style="font-size: 32px;">file_download</span></div>
                     <h3>Export CSV</h3>
                     <p>Exportă toate înregistrările ca CSV prin share sheet-ul iOS. Util pentru chiriași care trebuie să justifice cheltuielile sau pentru deducere fiscală.</p>
                 </div>
@@ -234,7 +243,7 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span> Sagelight <span>Studio</span></div>
+            <div class="footer__brand"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg> Sagelight <span>Studio</span></div>
             <p class="footer__tagline">Privacy through clarity. Un studio independent care construiește aplicații iOS și macOS local-first, din România, UE.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>

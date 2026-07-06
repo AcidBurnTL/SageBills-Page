@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){try{var t=localStorage.getItem('sage-theme')||'dark';var r=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.setAttribute('data-theme',r);}catch(e){}})();</script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -12,12 +13,13 @@
       gtag('js', new Date());
       gtag('config', 'AW-17758801825');
     </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758801825"></script>
     <title>SageDocs — Šifrovaný AES-256 Trezor pro iPhone</title>
     <meta name="description" content="Šifrovaný AES-256 trezor pro občanské průkazy, smlouvy, pojistky a lékařské dokumenty. Biometrická ochrana. Šifrovaná iCloud synchronizace. iPhone a Mac.">
     <meta property="og:title" content="SageDocs — Šifrovaný Osobní Dokumentový Trezor">
     <meta property="og:description" content="Šifrovaný AES-256 trezor pro osobní dokumenty. Biometrická ochrana. iOS a macOS.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="product">
     <meta property="og:url" content="https://sagelight-studio.com/cz/sagedocs.html">
     <meta property="og:site_name" content="Sagelight Studio">
     <meta property="og:locale" content="cs_CZ">
@@ -44,10 +46,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <link rel="stylesheet" href="../assets/sage.css">
 
     <script type="application/ld+json">
@@ -60,8 +60,25 @@
         "inLanguage": "cs",
         "url": "https://apps.apple.com/cz/app/sagedocs/id6762064711",
         "image": "https://sagelight-studio.com/assets/og/sagedocs.png",
-        "author": {"@type": "Organization", "name": "Sagelight Studio", "url": "https://sagelight-studio.com/"}
+        "author": {"@id": "https://sagelight-studio.com/#organization"},
+        "publisher": {"@id": "https://sagelight-studio.com/#organization"}
     }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://sagelight-studio.com/cz/"},
+        {"@type": "ListItem", "position": 2, "name": "SageDocs", "item": "https://sagelight-studio.com/cz/sagedocs.html"}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": "Kolik stojí SageDocs?", "acceptedAnswer": {"@type": "Answer", "text": "SageDocs je předplatné s automatickým obnovováním v App Store: $2,99 měsíčně nebo $24,99 ročně. Můžete kdykoli zrušit v Nastavení → [Apple ID] → Předplatné; zrušení nabývá účinnosti na konci aktuálního období."}},
+        {"@type": "Question", "name": "Jak jsou moje data šifrována?", "acceptedAnswer": {"@type": "Answer", "text": "Každá příloha je před uložením šifrována AES-256-GCM. Šifrovací klíče jsou odvozeny z master PIN pomocí PBKDF2-SHA256 s 600 000 iteracemi a 256-bitovou solí na instalaci. Klíče jsou v iOS Keychain a chráněné biometricky."}},
+        {"@type": "Question", "name": "Co se stane, když zapomenu master PIN?", "acceptedAnswer": {"@type": "Answer", "text": "Vaše šifrované dokumenty nelze obnovit. Nemáme backdoor ani způsob, jak resetovat vaše šifrovací klíče — to je smysl celého návrhu."}},
+        {"@type": "Question", "name": "Vidí iCloud moje dokumenty?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Dokumenty jsou na zařízení šifrovány AES-256-GCM před synchronizací do iCloud přes CloudKit. Apple ukládá pouze šifrovaný text — ani Apple nemůže vaše dokumenty dešifrovat."}},
+        {"@type": "Question", "name": "Mohu sdílet dokument z SageDocs?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Dokumenty jsou dočasně dešifrovány pro sdílení, které zahájíte. Dočasný soubor je ihned poté bezpečně smazán."}},
+        {"@type": "Question", "name": "Je SageDocs k dispozici pro Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. SageDocs je univerzální binární soubor běžící nativně na iPhone (iOS 17+), iPad (iPadOS 17+) a Mac (macOS 14+). Dokumenty se synchronizují šifrované mezi všemi vašimi Apple zařízeními přes iCloud."}}
+    ]}
     </script>
 
     <style>
@@ -154,17 +171,17 @@
 
 <nav class="nav" role="navigation" aria-label="Hlavní navigace">
     <div class="nav__inner">
-        <a href="../index.html" class="nav__logo"><span class="nav__logo-leaf" aria-hidden="true">🌿</span>Sagelight <span>Studio</span></a>
+        <a href="../index.html" class="nav__logo"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></a>
         <ul class="nav__tabs" id="navTabs" role="list">
             <li><a href="sagedocs.html" class="nav__tab nav__tab--active">SageDocs</a></li>
-            <li><a href="../sagebills.html" class="nav__tab">SageBills</a></li>
-            <li><a href="../sagemeet.html" class="nav__tab">SageMeet</a></li>
+            <li><a href="sagebills.html" class="nav__tab">SageBills</a></li>
+            <li><a href="sagemeet.html" class="nav__tab">SageMeet</a></li>
             <li><a href="../blog.html" class="nav__tab">Blog</a></li>
             <li><a href="../press-kit.html" class="nav__tab">Tisk</a></li>
         </ul>
         <div class="nav__actions">
             <button class="nav__icon-btn" id="themeToggle" onclick="cycleTheme()" aria-label="Změnit motiv"><span id="themeIcon" aria-hidden="true">☾</span></button>
-            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+            <button class="nav__icon-btn mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menu"><span aria-hidden="true" class="material-symbols-outlined">menu</span></button>
         </div>
     </div>
 </nav>
@@ -174,7 +191,7 @@
         <div class="container">
             <div class="hero__inner">
                 <div class="eyebrow fade-up d1">End-to-end šifrování</div>
-                <h1 class="h-display fade-up d2">Vaše dokumenty.<br><span class="italic-em">Šifrované.</span></h1>
+                <h1 class="h-display fade-up d2">Šifrovaný dokumentový trezor<br><span class="italic-em">pro iPhone a Mac.</span></h1>
                 <p class="text-lead lead fade-up d3">
                     Digitální trezor pro vaše nejcitlivější údaje &mdash; občanský průkaz, pas, smlouvy, pojistky, lékařské dokumenty. AES-256-GCM šifrování na vašem zařízení. Přístup máte pouze vy.
                 </p>
@@ -188,13 +205,13 @@
                         <div class="vault__head">
                             <h2>Zabezpečené Dokumenty</h2>
                             <button class="btn btn--primary" style="padding: 8px 16px; font-size: 13px;">
-                                <span class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
+                                <span aria-hidden="true" class="material-symbols-outlined icon" style="font-size: 18px;">add</span>
                                 Přidat
                             </button>
                         </div>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">badge</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">badge</span></div>
                                 <div>
                                     <div class="doc-row__name">Občanský Průkaz &mdash; Primární</div>
                                     <div class="doc-row__filename">DOC_OP_9928_SECURE.enc</div>
@@ -206,12 +223,12 @@
                                     <span class="value">před 2 hodinami</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--warn">Brzy vyprší</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">flight_takeoff</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">flight_takeoff</span></div>
                                 <div>
                                     <div class="doc-row__name">Cestovní Pas</div>
                                     <div class="doc-row__filename">PPT_2026_VALID.enc</div>
@@ -223,12 +240,12 @@
                                     <span class="value">12. led. 2026</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--secure">Ověřeno</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                         <article class="doc-row">
                             <div class="doc-row__left">
-                                <div class="doc-row__icon"><span class="material-symbols-outlined fill">description</span></div>
+                                <div class="doc-row__icon"><span aria-hidden="true" class="material-symbols-outlined fill">description</span></div>
                                 <div>
                                     <div class="doc-row__name">Kupní Smlouva</div>
                                     <div class="doc-row__filename">CONTRACT_2025.enc</div>
@@ -240,7 +257,7 @@
                                     <span class="value">05. pro. 2025</span>
                                 </div>
                                 <span class="doc-row__chip doc-row__chip--secure">Ověřeno</span>
-                                <span class="material-symbols-outlined arrow">chevron_right</span>
+                                <span aria-hidden="true" class="material-symbols-outlined arrow">chevron_right</span>
                             </div>
                         </article>
                     </div>
@@ -270,7 +287,7 @@
                     <h2 class="h-section" style="margin-top: 16px;">Zabezpečení bez <span class="italic-em">kompromisů</span>.</h2>
                     <div class="specs-list">
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">key</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">key</span></div>
                             <div>
                                 <h4>AES-256-GCM autentizované šifrování</h4>
                                 <p>Každá příloha je šifrována AES-256-GCM &mdash; stejnou šifrou používanou pro přísně tajná data. Každý soubor má vlastní nonce a integritní značku.</p>
@@ -278,7 +295,7 @@
                             </div>
                         </div>
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">vibration</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">vibration</span></div>
                             <div>
                                 <h4>PBKDF2-SHA256 odvození klíče</h4>
                                 <p>Váš master PIN je natahován 600.000 iteracemi s 256-bitovou solí na instalaci. Brute-force útoky jsou matematicky neproveditelné při současných výpočetních kapacitách.</p>
@@ -286,7 +303,7 @@
                             </div>
                         </div>
                         <div class="spec">
-                            <div class="spec__icon"><span class="material-symbols-outlined fill">fingerprint</span></div>
+                            <div class="spec__icon"><span aria-hidden="true" class="material-symbols-outlined fill">fingerprint</span></div>
                             <div>
                                 <h4>Keychain + biometrická ochrana</h4>
                                 <p>Šifrovací klíče v iOS Keychain chráněné Face ID, Touch ID nebo master PIN. Nikdy se neobjevují v otevřené podobě mimo Secure Enclave.</p>
@@ -296,10 +313,10 @@
                     </div>
                 </div>
                 <div class="spec-tiles reveal">
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">shield_lock</span><div class="label">Soukromí</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
-                    <div class="spec-tile"><span class="material-symbols-outlined fill">fingerprint</span><div class="label">Biometrie</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">shield_lock</span><div class="label">Soukromí</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">memory</span><div class="label">Secure Enclave</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">cloud_off</span><div class="label">Zero knowledge</div></div>
+                    <div class="spec-tile"><span aria-hidden="true" class="material-symbols-outlined fill">fingerprint</span><div class="label">Biometrie</div></div>
                 </div>
             </div>
         </div>
@@ -314,22 +331,22 @@
             </div>
             <div class="layers">
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">lock</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">lock</span></div>
                     <h5>Vrstva trezoru</h5>
                     <p>AES-256-GCM pro každou přílohu. Klíče na soubor.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">vpn_key</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">vpn_key</span></div>
                     <h5>Přístupová vrstva</h5>
                     <p>Master PIN, Face ID, Touch ID. PBKDF2 odvození klíče.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">cloud</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">cloud</span></div>
                     <h5>Synchronizační vrstva</h5>
                     <p>Šifrovaný v klidu iCloud přes CloudKit. Apple ukládá pouze šifrovaný text.</p>
                 </div>
                 <div class="layer reveal">
-                    <div class="layer__circle"><span class="material-symbols-outlined fill">visibility_off</span></div>
+                    <div class="layer__circle"><span aria-hidden="true" class="material-symbols-outlined fill">visibility_off</span></div>
                     <h5>Vrstva soukromí</h5>
                     <p>Žádná telemetrie, žádná analytika, žádný sběr metadat. Nikdy.</p>
                 </div>
@@ -345,32 +362,32 @@
             </div>
             <div class="bento">
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">event</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">event</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Sledování expirace</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Dostanete připomenutí dříve, než vyprší váš pas, občanský průkaz, pojistka nebo řidičský průkaz. Připomenutí běží na vašem zařízení.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">cloud_sync</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">cloud_sync</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Šifrovaná iCloud synchronizace</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Volitelná synchronizace na iPhone, iPad a Mac. Šifrované na zařízení, předáno Apple jako šifrovaný text.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">share</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">share</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Selektivní sdílení</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Dešifrujete a sdílíte pouze vybraný dokument. Dočasné soubory jsou po sdílení bezpečně smazány.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">phone_iphone</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">phone_iphone</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">iPhone, iPad, Mac</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Univerzální binární soubor běžící nativně na všech vašich Apple zařízeních. iOS 17+ a macOS 14+.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">ios_share</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">ios_share</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Šifrovaný export</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Vezměte si svá data s sebou. Exportujte vše jako šifrovaný balíček &mdash; přenosné, obnovitelné, vaše.</p>
                 </div>
                 <div class="solid-card col-4" style="padding: 36px;">
-                    <div class="card-icon"><span class="material-symbols-outlined">delete_forever</span></div>
+                    <div class="card-icon"><span aria-hidden="true" class="material-symbols-outlined">delete_forever</span></div>
                     <h3 class="h-card" style="margin-bottom: 8px;">Trvalé smazání</h3>
                     <p style="color: var(--text-secondary); font-size: 15px;">Smažete dokument a šifrovaný text zmizí. Bez měkkého mazání, bez stínových kopií, bez obnovovacího trezoru.</p>
                 </div>
@@ -430,11 +447,11 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__brand-block">
-            <div class="footer__brand"><span aria-hidden="true">🌿</span>Sagelight <span>Studio</span></div>
+            <div class="footer__brand"><svg class="nav__logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4.5 19.5C4.5 10.9 11.4 4 20 4c0 8.6-6.9 15.5-15.5 15.5Z" fill="currentColor"/><path d="M6.5 17.5 17.5 6.5" stroke="var(--bg)" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/></svg>Sagelight <span>Studio</span></div>
             <p class="footer__tagline">Soukromí skrze jasnost. Nezávislé studio tvořící místní iOS a macOS aplikace v Rumunsku, EU.</p>
             <p class="footer__tagline" style="margin-bottom: 0;"><a href="mailto:contact@sagelight-studio.com">contact@sagelight-studio.com</a></p>
         </div>
-        <div><div class="footer__col-title">Aplikace</div><ul class="footer__list"><li><a href="sagedocs.html">SageDocs</a></li><li><a href="../sagebills.html">SageBills</a></li><li><a href="../sagemeet.html">SageMeet</a></li></ul></div>
+        <div><div class="footer__col-title">Aplikace</div><ul class="footer__list"><li><a href="sagedocs.html">SageDocs</a></li><li><a href="sagebills.html">SageBills</a></li><li><a href="sagemeet.html">SageMeet</a></li></ul></div>
         <div><div class="footer__col-title">Studio</div><ul class="footer__list"><li><a href="../blog.html">Blog</a></li><li><a href="../press-kit.html">Press Kit</a></li><li><a href="mailto:contact@sagelight-studio.com">Kontakt</a></li></ul></div>
         <div><div class="footer__col-title">Právní</div><ul class="footer__list"><li><a href="privacy-policy.html">Zásady ochrany OÚ</a></li><li><a href="gdpr.html">GDPR</a></li><li><a href="terms.html">Podmínky</a></li><li><button type="button" class="cookie-pref-link" onclick="window.sageConsentOpen && window.sageConsentOpen()">Předvolby cookies</button></li></ul></div>
     </div>
